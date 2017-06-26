@@ -1,0 +1,32 @@
+{
+  "name": "silverback",
+  "title": "Silverback",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jeff Wilmoth"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wilmoth77/Silverback---WP"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "load-grunt-tasks": "latest",
+    "time-grunt": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-copy": "latest",
+    "less-plugin-autoprefix": "latest",
+    "bootstrap": "^3.3.7"
+  },
+  "keywords": [
+    "Underscores",
+    "Bootstrap"
+  ],
+  "dependencies": {
+    "prismjs": "^1.6.0"
+  }
+}

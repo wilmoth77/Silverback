@@ -1,0 +1,25 @@
+/*
+Theme Name: Silverback
+Theme URI: https://github.com/wilmoth77/Silverback---WP
+Author: Jeff Wilmoth
+Author URI: http://wilmoth77.com
+Description: WordPress starter theme based on Underscores using Bootstrap with LESS for responsiveness, Grunt.js for automation and Bower for front end package management.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: slvrbk
+Domain Path: /languages/
+Tags: wordpress, underscores, bootstrap, less, grunt.js, bower
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+ Silverback is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
+Thank you to the folks at http://blog.4digits.net/ for starting this project.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/

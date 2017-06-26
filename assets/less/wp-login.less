@@ -1,0 +1,70 @@
+@fy-unit-1: 0px;
+@fy-unit-2: 2px;
+
+@fy-color-1: rgba(0, 0, 0, 0.3);
+@fy-color-2: #2d374d;
+@fy-color-3: #f9f9f9;
+@fy-color-4: #181f2d;
+@fy-color-5: #fff;
+
+body {
+  background: @fy-color-5;
+  &.login {
+    form {
+      background: #f7f7f7;
+      -moz-box-shadow: @fy-unit-1 @fy-unit-2 @fy-unit-2 @fy-color-1;
+      -webkit-box-shadow: @fy-unit-1 @fy-unit-2 @fy-unit-2 @fy-color-1;
+      box-shadow: @fy-unit-1 @fy-unit-2 @fy-unit-2 @fy-color-1;
+    }
+    form p.forgetmenot {
+      display: none;
+    }
+    form input.input {
+      background: @fy-color-5;
+    }
+    form input[type=checkbox] {
+      background: @fy-color-5;
+    }
+    input.button-primary {
+      padding: 0 2@fy-unit-1 @fy-unit-2;
+      -webkit-border-radius: @fy-unit-1;
+      border-radius: @fy-unit-1;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background: @fy-color-4;
+      border-color: @fy-color-4;
+      text-shadow: none;
+    }
+    input.button-primary:hover {
+      background: @fy-color-2;
+      border-color: @fy-color-2;
+    }
+    input#wp-submit {
+      width: 100%;
+      height: 35px;
+    }
+    #nav {
+      text-align: center;
+    }
+    #backtoblog {
+      text-align: center;
+    }
+    p.message {
+      background-color: @fy-color-3;
+      border-left: 4px solid @fy-color-4;
+    }
+    #login_error {
+      background-color: @fy-color-3;
+    }
+    input[type=text] {
+      background: @fy-color-5;
+    }
+    div#login h1 a {
+      background-image: url(../img/admin-logo.png);
+      -webkit-background-size: 280px 173px;
+      background-size: 280px 173px;
+      width: 280px;
+      height: 173px;
+    }
+  }
+}

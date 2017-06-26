@@ -1,0 +1,481 @@
+/*******************************************************************************
+Primary-Main Main Header
+*/
+.primary-main {
+  padding-left: 10rem;
+}
+
+/*******************************************************************************
+Primary-Main Main Header
+*/
+.main-header {
+  margin: 0 -1.5rem 3rem -10rem;
+  padding: 2.5rem 2.5rem 1rem 8.5rem;
+  background-color: #fff;
+  @shadow: @dropshadow;
+  .box-shadow(@shadow);
+}
+
+.main-header .entry-title h6 {
+  margin-top: 0;
+  margin-bottom: .6rem;
+}
+.main-header .entry-title h1 {
+  margin-top: 0;
+  text-transform: lowercase;
+}
+h1 .parent_page,
+h1 .current_page {
+  color: @gray-light;
+}
+
+h1 .current_page_child {
+  font-weight: 600;
+}
+
+.header-colorbar {
+  width: 24px;
+  position: relative;
+  margin-left: -8.5rem;
+  margin-top: -2.5rem;
+  margin-bottom: -79.56px;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  & > div {
+    .make-row();
+  }
+
+  & [class^="colorbar-item-"] {
+    .make-xs-column (6);
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 47%;
+  }
+}
+
+
+.colorbar-item-1 {
+  background-color: @bc-p01;
+}
+.colorbar-item-2 {
+  background-color: @bc-s01;
+}
+.colorbar-item-3 {
+  background-color: @white;
+}
+.colorbar-item-4 {
+  background-color: @bc-p02;
+}
+.colorbar-item-5 {
+  background-color: @bc-s01-60;
+}
+.colorbar-item-6 {
+  background-color: @bc-s03;
+}
+.colorbar-item-7 {
+  background-color: @bc-sp01;
+}
+.colorbar-item-8 {
+  background-color: @bc-p01;
+}
+
+
+
+
+/*******************************************************************************
+Primary-Main primary-main-container
+*/
+.primary-main-container {
+  .make-md-column(12);
+}
+.primary-main.has-tertiary .primary-main-container {
+  .make-md-column(9);
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .primary-main-container, {
+    max-width: 900px;
+  }
+}
+section.colors {
+  margin: 4.5rem 0;
+}
+
+section.colors h4 {
+  font-weight: 500;
+}
+
+.colors td {
+  width: 40%;
+
+  &.colors-less {
+    width: 20%;
+  }
+}
+
+
+.swatches-panel {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.swatches-panel,
+.swatches-less{
+  min-height: 5rem;
+}
+
+.swatches-less {
+  padding-top: 7%;
+}
+
+
+.swatches.bc-p01 .swatches-panel {
+  background-color: @bc-p01;
+  &:nth-of-type(2n) {
+    background-color:  @bc-p01-80;
+  }
+  &:nth-of-type(3n)  {
+    background-color: @bc-p01-60;
+  }
+  &:nth-of-type(4n)  {
+    background-color: @bc-p01-40;
+  }
+  &:nth-of-type(5n)  {
+    background-color: @bc-p01-20;
+  }
+}
+
+.swatches.bc-p02 .swatches-panel {
+  background-color: @bc-p02;
+  &:nth-of-type(2n) {
+    background-color:  @bc-p02-80;
+  }
+  &:nth-of-type(3n)  {
+    background-color: @bc-p02-60;
+  }
+  &:nth-of-type(4n)  {
+    background-color: @bc-p02-40;
+  }
+  &:nth-of-type(5n)  {
+    background-color: @bc-p02-20;
+  }
+}
+
+.swatches.bc-s01 .swatches-panel {
+  background-color: @bc-s01;
+  &:nth-of-type(2n) {
+    background-color:  @bc-s01-80;
+  }
+  &:nth-of-type(3n)  {
+    background-color: @bc-s01-60;
+  }
+  &:nth-of-type(4n)  {
+    background-color: @bc-s01-40;
+  }
+  &:nth-of-type(5n)  {
+    background-color: @bc-s01-20;
+  }
+}
+
+.swatches.bc-s02 .swatches-panel {
+  background-color: @bc-s02;
+  &:nth-of-type(2n) {
+    background-color:  @bc-s02-80;
+  }
+  &:nth-of-type(3n)  {
+    background-color: @bc-s02-60;
+  }
+  &:nth-of-type(4n)  {
+    background-color: @bc-s02-40;
+  }
+  &:nth-of-type(5n)  {
+    background-color: @bc-s02-20;
+  }
+}
+
+.swatches.bc-s03 .swatches-panel {
+  background-color: @bc-s03;
+  &:nth-of-type(2n) {
+    background-color:  @bc-s03-80;
+  }
+  &:nth-of-type(3n)  {
+    background-color: @bc-s03-60;
+  }
+  &:nth-of-type(4n)  {
+    background-color: @bc-s03-40;
+  }
+  &:nth-of-type(5n)  {
+    background-color: @bc-s03-20;
+  }
+}
+
+.swatches.bc-sp01 .swatches-panel {
+  background-color: @bc-sp01;
+  &:nth-of-type(2n) {
+    background-color:  @bc-sp01-80;
+  }
+  &:nth-of-type(3n)  {
+    background-color: @bc-sp01-60;
+  }
+  &:nth-of-type(4n)  {
+    background-color: @bc-sp01-40;
+  }
+  &:nth-of-type(5n)  {
+    background-color: @bc-sp01-20;
+  }
+}
+
+.swatches.bc-sp02 .swatches-panel {
+  background-color: @bc-sp02;
+  &:nth-of-type(2n) {
+    background-color:  @bc-sp02-80;
+  }
+  &:nth-of-type(3n)  {
+    background-color: @bc-sp02-60;
+  }
+  &:nth-of-type(4n)  {
+    background-color: @bc-sp02-40;
+  }
+  &:nth-of-type(5n)  {
+    background-color: @bc-sp02-20;
+  }
+}
+
+.swatches.bc-sp03 .swatches-panel {
+  background-color: @bc-sp03;
+  &:nth-of-type(2n) {
+    background-color:  @bc-sp03-80;
+  }
+  &:nth-of-type(3n)  {
+    background-color: @bc-sp03-60;
+  }
+  &:nth-of-type(4n)  {
+    background-color: @bc-sp03-40;
+  }
+  &:nth-of-type(5n)  {
+    background-color: @bc-sp03-20;
+  }
+}
+
+.swatches.bc-sp04 .swatches-panel {
+  background-color: @bc-sp04;
+  &:nth-of-type(2n) {
+    background-color:  @bc-sp04-80;
+  }
+  &:nth-of-type(3n)  {
+    background-color: @bc-sp04-60;
+  }
+  &:nth-of-type(4n)  {
+    background-color: @bc-sp04-40;
+  }
+  &:nth-of-type(5n)  {
+    background-color: @bc-sp04-20;
+  }
+}
+
+.swatches.bc-sp05 .swatches-panel {
+  background-color: @bc-sp05;
+  &:nth-of-type(2n) {
+    background-color:  @bc-sp05-80;
+  }
+  &:nth-of-type(3n)  {
+    background-color: @bc-sp05-60;
+  }
+  &:nth-of-type(4n)  {
+    background-color: @bc-sp05-40;
+  }
+  &:nth-of-type(5n)  {
+    background-color: @bc-sp05-20;
+  }
+}
+.swatches.bc-sp06 .swatches-panel {
+  background-color: @bc-sp06;
+}
+.swatches.bc-sp07 .swatches-panel {
+  background-color: @bc-sp07;
+}
+.swatches.bc-sp08 .swatches-panel {
+  background-color: @bc-sp08;
+}
+.swatches.bc-sp06 .swatches-panel,
+.swatches.bc-sp07 .swatches-panel,
+.swatches.bc-sp08 .swatches-panel {
+  border-radius: 50%;
+  margin: 0 auto;
+  height: 10rem;
+  width: 10rem;
+  @shadow: @dropshadow;
+  .box-shadow(@shadow);
+}
+
+.principle-list .mdi {
+    position: absolute;
+    margin-top: -2rem;
+    font-size: 5rem;
+
+    &.mdi-human-male-female {
+      color: @bc-s02;
+    }
+    &.mdi-arrange-send-backward {
+      color: @bc-s01;
+    }
+    &.mdi-lightbulb-on-outline {
+      color: @bc-sp01;
+    }
+    &.mdi-gender-male-female {
+      color: @bc-s03;
+    }
+}
+
+.principle-list dl {
+  margin-left: 10rem;
+  margin-bottom: 5rem;
+}
+
+
+
+
+/*******************************************************************************
+primary-secondary sidebar
+*/
+
+.primary-secondary {
+  display: none;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .primary-secondary {
+    position: fixed;
+    top: 52px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #fff;
+    border-right: 1px solid #eee;
+  }
+}
+
+
+/*******************************************************************************
+prism.less Overrides
+//keep seperate from Prism.less
+*/
+
+
+
+/*******************************************************************************
+navbar.less
+*/
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-inverse {
+  background-color: @cin-p02;
+  border-color: transparent;
+}
+
+.navbar-inverse .navbar-nav>li>a,
+.navbar-inverse .navbar-brand {
+  color:  darken(@white, 15%);;
+}
+
+@media (min-width: @screen-sm-min) {
+  .navbar {
+    border-radius: 0;
+  }
+}
+
+/*******************************************************************************
+navs.less
+*/
+.sidebar.left .nav.nested {
+    display: none;
+}
+.sidebar.left .nav>li.active .nav.nested,
+.sidebar.left .nav>.active>.nav.nested,
+.sidebar.left .nav>.current-menu-parent>.nav.nested  {
+    display: block;
+}
+
+.sidebar.left .nav>.current-page-parent .mdi-chevron-right:before,
+.sidebar.left .nav>.active .mdi-chevron-right:before {
+    content: "\F140";
+}
+
+.sidebar.left .nav.nested a {
+  padding-top: .5rem;
+  padding-bottom: .4375rem;
+  padding-left: 3.5rem;
+  }
+
+
+
+
+/*******************************************************************************
+type.less
+*/
+
+h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 400;
+}
+p {
+  margin: 0 0 (@line-height-computed);
+}
+
+p.note {
+  color: @bc-sp02;
+  font-size: @font-size-small;
+}
+
+@media (min-width: @screen-sm-min) {
+  .lead {
+    font-size: floor((@font-size-base * 1.45));
+  }
+}
+
+/*******************************************************************************
+tables.less
+*/
+
+.table>tbody>tr>td {
+  padding: 1.5rem .8rem;
+}
+.table>thead>tr>th {
+  font-size: @font-size-small;
+  text-transform: uppercase;
+  color: @gray;
+}
+
+.table-hover>tbody>tr:hover {
+  background-color: @gray-lighter;
+}
+
+/*******************************************************************************
+scafffolding.less
+*/
+body {
+  padding-top: 51px;
+}
+
+
+//Extra small devices (phones, less than 768px)
+//No media query since this is the default in Bootstrap
+
+//Small devices (tablets, 768px and up)
+//@media (min-width: @screen-sm-min) { ... }
+
+//Medium devices (desktops, 992px and up)
+//@media (min-width: @screen-md-min) { ... }
+
+//Large devices (large desktops, 1200px and up)
+//@media (min-width: @screen-lg-min) { ... }
