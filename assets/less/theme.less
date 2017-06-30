@@ -27,7 +27,7 @@ Primary-Main Main Header
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
   .primary-main {
-    padding-left: 10rem;
+    padding-left: 100px;
   }
 }
 
@@ -35,8 +35,8 @@ Primary-Main Main Header
 Primary-Main Main Header
 */
 .main-header {
-  margin: 0 -1.5rem 3rem -1.5rem;
-  padding: 2.5rem 1.5rem 1rem 1.5rem;
+  margin: 0 -15px 30px -15px;
+  padding: 25px 15px 10px 15px;
   background-color: #fff;
   @shadow: @dropshadow;
   .box-shadow(@shadow);
@@ -45,14 +45,14 @@ Primary-Main Main Header
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
   .main-header {
-    margin: 0 -1.5rem 3rem -10rem;
-    padding: 2.5rem 2.5rem 1rem 8.5rem;
+    margin: 0 -15px 30px -100px;
+    padding: 25px 25px 10px 85px;
   }
 }
 
 .main-header .entry-title h6 {
   margin-top: 0;
-  margin-bottom: .6rem;
+  margin-bottom: 6px;
   display: none;
 }
 @media (min-width: @screen-sm-min) {
@@ -78,8 +78,8 @@ h1 .current_page_child {
 .header-colorbar {
   width: 24px;
   position: relative;
-  margin-left: -8.5rem;
-  margin-top: -2.5rem;
+  margin-left: -85px;
+  margin-top: -25px;
   margin-bottom: -79.56px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -136,9 +136,11 @@ Primary-Main primary-main-container
 */
 .primary-main-container {
   .make-md-column(12);
+  max-width: 1170px; //set a max-width when there is no right sidebar
 }
 .primary-main.has-tertiary .primary-main-container {
   .make-md-column(9);
+  max-width: none;
 }
 
 .primary-main h4 {
@@ -146,8 +148,8 @@ Primary-Main primary-main-container
 }
 
 section.section-contents {
-  margin-top: 3rem;
-  padding-bottom: 3rem;
+  margin-top: 30px;
+  padding-bottom: 30px;
 
   &:first-of-type {
     margin-top: inherit;
@@ -155,7 +157,7 @@ section.section-contents {
 }
 
 section.colors {
-  margin: 4.5rem 0;
+  margin: 45px 0;
 }
 
 .colors td {
@@ -175,7 +177,7 @@ section.colors {
 }
 .swatches-panel,
 .swatches-less{
-  min-height: 5rem;
+  min-height: 50px;
 }
 
 .swatches-less {
@@ -356,16 +358,16 @@ section.colors {
 .swatches.bc-sp08 .swatches-panel {
   border-radius: 50%;
   margin: 0 auto;
-  height: 10rem;
-  width: 10rem;
+  height: 100px;
+  width: 100px;
   @shadow: @dropshadow;
   .box-shadow(@shadow);
 }
 
 .principle-list .mdi {
   position: absolute;
-  margin-top: -2rem;
-  font-size: 5rem;
+  margin-top: -20px;
+  font-size: 50px;
 
   &.mdi-human-male-female {
     color: @bc-s02;
@@ -382,8 +384,8 @@ section.colors {
 }
 
 .principle-list dl {
-  margin-left: 10rem;
-  margin-bottom: 5rem;
+  margin-left: 100px;
+  margin-bottom: 50px;
 }
 
 #fonts {
@@ -393,7 +395,7 @@ section.colors {
   }
 
   & .specimen-modules {
-    margin-bottom: 7rem;
+    margin-bottom: 70px;
 
     &:last-of-type {
       margin-bottom: inherit;
@@ -401,7 +403,7 @@ section.colors {
   }
 
   & .specimen-module {
-    margin-bottom: 4rem;
+    margin-bottom: 40px;
   }
 
   & .specimen-characters-module {
@@ -575,8 +577,8 @@ nav.sidebar.left  li a {
 }
 
 .sidebar.left .nav.nested a {
-  padding-top: .5rem;
-  padding-bottom: .4375rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 55px; //was 35px, added 20px
 }
 
@@ -719,7 +721,7 @@ panels.less
 }
 
 .panel-heading {
-  padding: 2rem;
+  padding: 20px;
   & .panel-heading-left {
     .make-sm-column (6);
   }
@@ -735,7 +737,7 @@ panels.less
 }
 
 .panel-body {
-  padding: 2rem;
+  padding: 20px;
 }
 
 .panel-default .panel-footer {
@@ -766,8 +768,8 @@ panels.less
 //Primary panel style
 
 .panel-default.primary {
-  border: .1rem solid @bc-s02-20;
-  border-top: .5rem solid @bc-p01;
+  border: .10px solid @bc-s02-20;
+  border-top: .50px solid @bc-p01;
 }
 
 
