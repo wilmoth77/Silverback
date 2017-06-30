@@ -2346,41 +2346,54 @@
   })
 
 }(jQuery);
-;/**
- * navigation.js
- *
- * Handles toggling the navigation menu for small screens.
- */
-( function() {
-	var container, button, menu;
+;(function($) {
+  $.fn.closest_descendent = function(filter) {
+    var $found = $(),
+    $currentSet = this; // Current place
+    while ($currentSet.length) {
+      $found = $currentSet.filter(filter);
+      if ($found.length) break;  // At least one match: break loop
+      // Get all children of the current set
+      $currentSet = $currentSet.children();
+    }
+    return $found.first(); // Return first match of the collection
+  }
+})(jQuery);
 
-	container = document.getElementById( 'site-navigation' );
-	if ( ! container )
-		return;
-
-	button = container.getElementsByTagName( 'button' )[0];
-	if ( 'undefined' === typeof button )
-		return;
-
-	menu = container.getElementsByTagName( 'ul' )[0];
-
-	// Hide menu toggle button if menu is empty and return early.
-	if ( 'undefined' === typeof menu ) {
-		button.style.display = 'none';
-		return;
-	}
-
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) )
-		menu.className += ' nav-menu';
-
-	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) )
-			container.className = container.className.replace( ' toggled', '' );
-		else
-			container.className += ' toggled';
-	};
-} )();
-;!function(){if("undefined"!=typeof self&&self.Prism&&self.document){if(!Prism.plugins.toolbar)return console.warn("Copy to Clipboard plugin loaded before Toolbar plugin."),void 0;var o=window.Clipboard||void 0;o||"function"!=typeof require||(o=require("clipboard"));var e=[];if(!o){var t=document.createElement("script"),n=document.querySelector("head");t.onload=function(){if(o=window.Clipboard)for(;e.length;)e.pop()()},t.src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js",n.appendChild(t)}Prism.plugins.toolbar.registerButton("copy-to-clipboard",function(t){function n(){var e=new o(i,{text:function(){return t.code}});e.on("success",function(){i.textContent="Copied!",r()}),e.on("error",function(){i.textContent="Press Ctrl+C to copy",r()})}function r(){setTimeout(function(){i.textContent="Copy"},5e3)}var i=document.createElement("a");return i.textContent="Copy",o?n():e.push(n),i})}}();;
+$(function(){
+  var pre = document.getElementsByTagName('pre');
+  for (var i = 0; i < pre.length; i++) {
+    var isLanguage = pre[i].children[0].className.indexOf('language-');
+    if ( isLanguage === 0 ) {
+      var button = document.createElement('button');
+      button.className = 'copy-button';
+      button.textContent = 'Copy ';
+      pre[i].appendChild(button);
+      var footerCopy = $(".copy-button").parents(".panel").closest_descendent('.panel-footer-buttons>div');
+      $( button ).appendTo(footerCopy);
+      $(".copy-button").addClass( "btn btn-hair" );
+    }
+  }
+  var copyCode = new Clipboard('.copy-button', {
+    target: function(trigger) {
+      return $(trigger).parents(".panel").closest_descendent('code').get(0);
+    }
+  });
+  copyCode.on('success', function(event) {
+    event.clearSelection();
+    event.trigger.textContent = 'Copied';
+    window.setTimeout(function() {
+      event.trigger.textContent = 'Copy';
+    }, 2000);
+  });//end onSuccess
+  copyCode.on('error', function(event) {
+    event.trigger.textContent = 'Press "Ctrl + C" to copy';
+    window.setTimeout(function() {
+      event.trigger.textContent = 'Copy';
+    }, 2000);
+  });//end onError
+});//end function
+;
 /* **********************************************
      Begin prism-core.js
 ********************************************** */
@@ -3175,24 +3188,196 @@ Prism.languages.js = Prism.languages.javascript;
 	document.addEventListener('DOMContentLoaded', self.Prism.fileHighlight);
 
 })();
-;( function() {
-	var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
-	    is_opera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
-	    is_ie     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1;
+;(function(){
 
-	if ( ( is_webkit || is_opera || is_ie ) && document.getElementById && window.addEventListener ) {
-		window.addEventListener( 'hashchange', function() {
-			var element = document.getElementById( location.hash.substring( 1 ) );
+if (
+	typeof self !== 'undefined' && !self.Prism ||
+	typeof global !== 'undefined' && !global.Prism
+) {
+	return;
+}
 
-			if ( element ) {
-				if ( ! /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) )
-					element.tabIndex = -1;
+var url = /\b([a-z]{3,7}:\/\/|tel:)[\w\-+%~/.:#=?&amp;]+/,
+    email = /\b\S+@[\w.]+[a-z]{2}/,
+    linkMd = /\[([^\]]+)]\(([^)]+)\)/,
+    
+	// Tokens that may contain URLs and emails
+    candidates = ['comment', 'url', 'attr-value', 'string'];
 
-				element.focus();
+Prism.plugins.autolinker = {
+	processGrammar: function (grammar) {
+		// Abort if grammar has already been processed
+		if (!grammar || grammar['url-link']) {
+			return;
+		}
+		Prism.languages.DFS(grammar, function (key, def, type) {
+			if (candidates.indexOf(type) > -1 && Prism.util.type(def) !== 'Array') {
+				if (!def.pattern) {
+					def = this[key] = {
+						pattern: def
+					};
+				}
+
+				def.inside = def.inside || {};
+
+				if (type == 'comment') {
+					def.inside['md-link'] = linkMd;
+				}
+				if (type == 'attr-value') {
+					Prism.languages.insertBefore('inside', 'punctuation', { 'url-link': url }, def);
+				}
+				else {
+					def.inside['url-link'] = url;
+				}
+
+				def.inside['email-link'] = email;
 			}
-		}, false );
+		});
+		grammar['url-link'] = url;
+		grammar['email-link'] = email;
 	}
+};
+
+Prism.hooks.add('before-highlight', function(env) {
+	Prism.plugins.autolinker.processGrammar(env.grammar);
+});
+
+Prism.hooks.add('wrap', function(env) {
+	if (/-link$/.test(env.type)) {
+		env.tag = 'a';
+		
+		var href = env.content;
+		
+		if (env.type == 'email-link' && href.indexOf('mailto:') != 0) {
+			href = 'mailto:' + href;
+		}
+		else if (env.type == 'md-link') {
+			// Markdown
+			var match = env.content.match(linkMd);
+			
+			href = match[2];
+			env.content = match[1];
+		}
+		
+		env.attributes.href = href;
+	}
+});
+
+})();;(function(){
+	if (typeof self === 'undefined' || !self.Prism || !self.document) {
+		return;
+	}
+
+	if (!Prism.plugins.toolbar) {
+		console.warn('Copy to Clipboard plugin loaded before Toolbar plugin.');
+
+		return;
+	}
+
+	var Clipboard = window.Clipboard || undefined;
+
+	if (!Clipboard && typeof require === 'function') {
+		Clipboard = require('clipboard');
+	}
+
+	var callbacks = [];
+
+	if (!Clipboard) {
+		var script = document.createElement('script');
+		var head = document.querySelector('head');
+
+		script.onload = function() {
+			Clipboard = window.Clipboard;
+
+			if (Clipboard) {
+				while (callbacks.length) {
+					callbacks.pop()();
+				}
+			}
+		};
+
+		script.src = 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js';
+		head.appendChild(script);
+	}
+
+	Prism.plugins.toolbar.registerButton('copy-to-clipboard', function (env) {
+		var linkCopy = document.createElement('a');
+		linkCopy.textContent = 'Copy';
+
+		if (!Clipboard) {
+			callbacks.push(registerClipboard);
+		} else {
+			registerClipboard();
+		}
+
+		return linkCopy;
+
+		function registerClipboard() {
+			var clip = new Clipboard(linkCopy, {
+				'text': function () {
+					return env.code;
+				}
+			});
+
+			clip.on('success', function() {
+				linkCopy.textContent = 'Copied!';
+
+				resetText();
+			});
+			clip.on('error', function () {
+				linkCopy.textContent = 'Press Ctrl+C to copy';
+
+				resetText();
+			});
+		}
+
+		function resetText() {
+			setTimeout(function () {
+				linkCopy.textContent = 'Copy';
+			}, 5000);
+		}
+	});
 })();
+;(function () {
+
+	if (typeof self === 'undefined' || !self.Prism || !self.document || !Prism.languages.markup) {
+		return;
+	}
+
+	Prism.plugins.UnescapedMarkup = true;
+
+	Prism.hooks.add('before-highlightall', function (env) {
+		env.selector += ", .lang-markup script[type='text/plain'], .language-markup script[type='text/plain']" +
+		                ", script[type='text/plain'].lang-markup, script[type='text/plain'].language-markup";
+	});
+
+	Prism.hooks.add('before-sanity-check', function (env) {
+		if (env.language != "markup") {
+			return;
+		}
+
+		if (env.element.matches("script[type='text/plain']")) {
+			var code = document.createElement("code");
+			var pre = document.createElement("pre");
+
+			pre.className = code.className = env.element.className;
+
+			env.code = env.code.replace(/&lt;\/script(>|&gt;)/gi, "</scri" + "pt>");
+			code.textContent = env.code;
+
+			pre.appendChild(code);
+			env.element.parentNode.replaceChild(pre, env.element);
+			env.element = code;
+			return;
+		}
+
+		var pre = env.element.parentNode;
+		if (!env.code && pre && pre.nodeName.toLowerCase() == 'pre' &&
+				env.element.childNodes.length && env.element.childNodes[0].nodeName == "#comment") {
+			env.element.textContent = env.code = env.element.childNodes[0].textContent;
+		}
+	});
+}());
 ;/**
 * Call specific Javascript Components here
 *
@@ -3221,33 +3406,32 @@ Prism.languages.js = Prism.languages.javascript;
     common: {
       init: function() {
         // JavaScript to be fired on all pages
-        $(function(){
 
-          if ( $('nav .documentation li:nth-child(1)').hasClass('active') ) {
-            $('nav .documentation li:nth-child(2)').addClass('active');
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip();
+          $('[data-toggle="popover"]').popover();
+        });
+        $(function(){
+          if ( $('nav .documentation > li:nth-child(1)').hasClass('active') ) {
+            $('nav .documentation > li:nth-child(2)').addClass('active');
+          }
+          if ( $('body').hasClass('panel') ) {
+            $('body').removeClass('panel');
           }
         });
 
-        $(function(){
-          var snippets = document.querySelectorAll('.snippet');
-          [].forEach.call(snippets, function(snippet) {
-            snippet.firstChild.insertAdjacentHTML('beforebegin', '<button class="btn-clip"><img class="clippy" width="13" src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard"></button>');
-          });
-          var clipboard = new Clipboard('.btn-clip', {
-            target: function(trigger) {
-              return trigger.nextElementSibling;
-            }
-          });
-          clipboard.on('success', function(e) {
-            e.clearSelection();
-            console.log(e);
-
-          });
-
-          clipboard.on('error', function(e) {
-            console.log(e);
+        $('.sidebar.right').affix({
+          offset: {
+            top: 100,
+          }
+        });
+        $(function() {
+          $(".sidebar.right a").on("click", function() {
+            $("a.active").removeClass("active");
+            $(this).addClass("active");
           });
         });
+
       }
     },
     // Home page

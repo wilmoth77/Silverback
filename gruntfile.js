@@ -19,6 +19,7 @@ module.exports = function(grunt) {
     './node_modules/bootstrap/js/tab.js',
     './node_modules/bootstrap/js/affix.js',
     './assets/js/plugins/*.js',
+    './assets/js/plugins/**/*.js',
     './assets/js/theme.js'
   ];
 
@@ -39,6 +40,14 @@ module.exports = function(grunt) {
           sourceMapFilename: 'assets/css/main.css.map',
           sourceMapRootpath: '/wp-content/themes/Silverback/',
           sourceMapURL: '/wp-content/themes/Silverback/assets/css/main.css.map'
+        },
+        plugins: [
+          new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
+        ],
+      },
+      pretty: {
+        files: {
+          "./assets/css/main-pretty.css":"./assets/less/main.less",
         },
         plugins: [
           new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
@@ -138,7 +147,7 @@ module.exports = function(grunt) {
 
   });
   // Compile tasks
-     grunt.registerTask('compile', ['concat', 'less:development', 'uglify', 'jshint', 'copy']);
+     grunt.registerTask('compile', ['concat', 'less:development', 'less:pretty', 'uglify', 'jshint', 'copy']);
      grunt.registerTask('build', ['concat', 'less:dist', 'uglify', 'jshint', 'copy']);
   // Set default task
   grunt.registerTask('default', ['watch']);

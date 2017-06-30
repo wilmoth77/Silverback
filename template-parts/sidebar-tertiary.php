@@ -6,52 +6,28 @@
 * @package Silverback
 */
 ?>
-
 <?php
-$current_page = get_the_ID();
+//Condition of existing nav_menu was met in content-documentation.php
+//so just display the menu now...
 
-switch ( $current_page ) {
-  case '25' : // If is page id __
-  ?>
-  <div class="card side-nav">
-    <div class="card-block">
-      <?php
-      if (has_nav_menu('contents_menu_id')) :
-        wp_nav_menu( array(
-          'menu'              => 'contents_menu_id',
-          'theme_location'    => 'contents_menu_id',
-          'container'         => 'nav',
-          'container_id'      => 'sidebar-tertiary',
-          'menu_class'        => 'nav nav-pills nav-stacked',
-          'fallback_cb'       => 'nav_walker_bootstrap::fallback',
-          'walker'            => new nav_walker_bootstrap())
-        );
-        ?>
-      </div>
-    </div>
-    <?php
-  endif;
-  break;
-  case '99999' : // If is page id __
-  ?>
-  <div class="card side-nav">
-    <div class="card-block">
-      <?php
-      if (has_nav_menu('contents_menu_id')) :
-        wp_nav_menu( array(
-          'menu'              => 'contents_menu_id',
-          'theme_location'    => 'contents_menu_id',
-          'container'         => 'nav',
-          'container_id'      => 'sidebar-tertiary',
-          'menu_class'        => 'nav nav-pills nav-stacked',
-          'fallback_cb'       => 'nav_walker_bootstrap::fallback',
-          'walker'            => new nav_walker_bootstrap())
-        );
-        ?>
-      </div>
-    </div>
-    <?php
-  endif;
-  break;
-}
+$page_title = get_the_title( $post );
+$contentMenu = get_field('nav_menu');
+
+echo '<div class="sidebar right">
+<h4><span class="sidebar-title">' . $page_title . ' Contents</span></h4>';
+
+wp_nav_menu( array(
+  'menu'              => $contentMenu,
+  'container'         => 'nav',
+  'container_id'      => false,
+  'container_class'   => '',
+  'menu_id'           => false,
+  'menu_class'        => 'nav nav-sidebar documentation',
+  'fallback_cb'       => 'nav_walker_sidebar::fallback',
+  'walker'            => new nav_walker_sidebar()
+  )
+);
+
+echo '</div>';
+
 ?>

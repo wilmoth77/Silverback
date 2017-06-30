@@ -11,8 +11,8 @@ function Silverback_scripts() {
     $assets = array(
       'css'       => '/public/css/main.min.css',
       'prism'     => '/public/css/prism.min.css',
-      'script'    => '/public/js/script.min.js',
       'clipboard'    => '/public/js/clipboard.min.js',
+      'script'    => '/public/js/script.min.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
     );
     wp_enqueue_style('prism-style', get_stylesheet_directory_uri() . $assets['prism'], false, filemtime( get_stylesheet_directory() . '/public/css/prism.min.css' ), 'all');

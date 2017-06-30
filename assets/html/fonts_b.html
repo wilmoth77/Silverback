@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="specimen-variants-module specimen-module">
-          <h4 class="specimen-module-title">Weight</h4>
+          <h4 class="specimen-module-title">weight</h4>
           <div class="specimen-variants-module-content">
             <ol class="variants-preview-variants list-unstyled">
               <li class="variants-preview-variant light">
@@ -72,7 +72,7 @@
           </div>
         </div>
         <div class="specimen-variants-module specimen-module">
-          <h4 class="specimen-module-title">Weight</h4>
+          <h4 class="specimen-module-title">weight</h4>
           <div class="specimen-variants-module-content">
             <ol class="variants-preview-variants list-unstyled">
               <li class="variants-preview-variant regular">
@@ -118,123 +118,146 @@
 <section id="headings" class="section-contents">
   <h2>Headings</h2>
   <p>Font size and weight play a very important role in defining page layout heirarchy. Therefore, it requires careful thought when choosing which heading to use. All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available. .h1 through .h6 classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
-  <table class="table table-hover table-striped">
+  <table class="table table-striped">
     <thead>
         <tr>
             <th>Use</th>
+            <th>Font</th>
             <th>Weight</th>
-            <th>Size</th>
-            <th>Family</th>
-            <th>Color</th>
+            <th>Less</th>
+            <th>CSS Size</th>
+            <th>Less</th>
+            <th>CSS Color</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td><code>&lt;h1&gt;</code></td>
-            <td>300</td>
+            <td>H1</td>
             <td>32px</td>
             <td>Roboto</td>
-            <td>inherit</td>
-          </tr>
-        <tr>
-            <td><code>&lt;h2&gt;</code></td>
             <td>300</td>
-            <td>25px</td>
-            <td>Roboto</td>
-            <td>inherit</td>
+            <td>Inherit</td>
+            <td>Inherit</td>
         </tr>
         <tr>
-            <td><code>&lt;h3&gt;</code></td>
+            <td>H2</td>
+            <td>25px</td>
+            <td>Roboto</td>
             <td>300</td>
+            <td>Inherit</td>
+            <td>Inherit</td>
+        </tr>
+        <tr>
+            <td>H3</td>
             <td>18px</td>
             <td>Roboto</td>
+            <td>300</td>
+            <td>@gray</td>
             <td>#666</td>
         </tr>
         <tr>
-            <td><code>&lt;h4&gt;</code></td>
+            <td>H4</td>
+            <td>16px</td>
+            <td>Roboto</td>
             <td>700</td>
-            <td>16px</td>
-            <td>Roboto</td>
-            <td>inherit</td>
+            <td>Inherit</td>
+            <td>Inherit</td>
         </tr>
         <tr>
-            <td><code>&lt;h5&gt;</code></td>
+            <td>H5</td>
+            <td>16px</td>
+            <td>Roboto</td>
             <td>400</td>
-            <td>16px</td>
-            <td>Roboto</td>
-            <td>inherit</td>
+            <td>Inherit</td>
+            <td>Inherit</td>
         </tr>
         <tr>
-            <td><code>&lt;h6&gt;</code></td>
-            <td>300</td>
-            <td>14px</td>
+            <td>H6</td>
+            <td>32px</td>
             <td>Roboto</td>
-            <td>inherit</td>
+            <td>300</td>
+            <td>Inherit</td>
+            <td>Inherit</td>
         </tr>
     </tbody>
 </table>
 </section>
 <section id="body-copy" class="section-contents">
   <h2>Body</h2>
-  <table class="table table-hover table-striped">
+  <table class="table table-striped">
     <thead>
         <tr>
           <th>Use</th>
+          <th>Font</th>
           <th>Weight</th>
-          <th>Size</th>
-          <th>Family</th>
-          <th>Color</th>
+          <th>Less</th>
+          <th>CSS Size</th>
+          <th>Less</th>
+          <th>CSS Color</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td><code>&lt;body&gt;</code></td>
-            <td>400</td>
-            <td>14px</td>
+            <td>Body</td>
             <td>Open Sans</td>
+            <td>400</td>
+            <td>@font-size-base</td>
+            <td>14px</td>
+            <td>@gray-dark</td>
             <td>#333</td>
         </tr>
         <tr>
-            <td><code>&lt;label&gt;</code></td>
-            <td>13px</td>
-            <td>700</td>
-            <td>Roboto</td>
-            <td>inherit</td>
-        </tr>
-        <tr>
-            <td><code>&lt;th&gt;</code></td>
-            <td>13px</td>
-            <td>700</td>
-            <td>Roboto</td>
-            <td>#888</td>
-        </tr>
-        <tr>
-            <td>Small</td>
+            <td><code>&lt;small&gt;</code><code>.small</code></td>
+            <td>Open Sans</td>
             <td>400</td>
+            <td>@font-size-small</td>
             <td>12px</td>
             <td>inherit</td>
             <td>inherit</td>
         </tr>
         <tr>
-            <td>Hint</td>
+            <td><code>.text-muted</code></td>
             <td>inherit</td>
             <td>inherit</td>
             <td>inherit</td>
-            <td>#bdbdbd</td>
-       </tr>
+            <td>inherit</td>
+            <td>@gray-lighter</td>
+            <td>#bfbfbf</td>
+        </tr>
         <tr>
-            <td>Loud</td>
+            <td><code>.text-loud</code></td>
             <td>inherit</td>
             <td>inherit</td>
             <td>inherit</td>
+            <td>inherit</td>
+            <td>@bc-sp02</td>
             <td>#b21876</td>
         </tr>
+        <tr>
+            <td>Field Label</td>
+            <td>Roboto</td>
+            <td>700</td>
+            <td>--</td>
+            <td>13px</td>
+            <td>@gray-dark</td>
+            <td>#333</td>
+        </tr>
+        <tr>
+            <td>Table Header</td>
+            <td>Roboto</td>
+            <td>700</td>
+            <td>--</td>
+            <td>13px</td>
+            <td>@gray-light</td>
+            <td>#8c8c8c</td>
+        </tr>
+
     </tbody>
 </table>
 </section>
 <section id="line-height" class="section-contents">
   <h2>Line Height</h2>
   <p>Line-height which is also known as leading is very important to achieve great legibility. Line-height is tied to font size. Line-heights for standard copy have a 1.5 ratio and Headings of 1.25.</p>
-  <h5 class="line-height-example">Headings line-height: type size x 1.25</h5>
+  <h3 class="line-height-example">Headings line-height: type size x 1.25</h3>
   <p class="line-height-example">Standard line-height: type size x 1.5 </p>
 </section>

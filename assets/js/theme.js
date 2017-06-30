@@ -26,33 +26,32 @@
     common: {
       init: function() {
         // JavaScript to be fired on all pages
-        $(function(){
 
-          if ( $('nav .documentation li:nth-child(1)').hasClass('active') ) {
-            $('nav .documentation li:nth-child(2)').addClass('active');
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip();
+          $('[data-toggle="popover"]').popover();
+        });
+        $(function(){
+          if ( $('nav .documentation > li:nth-child(1)').hasClass('active') ) {
+            $('nav .documentation > li:nth-child(2)').addClass('active');
+          }
+          if ( $('body').hasClass('panel') ) {
+            $('body').removeClass('panel');
           }
         });
 
-        $(function(){
-          var snippets = document.querySelectorAll('.snippet');
-          [].forEach.call(snippets, function(snippet) {
-            snippet.firstChild.insertAdjacentHTML('beforebegin', '<button class="btn-clip"><img class="clippy" width="13" src="https://clipboardjs.com/assets/images/clippy.svg" alt="Copy to clipboard"></button>');
-          });
-          var clipboard = new Clipboard('.btn-clip', {
-            target: function(trigger) {
-              return trigger.nextElementSibling;
-            }
-          });
-          clipboard.on('success', function(e) {
-            e.clearSelection();
-            console.log(e);
-
-          });
-
-          clipboard.on('error', function(e) {
-            console.log(e);
+        $('.sidebar.right').affix({
+          offset: {
+            top: 100,
+          }
+        });
+        $(function() {
+          $(".sidebar.right a").on("click", function() {
+            $("a.active").removeClass("active");
+            $(this).addClass("active");
           });
         });
+
       }
     },
     // Home page

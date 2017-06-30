@@ -8,7 +8,7 @@
 <div class="primary-secondary col-sm-3 col-md-2">
   <?php get_template_part( 'template-parts/sidebar', 'secondary' ); ?>
 </div>
-<?php if( get_field('contents_menu') ): ?>
+<?php if( get_field('nav_menu') ): ?>
 <div class="primary-main has-tertiary col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ">
   <?php get_template_part( 'template-parts/primary-main', 'header' ); ?>
   <div class="row">
