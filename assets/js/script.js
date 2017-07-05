@@ -3410,6 +3410,10 @@ Prism.hooks.add('wrap', function(env) {
         $(function () {
           $('[data-toggle="tooltip"]').tooltip();
           $('[data-toggle="popover"]').popover();
+          $('body').scrollspy({ target: '.sidebar.right' });
+          $('body').each(function () {
+            var $spy = $(this).scrollspy('refresh');
+          });
         });
         $(function(){
           if ( $('nav .documentation > li:nth-child(1)').hasClass('active') ) {
@@ -3417,6 +3421,9 @@ Prism.hooks.add('wrap', function(env) {
           }
           if ( $('body').hasClass('panel') ) {
             $('body').removeClass('panel');
+          }
+          if ( $('body').hasClass('modal') ) {
+            $('body').removeClass('modal');
           }
         });
 

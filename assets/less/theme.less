@@ -1,7 +1,7 @@
 /*******************************************************************************
 slvrbck docs
 */
-.panel-default .panel-footer:first-child {
+.panel.basic .panel-footer:first-child {
   border-top-color: transparent;
 }
 
@@ -632,7 +632,8 @@ span.sidebar-title {
   }
 }
 
-.sidebar.right a.active {
+.sidebar.right a.active,
+.sidebar.right li.active {
   font-weight: 600;
 }
 
@@ -711,45 +712,56 @@ button {
 /*******************************************************************************
 panels.less
 */
-.panel {
+.panel.basic {
+  border: 1px solid @bc-s02-20;
+  border-top: 5px solid @bc-p01;
   .box-shadow(none);
-}
-.panel-default>.panel-heading,
-.panel-default>.panel-footer {
-  background-color: transparent;
-  border-color: transparent;
+
+  & .panel-heading,
+  .panel-body,
+  .panel-footer {
+    padding: 20px;
+  }
+
+  & >.panel-heading,
+  & >.panel-footer {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  & .panel-footer {
+    border-top-color: @bc-s02-20;
+  }
+
 }
 
-.panel-heading {
-  padding: 20px;
-  & .panel-heading-left {
+.panel.basic .panel-heading {
+
+  & .panel-title {
+    font-size: @font-size-h3 + 1;
+  }
+
+}
+
+.panel-heading-elements {
+  .make-row ();
+
+  & > div:first-of-type,
+  > div:last-of-type {
     .make-sm-column (6);
   }
 
-  & .panel-heading-right {
-    .make-sm-column (6);
-    text-align: right;
+  & > div:first-of-type:last-of-type {
+    .make-sm-column (12);
   }
-}
 
-.panel-title {
-  font-size: @font-size-h3 + 1;
-}
-
-.panel-body {
-  padding: 20px;
-}
-
-.panel-default .panel-footer {
-  padding: 20px;
-  border-top-color: @bc-s02-20;
 }
 
 .panel-footer-buttons {
   .make-row();
 
   & > div:first-of-type,
-  div:last-of-type {
+  > div:last-of-type {
     .make-sm-column (6);
   }
 
@@ -760,16 +772,99 @@ panels.less
 }
 
 @media (min-width: @screen-sm-min) {
+  .panel-heading-elements .heading-element-right,
   .panel-footer-buttons .footer-buttons-right {
     text-align: right;
   }
 }
 
-//Primary panel style
+// Styles for the code sample accordion panels
+.panel.prism {
+  border-color: @bc-s02-20;
 
-.panel-default.primary {
-  border: .10px solid @bc-s02-20;
-  border-top: .50px solid @bc-p01;
+  & .panel-heading {
+    background-color: @bc-s02-80;
+    color: @white;
+  }
+
+  & .panel-footer {
+    background-color: @bc-p01-20;
+  }
+
+}
+
+/*******************************************************************************
+alerts.less (notifications)
+*/
+
+/* Alert common styles
+*/
+.alert {
+  padding: 25px 35px 25px 25px;
+  margin-bottom: 24px;
+  width: 300px;
+  font-size: @font-size-small;
+  border: none;
+  border-radius: 0;
+  border-top: 10px solid transparent;
+  box-shadow: @dropshadow;
+
+  & .close {
+    font-size: 27px;
+  }
+
+  .alert-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    & i.mdi {
+      font-size: 36px;
+      top: 3px;
+      position: relative;
+    }
+
+  }
+
+}
+
+/* Alert type styles
+*
+* Info
+*/
+
+.alert-info {
+  background-color: @white;
+  border-top-color: @bc-s03;
+  color: @text-color;
+
+  & .alert-title {
+    color: @bc-s03;
+  }
+}
+
+/* Success
+*/
+.alert-success {
+  background-color: @white;
+  border-top-color: @bc-sp03;
+  color: @text-color;
+
+  & .alert-title {
+    color: @bc-sp03;
+  }
+}
+
+
+/* Error
+*/
+.alert-error {
+  background-color: @white;
+  border-top-color: @bc-sp05;
+  color: @text-color;
+
+  & .alert-title {
+    color: @bc-sp05;
+  }
 }
 
 

@@ -1,0 +1,267 @@
+<section class="section-contents">
+  <h2 id="notifications">Notifications</h2>
+  <p class="lead">Dismissible alert components styled similar to our basic panel with a fixed width of 300px.</p>
+  <h3>Notification Types</h3>
+  <div class="row">
+    <div class="col-md-4">
+      <h5>Information</h5>
+      <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="alert-title"><i class="mdi mdi-information"></i> Alert</h2>
+        Use this color to let users know about important information they need.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h5>Success</h5>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="alert-title"><i class="mdi mdi-checkbox-marked-circle"></i> Success</h2>
+        Use this color to let users know that they completed something.
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h5>Error</h5>
+      <div class="alert alert-error alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="alert-title"><i class="mdi mdi-alert-circle"></i> Error</h2>
+        Use this color to let users know that an error has occured. This is more info to show the panel growing vertically with more conent.
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-contents">
+  <h3 id="code-examples">Code Examples</h3>
+  <div class="panel-group" id="accordion-one" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default prism">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h2 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion-one" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            TWBSMVC
+          </a>
+        </h2>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <pre>
+            <code class="language-markup">
+<!--using (Html.Bootstrap().Begin(new Alert())
+  .Closeable()
+  .Style(AlertColor.info))
+  {
+    <h2 class="alert-title"><i class="mdi mdi-alert-circle"></i> Info</h2>
+    Use this color to let users know that an error has occured. This is more info to show the panel growing vertically with more conent.
+  }-->
+</code>
+          </pre>
+        </div>
+        <div class="panel-footer">
+          <div class="panel-footer-buttons">
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default prism">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h2 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion-one" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            HTML Output
+          </a>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+          <pre>
+            <code class="language-markup"><!--<div class="alert alert-info alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <h2 class="alert-title"><i class="mdi mdi-information"></i> Alert</h2>
+              Use this color to let users know about important information they need.
+            </div>--></code>
+          </pre>
+        </div>
+        <div class="panel-footer">
+          <div class="panel-footer-buttons">
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default prism">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h2 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion-one" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            Less
+          </a>
+        </h2>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+          <pre>
+            <code class="language-css">// Alert common styles
+            .alert {
+              padding: 25px 35px 25px 25px;
+              margin-bottom: 24px;
+              width: 300px;
+              font-size: @font-size-small;
+              border: none;
+              border-radius: 0;
+              border-top: 10px solid transparent;
+              box-shadow: @dropshadow;
+
+              & .close {
+                font-size: 27px;
+              }
+
+              .alert-title {
+                margin-top: 0;
+                margin-bottom: 10px;
+
+                & i.mdi {
+                  font-size: 36px;
+                  top: 3px;
+                  position: relative;
+                }
+
+              }
+
+            }
+
+            // Alert type styles
+            // Info
+            .alert-info {
+              background-color: @white;
+              border-top-color: @bc-s03;
+              color: @text-color;
+
+              & .alert-title {
+                color: @bc-s03;
+              }
+            }
+
+            // Success
+            .alert-success {
+              background-color: @white;
+              border-top-color: @bc-sp03;
+              color: @text-color;
+
+              & .alert-title {
+                color: @bc-sp03;
+              }
+            }
+
+
+            // Error
+            .alert-error {
+              background-color: @white;
+              border-top-color: @bc-sp05;
+              color: @text-color;
+
+              & .alert-title {
+                color: @bc-sp05;
+              }
+            }
+            </code>
+          </pre>
+        </div>
+        <div class="panel-footer">
+          <div class="panel-footer-buttons">
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default prism">
+      <div class="panel-heading" role="tab" id="headingFour">
+        <h2 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion-one" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            CSS
+          </a>
+        </h2>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+        <div class="panel-body">
+          <pre>
+            <code class="language-css">*/
+            /* Alert common styles
+            */
+            .alert {
+              padding: 25px 35px 25px 25px;
+              margin-bottom: 24px;
+              width: 300px;
+              font-size: 12px;
+              border: none;
+              border-radius: 0;
+              border-top: 10px solid transparent;
+              box-shadow: 0 5px 15px rgba(68, 68, 68, 0.27);
+            }
+            .alert .close {
+              font-size: 27px;
+            }
+            .alert .alert-title {
+              margin-top: 0;
+              margin-bottom: 10px;
+            }
+            .alert .alert-title i.mdi {
+              font-size: 36px;
+              top: 3px;
+              position: relative;
+            }
+            /* Alert type styles
+            *
+            * Info
+            */
+            .alert-info {
+              background-color: #fff;
+              border-top-color: #2d83c4;
+              color: #333333;
+            }
+            .alert-info .alert-title {
+              color: #2d83c4;
+            }
+            /* Success
+            */
+            .alert-success {
+              background-color: #fff;
+              border-top-color: #65ae45;
+              color: #333333;
+            }
+            .alert-success .alert-title {
+              color: #65ae45;
+            }
+            /* Error
+            */
+            .alert-error {
+              background-color: #fff;
+              border-top-color: #ea2032;
+              color: #333333;
+            }
+            .alert-error .alert-title {
+              color: #ea2032;
+            }
+            </code>
+          </pre>
+        </div>
+        <div class="panel-footer">
+          <div class="panel-footer-buttons">
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-contents">
+  <h3>Notification Behavior</h3>
+  <ul>
+    <li>Fade in when received in the upper-right hand corner of the screen</li>
+    <li>Fade out after 10 seconds of inactivity</li>
+    <li>On hover - Remain in place and not fade out</li>
+    <li>On mouse exit - Timer for the toast inactivity should restart at 10 seconds</li>
+    <li>Dismissible at anytime by clicking on it or the 'X' in the upper-right hand corner</li>
+    <li>Interacting with the notification, either by dismissal or clicking a link in the notification body, should mark the notfication as "read" in the notfications list</li>
+  </ul>
+</section>
