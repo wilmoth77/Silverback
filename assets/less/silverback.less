@@ -1,6 +1,15 @@
+@import "mixins/buttons";         // Button constructs
+@import "components/navs";        // Nav styles
+
 /*******************************************************************************
 slvrbck docs
 */
+
+.section-page-heading+p {
+  &:extend(.lead all);
+}
+
+
 .panel.basic .panel-footer:first-child {
   border-top-color: transparent;
 }
@@ -19,6 +28,37 @@ section.panel-examples .panel {
 .btn+.btn {
   margin-left: 10px;
 }
+
+.buttons #disabled .row,
+.buttons #active .row {
+  margin-bottom: 30px;
+}
+
+.buttons #ghost .well {
+  background-color: @bc-p01;
+  padding: 30px;
+}
+
+.buttons button+div code,
+.buttons a+div code {
+  position: relative;
+  top: 10px;
+}
+
+#slvrbck-example-modal.modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    display: block;
+}
+h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
+  //font-weight: 400;
+}
+
+
 
 /*******************************************************************************
 Primary-Main Main Header
@@ -521,12 +561,6 @@ script[type='text/plain'].language-markup {
 
 
 /*******************************************************************************
-clipboard.js
-*/
-
-
-
-/*******************************************************************************
 navbar.less
 */
 
@@ -644,11 +678,13 @@ span.sidebar-title {
 type.less
 */
 
-h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
-  font-weight: 400;
-}
+
 p {
   margin: 0 0 (@line-height-computed);
+
+  &+ul {
+    margin-top: -12px;
+  }
 }
 
 .hint {
@@ -703,80 +739,6 @@ button {
 }
 
 
-// Alternate buttons
-// Success appears as green
-.btn-hair {
-  .button-variant(@btn-hair-color; @btn-hair-bg; @btn-hair-border);
-}
-
-/*******************************************************************************
-panels.less
-*/
-.panel.basic {
-  border: 1px solid @bc-s02-20;
-  border-top: 5px solid @bc-p01;
-  .box-shadow(none);
-
-  & .panel-heading,
-  .panel-body,
-  .panel-footer {
-    padding: 20px;
-  }
-
-  & >.panel-heading,
-  & >.panel-footer {
-    background-color: transparent;
-    border-color: transparent;
-  }
-
-  & .panel-footer {
-    border-top-color: @bc-s02-20;
-  }
-
-}
-
-.panel.basic .panel-heading {
-
-  & .panel-title {
-    font-size: @font-size-h3 + 1;
-  }
-
-}
-
-.panel-heading-elements {
-  .make-row ();
-
-  & > div:first-of-type,
-  > div:last-of-type {
-    .make-sm-column (6);
-  }
-
-  & > div:first-of-type:last-of-type {
-    .make-sm-column (12);
-  }
-
-}
-
-.panel-footer-buttons {
-  .make-row();
-
-  & > div:first-of-type,
-  > div:last-of-type {
-    .make-sm-column (6);
-  }
-
-  & > div:first-of-type:last-of-type {
-    .make-sm-column (12);
-  }
-
-}
-
-@media (min-width: @screen-sm-min) {
-  .panel-heading-elements .heading-element-right,
-  .panel-footer-buttons .footer-buttons-right {
-    text-align: right;
-  }
-}
 
 // Styles for the code sample accordion panels
 .panel.prism {
@@ -791,80 +753,6 @@ panels.less
     background-color: @bc-p01-20;
   }
 
-}
-
-/*******************************************************************************
-alerts.less (notifications)
-*/
-
-/* Alert common styles
-*/
-.alert {
-  padding: 25px 35px 25px 25px;
-  margin-bottom: 24px;
-  width: 300px;
-  font-size: @font-size-small;
-  border: none;
-  border-radius: 0;
-  border-top: 10px solid transparent;
-  box-shadow: @dropshadow;
-
-  & .close {
-    font-size: 27px;
-  }
-
-  .alert-title {
-    margin-top: 0;
-    margin-bottom: 10px;
-
-    & i.mdi {
-      font-size: 36px;
-      top: 3px;
-      position: relative;
-    }
-
-  }
-
-}
-
-/* Alert type styles
-*
-* Info
-*/
-
-.alert-info {
-  background-color: @white;
-  border-top-color: @bc-s03;
-  color: @text-color;
-
-  & .alert-title {
-    color: @bc-s03;
-  }
-}
-
-/* Success
-*/
-.alert-success {
-  background-color: @white;
-  border-top-color: @bc-sp03;
-  color: @text-color;
-
-  & .alert-title {
-    color: @bc-sp03;
-  }
-}
-
-
-/* Error
-*/
-.alert-error {
-  background-color: @white;
-  border-top-color: @bc-sp05;
-  color: @text-color;
-
-  & .alert-title {
-    color: @bc-sp05;
-  }
 }
 
 

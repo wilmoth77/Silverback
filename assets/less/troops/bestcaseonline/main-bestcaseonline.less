@@ -1,0 +1,366 @@
+/*******************************************************************************
+While building the design system, use this file for quick styling.
+  - Note which Bootstrap Less files you are overriding ex: components/modals.less
+  - Once development is complete, create the required less files for override in
+    /troops/bestcaseonline/___________/filename.less and move the css
+    from this file to the new file.
+  - Once the css have been moved, create an import in this file to the new file.
+*/
+
+@import "mixins/buttons";         // Button constructs
+@import "components/navbar";        // Nav styles
+
+/*******************************************************************************
+type.less
+*/
+
+.hint {
+  &:extend(.text-muted);
+}
+
+.loud {
+  color: @bc-sp02;
+}
+
+
+/*******************************************************************************
+buttons.less
+*/
+
+.btn,
+button {
+  &:extend(.btn all);
+  outline: 0!important;
+  //border-color: transparent !important;
+}
+
+// Alternate color buttons
+.btn-hair {
+  .button-variant(@btn-hair-color; @btn-hair-bg; @btn-hair-border);
+}
+.btn-secondary {
+  .button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
+}
+
+
+// Create a mixin for the outline button variant
+
+.button-outline-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:focus,
+  &.focus {
+    color: @color;
+    background-color: lighten(@border, 10%);
+    border-color: @border;
+  }
+  &:hover {
+    color: @color;
+    background-color: lighten(@border, 10%);
+    border-color: @border;
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @color;
+    background-color: lighten(@border, 10%);
+    border-color: @border;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @color;
+      background-color: lighten(@border, 10%);
+      border-color: @border;
+    }
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: @background;
+      border-color: @border;
+    }
+  }
+
+}
+
+// Build the outline buttons
+.btn-outline-default {
+  .button-outline-variant(@text-color; transparent; @btn-default-border);
+}
+.btn-outline-primary {
+  .button-outline-variant(@bc-s01-80; transparent; @bc-s01-40);
+}
+.btn-outline-secondary {
+  .button-outline-variant(@bc-s03-80; transparent; @bc-s03-40);
+}
+.btn-outline-danger {
+  .button-outline-variant(@bc-sp05-80; transparent; @bc-sp05-40);
+}
+
+
+// Create a mixin for the ghost button variant
+
+.button-ghost-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:focus,
+  &.focus {
+    color: @color;
+    background-color: @bc-p01-80;
+    border-color: @border;
+  }
+  &:hover {
+    color: @color;
+    background-color: @bc-p01-80;
+    border-color: @border;
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @color;
+    background-color: @bc-p01-80;
+    border-color: @border;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @color;
+      background-color: @bc-p01-80;
+      border-color: @border;
+    }
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: @background;
+      border-color: @border;
+    }
+  }
+
+}
+
+// Build the ghost buttons
+.btn-ghost-default {
+  .button-ghost-variant(@white; transparent; @white);
+}
+//Ghost primary has unique hover text color of @white
+.btn-ghost-primary {
+  .button-ghost-variant(@text-color; @white; transparent);
+  &:focus,
+  &.focus,
+  &:hover,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle&  {
+    color: @white;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @white;
+    }
+
+  }
+
+}
+
+.btn-ghost-secondary {
+  .button-ghost-variant(@white; transparent; @white);
+}
+.btn-ghost-danger {
+  .button-ghost-variant(@white; @bc-p01-60; transparent);
+}
+
+/*******************************************************************************
+panels.less
+*/
+.panel.basic {
+  border: 1px solid @bc-s02-20;
+  border-top: 5px solid @bc-p01;
+  .box-shadow(none);
+
+  & .panel-heading,
+  .panel-body,
+  .panel-footer {
+    padding: 20px;
+  }
+
+  & >.panel-heading,
+  & >.panel-footer {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  & .panel-footer {
+    border-top-color: @bc-s02-20;
+  }
+
+}
+
+.panel.basic .panel-heading {
+
+  & .panel-title {
+    font-size: @font-size-h3 + 1;
+  }
+
+}
+
+.panel-heading-elements {
+  .make-row ();
+
+  & > div:first-of-type,
+  > div:last-of-type {
+    .make-sm-column (6);
+  }
+
+  & > div:first-of-type:last-of-type {
+    .make-sm-column (12);
+  }
+
+}
+
+.panel-footer-buttons {
+  .make-row();
+
+  & > div:first-of-type,
+  > div:last-of-type {
+    .make-sm-column (6);
+  }
+
+  & > div:first-of-type:last-of-type {
+    .make-sm-column (12);
+  }
+
+}
+
+@media (min-width: @screen-sm-min) {
+  .panel-heading-elements .heading-element-right,
+  .panel-footer-buttons .footer-buttons-right {
+    text-align: right;
+  }
+}
+
+/*******************************************************************************
+modal.less
+*/
+.modal-content {
+  border-radius: 0;
+
+  & .modal-header,
+    .modal-footer {
+    border-bottom-color: @bc-s02-20;
+
+    & .modal-title {
+      &:extend(h2 all);
+    }
+  }
+}
+
+.modal-sm .modal-footer button {
+  &:extend(.btn-sm all);
+}
+
+
+
+
+/*******************************************************************************
+alerts.less (notifications)
+*/
+
+// Alert common styles
+.alert {
+  padding: 25px 35px 25px 25px;
+  margin-bottom: 24px;
+  width: 300px;
+  font-size: @font-size-small;
+  border: none;
+  border-radius: 0;
+  border-top: 10px solid transparent;
+  box-shadow: @dropshadow;
+
+  & .close {
+    font-size: 27px;
+  }
+
+  .alert-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    & i.mdi {
+      font-size: 36px;
+      top: 3px;
+      position: relative;
+    }
+
+  }
+
+}
+
+// Alert type styles
+// Info
+.alert-info {
+  background-color: @white;
+  border-top-color: @bc-s03;
+  color: @text-color;
+
+  & .alert-title {
+    color: @bc-s03;
+  }
+}
+
+// Success
+.alert-success {
+  background-color: @white;
+  border-top-color: @bc-sp03;
+  color: @text-color;
+
+  & .alert-title {
+    color: @bc-sp03;
+  }
+}
+
+
+// Error
+.alert-error {
+  background-color: @white;
+  border-top-color: @bc-sp05;
+  color: @text-color;
+
+  & .alert-title {
+    color: @bc-sp05;
+  }
+}
+
+
+//Extra small devices (phones, less than 768px)
+//No media query since this is the default in Bootstrap
+
+//Small devices (tablets, 768px and up)
+//@media (min-width: @screen-sm-min) { ... }
+
+//Medium devices (desktops, 992px and up)
+//@media (min-width: @screen-md-min) { ... }
+
+//Large devices (large desktops, 1200px and up)
+//@media (min-width: @screen-lg-min) { ... }
