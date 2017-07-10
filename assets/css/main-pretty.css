@@ -220,12 +220,16 @@ th {
   }
   p,
   h2,
-  h3 {
+  h3,
+  .modal-content .modal-header .modal-title,
+  .modal-content .modal-footer .modal-title {
     orphans: 3;
     widows: 3;
   }
   h2,
-  h3 {
+  h3,
+  .modal-content .modal-header .modal-title,
+  .modal-content .modal-footer .modal-title {
     page-break-after: avoid;
   }
   .navbar {
@@ -235,6 +239,28 @@ th {
   .dropup > .btn > .caret,
   .btn > .caret,
   .dropup > .btn > .caret,
+  button > .caret,
+  .dropup > button > .caret,
+  .btn > .caret,
+  .dropup > .btn > .caret,
+  button > .caret,
+  .dropup > button > .caret,
+  .btn > .caret,
+  .dropup > .btn > .caret,
+  button > .caret,
+  .dropup > button > .caret,
+  button > .caret,
+  .dropup > button > .caret,
+  .btn > .caret,
+  .dropup > .btn > .caret,
+  button > .caret,
+  .dropup > button > .caret,
+  button > .caret,
+  .dropup > button > .caret,
+  button > .caret,
+  .dropup > button > .caret,
+  button > .caret,
+  .dropup > button > .caret,
   button > .caret,
   .dropup > button > .caret,
   button > .caret,
@@ -276,7 +302,7 @@ body {
   font-size: 14px;
   line-height: 1.71428571;
   color: #333333;
-  background-color: #f8f8f8;
+  background-color: #fff;
 }
 input,
 button,
@@ -320,7 +346,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.71428571;
-  background-color: #f8f8f8;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -373,7 +399,8 @@ h6,
 .h4,
 .h5,
 .h6,
-h4.modal-title {
+.modal-content .modal-header .modal-title,
+.modal-content .modal-footer .modal-title {
   font-family: Roboto, "Open Sans", Arial, sans-serif;
   font-weight: 300;
   line-height: 1.1;
@@ -403,8 +430,10 @@ h6 .small,
 .h4 .small,
 .h5 .small,
 .h6 .small,
-h4.modal-title small,
-h4.modal-title .small {
+.modal-content .modal-header .modal-title small,
+.modal-content .modal-header .modal-title .small,
+.modal-content .modal-footer .modal-title small,
+.modal-content .modal-footer .modal-title .small {
   font-weight: normal;
   line-height: 1;
   color: #777777;
@@ -415,7 +444,8 @@ h2,
 .h2,
 h3,
 .h3,
-h4.modal-title {
+.modal-content .modal-header .modal-title,
+.modal-content .modal-footer .modal-title {
   margin-top: 24px;
   margin-bottom: 12px;
 }
@@ -431,8 +461,10 @@ h2 .small,
 .h2 .small,
 h3 .small,
 .h3 .small,
-h4.modal-title small,
-h4.modal-title .small {
+.modal-content .modal-header .modal-title small,
+.modal-content .modal-header .modal-title .small,
+.modal-content .modal-footer .modal-title small,
+.modal-content .modal-footer .modal-title .small {
   font-size: 65%;
 }
 h4,
@@ -464,7 +496,8 @@ h1,
 }
 h2,
 .h2,
-h4.modal-title {
+.modal-content .modal-header .modal-title,
+.modal-content .modal-footer .modal-title {
   font-size: 25px;
 }
 h3,
@@ -533,6 +566,7 @@ mark,
   text-transform: capitalize;
 }
 .text-muted,
+.hint,
 .hint {
   color: #777777;
 }
@@ -800,7 +834,8 @@ pre code {
     width: 1170px;
   }
 }
-.container-fluid {
+.container-fluid,
+#silverback-main {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
@@ -1472,11 +1507,11 @@ th {
   padding: 8px;
   line-height: 1.71428571;
   vertical-align: top;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #d6dbdc;
 }
 .table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #d6dbdc;
 }
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,
@@ -1487,10 +1522,10 @@ th {
   border-top: 0;
 }
 .table > tbody + tbody {
-  border-top: 2px solid #ddd;
+  border-top: 2px solid #d6dbdc;
 }
 .table .table {
-  background-color: #f8f8f8;
+  background-color: #fff;
 }
 .table-condensed > thead > tr > th,
 .table-condensed > tbody > tr > th,
@@ -1501,7 +1536,7 @@ th {
   padding: 5px;
 }
 .table-bordered {
-  border: 1px solid #ddd;
+  border: 1px solid #d6dbdc;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
@@ -1509,7 +1544,7 @@ th {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #ddd;
+  border: 1px solid #d6dbdc;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
@@ -1647,7 +1682,7 @@ table th[class*="col-"] {
     margin-bottom: 18px;
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #ddd;
+    border: 1px solid #d6dbdc;
   }
   .table-responsive > .table {
     margin-bottom: 0;
@@ -1754,7 +1789,7 @@ output {
   color: #555555;
   background-color: #fff;
   background-image: none;
-  border: 1px solid #ccc;
+  border: 1px solid #d6dbdc;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -1769,14 +1804,14 @@ output {
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 .form-control::-moz-placeholder {
-  color: #777777;
+  color: #999;
   opacity: 1;
 }
 .form-control:-ms-input-placeholder {
-  color: #777777;
+  color: #999;
 }
 .form-control::-webkit-input-placeholder {
-  color: #777777;
+  color: #999;
 }
 .form-control::-ms-expand {
   border: 0;
@@ -1943,7 +1978,7 @@ select[multiple].input-sm {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
-  line-height: 1.33;
+  line-height: 1.3333333;
   border-radius: 6px;
 }
 select.input-lg {
@@ -1958,7 +1993,7 @@ select[multiple].input-lg {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
-  line-height: 1.33;
+  line-height: 1.3333333;
   border-radius: 6px;
 }
 .form-group-lg select.form-control {
@@ -1974,7 +2009,7 @@ select[multiple].input-lg {
   min-height: 42px;
   padding: 11px 16px;
   font-size: 18px;
-  line-height: 1.33;
+  line-height: 1.3333333;
 }
 .has-feedback {
   position: relative;
@@ -2201,6 +2236,17 @@ select[multiple].input-lg {
 .btn,
 .btn,
 button,
+.btn,
+button,
+.btn,
+button,
+button,
+.btn,
+button,
+button,
+button,
+button,
+button,
 button {
   display: inline-block;
   margin-bottom: 0;
@@ -2212,11 +2258,10 @@ button {
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
-  border-radius: 4px;
   padding: 6px 15px;
   font-size: 14px;
   line-height: 1.71428571;
-  border-radius: 40px;
+  border-radius: 0px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2234,6 +2279,72 @@ button {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus,
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus,
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus,
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus,
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus,
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus,
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus,
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus,
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus,
 button:focus,
 button:active:focus,
 button.active:focus,
@@ -2258,6 +2369,39 @@ button.active.focus {
 button:hover,
 button:focus,
 button.focus,
+.btn:hover,
+.btn:focus,
+.btn.focus,
+button:hover,
+button:focus,
+button.focus,
+.btn:hover,
+.btn:focus,
+.btn.focus,
+button:hover,
+button:focus,
+button.focus,
+button:hover,
+button:focus,
+button.focus,
+.btn:hover,
+.btn:focus,
+.btn.focus,
+button:hover,
+button:focus,
+button.focus,
+button:hover,
+button:focus,
+button.focus,
+button:hover,
+button:focus,
+button.focus,
+button:hover,
+button:focus,
+button.focus,
+button:hover,
+button:focus,
+button.focus,
 button:hover,
 button:focus,
 button.focus {
@@ -2268,6 +2412,28 @@ button.focus {
 .btn.active,
 .btn:active,
 .btn.active,
+button:active,
+button.active,
+.btn:active,
+.btn.active,
+button:active,
+button.active,
+.btn:active,
+.btn.active,
+button:active,
+button.active,
+button:active,
+button.active,
+.btn:active,
+.btn.active,
+button:active,
+button.active,
+button:active,
+button.active,
+button:active,
+button.active,
+button:active,
+button.active,
 button:active,
 button.active,
 button:active,
@@ -2286,6 +2452,39 @@ fieldset[disabled] .btn,
 button.disabled,
 button[disabled],
 fieldset[disabled] button,
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn,
+button.disabled,
+button[disabled],
+fieldset[disabled] button,
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn,
+button.disabled,
+button[disabled],
+fieldset[disabled] button,
+button.disabled,
+button[disabled],
+fieldset[disabled] button,
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn,
+button.disabled,
+button[disabled],
+fieldset[disabled] button,
+button.disabled,
+button[disabled],
+fieldset[disabled] button,
+button.disabled,
+button[disabled],
+fieldset[disabled] button,
+button.disabled,
+button[disabled],
+fieldset[disabled] button,
+button.disabled,
+button[disabled],
+fieldset[disabled] button,
 button.disabled,
 button[disabled],
 fieldset[disabled] button {
@@ -2299,6 +2498,28 @@ a.btn.disabled,
 fieldset[disabled] a.btn,
 a.btn.disabled,
 fieldset[disabled] a.btn,
+abutton.disabled,
+fieldset[disabled] abutton,
+a.btn.disabled,
+fieldset[disabled] a.btn,
+abutton.disabled,
+fieldset[disabled] abutton,
+a.btn.disabled,
+fieldset[disabled] a.btn,
+abutton.disabled,
+fieldset[disabled] abutton,
+abutton.disabled,
+fieldset[disabled] abutton,
+a.btn.disabled,
+fieldset[disabled] a.btn,
+abutton.disabled,
+fieldset[disabled] abutton,
+abutton.disabled,
+fieldset[disabled] abutton,
+abutton.disabled,
+fieldset[disabled] abutton,
+abutton.disabled,
+fieldset[disabled] abutton,
 abutton.disabled,
 fieldset[disabled] abutton,
 abutton.disabled,
@@ -2684,35 +2905,65 @@ fieldset[disabled] .btn-link:focus {
 .btn-group-lg > .btn,
 .btn-group-lg > .btn,
 .btn-group-lg > button,
+.btn-group-lg > .btn,
+.btn-group-lg > button,
+.btn-group-lg > .btn,
+.btn-group-lg > button,
+.btn-group-lg > button,
+.btn-group-lg > .btn,
+.btn-group-lg > button,
+.btn-group-lg > button,
+.btn-group-lg > button,
+.btn-group-lg > button,
+.btn-group-lg > button,
 .btn-group-lg > button {
-  border-radius: 6px;
   padding: 10px 16px;
   font-size: 18px;
-  line-height: 1.33;
-  border-radius: 40px;
+  line-height: 1.3333333;
+  border-radius: 6px;
 }
 .btn-sm,
 .btn-group-sm > .btn,
 .modal-sm .modal-footer button,
 .btn-group-sm > .btn,
 .btn-group-sm > button,
+.btn-group-sm > .btn,
+.btn-group-sm > button,
+.btn-group-sm > .btn,
+.btn-group-sm > button,
+.btn-group-sm > button,
+.btn-group-sm > .btn,
+.btn-group-sm > button,
+.btn-group-sm > button,
+.btn-group-sm > button,
+.btn-group-sm > button,
+.btn-group-sm > button,
 .btn-group-sm > button {
-  border-radius: 3px;
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 40px;
+  border-radius: 3px;
 }
 .btn-xs,
 .btn-group-xs > .btn,
 .btn-group-xs > .btn,
 .btn-group-xs > button,
+.btn-group-xs > .btn,
+.btn-group-xs > button,
+.btn-group-xs > .btn,
+.btn-group-xs > button,
+.btn-group-xs > button,
+.btn-group-xs > .btn,
+.btn-group-xs > button,
+.btn-group-xs > button,
+.btn-group-xs > button,
+.btn-group-xs > button,
+.btn-group-xs > button,
 .btn-group-xs > button {
-  border-radius: 3px;
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 40px;
+  border-radius: 3px;
 }
 .btn-block {
   display: block;
@@ -2760,8 +3011,8 @@ tbody.collapse.in {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('/wp-content/themes/Silverback/public/fonts/glyphicons-halflings-regular.eot');
+  src: url('/wp-content/themes/Silverback/public/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/wp-content/themes/Silverback/public/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('/wp-content/themes/Silverback/public/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/wp-content/themes/Silverback/public/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/wp-content/themes/Silverback/public/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -3593,7 +3844,7 @@ tbody.collapse.in {
   font-size: 14px;
   text-align: left;
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #d6dbdc;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -3715,6 +3966,28 @@ tbody.collapse.in {
 .btn-group-vertical > .btn,
 .btn-group > button,
 .btn-group-vertical > button,
+.btn-group > .btn,
+.btn-group-vertical > .btn,
+.btn-group > button,
+.btn-group-vertical > button,
+.btn-group > .btn,
+.btn-group-vertical > .btn,
+.btn-group > button,
+.btn-group-vertical > button,
+.btn-group > button,
+.btn-group-vertical > button,
+.btn-group > .btn,
+.btn-group-vertical > .btn,
+.btn-group > button,
+.btn-group-vertical > button,
+.btn-group > button,
+.btn-group-vertical > button,
+.btn-group > button,
+.btn-group-vertical > button,
+.btn-group > button,
+.btn-group-vertical > button,
+.btn-group > button,
+.btn-group-vertical > button,
 .btn-group > button,
 .btn-group-vertical > button {
   position: relative;
@@ -3744,6 +4017,94 @@ tbody.collapse.in {
 .btn-group-vertical > button:active,
 .btn-group > button.active,
 .btn-group-vertical > button.active,
+.btn-group > .btn:hover,
+.btn-group-vertical > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group-vertical > .btn:focus,
+.btn-group > .btn:active,
+.btn-group-vertical > .btn:active,
+.btn-group > .btn.active,
+.btn-group-vertical > .btn.active,
+.btn-group > button:hover,
+.btn-group-vertical > button:hover,
+.btn-group > button:focus,
+.btn-group-vertical > button:focus,
+.btn-group > button:active,
+.btn-group-vertical > button:active,
+.btn-group > button.active,
+.btn-group-vertical > button.active,
+.btn-group > .btn:hover,
+.btn-group-vertical > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group-vertical > .btn:focus,
+.btn-group > .btn:active,
+.btn-group-vertical > .btn:active,
+.btn-group > .btn.active,
+.btn-group-vertical > .btn.active,
+.btn-group > button:hover,
+.btn-group-vertical > button:hover,
+.btn-group > button:focus,
+.btn-group-vertical > button:focus,
+.btn-group > button:active,
+.btn-group-vertical > button:active,
+.btn-group > button.active,
+.btn-group-vertical > button.active,
+.btn-group > button:hover,
+.btn-group-vertical > button:hover,
+.btn-group > button:focus,
+.btn-group-vertical > button:focus,
+.btn-group > button:active,
+.btn-group-vertical > button:active,
+.btn-group > button.active,
+.btn-group-vertical > button.active,
+.btn-group > .btn:hover,
+.btn-group-vertical > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group-vertical > .btn:focus,
+.btn-group > .btn:active,
+.btn-group-vertical > .btn:active,
+.btn-group > .btn.active,
+.btn-group-vertical > .btn.active,
+.btn-group > button:hover,
+.btn-group-vertical > button:hover,
+.btn-group > button:focus,
+.btn-group-vertical > button:focus,
+.btn-group > button:active,
+.btn-group-vertical > button:active,
+.btn-group > button.active,
+.btn-group-vertical > button.active,
+.btn-group > button:hover,
+.btn-group-vertical > button:hover,
+.btn-group > button:focus,
+.btn-group-vertical > button:focus,
+.btn-group > button:active,
+.btn-group-vertical > button:active,
+.btn-group > button.active,
+.btn-group-vertical > button.active,
+.btn-group > button:hover,
+.btn-group-vertical > button:hover,
+.btn-group > button:focus,
+.btn-group-vertical > button:focus,
+.btn-group > button:active,
+.btn-group-vertical > button:active,
+.btn-group > button.active,
+.btn-group-vertical > button.active,
+.btn-group > button:hover,
+.btn-group-vertical > button:hover,
+.btn-group > button:focus,
+.btn-group-vertical > button:focus,
+.btn-group > button:active,
+.btn-group-vertical > button:active,
+.btn-group > button.active,
+.btn-group-vertical > button.active,
+.btn-group > button:hover,
+.btn-group-vertical > button:hover,
+.btn-group > button:focus,
+.btn-group-vertical > button:focus,
+.btn-group > button:active,
+.btn-group-vertical > button:active,
+.btn-group > button.active,
+.btn-group-vertical > button.active,
 .btn-group > button:hover,
 .btn-group-vertical > button:hover,
 .btn-group > button:focus,
@@ -3764,6 +4125,39 @@ tbody.collapse.in {
 .btn-group button + button,
 .btn-group button + .btn-group,
 .btn-group .btn-group + button,
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group button + button,
+.btn-group button + .btn-group,
+.btn-group .btn-group + button,
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group button + button,
+.btn-group button + .btn-group,
+.btn-group .btn-group + button,
+.btn-group button + button,
+.btn-group button + .btn-group,
+.btn-group .btn-group + button,
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group button + button,
+.btn-group button + .btn-group,
+.btn-group .btn-group + button,
+.btn-group button + button,
+.btn-group button + .btn-group,
+.btn-group .btn-group + button,
+.btn-group button + button,
+.btn-group button + .btn-group,
+.btn-group .btn-group + button,
+.btn-group button + button,
+.btn-group button + .btn-group,
+.btn-group .btn-group + button,
+.btn-group button + button,
+.btn-group button + .btn-group,
+.btn-group .btn-group + button,
 .btn-group button + button,
 .btn-group button + .btn-group,
 .btn-group .btn-group + button {
@@ -3777,6 +4171,17 @@ tbody.collapse.in {
 .btn-toolbar .input-group,
 .btn-toolbar .btn,
 .btn-toolbar button,
+.btn-toolbar .btn,
+.btn-toolbar button,
+.btn-toolbar .btn,
+.btn-toolbar button,
+.btn-toolbar button,
+.btn-toolbar .btn,
+.btn-toolbar button,
+.btn-toolbar button,
+.btn-toolbar button,
+.btn-toolbar button,
+.btn-toolbar button,
 .btn-toolbar button {
   float: left;
 }
@@ -3785,11 +4190,33 @@ tbody.collapse.in {
 .btn-toolbar > .input-group,
 .btn-toolbar > .btn,
 .btn-toolbar > button,
+.btn-toolbar > .btn,
+.btn-toolbar > button,
+.btn-toolbar > .btn,
+.btn-toolbar > button,
+.btn-toolbar > button,
+.btn-toolbar > .btn,
+.btn-toolbar > button,
+.btn-toolbar > button,
+.btn-toolbar > button,
+.btn-toolbar > button,
+.btn-toolbar > button,
 .btn-toolbar > button {
   margin-left: 5px;
 }
 .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
 .btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
 .btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
@@ -3797,11 +4224,33 @@ tbody.collapse.in {
 .btn-group > .btn:first-child,
 .btn-group > .btn:first-child,
 .btn-group > button:first-child,
+.btn-group > .btn:first-child,
+.btn-group > button:first-child,
+.btn-group > .btn:first-child,
+.btn-group > button:first-child,
+.btn-group > button:first-child,
+.btn-group > .btn:first-child,
+.btn-group > button:first-child,
+.btn-group > button:first-child,
+.btn-group > button:first-child,
+.btn-group > button:first-child,
+.btn-group > button:first-child,
 .btn-group > button:first-child {
   margin-left: 0;
 }
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
+.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
+.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
+.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
+.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
+.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
+.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
+.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
+.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
 .btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
 .btn-group > button:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
@@ -3810,6 +4259,17 @@ tbody.collapse.in {
 .btn-group > .btn:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child),
 .btn-group > .btn:last-child:not(:first-child),
+.btn-group > button:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > button:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > button:last-child:not(:first-child),
+.btn-group > button:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > button:last-child:not(:first-child),
+.btn-group > button:last-child:not(:first-child),
+.btn-group > button:last-child:not(:first-child),
+.btn-group > button:last-child:not(:first-child),
 .btn-group > button:last-child:not(:first-child),
 .btn-group > button:last-child:not(:first-child) {
   border-bottom-left-radius: 0;
@@ -3821,6 +4281,17 @@ tbody.collapse.in {
 .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn,
 .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn,
 .btn-group > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn,
+.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn,
+.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn,
+.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
 .btn-group > .btn-group:not(:first-child):not(:last-child) > button {
   border-radius: 0;
 }
@@ -3828,12 +4299,34 @@ tbody.collapse.in {
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle,
 .btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > button:last-child {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child,
 .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child,
+.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child,
+.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child,
+.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child,
+.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
 .btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
 .btn-group > .btn-group:last-child:not(:first-child) > button:first-child {
   border-bottom-left-radius: 0;
@@ -3845,6 +4338,17 @@ tbody.collapse.in {
 }
 .btn-group > .btn + .dropdown-toggle,
 .btn-group > .btn + .dropdown-toggle,
+.btn-group > button + .dropdown-toggle,
+.btn-group > .btn + .dropdown-toggle,
+.btn-group > button + .dropdown-toggle,
+.btn-group > .btn + .dropdown-toggle,
+.btn-group > button + .dropdown-toggle,
+.btn-group > button + .dropdown-toggle,
+.btn-group > .btn + .dropdown-toggle,
+.btn-group > button + .dropdown-toggle,
+.btn-group > button + .dropdown-toggle,
+.btn-group > button + .dropdown-toggle,
+.btn-group > button + .dropdown-toggle,
 .btn-group > button + .dropdown-toggle,
 .btn-group > button + .dropdown-toggle {
   padding-left: 8px;
@@ -3865,6 +4369,17 @@ tbody.collapse.in {
 .btn .caret,
 .btn .caret,
 button .caret,
+.btn .caret,
+button .caret,
+.btn .caret,
+button .caret,
+button .caret,
+.btn .caret,
+button .caret,
+button .caret,
+button .caret,
+button .caret,
+button .caret,
 button .caret {
   margin-left: 0;
 }
@@ -3882,6 +4397,28 @@ button .caret {
 .btn-group-vertical > .btn-group > .btn,
 .btn-group-vertical > button,
 .btn-group-vertical > .btn-group > button,
+.btn-group-vertical > .btn,
+.btn-group-vertical > .btn-group > .btn,
+.btn-group-vertical > button,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > .btn,
+.btn-group-vertical > .btn-group > .btn,
+.btn-group-vertical > button,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > button,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > .btn,
+.btn-group-vertical > .btn-group > .btn,
+.btn-group-vertical > button,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > button,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > button,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > button,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > button,
+.btn-group-vertical > .btn-group > button,
 .btn-group-vertical > button,
 .btn-group-vertical > .btn-group > button {
   display: block;
@@ -3891,6 +4428,17 @@ button .caret {
 }
 .btn-group-vertical > .btn-group > .btn,
 .btn-group-vertical > .btn-group > .btn,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > .btn-group > .btn,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > .btn-group > .btn,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > .btn-group > .btn,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > .btn-group > button,
+.btn-group-vertical > .btn-group > button,
 .btn-group-vertical > .btn-group > button,
 .btn-group-vertical > .btn-group > button {
   float: none;
@@ -3905,6 +4453,39 @@ button .caret {
 .btn-group-vertical > button + button,
 .btn-group-vertical > button + .btn-group,
 .btn-group-vertical > .btn-group + button,
+.btn-group-vertical > .btn + .btn,
+.btn-group-vertical > .btn + .btn-group,
+.btn-group-vertical > .btn-group + .btn,
+.btn-group-vertical > button + button,
+.btn-group-vertical > button + .btn-group,
+.btn-group-vertical > .btn-group + button,
+.btn-group-vertical > .btn + .btn,
+.btn-group-vertical > .btn + .btn-group,
+.btn-group-vertical > .btn-group + .btn,
+.btn-group-vertical > button + button,
+.btn-group-vertical > button + .btn-group,
+.btn-group-vertical > .btn-group + button,
+.btn-group-vertical > button + button,
+.btn-group-vertical > button + .btn-group,
+.btn-group-vertical > .btn-group + button,
+.btn-group-vertical > .btn + .btn,
+.btn-group-vertical > .btn + .btn-group,
+.btn-group-vertical > .btn-group + .btn,
+.btn-group-vertical > button + button,
+.btn-group-vertical > button + .btn-group,
+.btn-group-vertical > .btn-group + button,
+.btn-group-vertical > button + button,
+.btn-group-vertical > button + .btn-group,
+.btn-group-vertical > .btn-group + button,
+.btn-group-vertical > button + button,
+.btn-group-vertical > button + .btn-group,
+.btn-group-vertical > .btn-group + button,
+.btn-group-vertical > button + button,
+.btn-group-vertical > button + .btn-group,
+.btn-group-vertical > .btn-group + button,
+.btn-group-vertical > button + button,
+.btn-group-vertical > button + .btn-group,
+.btn-group-vertical > .btn-group + button,
 .btn-group-vertical > button + button,
 .btn-group-vertical > button + .btn-group,
 .btn-group-vertical > .btn-group + button {
@@ -3914,29 +4495,73 @@ button .caret {
 .btn-group-vertical > .btn:not(:first-child):not(:last-child),
 .btn-group-vertical > .btn:not(:first-child):not(:last-child),
 .btn-group-vertical > button:not(:first-child):not(:last-child),
+.btn-group-vertical > .btn:not(:first-child):not(:last-child),
+.btn-group-vertical > button:not(:first-child):not(:last-child),
+.btn-group-vertical > .btn:not(:first-child):not(:last-child),
+.btn-group-vertical > button:not(:first-child):not(:last-child),
+.btn-group-vertical > button:not(:first-child):not(:last-child),
+.btn-group-vertical > .btn:not(:first-child):not(:last-child),
+.btn-group-vertical > button:not(:first-child):not(:last-child),
+.btn-group-vertical > button:not(:first-child):not(:last-child),
+.btn-group-vertical > button:not(:first-child):not(:last-child),
+.btn-group-vertical > button:not(:first-child):not(:last-child),
+.btn-group-vertical > button:not(:first-child):not(:last-child),
 .btn-group-vertical > button:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 .btn-group-vertical > .btn:first-child:not(:last-child),
 .btn-group-vertical > .btn:first-child:not(:last-child),
 .btn-group-vertical > button:first-child:not(:last-child),
+.btn-group-vertical > .btn:first-child:not(:last-child),
+.btn-group-vertical > button:first-child:not(:last-child),
+.btn-group-vertical > .btn:first-child:not(:last-child),
+.btn-group-vertical > button:first-child:not(:last-child),
+.btn-group-vertical > button:first-child:not(:last-child),
+.btn-group-vertical > .btn:first-child:not(:last-child),
+.btn-group-vertical > button:first-child:not(:last-child),
+.btn-group-vertical > button:first-child:not(:last-child),
+.btn-group-vertical > button:first-child:not(:last-child),
+.btn-group-vertical > button:first-child:not(:last-child),
+.btn-group-vertical > button:first-child:not(:last-child),
 .btn-group-vertical > button:first-child:not(:last-child) {
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 .btn-group-vertical > .btn:last-child:not(:first-child),
 .btn-group-vertical > .btn:last-child:not(:first-child),
 .btn-group-vertical > button:last-child:not(:first-child),
+.btn-group-vertical > .btn:last-child:not(:first-child),
+.btn-group-vertical > button:last-child:not(:first-child),
+.btn-group-vertical > .btn:last-child:not(:first-child),
+.btn-group-vertical > button:last-child:not(:first-child),
+.btn-group-vertical > button:last-child:not(:first-child),
+.btn-group-vertical > .btn:last-child:not(:first-child),
+.btn-group-vertical > button:last-child:not(:first-child),
+.btn-group-vertical > button:last-child:not(:first-child),
+.btn-group-vertical > button:last-child:not(:first-child),
+.btn-group-vertical > button:last-child:not(:first-child),
+.btn-group-vertical > button:last-child:not(:first-child),
 .btn-group-vertical > button:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn,
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn,
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn,
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn,
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn,
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button {
   border-radius: 0;
@@ -3945,12 +4570,34 @@ button .caret {
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child,
 .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child,
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child,
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child,
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child,
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
 .btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
 .btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child {
   border-top-right-radius: 0;
@@ -3966,6 +4613,17 @@ button .caret {
 .btn-group-justified > .btn-group,
 .btn-group-justified > .btn,
 .btn-group-justified > button,
+.btn-group-justified > .btn,
+.btn-group-justified > button,
+.btn-group-justified > .btn,
+.btn-group-justified > button,
+.btn-group-justified > button,
+.btn-group-justified > .btn,
+.btn-group-justified > button,
+.btn-group-justified > button,
+.btn-group-justified > button,
+.btn-group-justified > button,
+.btn-group-justified > button,
 .btn-group-justified > button {
   float: none;
   display: table-cell;
@@ -3973,6 +4631,17 @@ button .caret {
 }
 .btn-group-justified > .btn-group .btn,
 .btn-group-justified > .btn-group .btn,
+.btn-group-justified > .btn-group button,
+.btn-group-justified > .btn-group .btn,
+.btn-group-justified > .btn-group button,
+.btn-group-justified > .btn-group .btn,
+.btn-group-justified > .btn-group button,
+.btn-group-justified > .btn-group button,
+.btn-group-justified > .btn-group .btn,
+.btn-group-justified > .btn-group button,
+.btn-group-justified > .btn-group button,
+.btn-group-justified > .btn-group button,
+.btn-group-justified > .btn-group button,
 .btn-group-justified > .btn-group button,
 .btn-group-justified > .btn-group button {
   width: 100%;
@@ -3988,6 +4657,50 @@ button .caret {
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
+[data-toggle="buttons"] > button input[type="radio"],
+[data-toggle="buttons"] > .btn-group > button input[type="radio"],
+[data-toggle="buttons"] > button input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
+[data-toggle="buttons"] > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
+[data-toggle="buttons"] > button input[type="radio"],
+[data-toggle="buttons"] > .btn-group > button input[type="radio"],
+[data-toggle="buttons"] > button input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
+[data-toggle="buttons"] > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
+[data-toggle="buttons"] > button input[type="radio"],
+[data-toggle="buttons"] > .btn-group > button input[type="radio"],
+[data-toggle="buttons"] > button input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
+[data-toggle="buttons"] > button input[type="radio"],
+[data-toggle="buttons"] > .btn-group > button input[type="radio"],
+[data-toggle="buttons"] > button input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
+[data-toggle="buttons"] > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
+[data-toggle="buttons"] > button input[type="radio"],
+[data-toggle="buttons"] > .btn-group > button input[type="radio"],
+[data-toggle="buttons"] > button input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
+[data-toggle="buttons"] > button input[type="radio"],
+[data-toggle="buttons"] > .btn-group > button input[type="radio"],
+[data-toggle="buttons"] > button input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
+[data-toggle="buttons"] > button input[type="radio"],
+[data-toggle="buttons"] > .btn-group > button input[type="radio"],
+[data-toggle="buttons"] > button input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
+[data-toggle="buttons"] > button input[type="radio"],
+[data-toggle="buttons"] > .btn-group > button input[type="radio"],
+[data-toggle="buttons"] > button input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
 [data-toggle="buttons"] > button input[type="radio"],
 [data-toggle="buttons"] > .btn-group > button input[type="radio"],
 [data-toggle="buttons"] > button input[type="checkbox"],
@@ -4025,17 +4738,39 @@ button .caret {
 .input-group-lg > .input-group-btn > .btn,
 .input-group-lg > .input-group-btn > .btn,
 .input-group-lg > .input-group-btn > button,
+.input-group-lg > .input-group-btn > .btn,
+.input-group-lg > .input-group-btn > button,
+.input-group-lg > .input-group-btn > .btn,
+.input-group-lg > .input-group-btn > button,
+.input-group-lg > .input-group-btn > button,
+.input-group-lg > .input-group-btn > .btn,
+.input-group-lg > .input-group-btn > button,
+.input-group-lg > .input-group-btn > button,
+.input-group-lg > .input-group-btn > button,
+.input-group-lg > .input-group-btn > button,
+.input-group-lg > .input-group-btn > button,
 .input-group-lg > .input-group-btn > button {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
-  line-height: 1.33;
+  line-height: 1.3333333;
   border-radius: 6px;
 }
 select.input-group-lg > .form-control,
 select.input-group-lg > .input-group-addon,
 select.input-group-lg > .input-group-btn > .btn,
 select.input-group-lg > .input-group-btn > .btn,
+select.input-group-lg > .input-group-btn > button,
+select.input-group-lg > .input-group-btn > .btn,
+select.input-group-lg > .input-group-btn > button,
+select.input-group-lg > .input-group-btn > .btn,
+select.input-group-lg > .input-group-btn > button,
+select.input-group-lg > .input-group-btn > button,
+select.input-group-lg > .input-group-btn > .btn,
+select.input-group-lg > .input-group-btn > button,
+select.input-group-lg > .input-group-btn > button,
+select.input-group-lg > .input-group-btn > button,
+select.input-group-lg > .input-group-btn > button,
 select.input-group-lg > .input-group-btn > button,
 select.input-group-lg > .input-group-btn > button {
   height: 46px;
@@ -4051,6 +4786,28 @@ textarea.input-group-lg > .input-group-btn > .btn,
 select[multiple].input-group-lg > .input-group-btn > .btn,
 textarea.input-group-lg > .input-group-btn > button,
 select[multiple].input-group-lg > .input-group-btn > button,
+textarea.input-group-lg > .input-group-btn > .btn,
+select[multiple].input-group-lg > .input-group-btn > .btn,
+textarea.input-group-lg > .input-group-btn > button,
+select[multiple].input-group-lg > .input-group-btn > button,
+textarea.input-group-lg > .input-group-btn > .btn,
+select[multiple].input-group-lg > .input-group-btn > .btn,
+textarea.input-group-lg > .input-group-btn > button,
+select[multiple].input-group-lg > .input-group-btn > button,
+textarea.input-group-lg > .input-group-btn > button,
+select[multiple].input-group-lg > .input-group-btn > button,
+textarea.input-group-lg > .input-group-btn > .btn,
+select[multiple].input-group-lg > .input-group-btn > .btn,
+textarea.input-group-lg > .input-group-btn > button,
+select[multiple].input-group-lg > .input-group-btn > button,
+textarea.input-group-lg > .input-group-btn > button,
+select[multiple].input-group-lg > .input-group-btn > button,
+textarea.input-group-lg > .input-group-btn > button,
+select[multiple].input-group-lg > .input-group-btn > button,
+textarea.input-group-lg > .input-group-btn > button,
+select[multiple].input-group-lg > .input-group-btn > button,
+textarea.input-group-lg > .input-group-btn > button,
+select[multiple].input-group-lg > .input-group-btn > button,
 textarea.input-group-lg > .input-group-btn > button,
 select[multiple].input-group-lg > .input-group-btn > button {
   height: auto;
@@ -4059,6 +4816,17 @@ select[multiple].input-group-lg > .input-group-btn > button {
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
 .input-group-sm > .input-group-btn > .btn,
+.input-group-sm > .input-group-btn > button,
+.input-group-sm > .input-group-btn > .btn,
+.input-group-sm > .input-group-btn > button,
+.input-group-sm > .input-group-btn > .btn,
+.input-group-sm > .input-group-btn > button,
+.input-group-sm > .input-group-btn > button,
+.input-group-sm > .input-group-btn > .btn,
+.input-group-sm > .input-group-btn > button,
+.input-group-sm > .input-group-btn > button,
+.input-group-sm > .input-group-btn > button,
+.input-group-sm > .input-group-btn > button,
 .input-group-sm > .input-group-btn > button,
 .input-group-sm > .input-group-btn > button {
   height: 30px;
@@ -4072,6 +4840,17 @@ select.input-group-sm > .input-group-addon,
 select.input-group-sm > .input-group-btn > .btn,
 select.input-group-sm > .input-group-btn > .btn,
 select.input-group-sm > .input-group-btn > button,
+select.input-group-sm > .input-group-btn > .btn,
+select.input-group-sm > .input-group-btn > button,
+select.input-group-sm > .input-group-btn > .btn,
+select.input-group-sm > .input-group-btn > button,
+select.input-group-sm > .input-group-btn > button,
+select.input-group-sm > .input-group-btn > .btn,
+select.input-group-sm > .input-group-btn > button,
+select.input-group-sm > .input-group-btn > button,
+select.input-group-sm > .input-group-btn > button,
+select.input-group-sm > .input-group-btn > button,
+select.input-group-sm > .input-group-btn > button,
 select.input-group-sm > .input-group-btn > button {
   height: 30px;
   line-height: 30px;
@@ -4084,6 +4863,28 @@ select[multiple].input-group-sm > .input-group-addon,
 select[multiple].input-group-sm > .input-group-btn > .btn,
 textarea.input-group-sm > .input-group-btn > .btn,
 select[multiple].input-group-sm > .input-group-btn > .btn,
+textarea.input-group-sm > .input-group-btn > button,
+select[multiple].input-group-sm > .input-group-btn > button,
+textarea.input-group-sm > .input-group-btn > .btn,
+select[multiple].input-group-sm > .input-group-btn > .btn,
+textarea.input-group-sm > .input-group-btn > button,
+select[multiple].input-group-sm > .input-group-btn > button,
+textarea.input-group-sm > .input-group-btn > .btn,
+select[multiple].input-group-sm > .input-group-btn > .btn,
+textarea.input-group-sm > .input-group-btn > button,
+select[multiple].input-group-sm > .input-group-btn > button,
+textarea.input-group-sm > .input-group-btn > button,
+select[multiple].input-group-sm > .input-group-btn > button,
+textarea.input-group-sm > .input-group-btn > .btn,
+select[multiple].input-group-sm > .input-group-btn > .btn,
+textarea.input-group-sm > .input-group-btn > button,
+select[multiple].input-group-sm > .input-group-btn > button,
+textarea.input-group-sm > .input-group-btn > button,
+select[multiple].input-group-sm > .input-group-btn > button,
+textarea.input-group-sm > .input-group-btn > button,
+select[multiple].input-group-sm > .input-group-btn > button,
+textarea.input-group-sm > .input-group-btn > button,
+select[multiple].input-group-sm > .input-group-btn > button,
 textarea.input-group-sm > .input-group-btn > button,
 select[multiple].input-group-sm > .input-group-btn > button,
 textarea.input-group-sm > .input-group-btn > button,
@@ -4114,7 +4915,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
   color: #555555;
   text-align: center;
   background-color: #eeeeee;
-  border: 1px solid #ccc;
+  border: 1px solid #d6dbdc;
   border-radius: 4px;
 }
 .input-group-addon.input-sm {
@@ -4146,6 +4947,50 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .input-group-btn:first-child > .btn-group > button,
 .input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > button,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > .btn-group > button,
+.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > button,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > .btn-group > button,
+.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > button,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > .btn-group > button,
+.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > button,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > .btn-group > button,
+.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > button,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > .btn-group > button,
+.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > button,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > .btn-group > button,
+.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > button,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > .btn-group > button,
+.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > button,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > .btn-group > button,
+.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > button,
 .input-group-btn:first-child > button,
 .input-group-btn:first-child > .btn-group > button,
 .input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
@@ -4171,6 +5016,50 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .input-group-btn:last-child > .btn-group > button,
 .input-group-btn:first-child > button:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > button,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > .btn-group > button,
+.input-group-btn:first-child > button:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > button,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > .btn-group > button,
+.input-group-btn:first-child > button:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > button,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > .btn-group > button,
+.input-group-btn:first-child > button:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > button,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > .btn-group > button,
+.input-group-btn:first-child > button:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > button,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > .btn-group > button,
+.input-group-btn:first-child > button:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > button,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > .btn-group > button,
+.input-group-btn:first-child > button:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > button,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > .btn-group > button,
+.input-group-btn:first-child > button:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > button,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > .btn-group > button,
+.input-group-btn:first-child > button:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > button,
 .input-group-btn:last-child > button,
 .input-group-btn:last-child > .btn-group > button,
 .input-group-btn:first-child > button:not(:first-child),
@@ -4189,11 +5078,33 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .input-group-btn > .btn,
 .input-group-btn > .btn,
 .input-group-btn > button,
+.input-group-btn > .btn,
+.input-group-btn > button,
+.input-group-btn > .btn,
+.input-group-btn > button,
+.input-group-btn > button,
+.input-group-btn > .btn,
+.input-group-btn > button,
+.input-group-btn > button,
+.input-group-btn > button,
+.input-group-btn > button,
+.input-group-btn > button,
 .input-group-btn > button {
   position: relative;
 }
 .input-group-btn > .btn + .btn,
 .input-group-btn > .btn + .btn,
+.input-group-btn > button + button,
+.input-group-btn > .btn + .btn,
+.input-group-btn > button + button,
+.input-group-btn > .btn + .btn,
+.input-group-btn > button + button,
+.input-group-btn > button + button,
+.input-group-btn > .btn + .btn,
+.input-group-btn > button + button,
+.input-group-btn > button + button,
+.input-group-btn > button + button,
+.input-group-btn > button + button,
 .input-group-btn > button + button,
 .input-group-btn > button + button {
   margin-left: -1px;
@@ -4207,6 +5118,39 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .input-group-btn > button:hover,
 .input-group-btn > button:focus,
 .input-group-btn > button:active,
+.input-group-btn > .btn:hover,
+.input-group-btn > .btn:focus,
+.input-group-btn > .btn:active,
+.input-group-btn > button:hover,
+.input-group-btn > button:focus,
+.input-group-btn > button:active,
+.input-group-btn > .btn:hover,
+.input-group-btn > .btn:focus,
+.input-group-btn > .btn:active,
+.input-group-btn > button:hover,
+.input-group-btn > button:focus,
+.input-group-btn > button:active,
+.input-group-btn > button:hover,
+.input-group-btn > button:focus,
+.input-group-btn > button:active,
+.input-group-btn > .btn:hover,
+.input-group-btn > .btn:focus,
+.input-group-btn > .btn:active,
+.input-group-btn > button:hover,
+.input-group-btn > button:focus,
+.input-group-btn > button:active,
+.input-group-btn > button:hover,
+.input-group-btn > button:focus,
+.input-group-btn > button:active,
+.input-group-btn > button:hover,
+.input-group-btn > button:focus,
+.input-group-btn > button:active,
+.input-group-btn > button:hover,
+.input-group-btn > button:focus,
+.input-group-btn > button:active,
+.input-group-btn > button:hover,
+.input-group-btn > button:focus,
+.input-group-btn > button:active,
 .input-group-btn > button:hover,
 .input-group-btn > button:focus,
 .input-group-btn > button:active {
@@ -4216,12 +5160,34 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .input-group-btn:first-child > .btn-group,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > button,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > button,
+.input-group-btn:first-child > button,
 .input-group-btn:first-child > button {
   margin-right: -1px;
 }
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group,
 .input-group-btn:last-child > .btn,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > button,
+.input-group-btn:last-child > button,
 .input-group-btn:last-child > button,
 .input-group-btn:last-child > button {
   z-index: 2;
@@ -4291,7 +5257,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #f8f8f8;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -4337,7 +5303,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #f8f8f8;
+    border-bottom-color: #fff;
   }
 }
 .nav-pills > li {
@@ -4405,7 +5371,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #f8f8f8;
+    border-bottom-color: #fff;
   }
 }
 .tab-content > .tab-pane {
@@ -4481,7 +5447,9 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .container > .navbar-header,
 .container-fluid > .navbar-header,
 .container > .navbar-collapse,
-.container-fluid > .navbar-collapse {
+.container-fluid > .navbar-collapse,
+#silverback-main > .navbar-header,
+#silverback-main > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -4489,7 +5457,9 @@ select[multiple].input-group-sm > .input-group-btn > button {
   .container > .navbar-header,
   .container-fluid > .navbar-header,
   .container > .navbar-collapse,
-  .container-fluid > .navbar-collapse {
+  .container-fluid > .navbar-collapse,
+  #silverback-main > .navbar-header,
+  #silverback-main > .navbar-collapse {
     margin-right: 0;
     margin-left: 0;
   }
@@ -4541,7 +5511,8 @@ select[multiple].input-group-sm > .input-group-btn > button {
 }
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
-  .navbar > .container-fluid .navbar-brand {
+  .navbar > .container-fluid .navbar-brand,
+  .navbar > #silverback-main .navbar-brand {
     margin-left: -15px;
   }
 }
@@ -4778,7 +5749,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
 .navbar-default .navbar-nav > .disabled > a:focus {
-  color: #ccc;
+  color: #d6dbdc;
   background-color: transparent;
 }
 .navbar-default .navbar-toggle {
@@ -4819,7 +5790,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #ccc;
+    color: #d6dbdc;
     background-color: transparent;
   }
 }
@@ -4840,14 +5811,14 @@ select[multiple].input-group-sm > .input-group-btn > button {
 fieldset[disabled] .navbar-default .btn-link:hover,
 .navbar-default .btn-link[disabled]:focus,
 fieldset[disabled] .navbar-default .btn-link:focus {
-  color: #ccc;
+  color: #d6dbdc;
 }
 .navbar-inverse {
   background-color: #222;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
-  color: #777777;
+  color: #9d9d9d;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -4855,10 +5826,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
-  color: #777777;
+  color: #9d9d9d;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #777777;
+  color: #9d9d9d;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
@@ -4905,7 +5876,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     background-color: #080808;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #777777;
+    color: #9d9d9d;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -4926,13 +5897,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
 }
 .navbar-inverse .navbar-link {
-  color: #777777;
+  color: #9d9d9d;
 }
 .navbar-inverse .navbar-link:hover {
   color: #fff;
 }
 .navbar-inverse .btn-link {
-  color: #777777;
+  color: #9d9d9d;
 }
 .navbar-inverse .btn-link:hover,
 .navbar-inverse .btn-link:focus {
@@ -4957,7 +5928,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .breadcrumb > li + li:before {
   content: "/\00a0";
   padding: 0 5px;
-  color: #ccc;
+  color: #d6dbdc;
 }
 .breadcrumb > .active {
   color: #777777;
@@ -5030,7 +6001,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination-lg > li > span {
   padding: 10px 16px;
   font-size: 18px;
-  line-height: 1.33;
+  line-height: 1.3333333;
 }
 .pagination-lg > li:first-child > a,
 .pagination-lg > li:first-child > span {
@@ -5120,6 +6091,17 @@ a.label:focus {
 .btn .label,
 .btn .label,
 button .label,
+.btn .label,
+button .label,
+.btn .label,
+button .label,
+button .label,
+.btn .label,
+button .label,
+button .label,
+button .label,
+button .label,
+button .label,
 button .label {
   position: relative;
   top: -1px;
@@ -5186,6 +6168,17 @@ button .label {
 .btn .badge,
 .btn .badge,
 button .badge,
+.btn .badge,
+button .badge,
+.btn .badge,
+button .badge,
+button .badge,
+.btn .badge,
+button .badge,
+button .badge,
+button .badge,
+button .badge,
+button .badge,
 button .badge {
   position: relative;
   top: -1px;
@@ -5193,6 +6186,17 @@ button .badge {
 .btn-xs .badge,
 .btn-group-xs > .btn .badge,
 .btn-group-xs > .btn .badge,
+.btn-group-xs > button .badge,
+.btn-group-xs > .btn .badge,
+.btn-group-xs > button .badge,
+.btn-group-xs > .btn .badge,
+.btn-group-xs > button .badge,
+.btn-group-xs > button .badge,
+.btn-group-xs > .btn .badge,
+.btn-group-xs > button .badge,
+.btn-group-xs > button .badge,
+.btn-group-xs > button .badge,
+.btn-group-xs > button .badge,
 .btn-group-xs > button .badge,
 .btn-group-xs > button .badge {
   top: 0;
@@ -5238,7 +6242,8 @@ a.badge:focus {
   border-top-color: #d5d5d5;
 }
 .container .jumbotron,
-.container-fluid .jumbotron {
+.container-fluid .jumbotron,
+#silverback-main .jumbotron {
   border-radius: 6px;
   padding-left: 15px;
   padding-right: 15px;
@@ -5252,7 +6257,8 @@ a.badge:focus {
     padding-bottom: 48px;
   }
   .container .jumbotron,
-  .container-fluid .jumbotron {
+  .container-fluid .jumbotron,
+  #silverback-main .jumbotron {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -5266,7 +6272,7 @@ a.badge:focus {
   padding: 4px;
   margin-bottom: 24px;
   line-height: 1.71428571;
-  background-color: #f8f8f8;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: border 0.2s ease-in-out;
@@ -5705,7 +6711,7 @@ button.list-group-item-danger.active:focus {
   margin-bottom: 24px;
   background-color: #fff;
   border: 1px solid transparent;
-  border-radius: 0px;
+  border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -5715,8 +6721,8 @@ button.list-group-item-danger.active:focus {
 .panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
-  border-top-right-radius: -1px;
-  border-top-left-radius: -1px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
 }
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
@@ -5738,8 +6744,8 @@ button.list-group-item-danger.active:focus {
   padding: 10px 15px;
   background-color: #f5f5f5;
   border-top: 1px solid #ddd;
-  border-bottom-right-radius: -1px;
-  border-bottom-left-radius: -1px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 .panel > .list-group,
 .panel > .panel-collapse > .list-group {
@@ -5753,14 +6759,14 @@ button.list-group-item-danger.active:focus {
 .panel > .list-group:first-child .list-group-item:first-child,
 .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
   border-top: 0;
-  border-top-right-radius: -1px;
-  border-top-left-radius: -1px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
 }
 .panel > .list-group:last-child .list-group-item:last-child,
 .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
   border-bottom: 0;
-  border-bottom-right-radius: -1px;
-  border-bottom-left-radius: -1px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 .panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
   border-top-right-radius: 0;
@@ -5785,15 +6791,15 @@ button.list-group-item-danger.active:focus {
 }
 .panel > .table:first-child,
 .panel > .table-responsive:first-child > .table:first-child {
-  border-top-right-radius: -1px;
-  border-top-left-radius: -1px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
 }
 .panel > .table:first-child > thead:first-child > tr:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
-  border-top-left-radius: -1px;
-  border-top-right-radius: -1px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
@@ -5803,7 +6809,7 @@ button.list-group-item-danger.active:focus {
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
-  border-top-left-radius: -1px;
+  border-top-left-radius: 3px;
 }
 .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
@@ -5813,19 +6819,19 @@ button.list-group-item-danger.active:focus {
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
-  border-top-right-radius: -1px;
+  border-top-right-radius: 3px;
 }
 .panel > .table:last-child,
 .panel > .table-responsive:last-child > .table:last-child {
-  border-bottom-right-radius: -1px;
-  border-bottom-left-radius: -1px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 .panel > .table:last-child > tbody:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
-  border-bottom-left-radius: -1px;
-  border-bottom-right-radius: -1px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
@@ -5835,7 +6841,7 @@ button.list-group-item-danger.active:focus {
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
-  border-bottom-left-radius: -1px;
+  border-bottom-left-radius: 3px;
 }
 .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
@@ -5845,13 +6851,13 @@ button.list-group-item-danger.active:focus {
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
-  border-bottom-right-radius: -1px;
+  border-bottom-right-radius: 3px;
 }
 .panel > .panel-body + .table,
 .panel > .panel-body + .table-responsive,
 .panel > .table + .panel-body,
 .panel > .table-responsive + .panel-body {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #d6dbdc;
 }
 .panel > .table > tbody:first-child > tr:first-child th,
 .panel > .table > tbody:first-child > tr:first-child td {
@@ -5918,7 +6924,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel-group .panel {
   margin-bottom: 0;
-  border-radius: 0px;
+  border-radius: 4px;
 }
 .panel-group .panel + .panel {
   margin-top: 5px;
@@ -6172,15 +7178,26 @@ button.close {
 }
 .modal-body {
   position: relative;
-  padding: 20px;
+  padding: 15px;
 }
 .modal-footer {
-  padding: 20px;
+  padding: 15px;
   text-align: right;
   border-top: 1px solid #e5e5e5;
 }
 .modal-footer .btn + .btn,
 .modal-footer .btn + .btn,
+.modal-footer button + button,
+.modal-footer .btn + .btn,
+.modal-footer button + button,
+.modal-footer .btn + .btn,
+.modal-footer button + button,
+.modal-footer button + button,
+.modal-footer .btn + .btn,
+.modal-footer button + button,
+.modal-footer button + button,
+.modal-footer button + button,
+.modal-footer button + button,
 .modal-footer button + button,
 .modal-footer button + button {
   margin-left: 5px;
@@ -6188,6 +7205,17 @@ button.close {
 }
 .modal-footer .btn-group .btn + .btn,
 .modal-footer .btn-group .btn + .btn,
+.modal-footer .btn-group button + button,
+.modal-footer .btn-group .btn + .btn,
+.modal-footer .btn-group button + button,
+.modal-footer .btn-group .btn + .btn,
+.modal-footer .btn-group button + button,
+.modal-footer .btn-group button + button,
+.modal-footer .btn-group .btn + .btn,
+.modal-footer .btn-group button + button,
+.modal-footer .btn-group button + button,
+.modal-footer .btn-group button + button,
+.modal-footer .btn-group button + button,
 .modal-footer .btn-group button + button,
 .modal-footer .btn-group button + button {
   margin-left: -1px;
@@ -6222,7 +7250,7 @@ button.close {
 }
 .tooltip {
   position: absolute;
-  z-index: 1030;
+  z-index: 1070;
   display: block;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
@@ -6338,7 +7366,7 @@ button.close {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1010;
+  z-index: 1060;
   display: none;
   max-width: 276px;
   padding: 1px;
@@ -6360,7 +7388,7 @@ button.close {
   font-size: 14px;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #ccc;
+  border: 1px solid #d6dbdc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -6409,7 +7437,7 @@ button.close {
   left: 50%;
   margin-left: -11px;
   border-bottom-width: 0;
-  border-top-color: #999999;
+  border-top-color: #9fabad;
   border-top-color: rgba(0, 0, 0, 0.25);
   bottom: -11px;
 }
@@ -6425,7 +7453,7 @@ button.close {
   left: -11px;
   margin-top: -11px;
   border-left-width: 0;
-  border-right-color: #999999;
+  border-right-color: #9fabad;
   border-right-color: rgba(0, 0, 0, 0.25);
 }
 .popover.right > .arrow:after {
@@ -6439,7 +7467,7 @@ button.close {
   left: 50%;
   margin-left: -11px;
   border-top-width: 0;
-  border-bottom-color: #999999;
+  border-bottom-color: #9fabad;
   border-bottom-color: rgba(0, 0, 0, 0.25);
   top: -11px;
 }
@@ -6455,7 +7483,7 @@ button.close {
   right: -11px;
   margin-top: -11px;
   border-right-width: 0;
-  border-left-color: #999999;
+  border-left-color: #9fabad;
   border-left-color: rgba(0, 0, 0, 0.25);
 }
 .popover.left > .arrow:after {
@@ -6662,6 +7690,17 @@ button.close {
 .carousel-caption .btn,
 .carousel-caption .btn,
 .carousel-caption button,
+.carousel-caption .btn,
+.carousel-caption button,
+.carousel-caption .btn,
+.carousel-caption button,
+.carousel-caption button,
+.carousel-caption .btn,
+.carousel-caption button,
+.carousel-caption button,
+.carousel-caption button,
+.carousel-caption button,
+.carousel-caption button,
 .carousel-caption button {
   text-shadow: none;
 }
@@ -6724,6 +7763,8 @@ button.close {
 .modal-header:after,
 .modal-footer:before,
 .modal-footer:after,
+#silverback-main .gorilla-nest:before,
+#silverback-main .gorilla-nest:after,
 .header-colorbar > div:before,
 .header-colorbar > div:after,
 #fonts .specimen-main-modules > div:first-child:before,
@@ -6731,7 +7772,9 @@ button.close {
 .panel-heading-elements:before,
 .panel-heading-elements:after,
 .panel-footer-buttons:before,
-.panel-footer-buttons:after {
+.panel-footer-buttons:after,
+#silverback-main:before,
+#silverback-main:after {
   content: " ";
   display: table;
 }
@@ -6751,10 +7794,12 @@ button.close {
 .panel-body:after,
 .modal-header:after,
 .modal-footer:after,
+#silverback-main .gorilla-nest:after,
 .header-colorbar > div:after,
 #fonts .specimen-main-modules > div:first-child:after,
 .panel-heading-elements:after,
-.panel-footer-buttons:after {
+.panel-footer-buttons:after,
+#silverback-main:after {
   clear: both;
 }
 .center-block {
@@ -7007,40 +8052,6 @@ Open Sans
 600 - Semi-bold
 700 - Bold
 800 - Extra-Bold
-
-Roboto
-100 - Thin
-300 - Light
-400 - Regular
-500 - Medium
-700 - Bold
-900 - Black
-
-*/
-/*
-@gray-base:              #000;
-@gray-darker:            lighten(@gray-base, 13.5%); // #222
-@gray-dark:              lighten(@gray-base, 20%);   // #333
-@gray:                   lighten(@gray-base, 40%); // #666
-@gray-light:             lighten(@gray-base, 53%);   // #888
-@gray-lighter:           lighten(@gray-base, 74%);   // #bdbdbd
-@gray-lightest:          lighten(@gray-base, 90%// #e5e5e5
-*/
-/*
-@font-slvrbck-h1:         floor((@font-size-base * 2.85)); // 40px
-@font-slvrbck-h2:         floor((@font-size-base * 2.25)); // 32px
-@font-slvrbck-h3:         ceil((@font-size-base * 2.0)); //  28px
-@font-slvrbck-h4:         ceil((@font-size-base * 1.7)); //  24px
-@font-slvrbck-h5:         ceil((@font-size-base * 1.4)); // 20px
-@font-slvrbck-h6:         ceil((@font-size-base * 1.1)); // 16px
-
-h1.slvrbck-heading, .h1.slvrbck-heading { font-size: @font-slvrbck-h1; }
-h2.slvrbck-heading, .h2.slvrbck-heading { font-size: @font-slvrbck-h2; }
-h3.slvrbck-heading, .h3.slvrbck-heading { font-size: @font-slvrbck-h3; }
-h4.slvrbck-heading, .h4.slvrbck-heading { font-size: @font-slvrbck-h4; }
-h5.slvrbck-heading, .h5.slvrbck-heading { font-size: @font-slvrbck-h5; }
-h6.slvrbck-heading, .h6.slvrbck-heading { font-size: @font-slvrbck-h6; }
-
 */
 /*******************************************************************************
 slvrbck docs
@@ -7059,6 +8070,17 @@ section.panel-examples .panel {
 }
 .btn + .btn,
 .btn + .btn,
+button + button,
+.btn + .btn,
+button + button,
+.btn + .btn,
+button + button,
+button + button,
+.btn + .btn,
+button + button,
+button + button,
+button + button,
+button + button,
 button + button,
 button + button {
   margin-left: 10px;
@@ -7085,62 +8107,205 @@ button + button {
   z-index: 1;
   display: block;
 }
-h2,
-h3,
-h4,
-h5,
-h6,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h4.modal-title {
-  font-weight: 400;
-}
-h4.modal-title {
-  font-weight: 300;
-  color: #333333 !important;
-}
 /*******************************************************************************
-Primary-Main Main Header
+<header>
+navbar.less
 */
-/* Small devices (tablets, 768px and up) */
+#silverback-header .navbar {
+  margin-bottom: 0;
+}
+#silverback-header .navbar-inverse {
+  background-color: #738596;
+  border-color: transparent;
+}
+#silverback-header .navbar-inverse .navbar-nav > li > a,
+#silverback-header .navbar-inverse .navbar-brand {
+  color: #d9d9d9;
+}
 @media (min-width: 768px) {
-  .primary-main {
-    padding-left: 100px;
+  #silverback-header .navbar {
+    border-radius: 0;
   }
 }
 /*******************************************************************************
-Primary-Main Main Header
+<main>
 */
-.main-header {
+#silverback-main .gorilla-nest {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+/***************************************
+main-secondary
+*/
+.main-secondary {
+  display: none;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .main-secondary {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: fixed;
+    top: 52px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #fff;
+    border-right: 1px solid #eee;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .main-secondary {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 768px) and (min-width: 992px) {
+  .main-secondary {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+/***************************************
+navs.less
+*/
+nav.sidebar.left {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+nav.sidebar.left li a {
+  padding: 10px 35px;
+  color: #354a53;
+}
+.sidebar.left .nav.nested {
+  display: none;
+}
+.sidebar.left .nav > li.active .nav.nested,
+.sidebar.left .nav > .active > .nav.nested,
+.sidebar.left .nav > .current-menu-parent > .nav.nested {
+  display: block;
+}
+.sidebar.left .nav > .current-page-parent .mdi-chevron-right:before,
+.sidebar.left .nav > .active .mdi-chevron-right:before {
+  content: "\F140";
+}
+.sidebar.left .nav.nested a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 55px;
+}
+.sidebar.left .current-menu-parent {
+  background-color: #fbfbfb;
+}
+.sidebar.left .current_page_item.active > a {
+  background-color: #dfd4e0;
+  border-left: 5px solid #7f5384;
+  color: #602966;
+  padding-left: 50px;
+}
+/***************************************
+main-secondary
+*/
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .main-primary {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-left: 100px;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .main-primary {
+    float: left;
+    width: 75%;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .main-primary {
+    margin-left: 8.33333333%;
+  }
+}
+@media (min-width: 768px) and (min-width: 992px) {
+  .main-primary {
+    float: left;
+    width: 83.33333333%;
+  }
+}
+@media (min-width: 768px) and (min-width: 992px) {
+  .main-primary {
+    margin-left: 16.66666667%;
+  }
+}
+.main-primary .main-primary-header {
   margin: 0 -15px 30px -15px;
   padding: 25px 15px 10px 15px;
   background-color: #fff;
   -webkit-box-shadow: 0 5px 15px rgba(68, 68, 68, 0.27);
   box-shadow: 0 5px 15px rgba(68, 68, 68, 0.27);
 }
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .main-header {
-    margin: 0 -15px 30px -100px;
-    padding: 25px 25px 10px 85px;
-  }
-}
-.main-header .entry-title h6 {
+.main-primary .main-primary-header .entry-title h6 {
   margin-top: 0;
   margin-bottom: 6px;
   display: none;
 }
-@media (min-width: 768px) {
-  .main-header .entry-title h6 {
-    display: block;
-  }
-}
-.main-header .entry-title h1 {
+.main-primary .main-primary-header .entry-title h1 {
   margin-top: 0;
   text-transform: lowercase;
+}
+.main-primary .main-primary-container {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1170px;
+}
+@media (min-width: 992px) {
+  .main-primary .main-primary-container {
+    float: left;
+    width: 100%;
+  }
+}
+.main-primary .main-primary-container.has-tertiary {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: none;
+}
+@media (min-width: 992px) {
+  .main-primary .main-primary-container.has-tertiary {
+    float: left;
+    width: 75%;
+  }
+}
+.main-primary .main-tertiary {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .main-primary .main-tertiary {
+    float: left;
+    width: 25%;
+  }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .main-primary .main-primary-header {
+    margin: 0 -15px 30px -100px;
+    padding: 25px 25px 10px 85px;
+  }
+  .main-primary .main-primary-header .entry-title h6 {
+    display: block;
+  }
 }
 h1 .parent_page,
 h1 .current_page {
@@ -7205,35 +8370,9 @@ h1 .current_page_child {
   }
 }
 /*******************************************************************************
-Primary-Main primary-main-container
+main-primary main-primary-container
 */
-.primary-main-container {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  max-width: 1170px;
-}
-@media (min-width: 992px) {
-  .primary-main-container {
-    float: left;
-    width: 100%;
-  }
-}
-.primary-main.has-tertiary .primary-main-container {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  max-width: none;
-}
-@media (min-width: 992px) {
-  .primary-main.has-tertiary .primary-main-container {
-    float: left;
-    width: 75%;
-  }
-}
-.primary-main h4 {
+.main-primary h4 {
   color: #5d6e75;
 }
 section.section-contents {
@@ -7531,31 +8670,10 @@ p.line-height-example {
   line-height: 1.5;
 }
 /*******************************************************************************
-primary-secondary sidebar
-*/
-.primary-secondary {
-  display: none;
-}
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .primary-secondary {
-    position: fixed;
-    top: 52px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #fff;
-    border-right: 1px solid #eee;
-  }
-}
-/*******************************************************************************
 prism.less Overrides
 //keep seperate from Prism.less
 */
-.primary-main pre {
+.main-primary pre {
   position: relative;
   padding: 35px 15px 30px;
 }
@@ -7576,65 +8694,6 @@ script[type='text/plain'].language-markup {
   font: 100% Consolas, Monaco, monospace;
   white-space: pre;
   overflow: auto;
-}
-/*******************************************************************************
-clipboard.js
-*/
-/*******************************************************************************
-navbar.less
-*/
-.navbar {
-  margin-bottom: 0;
-}
-.navbar-inverse {
-  background-color: #738596;
-  border-color: transparent;
-}
-.navbar-inverse .navbar-nav > li > a,
-.navbar-inverse .navbar-brand {
-  color: #d9d9d9;
-}
-@media (min-width: 768px) {
-  .navbar {
-    border-radius: 0;
-  }
-}
-/*******************************************************************************
-navs.less
-*/
-nav.sidebar.left {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-nav.sidebar.left li a {
-  padding: 10px 35px;
-  color: #354a53;
-}
-.sidebar.left .nav.nested {
-  display: none;
-}
-.sidebar.left .nav > li.active .nav.nested,
-.sidebar.left .nav > .active > .nav.nested,
-.sidebar.left .nav > .current-menu-parent > .nav.nested {
-  display: block;
-}
-.sidebar.left .nav > .current-page-parent .mdi-chevron-right:before,
-.sidebar.left .nav > .active .mdi-chevron-right:before {
-  content: "\F140";
-}
-.sidebar.left .nav.nested a {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 55px;
-}
-.sidebar.left .current-menu-parent {
-  background-color: #fbfbfb;
-}
-.sidebar.left .current_page_item.active > a {
-  background-color: #dfd4e0;
-  border-left: 5px solid #7f5384;
-  color: #602966;
-  padding-left: 50px;
 }
 .sidebar.right {
   display: none;
@@ -7720,6 +8779,51 @@ body {
 buttons.less
 */
 .btn,
+button,
+button,
+.btn,
+button,
+button,
+button {
+  outline: 0!important;
+}
+.panel.prism {
+  border-color: #d6dbdc;
+}
+.panel.prism .panel-heading {
+  background-color: #5d6e75;
+  color: #fff;
+}
+.panel.prism .panel-footer {
+  background-color: #d1d2d5;
+}
+/*******************************************************************************
+While building the design system, use this file for quick styling.
+  - Note which Bootstrap Less files you are overriding ex: components/modals.less
+  - Once development is complete, create the required less files for override in
+    /troops/bestcaseonline/___________/filename.less and move the css
+    from this file to the new file.
+  - Once the css have been moved, create an import in this file to the new file.
+*/
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+}
+/*******************************************************************************
+type.less
+*/
+.loud {
+  color: #b21876;
+}
+/*******************************************************************************
+buttons.less
+*/
+.btn,
+button,
+.btn,
+button,
+button,
 button,
 button {
   outline: 0!important;
@@ -8381,19 +9485,16 @@ panels.less
     text-align: right;
   }
 }
-.panel.prism {
-  border-color: #d6dbdc;
-}
-.panel.prism .panel-heading {
-  background-color: #5d6e75;
-  color: #fff;
-}
-.panel.prism .panel-footer {
-  background-color: #d1d2d5;
-}
 /*******************************************************************************
 modal.less
 */
+.modal-content {
+  border-radius: 0;
+}
+.modal-content .modal-header,
+.modal-content .modal-footer {
+  border-bottom-color: #d6dbdc;
+}
 /*******************************************************************************
 alerts.less (notifications)
 */
@@ -8443,11 +9544,3 @@ alerts.less (notifications)
 .alert-error .alert-title {
   color: #ea2032;
 }
-/*******************************************************************************
-While building the design system, use this file for quick styling.
-  - Note which Bootstrap Less files you are overriding ex: components/modals.less
-  - Once development is complete, create the required less files for override in
-    /troops/bestcaseonline/___________/filename.less and move the css
-    from this file to the new file.
-  - Once the css have been moved, create an import in this file to the new file.
-*/

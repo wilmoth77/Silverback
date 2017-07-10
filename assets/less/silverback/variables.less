@@ -15,29 +15,31 @@ Open Sans
 800 - Extra-Bold
 */
 
-//== Colors
-
-@slvrbck-primary:         @cin-p02;
-@slvrbck-success:         @cin-s07;
-@slvrbck-info:            @cin-s03;
-@slvrbck-warning:         @cin-s04
-@slvrbck-danger:          #d9534f;
-
-
 //Silverback Colors (CINgroup palette)
 //Primary
 @cin-p01:               #1a202e; //dark blue
 @cin-p02:               #738596; //slate blue
 //Secondary
-@cin-s01                #2d83c4 //blue
-@cin-s02                #471b31 //maroonish
-@cin-s03                #1bbcb6 //teal
-@cin-s04                #ebaa20 //gold
-@cin-s05                #602966 //purple
-@cin-s06                #354a53 //emerald
-@cin-s07                #65ae45 //CINLDS Green
-@cin-s08                #b0b7c1 //Soft silver
-@cin-s09                #3d8764 //green teal
+@cin-s01:                #2d83c4; //blue
+@cin-s02:                #471b31; //maroonish
+@cin-s03:                #1bbcb6; //teal
+@cin-s04:                #ebaa20; //gold
+@cin-s05:                #602966; //purple
+@cin-s06:                #354a53; //emerald
+@cin-s07:                #65ae45; //CINLDS Green
+@cin-s08:                #b0b7c1; //Soft silver
+@cin-s09:                #3d8764; //green teal
+
+//== Colors
+
+@brand-primary:         @cin-p02;
+@brand-success:         @cin-s07;
+@brand-info:            @cin-s03;
+@brand-warning:         @cin-s04;
+@brand-danger:          #d9534f;
+
+//** Dropshadow
+@dropshadow: 0 5px 15px rgba(68,68,68,0.27);
 
 
 //== Scaffolding
@@ -45,7 +47,7 @@ Open Sans
 //## Settings for some of the most global styles.
 
 //** Global textual link color.
-@link-color:            #336699
+@link-color:            #336699;
 
 //== Typography
 //
@@ -64,26 +66,26 @@ Open Sans
 @btn-default-border:             #ccc;
 
 @btn-primary-color:              #fff;
-@btn-primary-bg:                 @slvrbck-primary;
+@btn-primary-bg:                 @brand-primary;
 @btn-primary-border:             darken(@btn-primary-bg, 5%);
 
 @btn-success-color:              #fff;
-@btn-success-bg:                 @slvrbck-success;
+@btn-success-bg:                 @brand-success;
 @btn-success-border:             darken(@btn-success-bg, 5%);
 
 @btn-info-color:                 #fff;
-@btn-info-bg:                    @slvrbck-info;
+@btn-info-bg:                    @brand-info;
 @btn-info-border:                darken(@btn-info-bg, 5%);
 
 @btn-warning-color:              #fff;
-@btn-warning-bg:                 @slvrbck-warning;
+@btn-warning-bg:                 @brand-warning;
 @btn-warning-border:             darken(@btn-warning-bg, 5%);
 
 @btn-danger-color:               #fff;
-@btn-danger-bg:                  @slvrbck-danger;
+@btn-danger-bg:                  @brand-danger;
 @btn-danger-border:              darken(@btn-danger-bg, 5%);
 
-@btn-link-disabled-color:        @slvrbck-light;
+@btn-link-disabled-color:        @gray-light;
 
 // Allows for customizing button radius independently from global border radius
 @btn-border-radius-base:         0px;
@@ -248,8 +250,8 @@ Open Sans
 //
 //##
 
-@pagination-active-bg:                 @slvrbck-primary;
-@pagination-active-border:             @slvrbck-primary;
+@pagination-active-bg:                 @brand-primary;
+@pagination-active-border:             @brand-primary;
 
 
 
@@ -275,15 +277,15 @@ Open Sans
 //** Default label background color
 @label-default-bg:            @gray-light;
 //** Primary label background color
-@label-primary-bg:            @slvrbck-primary;
+@label-primary-bg:            @brand-primary;
 //** Success label background color
-@label-success-bg:            @slvrbck-success;
+@label-success-bg:            @brand-success;
 //** Info label background color
-@label-info-bg:               @slvrbck-info;
+@label-info-bg:               @brand-info;
 //** Warning label background color
-@label-warning-bg:            @slvrbck-warning;
+@label-warning-bg:            @brand-warning;
 //** Danger label background color
-@label-danger-bg:             @slvrbck-danger;
+@label-danger-bg:             @brand-danger;
 
 
 //== Progress bars
@@ -298,15 +300,15 @@ Open Sans
 @progress-border-radius:      @border-radius-base;
 
 //** Default progress bar color
-@progress-bar-bg:             @slvrbck-primary;
+@progress-bar-bg:             @brand-primary;
 //** Success progress bar color
-@progress-bar-success-bg:     @slvrbck-success;
+@progress-bar-success-bg:     @brand-success;
 //** Warning progress bar color
-@progress-bar-warning-bg:     @slvrbck-warning;
+@progress-bar-warning-bg:     @brand-warning;
 //** Danger progress bar color
-@progress-bar-danger-bg:      @slvrbck-danger;
+@progress-bar-danger-bg:      @brand-danger;
 //** Info progress bar color
-@progress-bar-info-bg:        @slvrbck-info;
+@progress-bar-info-bg:        @brand-info;
 
 
 //== Panels
@@ -328,8 +330,8 @@ Open Sans
 @panel-default-heading-bg:    #f5f5f5;
 
 @panel-primary-text:          #fff;
-@panel-primary-border:        @slvrbck-primary;
-@panel-primary-heading-bg:    @slvrbck-primary;
+@panel-primary-border:        @brand-primary;
+@panel-primary-heading-bg:    @brand-primary;
 
 @panel-success-text:          @state-success-text;
 @panel-success-border:        @state-success-border;

@@ -1,14 +1,24 @@
 /*******************************************************************************
 While building the design system, use this file for quick styling.
-  - Note which Bootstrap Less files you are overriding ex: components/modals.less
-  - Once development is complete, create the required less files for override in
-    /troops/bestcaseonline/___________/filename.less and move the css
-    from this file to the new file.
-  - Once the css have been moved, create an import in this file to the new file.
+- Note which Bootstrap Less files you are overriding ex: components/modals.less
+- Once development is complete, create the required less files for override in
+/troops/bestcaseonline/___________/filename.less and move the css
+from this file to the new file.
+- Once the css have been moved, create an import in this file to the new file.
 */
 
 @import "mixins/buttons";         // Button constructs
 @import "components/navbar";        // Nav styles
+
+//Always last
+@import "variables";             // New and override variables
+
+
+// Target main-primary-container for Best Case Online specific styles
+//  -Inject css??
+
+
+
 
 /*******************************************************************************
 type.less
@@ -198,12 +208,14 @@ panels.less
 .panel.basic {
   border: 1px solid @bc-s02-20;
   border-top: 5px solid @bc-p01;
+  border-radius: 0;
   .box-shadow(none);
 
   & .panel-heading,
   .panel-body,
   .panel-footer {
     padding: 20px;
+    border-radius: 0;
   }
 
   & >.panel-heading,
@@ -268,7 +280,7 @@ modal.less
   border-radius: 0;
 
   & .modal-header,
-    .modal-footer {
+  .modal-footer {
     border-bottom-color: @bc-s02-20;
 
     & .modal-title {
@@ -297,7 +309,8 @@ alerts.less (notifications)
   border: none;
   border-radius: 0;
   border-top: 10px solid transparent;
-  box-shadow: @dropshadow;
+  @shadow: @level-1;
+  .box-shadow(@shadow);
 
   & .close {
     font-size: 27px;
@@ -351,6 +364,39 @@ alerts.less (notifications)
     color: @bc-sp05;
   }
 }
+
+/*******************************************************************************
+tabs.less
+*/
+.nav-tabs>li>a {
+  &:extend(.btn-default all);
+  padding: @nav-tabs-link-padding;
+  border-bottom-color: @bc-s01;
+}
+
+/*******************************************************************************
+forms.less
+*/
+.form-group {
+  & label,
+  .form-control {
+    font-size: @font-size-base - 1;
+  }
+  & .form-control {
+    border-radius: 0;
+    @shadow: none;
+    .box-shadow(@shadow);
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  .form-group {
+    & .form-control {
+      height: 30px;
+    }
+  }
+}
+
 
 
 //Extra small devices (phones, less than 768px)

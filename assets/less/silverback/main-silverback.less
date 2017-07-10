@@ -1,20 +1,38 @@
 @import "mixins/buttons";         // Button constructs
 @import "components/navs";        // Nav styles
 
+//Always last
+@import "variables";             // New and override variables
 
+.doc-example:after {
+  position: relative;
+  padding: 45px 15px 15px;
 
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+  -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
 
+    background-color: #fff;
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 4px 4px 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 
-
-
-
-
-// Target main-primary-container for Best Case Online specific styles
-//  -Inject css??
-
-
-
-
+.doc-example:after {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    color: @gray;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    content: "Example";
+}
 
 
 
@@ -104,14 +122,6 @@ navbar.less
   }
 }
 
-@media (min-width: @screen-sm-min) {
-  #silverback-header {
-    & .navbar {
-      border-radius: 0;
-    }
-  }
-}
-
 /*******************************************************************************
 <main>
 */
@@ -137,14 +147,14 @@ main-secondary
     .make-sm-column(3);
     .make-md-column(2);
     position: fixed;
-    top: 52px;
+    top: 51px;
     bottom: 0;
     left: 0;
     z-index: 1000;
     display: block;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: #fff;
+    background-color: lighten(@cin-p02, 43%);
     border-right: 1px solid #eee;
   }
 }
@@ -182,12 +192,13 @@ nav.sidebar.left  li a {
 }
 
 .sidebar.left .current-menu-parent {
-  background-color: lighten(@bc-sp06, 1%);
+  background-color: lighten(@cin-p02, 38%);
 }
 .sidebar.left .current_page_item.active>a {
-  background-color: @bc-sp01-20;
-  border-left: 5px solid @bc-sp01-80;
-  color: @bc-sp01;
+  background-color: lighten(@cin-p02, 31%);
+  border-left: 5px solid @cin-p02;
+  color: darken(@cin-p02, 15%);
+  font-weight: 600;
   padding-left: 50px;
 }
 
@@ -273,7 +284,7 @@ h1 .current_page_child {
   position: relative;
   margin-left: -85px;
   margin-top: -25px;
-  margin-bottom: -79.56px;
+  margin-bottom: -77px;
   overflow-x: hidden;
   overflow-y: auto;
   display: none;

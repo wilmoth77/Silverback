@@ -30,6 +30,10 @@
         $(function () {
           $('[data-toggle="tooltip"]').tooltip();
           $('[data-toggle="popover"]').popover();
+          $('#myTabs a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+          })
           $('body').scrollspy({ target: '.sidebar.right' });
           $('body').each(function () {
             var $spy = $(this).scrollspy('refresh');
