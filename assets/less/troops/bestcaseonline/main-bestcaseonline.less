@@ -112,7 +112,7 @@ button {
   .button-outline-variant(@bc-s01-80; transparent; @bc-s01-40);
 }
 .btn-outline-secondary {
-  .button-outline-variant(@bc-s03-80; transparent; @bc-s03-40);
+  .button-outline-variant(@bc-s03; transparent; @bc-s03-40);
 }
 .btn-outline-danger {
   .button-outline-variant(@bc-sp05-80; transparent; @bc-sp05-40);
@@ -208,35 +208,38 @@ panels.less
 .panel.basic {
   border: 1px solid @bc-s02-20;
   border-top: 5px solid @bc-p01;
-  border-radius: 0;
   .box-shadow(none);
 
-  & .panel-heading,
+  > .panel-heading,
   .panel-body,
   .panel-footer {
-    padding: 20px;
-    border-radius: 0;
+    padding: 20px 30px;
   }
 
-  & >.panel-heading,
-  & >.panel-footer {
+  > .panel-heading,
+  .panel-footer {
     background-color: transparent;
     border-color: transparent;
   }
 
-  & .panel-footer {
+  > .panel-heading {
+    & .panel-title {
+      font-size: @font-size-h3 + 1;
+   }
+  }
+
+  > .panel-body {
+    & .tab-content {
+      padding: 0 15px;
+    }
+  }
+
+  > .panel-footer {
     border-top-color: @bc-s02-20;
   }
-
 }
 
-.panel.basic .panel-heading {
 
-  & .panel-title {
-    font-size: @font-size-h3 + 1;
-  }
-
-}
 
 .panel-heading-elements {
   .make-row ();
@@ -368,11 +371,29 @@ alerts.less (notifications)
 /*******************************************************************************
 tabs.less
 */
-.nav-tabs>li>a {
-  &:extend(.btn-default all);
-  padding: @nav-tabs-link-padding;
-  border-bottom-color: @bc-s01;
+
+.nav-tabs {
+  > li {
+
+    > a {
+      &:extend(.btn-default all);
+      padding: @nav-tabs-link-padding;
+      font-size: @font-size-base - 1;
+      border-bottom-color: @bc-s01;
+      border-radius: 0;
+    }
+
+    // Active state, and its :hover to override normal :hover
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        //border-left-color: transparent;
+      }
+    }
+  }
 }
+
 
 /*******************************************************************************
 forms.less

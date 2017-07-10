@@ -14,24 +14,24 @@
   -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
   box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
 
-    background-color: #fff;
-    border-color: #ddd;
-    border-width: 1px;
-    border-radius: 4px 4px 0 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+  background-color: #fff;
+  border-color: #ddd;
+  border-width: 1px;
+  border-radius: 4px 4px 0 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .doc-example:after {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size: 12px;
-    font-weight: 600;
-    color: @gray;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    content: "Example";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  color: @gray;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  content: "Example";
 }
 
 
@@ -107,18 +107,23 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
 navbar.less
 */
 #silverback-header {
-  & .navbar {
+  > .navbar {
     margin-bottom: 0;
   }
 
-  & .navbar-inverse {
+  > .navbar-inverse {
     background-color: @cin-p02;
     border-color: transparent;
-  }
 
-  & .navbar-inverse .navbar-nav>li>a,
-  .navbar-inverse .navbar-brand {
-    color:  darken(@white, 15%);;
+    & .navbar-nav li a,
+    .navbar-brand  {
+      color:  darken(@white, 15%);
+
+      &:hover,
+      &:focus {
+        color: @white;
+      }
+    }
   }
 }
 
@@ -137,9 +142,56 @@ navbar.less
 main-secondary
 */
 
+
 .main-secondary {
   display: none;
+
+  > .sidebar {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  > .sidebar li a {
+    padding: 10px 35px;
+    color: @bc-s02;
+
+    &:hover,
+    :focus {
+      background-color: lighten(@cin-p02, 31%);
+    }
+  }
+
+  > .sidebar .nav.nested {
+    display: none;
+  }
+  > .sidebar .nav>li.active .nav.nested,
+  .sidebar .nav>.active>.nav.nested,
+  .sidebar .nav>.current-menu-parent>.nav.nested  {
+    display: block;
+  }
+
+  > .sidebar .nav>.current-page-parent .mdi-chevron-right:before,
+  .sidebar .nav>.active .mdi-chevron-right:before {
+    content: "\F140";
+  }
+
+  > .sidebar .nav.nested a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 55px; //was 35px, added 20px
+  }
+
+  > .sidebar .current-menu-parent {
+    background-color: lighten(@cin-p02, 38%);
+  }
+  > .sidebar .current_page_item.active>a {
+    background-color: lighten(@cin-p02, 31%);
+    border-left: 5px solid @cin-p02;
+    color: darken(@cin-p02, 15%);
+    font-weight: 600;
+    padding-left: 50px;
+  }
 }
+
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
@@ -158,52 +210,74 @@ main-secondary
     border-right: 1px solid #eee;
   }
 }
-
 /***************************************
-navs.less
+main-tertiary
 */
-nav.sidebar.left {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-nav.sidebar.left  li a {
-  padding: 10px 35px;
-  color: @bc-s02;
+
+.main-tertiary {
+  > .sidebar {
+    display: none;
+    border-left: 1px solid @bc-s02-20;
+    margin-left: 20px;
+    padding-left: 20px;
+
+    & .sidebar-title {
+      margin-left: 15px;
+    }
+
+    & li {
+      &.active {
+        font-weight: 600;
+      }
+      > a {
+        & .active {
+          font-weight: 600;
+        }
+        &:hover,
+        :focus {
+          background-color: lighten(@cin-p02, 31%);
+        }
+      }
+    }
+  }
 }
 
-.sidebar.left .nav.nested {
-  display: none;
-}
-.sidebar.left .nav>li.active .nav.nested,
-.sidebar.left .nav>.active>.nav.nested,
-.sidebar.left .nav>.current-menu-parent>.nav.nested  {
-  display: block;
+@media (min-width: @screen-md-min) {
+  .main-tertiary {
+    > .sidebar {
+      display: block;
+    }
+    /* Widen the fixed sidebar */
+    >  .sidebar.affix,
+    .sidebar.affix-bottom {
+      width: 204px;
+    }
+    >  .sidebar.affix {
+      position: fixed;
+      top: 100px;
+    }
+    >  .sidebar.affix-bottom {
+      position: absolute; /* Undo the static from mobile first approach */
+    }
+  }
 }
 
-.sidebar.left .nav>.current-page-parent .mdi-chevron-right:before,
-.sidebar.left .nav>.active .mdi-chevron-right:before {
-  content: "\F140";
+
+@media (min-width: @screen-lg-min) {
+  /* Widen the fixed sidebar */
+  .main-tertiary {
+    >  .sidebar.affix,
+    .sidebar.affix-bottom {
+      width: 18.25%;
+    }
+  }
 }
 
-.sidebar.left .nav.nested a {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 55px; //was 35px, added 20px
-}
 
-.sidebar.left .current-menu-parent {
-  background-color: lighten(@cin-p02, 38%);
-}
-.sidebar.left .current_page_item.active>a {
-  background-color: lighten(@cin-p02, 31%);
-  border-left: 5px solid @cin-p02;
-  color: darken(@cin-p02, 15%);
-  font-weight: 600;
-  padding-left: 50px;
-}
+
 
 /***************************************
-main-secondary
+main-primary
 */
 
 
@@ -339,6 +413,36 @@ h1 .current_page_child {
 main-primary main-primary-container
 */
 
+//Grid for Michael
+
+#fluidGridSystem .row {
+  margin-bottom: 10px;
+  > div:nth-of-type(odd){
+    background-color: @bc-sp03-40;
+    & .fluidGridSystem-col:first-child {
+      background-color: @bc-s03-40;
+      text-align: center;
+      padding: 15px 0;
+    }
+  }
+  > div:nth-of-type(even) {
+    background-color: @bc-sp03-20;
+
+    & .fluidGridSystem-col:last-of-type {
+      background-color: @bc-s03-20;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+  }
+}
+
+
+
+.tab-col {
+  height: 50px;
+  background-color: @bc-s03-20;
+}
 
 .main-primary h4 {
   color: @bc-s02-80;
@@ -697,51 +801,6 @@ script[type='text/plain'].language-markup {
 
 
 
-
-.sidebar.right {
-  display: none;
-  border-left: 1px solid @bc-s02-20;
-  margin-left: 20px;
-  padding-left: 20px;
-}
-
-span.sidebar-title {
-  margin-left: 15px;
-}
-
-@media (min-width: @screen-md-min) {
-  .sidebar.right {
-    display: block;
-  }
-}
-
-/* Show and affix the side nav when space allows it */
-@media (min-width: @screen-md-min) {
-  /* Widen the fixed sidebar */
-  .sidebar.right.affix,
-  .sidebar.right.affix-bottom {
-    width: 204px;
-  }
-  .sidebar.right.affix {
-    position: fixed;
-    top: 100px;
-  }
-  .sidebar.right.affix-bottom {
-    position: absolute; /* Undo the static from mobile first approach */
-  }
-}
-@media (min-width: @screen-lg-min) {
-  /* Widen the fixed sidebar */
-  .sidebar.right.affix,
-  .sidebar.right.affix-bottom {
-    width: 18.25%;
-  }
-}
-
-.sidebar.right a.active,
-.sidebar.right li.active {
-  font-weight: 600;
-}
 
 
 
