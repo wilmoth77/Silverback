@@ -7,17 +7,14 @@
 * @package Silverback
 */
 get_header(); ?>
-<main class="content-area" role="main">
-
-  <div id="primary" class="container-fluid">
-    <div class="row">
+<main id="silverback-main" class="content-area" role="main">
+<div class="gorilla-nest">
       <?php
       while ( have_posts() ) : the_post();
       get_template_part( 'template-parts/content', 'documentation' );
       endwhile; // End of the loop.
       ?>
     </div>
-  </div>
 </main>
 <!-- #primary -->
 <?php get_footer();?>

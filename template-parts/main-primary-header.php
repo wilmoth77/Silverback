@@ -6,7 +6,7 @@
 */
 ?>
 
-<div class="main-header">
+<div class="main-primary-header">
   <div class="header-colorbar">
     <div>
       <div class="colorbar-item-1"></div>

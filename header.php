@@ -25,7 +25,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <header role="banner">
+  <header id="silverback-header" role="banner">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">

@@ -5,28 +5,23 @@
 * @package Silverback
 */
 ?>
-<div class="primary-secondary col-sm-3 col-md-2">
+<div class="main-secondary">
   <?php get_template_part( 'template-parts/sidebar', 'secondary' ); ?>
 </div>
-<?php if( get_field('nav_menu') ): ?>
-<div class="primary-main has-tertiary col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ">
-  <?php get_template_part( 'template-parts/primary-main', 'header' ); ?>
-  <div class="row">
-      <div class="primary-main-container ">
+<div class="main-primary">
+  <?php get_template_part( 'template-parts/main-primary', 'header' ); ?>
+  <div class="gorilla-nest">
+    <?php if( get_field('nav_menu') ): ?>
+      <div class="main-primary-container has-tertiary ">
         <?php the_content(); ?>
       </div>
-      <div class="primary-tertiary col-md-3">
+      <div class="main-tertiary">
         <?php get_template_part( 'template-parts/sidebar', 'tertiary' ); ?>
       </div>
-</div>
-</div>
-<?php else: ?>
-  <div class="primary-main col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 ">
-    <?php get_template_part( 'template-parts/primary-main', 'header' ); ?>
-    <div class="row">
-        <div class="primary-main-container ">
-          <?php the_content(); ?>
-        </div>
+    <?php else: ?>
+      <div class="main-primary-container">
+        <?php the_content(); ?>
+      </div>
+      <?php endif; ?>
+    </div>
   </div>
-  </div>
-<?php endif; ?>

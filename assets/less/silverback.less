@@ -1,6 +1,31 @@
 @import "mixins/buttons";         // Button constructs
 @import "components/navs";        // Nav styles
 
+
+
+
+
+
+
+
+
+// Target main-primary-container for Best Case Online specific styles
+//  -Inject css??
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*******************************************************************************
 slvrbck docs
 */
@@ -46,64 +71,192 @@ section.panel-examples .panel {
 }
 
 #slvrbck-example-modal.modal {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    z-index: 1;
-    display: block;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: block;
 }
 h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
   //font-weight: 400;
 }
 
 
+/*******************************************************************************
+<header>
+navbar.less
+*/
+#silverback-header {
+  & .navbar {
+    margin-bottom: 0;
+  }
+
+  & .navbar-inverse {
+    background-color: @cin-p02;
+    border-color: transparent;
+  }
+
+  & .navbar-inverse .navbar-nav>li>a,
+  .navbar-inverse .navbar-brand {
+    color:  darken(@white, 15%);;
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  #silverback-header {
+    & .navbar {
+      border-radius: 0;
+    }
+  }
+}
 
 /*******************************************************************************
-Primary-Main Main Header
+<main>
 */
+
+#silverback-main {
+  &:extend(.container-fluid all);
+  & .gorilla-nest {
+    .make-row();
+  }
+}
+
+/***************************************
+main-secondary
+*/
+
+.main-secondary {
+  display: none;
+}
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
-  .primary-main {
+  .main-secondary {
+    .make-sm-column(3);
+    .make-md-column(2);
+    position: fixed;
+    top: 52px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #fff;
+    border-right: 1px solid #eee;
+  }
+}
+
+/***************************************
+navs.less
+*/
+nav.sidebar.left {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+nav.sidebar.left  li a {
+  padding: 10px 35px;
+  color: @bc-s02;
+}
+
+.sidebar.left .nav.nested {
+  display: none;
+}
+.sidebar.left .nav>li.active .nav.nested,
+.sidebar.left .nav>.active>.nav.nested,
+.sidebar.left .nav>.current-menu-parent>.nav.nested  {
+  display: block;
+}
+
+.sidebar.left .nav>.current-page-parent .mdi-chevron-right:before,
+.sidebar.left .nav>.active .mdi-chevron-right:before {
+  content: "\F140";
+}
+
+.sidebar.left .nav.nested a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 55px; //was 35px, added 20px
+}
+
+.sidebar.left .current-menu-parent {
+  background-color: lighten(@bc-sp06, 1%);
+}
+.sidebar.left .current_page_item.active>a {
+  background-color: @bc-sp01-20;
+  border-left: 5px solid @bc-sp01-80;
+  color: @bc-sp01;
+  padding-left: 50px;
+}
+
+/***************************************
+main-secondary
+*/
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .main-primary {
+    .make-sm-column(9);
+    .make-sm-column-offset(1);
+    .make-md-column(10);
+    .make-md-column-offset(2);
     padding-left: 100px;
   }
 }
 
-/*******************************************************************************
-Primary-Main Main Header
-*/
-.main-header {
-  margin: 0 -15px 30px -15px;
-  padding: 25px 15px 10px 15px;
-  background-color: #fff;
-  @shadow: @dropshadow;
-  .box-shadow(@shadow);
+.main-primary {
+  & .main-primary-header {
+    margin: 0 -15px 30px -15px;
+    padding: 25px 15px 10px 15px;
+    background-color: #fff;
+    @shadow: @dropshadow;
+    .box-shadow(@shadow);
+
+    & .entry-title h6 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      display: none;
+    }
+
+    & .entry-title h1 {
+      margin-top: 0;
+      text-transform: lowercase;
+    }
+  }
+
+  & .main-primary-container {
+    .make-md-column(12);
+    max-width: 1170px; //set a max-width when there is no right sidebar
+
+    &.has-tertiary {
+      .make-md-column(9);
+      max-width: none;
+    }
+  }
+
+  & .main-tertiary {
+    .make-md-column(3);
+  }
 }
+
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
-  .main-header {
-    margin: 0 -15px 30px -100px;
-    padding: 25px 25px 10px 85px;
+  .main-primary {
+    .main-primary-header {
+      margin: 0 -15px 30px -100px;
+      padding: 25px 25px 10px 85px;
+
+      & .entry-title h6 {
+        display: block;
+      }
+    }
   }
 }
 
-.main-header .entry-title h6 {
-  margin-top: 0;
-  margin-bottom: 6px;
-  display: none;
-}
-@media (min-width: @screen-sm-min) {
-  .main-header .entry-title h6 {
-    display: block;
-  }
-}
-.main-header .entry-title h1 {
-  margin-top: 0;
-  text-transform: lowercase;
-}
 
 
 h1 .parent_page,
@@ -172,18 +325,11 @@ h1 .current_page_child {
 
 
 /*******************************************************************************
-Primary-Main primary-main-container
+main-primary main-primary-container
 */
-.primary-main-container {
-  .make-md-column(12);
-  max-width: 1170px; //set a max-width when there is no right sidebar
-}
-.primary-main.has-tertiary .primary-main-container {
-  .make-md-column(9);
-  max-width: none;
-}
 
-.primary-main h4 {
+
+.main-primary h4 {
   color: @bc-s02-80;
 }
 
@@ -502,29 +648,7 @@ p.line-height-example {
 }
 
 
-/*******************************************************************************
-primary-secondary sidebar
-*/
 
-.primary-secondary {
-  display: none;
-}
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) {
-  .primary-secondary {
-    position: fixed;
-    top: 52px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #fff;
-    border-right: 1px solid #eee;
-  }
-}
 
 
 
@@ -533,7 +657,7 @@ prism.less Overrides
 //keep seperate from Prism.less
 */
 
-.primary-main pre {
+.main-primary pre {
   position: relative;
   padding: 35px 15px 30px;
 }
@@ -560,71 +684,8 @@ script[type='text/plain'].language-markup {
 }
 
 
-/*******************************************************************************
-navbar.less
-*/
 
-.navbar {
-  margin-bottom: 0;
-}
 
-.navbar-inverse {
-  background-color: @cin-p02;
-  border-color: transparent;
-}
-
-.navbar-inverse .navbar-nav>li>a,
-.navbar-inverse .navbar-brand {
-  color:  darken(@white, 15%);;
-}
-
-@media (min-width: @screen-sm-min) {
-  .navbar {
-    border-radius: 0;
-  }
-}
-
-/*******************************************************************************
-navs.less
-*/
-nav.sidebar.left {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-nav.sidebar.left  li a {
-  padding: 10px 35px;
-  color: @bc-s02;
-}
-
-.sidebar.left .nav.nested {
-  display: none;
-}
-.sidebar.left .nav>li.active .nav.nested,
-.sidebar.left .nav>.active>.nav.nested,
-.sidebar.left .nav>.current-menu-parent>.nav.nested  {
-  display: block;
-}
-
-.sidebar.left .nav>.current-page-parent .mdi-chevron-right:before,
-.sidebar.left .nav>.active .mdi-chevron-right:before {
-  content: "\F140";
-}
-
-.sidebar.left .nav.nested a {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 55px; //was 35px, added 20px
-}
-
-.sidebar.left .current-menu-parent {
-  background-color: lighten(@bc-sp06, 1%);
-}
-.sidebar.left .current_page_item.active>a {
-  background-color: @bc-sp01-20;
-  border-left: 5px solid @bc-sp01-80;
-  color: @bc-sp01;
-  padding-left: 50px;
-}
 
 .sidebar.right {
   display: none;

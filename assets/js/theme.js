@@ -45,6 +45,9 @@
           if ( $('body').hasClass('modal') ) {
             $('body').removeClass('modal');
           }
+          if ( $('body').hasClass('pagination') ) {
+            $('body').removeClass('pagination');
+          }
         });
 
         $('.sidebar.right').affix({
