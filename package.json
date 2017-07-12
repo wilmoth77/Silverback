@@ -10,17 +10,18 @@
     "url": "https://github.com/wilmoth77/Silverback---WP"
   },
   "devDependencies": {
+    "bootstrap": "^3.3.7",
     "grunt": "latest",
-    "load-grunt-tasks": "latest",
-    "time-grunt": "latest",
+    "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-jshint": "latest",
     "grunt-contrib-less": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-contrib-jshint": "latest",
-    "grunt-contrib-copy": "latest",
     "less-plugin-autoprefix": "latest",
-    "bootstrap": "^3.3.7"
+    "load-grunt-tasks": "latest",
+    "time-grunt": "latest"
   },
   "keywords": [
     "Underscores",

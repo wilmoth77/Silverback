@@ -3471,10 +3471,6 @@ Prism.hooks.add('wrap', function(env) {
             e.preventDefault();
             $(this).tab('show');
           });
-          $('body').scrollspy({ target: '.sidebar.right' });
-          $('body').each(function () {
-            var $spy = $(this).scrollspy('refresh');
-          });
         });
 
         $(function(){

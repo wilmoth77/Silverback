@@ -19,7 +19,7 @@ $Silverback_includes = array(
   'inc/theme.php',                  // My temp php file while dividing these up
   'inc/nav_walker_bootstrap.php',  // Register Custom Navigation Walker
   'inc/nav_walker_sidebar.php',  // Register Custom Navigation Walker for sidemenu
-  'inc/nav_walker_sidebar_soil.php'  // Register Custom Navigation Walker for sidemenu
+  'inc/nav_walker_sidebar_tertiary.php',  // Register Custom Navigation Walker for sidemenu
 );
 
 foreach ($Silverback_includes as $file) {

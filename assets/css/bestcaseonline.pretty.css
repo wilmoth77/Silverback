@@ -470,7 +470,7 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 31px;
+  font-size: 32px;
 }
 h2,
 .h2,
@@ -7621,6 +7621,12 @@ fieldset[disabled] .btn-ghost-danger.focus {
   background-color: #757981;
   border-color: transparent;
 }
+.btn + .btn,
+.btn + .btn,
+button + button,
+button + button {
+  margin-left: 10px;
+}
 /*******************************************************************************
 Extend panels.less
 */
@@ -7784,7 +7790,6 @@ alerts.less (notifications)
 tabs.less
 */
 .nav-tabs > li > a {
-  padding: 5px 15px;
   font-size: 13px;
   border-bottom-color: #1bbcb6;
   border-radius: 0;

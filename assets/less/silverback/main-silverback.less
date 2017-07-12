@@ -1,5 +1,5 @@
-// Bootstrap
-@import "../bootstrap";
+@import "../bootstrap";          // Bootstrap
+@import "../prism.less";         // Prism.js styles
 
 @import "mixins/buttons";         // Button constructs
 @import "components/navs";        // Nav styles
@@ -225,8 +225,8 @@ navbar.less
       .navbar-nav>.current-page-ancestor>a:focus{
         color: @white;
         background-color: lighten(@cin-p01, 3%);
-        border-bottom: 5px solid lighten(@cin-p02, 1%);
-        padding-bottom: 8px;
+        border-top: 4px solid lighten(@cin-p02, 1%);
+        padding-top: 9px;
       }
   }
 }
@@ -337,7 +337,11 @@ main-tertiary
       margin-left: 15px;
       font-size: @font-size-h4 - 4;
     }
-
+/* Add this if you want to do something with the nested tertiary nav
+    & .nav.nested a {
+      padding-left: 15px;
+    }
+*/
     & li {
       &.active {
         font-weight: 600;

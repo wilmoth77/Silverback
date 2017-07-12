@@ -26,52 +26,65 @@ module.exports = function(grunt) {
   // Initialize configuration object
   grunt.initConfig({
 
-    // Less tasks
+    //Delete existing CSS
+    clean: {
+      contents: ['./public/css/*', './assets/css/*'],
+    },
+
+    //Less tasks
     less: {
-      development: {
-        files: {
-          "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
-          "./public/css/prism.min.css":"./assets/less/prism.less",
-          //"./public/css/main.min.css":"./assets/less/main.less",
-          "./public/css/silverback.min.css":"./assets/less/silverback/main-silverback.less",
-          "./public/css/bestcaseonline.min.css":"./assets/less/troops/bestcaseonline/main-bestcaseonline.less",
-        },
-        options: {
-          compress: true,
-          sourceMap: true,
-          sourceMapFilename: 'assets/css/main.css.map',
-          sourceMapRootpath: '/wp-content/themes/Silverback/',
-          sourceMapURL: '/wp-content/themes/Silverback/assets/css/main.css.map'
-        },
-        plugins: [
-          new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
-        ],
+    dev_one: {
+      options: {
+        compress: true,
+        sourceMap: true,
+        sourceMapFilename: 'assets/css/silverback.css.map',
+        sourceMapRootpath: '/wp-content/themes/silverback/',
+        sourceMapURL: '/wp-content/themes/silverback/assets/css/silverback.css.map'
       },
-      pretty: {
+      plugins: [
+        new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
+      ],
         files: {
-          "./assets/css/bestcaseonline.pretty.css":"./assets/less/bestcaseonline.pretty.less",
-        },
-        plugins: [
-          new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
-        ],
+            "./public/css/silverback.min.css":"./assets/less/silverback/main-silverback.less",
+        }
+    },
+    dev_two: {
+      options: {
+        compress: true,
+        sourceMap: true,
+        sourceMapFilename: 'assets/css/bestcaseonline.css.map',
+        sourceMapRootpath: '/wp-content/themes/silverback/',
+        sourceMapURL: '/wp-content/themes/silverback/assets/css/bestcaseonline.css.map'
       },
-      dist: {
+      plugins: [
+        new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
+      ],
         files: {
-          "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
-          "./public/css/prism.min.css":"./assets/less/prism.less",
-          //"./public/css/main.min.css":"./assets/less/main.less",
-          "./public/css/silverback.min.css":"./assets/less/silverback/main-silverback.less",
-          "./public/css/bestcaseonline.min.css":"./assets/less/silverback/troops/bestcaseonline/main-bestcaseonline.less"
-        },
-        options: {
-          compress: true,
-          sourceMap: false
-        },
-        plugins: [
-          new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
-        ],
+            "./public/css/bestcaseonline.min.css":"./assets/less/troops/bestcaseonline/main-bestcaseonline.less",
+        }
+    },
+    pretty: {
+      files: {
+        "./assets/css/bestcaseonline.pretty.css":"./assets/less/bestcaseonline.pretty.less",
+      },
+      plugins: [
+        new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
+      ],
+    },
+    dist: {
+      options: {
+        compress: true,
+      },
+      plugins: [
+        new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
+      ],
+      files: {
+        "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
+        "./public/css/silverback.min.css":"./assets/less/silverback/main-silverback.less",
+        "./public/css/bestcaseonline.min.css":"./assets/less/silverback/troops/bestcaseonline/main-bestcaseonline.less"
       },
     },
+},
 
 
     // Concatenate and minify
@@ -151,8 +164,8 @@ module.exports = function(grunt) {
 
   });
   // Compile tasks
-     grunt.registerTask('compile', ['concat', 'less:development', 'less:pretty', 'uglify', 'jshint', 'copy']);
-     grunt.registerTask('build', ['concat', 'less:dist', 'uglify', 'jshint', 'copy']);
+  grunt.registerTask('compile', ['clean', 'concat', 'less:dev_one', 'less:dev_two', 'less:pretty', 'uglify', 'jshint', 'copy']);
+  grunt.registerTask('build', ['clean','concat', 'less:dist', 'uglify', 'jshint', 'copy']);
   // Set default task
   grunt.registerTask('default', ['watch']);
 };

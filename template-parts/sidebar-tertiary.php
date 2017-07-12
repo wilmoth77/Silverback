@@ -24,7 +24,7 @@ wp_nav_menu( array(
   'menu_id'           => false,
   'menu_class'        => 'nav nav-sidebar documentation',
   'fallback_cb'       => 'nav_walker_sidebar::fallback',
-  'walker'            => new nav_walker_sidebar()
+  'walker'            => new nav_walker_sidebar_tertiary()
   )
 );
 
