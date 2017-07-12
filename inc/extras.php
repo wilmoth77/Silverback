@@ -26,9 +26,15 @@ add_filter( 'wp_page_menu_args', 'slvrbk_page_menu_args' );
  * @return array
  */
 function slvrbk_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
+	// Adds a class based on conditionals
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
+	}
+	elseif (is_tree(7)) {
+		$classes[] = 'bestcaseonline';
+	}
+	elseif (is_tree(57)) {
+		$classes[] = 'clientportal';
 	}
 
 	return $classes;

@@ -1,0 +1,286 @@
+<section class="sb-docs-section intro">
+  <header>
+    <h2 class="section-intro-heading">Panel</h2>
+    <p>A panel is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.</p>
+  </header>
+    <p>Basic panels have no fixed width, so they'll naturally fill the full width of their parent element.</p>
+</section>
+  <section id="rio-panel" class="sb-docs-section">
+    <h3 class="section-heading">Rio Panel</h3>
+    <section id="rio-panel-example" class="sb-docs-subsection">
+    <h4 class="section-subheading">Panel example</h4>
+    <p>For the Rio Panel we start with the basic markup of the <a href="http://getbootstrap.com/components/#panels" title="Bootstrap v3 Docs - Panel" target="_blank">Bootstrap panel</a>, then extend the panel by replacing the
+    <code>.panel-default</code> class with <code>.panel-rio</code>. Next, we add a <code>.panel-heading-content</code> <code>div</code> to the <code>.panel-heading</code> container. This new <code>div</code><code>div</code>, and it's children <code>.heading-content-left</code>
+  and <code>.heading-content-right</code> give us the markup for the possible headings of the Rio Panel. Similarly, we add a <code>.panel-footer-content</code> <code>div</code> to the <code>.panel-footer</code> container. This new <code>div</code>, and it's children <code>.footer-content-left</code>
+and <code>.footer-content-right</code> give us the markup for the possible footers of the Rio Panel.</p>
+  <section class="section-example">
+    <div class="example-container">
+      <div class="example-container-body">
+        <div class="panel panel-rio">
+          <div class="panel-heading">
+            <div class="panel-heading-content">
+              <div class="heading-content-left">
+                <h3 class="panel-title">Panel Title</h3>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <p>Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+          </div>
+          <div class="panel-footer">
+            <div class="panel-footer-content">
+              <div class="footer-content-left">
+                <button type="button" class="btn btn-primary">Primary</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="example-container-footer">
+        <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#basic-panel-code" aria-expanded="false" aria-controls="basic-panel-code">
+          View code
+        </button>
+        <div class="collapse" id="basic-panel-code">
+              <div class="prismjs-code">
+                  <h4>HTML</h4>
+        <pre class="snippet">
+        <code class="language-markup"><!--<div class="panel panel-rio">
+          <div class="panel-heading">
+            <div class="panel-heading-content">
+              <div class="heading-content-left">
+                <h3 class="panel-title">Panel Title</h3>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <p>Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+          </div>
+          <div class="panel-footer">
+            <div class="panel-footer-content">
+              <div class="footer-content-left">
+                <button type="button" class="btn btn-primary">Primary</button>
+              </div>
+            </div>
+          </div>
+        </div>--></code>
+              </pre>
+              </div>
+              <div class="prismjs-code">
+              <h4>Less</h4>
+        <pre class="snippet">
+        <code class="language-less">.panel-rio {
+          border: 1px solid @bc-s02-20;
+          border-top: 5px solid @bc-p01;
+          @shadow: none;
+          .box-shadow(@shadow);
+
+          > .panel-heading,
+          .panel-footer {
+            background-color: transparent;
+            border-color: transparent;
+          }
+
+          > .panel-heading {
+            & .panel-title {
+              font-size: @font-size-h3 + 1;
+            }
+            & .panel-heading-content {
+              .make-row ();
+              & > .heading-content-left,
+              > .heading-content-right {
+                .make-sm-column (6);
+              }
+              & > div:first-of-type:last-of-type {
+                .make-sm-column (12);
+              }
+            }
+          }
+
+          > .panel-footer {
+            padding: 20px 30px;
+            border-top-color: @bc-s02-20;
+            & .panel-footer-content {
+              .make-row();
+              > .footer-content-left,
+                .footer-content-right {
+                .make-sm-column (6);
+              }
+              > div:first-of-type:last-of-type {
+                .make-sm-column (12);
+              }
+            }
+          }
+        }
+
+        //Small devices (tablets, 768px and up)
+        @media (min-width: @screen-sm-min) {
+          .panel-rio {
+            & .panel-heading-content .heading-content-right,
+              .panel-footer-content .footer-content-right {
+              text-align: right;
+            }
+          }
+        }
+
+        //Medium devices (desktops, 992px and up)
+        @media (min-width: @screen-md-min) {
+          .panel-rio {
+            > .panel-heading,
+              .panel-body {
+              padding: 30px;
+            }
+
+            > .panel-heading+.panel-body {
+              padding-top: 0px;
+            }
+          }
+        }</code>
+        </pre>
+            </div>
+              <div class="prismjs-code">
+                <h4>CSS</h4>
+          <pre class="snippet">
+          <code class="language-css">.panel-rio {
+            border: 1px solid #d6dbdc;
+            border-top: 5px solid #1a202e;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+          }
+          .panel-rio > .panel-heading,
+          .panel-rio .panel-footer {
+            background-color: transparent;
+            border-color: transparent;
+          }
+          .panel-rio > .panel-heading .panel-title {
+            font-size: 19px;
+          }
+          .panel-rio > .panel-heading .panel-heading-content {
+            margin-left: -15px;
+            margin-right: -15px;
+          }
+          .panel-rio > .panel-heading .panel-heading-content > .heading-content-left,
+          .panel-rio > .panel-heading .panel-heading-content > .heading-content-right {
+            position: relative;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+          @media (min-width: 768px) {
+            .panel-rio > .panel-heading .panel-heading-content > .heading-content-left,
+            .panel-rio > .panel-heading .panel-heading-content > .heading-content-right {
+              float: left;
+              width: 50%;
+            }
+          }
+          .panel-rio > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
+            position: relative;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+          @media (min-width: 768px) {
+            .panel-rio > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
+              float: left;
+              width: 100%;
+            }
+          }
+          .panel-rio > .panel-footer {
+            padding: 20px 30px;
+            border-top-color: #d6dbdc;
+          }
+          .panel-rio > .panel-footer .panel-footer-content {
+            margin-left: -15px;
+            margin-right: -15px;
+          }
+          .panel-rio > .panel-footer .panel-footer-content > .footer-content-left,
+          .panel-rio > .panel-footer .panel-footer-content .footer-content-right {
+            position: relative;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+          @media (min-width: 768px) {
+            .panel-rio > .panel-footer .panel-footer-content > .footer-content-left,
+            .panel-rio > .panel-footer .panel-footer-content .footer-content-right {
+              float: left;
+              width: 50%;
+            }
+          }
+          .panel-rio > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
+            position: relative;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+          @media (min-width: 768px) {
+            .panel-rio > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
+              float: left;
+              width: 100%;
+            }
+          }
+          @media (min-width: 768px) {
+            .panel-rio .panel-heading-content .heading-content-right,
+            .panel-rio .panel-footer-content .footer-content-right {
+              text-align: right;
+            }
+          }
+          @media (min-width: 992px) {
+            .panel-rio > .panel-heading,
+            .panel-rio .panel-body {
+              padding: 30px;
+            }
+            .panel-rio > .panel-heading + .panel-body {
+              padding-top: 0px;
+            }
+          }</code>
+          </pre>
+        </div>
+        </div>
+      </div>
+    </div><!--/section-example-container-->
+  </section><!--/section-example-->
+</section><!--/rio-panel-example-->
+  <section id="rio-panel-heading" class="sb-docs-subsection">
+    <h4 class="section-subheading">Heading types</h4>
+    <section id="rio-panel-heading-basic">
+    <h5 class="section-subheading">Basic heading</h5>
+    <p>The basic heading of the Rio Panel has a <code>.heading-content-left</code> container with a <code>.panel-title</code> element.</p>
+    <section class="section-example">
+      <div class="example-container">
+        <div class="example-container-body">
+          <div class="panel panel-rio">
+            <div class="panel-heading">
+              <div class="panel-heading-content">
+                <div class="heading-content-left">
+                  <h3 class="panel-title">Panel Title</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="example-container-footer">
+          <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#basic-heading-code" aria-expanded="false" aria-controls="basic-heading-code">
+            View code
+          </button>
+          <div class="collapse" id="basic-heading-code">
+            <div class="prismjs-code">
+              <h4>HTML</h4>
+              <pre class="snippet">
+                <code class="language-markup"><!--<div class="panel panel-rio">
+                  <div class="panel-heading">
+                    <div class="panel-heading-content">
+                      <div class="heading-content-left">
+                        <h3 class="panel-title">Panel Title</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>--></code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div><!--/.section-example-container-->
+    </section><!--/.section-example-->
+  </section><!--/#rio-panel-heading-basic-->
+</section><!--/#rio-panel-heading-->
+</section><!--/#rio-panel-->

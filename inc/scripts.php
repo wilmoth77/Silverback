@@ -9,14 +9,22 @@
 
 function Silverback_scripts() {
     $assets = array(
-      'css'       => '/public/css/main.min.css',
+      //'css'       => '/public/css/main.min.css',
+      'bestcaseonline'     => '/public/css/bestcaseonline.min.css',
+      'silverback'     => '/public/css/silverback.min.css',
       'prism'     => '/public/css/prism.min.css',
       'clipboard'    => '/public/js/clipboard.min.js',
       'script'    => '/public/js/script.min.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
     );
     wp_enqueue_style('prism-style', get_stylesheet_directory_uri() . $assets['prism'], false, filemtime( get_stylesheet_directory() . '/public/css/prism.min.css' ), 'all');
-    wp_enqueue_style('main-style', get_stylesheet_directory_uri() . $assets['css'], false, filemtime( get_stylesheet_directory() . '/public/css/main.min.css' ), 'all');
+    //wp_enqueue_style('main-style', get_stylesheet_directory_uri() . $assets['css'], false, filemtime( get_stylesheet_directory() . '/public/css/main.min.css' ), 'all');
+    wp_enqueue_style('silverback', get_stylesheet_directory_uri() . $assets['silverback'], false, filemtime( get_stylesheet_directory() . '/public/css/silverback.min.css' ), 'all');
+
+    if (is_tree(7)) { //enqueue the Best Case Online stylesheet if it's a Best Case page only
+    wp_enqueue_style('bestcaseonline', get_stylesheet_directory_uri() . $assets['bestcaseonline'], false, filemtime( get_stylesheet_directory() . '/public/css/bestcaseonline.min.css' ), 'all');
+    }
+
 
    /**
    * jQuery is loaded using the same method from HTML5 Boilerplate:

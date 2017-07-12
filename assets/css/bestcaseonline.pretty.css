@@ -1,5 +1,5 @@
 /*
-    main.less - Is compiled and minified for production to /public/css/main.min.css
+    bestcaseonline.pretty.less - Is compiled with bootstrap to /assets/css/bestcaseonline.pretty.css
 */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -239,28 +239,6 @@ th {
   .dropup > .btn > .caret,
   .btn > .caret,
   .dropup > .btn > .caret,
-  button > .caret,
-  .dropup > button > .caret,
-  .btn > .caret,
-  .dropup > .btn > .caret,
-  button > .caret,
-  .dropup > button > .caret,
-  .btn > .caret,
-  .dropup > .btn > .caret,
-  button > .caret,
-  .dropup > button > .caret,
-  button > .caret,
-  .dropup > button > .caret,
-  .btn > .caret,
-  .dropup > .btn > .caret,
-  button > .caret,
-  .dropup > button > .caret,
-  button > .caret,
-  .dropup > button > .caret,
-  button > .caret,
-  .dropup > button > .caret,
-  button > .caret,
-  .dropup > button > .caret,
   button > .caret,
   .dropup > button > .caret,
   button > .caret,
@@ -519,16 +497,14 @@ h6,
 p {
   margin: 0 0 12px;
 }
-.lead,
-.section-page-heading + p {
+.lead {
   margin-bottom: 24px;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.4;
 }
 @media (min-width: 768px) {
-  .lead,
-  .section-page-heading + p {
+  .lead {
     font-size: 21px;
   }
 }
@@ -566,7 +542,6 @@ mark,
   text-transform: capitalize;
 }
 .text-muted,
-.hint,
 .hint {
   color: #777777;
 }
@@ -834,8 +809,7 @@ pre code {
     width: 1170px;
   }
 }
-.container-fluid,
-#silverback-main {
+.container-fluid {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
@@ -1774,7 +1748,7 @@ input[type="checkbox"]:focus {
 }
 output {
   display: block;
-  padding-top: 7px;
+  padding-top: 5px;
   font-size: 14px;
   line-height: 1.71428571;
   color: #555555;
@@ -1782,15 +1756,15 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 38px;
-  padding: 6px 15px;
+  height: 34px;
+  padding: 4px 15px;
   font-size: 14px;
   line-height: 1.71428571;
   color: #555555;
   background-color: #fff;
   background-image: none;
   border: 1px solid #d6dbdc;
-  border-radius: 4px;
+  border-radius: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -1798,10 +1772,10 @@ output {
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
-  border-color: #66afe9;
+  border-color: #1bbcb6;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(27, 188, 182, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(27, 188, 182, 0.6);
 }
 .form-control::-moz-placeholder {
   color: #999;
@@ -1838,7 +1812,7 @@ input[type="search"] {
   input[type="time"].form-control,
   input[type="datetime-local"].form-control,
   input[type="month"].form-control {
-    line-height: 38px;
+    line-height: 34px;
   }
   input[type="date"].input-sm,
   input[type="time"].input-sm,
@@ -1927,8 +1901,8 @@ fieldset[disabled] .checkbox label {
   cursor: not-allowed;
 }
 .form-control-static {
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   margin-bottom: 0;
   min-height: 38px;
 }
@@ -1942,7 +1916,7 @@ fieldset[disabled] .checkbox label {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 0;
 }
 select.input-sm {
   height: 30px;
@@ -1957,7 +1931,7 @@ select[multiple].input-sm {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 0;
 }
 .form-group-sm select.form-control {
   height: 30px;
@@ -1979,7 +1953,7 @@ select[multiple].input-sm {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
-  border-radius: 6px;
+  border-radius: 0;
 }
 select.input-lg {
   height: 46px;
@@ -1994,7 +1968,7 @@ select[multiple].input-lg {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
-  border-radius: 6px;
+  border-radius: 0;
 }
 .form-group-lg select.form-control {
   height: 46px;
@@ -2015,7 +1989,7 @@ select[multiple].input-lg {
   position: relative;
 }
 .has-feedback .form-control {
-  padding-right: 47.5px;
+  padding-right: 42.5px;
 }
 .form-control-feedback {
   position: absolute;
@@ -2023,9 +1997,9 @@ select[multiple].input-lg {
   right: 0;
   z-index: 2;
   display: block;
-  width: 38px;
-  height: 38px;
-  line-height: 38px;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
   text-align: center;
   pointer-events: none;
 }
@@ -2201,11 +2175,11 @@ select[multiple].input-lg {
 .form-horizontal .checkbox-inline {
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 7px;
+  padding-top: 5px;
 }
 .form-horizontal .radio,
 .form-horizontal .checkbox {
-  min-height: 31px;
+  min-height: 29px;
 }
 .form-horizontal .form-group {
   margin-left: -15px;
@@ -2215,7 +2189,7 @@ select[multiple].input-lg {
   .form-horizontal .control-label {
     text-align: right;
     margin-bottom: 0;
-    padding-top: 7px;
+    padding-top: 5px;
   }
 }
 .form-horizontal .has-feedback .form-control-feedback {
@@ -2236,17 +2210,6 @@ select[multiple].input-lg {
 .btn,
 .btn,
 button,
-.btn,
-button,
-.btn,
-button,
-button,
-.btn,
-button,
-button,
-button,
-button,
-button,
 button {
   display: inline-block;
   margin-bottom: 0;
@@ -2258,10 +2221,10 @@ button {
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
-  padding: 6px 15px;
+  padding: 4px 15px;
   font-size: 14px;
   line-height: 1.71428571;
-  border-radius: 0px;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2279,72 +2242,6 @@ button {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus,
-button:focus,
-button:active:focus,
-button.active:focus,
-button.focus,
-button:active.focus,
-button.active.focus,
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus,
-button:focus,
-button:active:focus,
-button.active:focus,
-button.focus,
-button:active.focus,
-button.active.focus,
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus,
-button:focus,
-button:active:focus,
-button.active:focus,
-button.focus,
-button:active.focus,
-button.active.focus,
-button:focus,
-button:active:focus,
-button.active:focus,
-button.focus,
-button:active.focus,
-button.active.focus,
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus,
-button:focus,
-button:active:focus,
-button.active:focus,
-button.focus,
-button:active.focus,
-button.active.focus,
-button:focus,
-button:active:focus,
-button.active:focus,
-button.focus,
-button:active.focus,
-button.active.focus,
-button:focus,
-button:active:focus,
-button.active:focus,
-button.focus,
-button:active.focus,
-button.active.focus,
-button:focus,
-button:active:focus,
-button.active:focus,
-button.focus,
-button:active.focus,
-button.active.focus,
 button:focus,
 button:active:focus,
 button.active:focus,
@@ -2369,39 +2266,6 @@ button.active.focus {
 button:hover,
 button:focus,
 button.focus,
-.btn:hover,
-.btn:focus,
-.btn.focus,
-button:hover,
-button:focus,
-button.focus,
-.btn:hover,
-.btn:focus,
-.btn.focus,
-button:hover,
-button:focus,
-button.focus,
-button:hover,
-button:focus,
-button.focus,
-.btn:hover,
-.btn:focus,
-.btn.focus,
-button:hover,
-button:focus,
-button.focus,
-button:hover,
-button:focus,
-button.focus,
-button:hover,
-button:focus,
-button.focus,
-button:hover,
-button:focus,
-button.focus,
-button:hover,
-button:focus,
-button.focus,
 button:hover,
 button:focus,
 button.focus {
@@ -2412,28 +2276,6 @@ button.focus {
 .btn.active,
 .btn:active,
 .btn.active,
-button:active,
-button.active,
-.btn:active,
-.btn.active,
-button:active,
-button.active,
-.btn:active,
-.btn.active,
-button:active,
-button.active,
-button:active,
-button.active,
-.btn:active,
-.btn.active,
-button:active,
-button.active,
-button:active,
-button.active,
-button:active,
-button.active,
-button:active,
-button.active,
 button:active,
 button.active,
 button:active,
@@ -2452,39 +2294,6 @@ fieldset[disabled] .btn,
 button.disabled,
 button[disabled],
 fieldset[disabled] button,
-.btn.disabled,
-.btn[disabled],
-fieldset[disabled] .btn,
-button.disabled,
-button[disabled],
-fieldset[disabled] button,
-.btn.disabled,
-.btn[disabled],
-fieldset[disabled] .btn,
-button.disabled,
-button[disabled],
-fieldset[disabled] button,
-button.disabled,
-button[disabled],
-fieldset[disabled] button,
-.btn.disabled,
-.btn[disabled],
-fieldset[disabled] .btn,
-button.disabled,
-button[disabled],
-fieldset[disabled] button,
-button.disabled,
-button[disabled],
-fieldset[disabled] button,
-button.disabled,
-button[disabled],
-fieldset[disabled] button,
-button.disabled,
-button[disabled],
-fieldset[disabled] button,
-button.disabled,
-button[disabled],
-fieldset[disabled] button,
 button.disabled,
 button[disabled],
 fieldset[disabled] button {
@@ -2500,54 +2309,39 @@ a.btn.disabled,
 fieldset[disabled] a.btn,
 abutton.disabled,
 fieldset[disabled] abutton,
-a.btn.disabled,
-fieldset[disabled] a.btn,
-abutton.disabled,
-fieldset[disabled] abutton,
-a.btn.disabled,
-fieldset[disabled] a.btn,
-abutton.disabled,
-fieldset[disabled] abutton,
-abutton.disabled,
-fieldset[disabled] abutton,
-a.btn.disabled,
-fieldset[disabled] a.btn,
-abutton.disabled,
-fieldset[disabled] abutton,
-abutton.disabled,
-fieldset[disabled] abutton,
-abutton.disabled,
-fieldset[disabled] abutton,
-abutton.disabled,
-fieldset[disabled] abutton,
-abutton.disabled,
-fieldset[disabled] abutton,
 abutton.disabled,
 fieldset[disabled] abutton {
   pointer-events: none;
 }
-.btn-default {
+.btn-default,
+.nav-tabs > li > a {
   color: #333333;
-  background-color: #d6dbdc;
-  border-color: #c8cfd0;
+  background-color: #eeeeee;
+  border-color: #e2e2e2;
 }
 .btn-default:focus,
-.btn-default.focus {
+.btn-default.focus,
+.nav-tabs > li > a:focus,
+.nav-tabs > li > a.focus {
   color: #333333;
-  background-color: #bac3c5;
-  border-color: #839396;
+  background-color: #d5d5d5;
+  border-color: #a2a2a2;
 }
-.btn-default:hover {
+.btn-default:hover,
+.nav-tabs > li > a:hover {
   color: #333333;
-  background-color: #bac3c5;
-  border-color: #a7b2b4;
+  background-color: #d5d5d5;
+  border-color: #c3c3c3;
 }
 .btn-default:active,
 .btn-default.active,
-.open > .dropdown-toggle.btn-default {
+.open > .dropdown-toggle.btn-default,
+.nav-tabs > li > a:active,
+.nav-tabs > li > a.active,
+.open > .dropdown-toggle.nav-tabs > li > a {
   color: #333333;
-  background-color: #bac3c5;
-  border-color: #a7b2b4;
+  background-color: #d5d5d5;
+  border-color: #c3c3c3;
 }
 .btn-default:active:hover,
 .btn-default.active:hover,
@@ -2557,14 +2351,26 @@ fieldset[disabled] abutton {
 .open > .dropdown-toggle.btn-default:focus,
 .btn-default:active.focus,
 .btn-default.active.focus,
-.open > .dropdown-toggle.btn-default.focus {
+.open > .dropdown-toggle.btn-default.focus,
+.nav-tabs > li > a:active:hover,
+.nav-tabs > li > a.active:hover,
+.open > .dropdown-toggle.nav-tabs > li > a:hover,
+.nav-tabs > li > a:active:focus,
+.nav-tabs > li > a.active:focus,
+.open > .dropdown-toggle.nav-tabs > li > a:focus,
+.nav-tabs > li > a:active.focus,
+.nav-tabs > li > a.active.focus,
+.open > .dropdown-toggle.nav-tabs > li > a.focus {
   color: #333333;
-  background-color: #a7b2b4;
-  border-color: #839396;
+  background-color: #c3c3c3;
+  border-color: #a2a2a2;
 }
 .btn-default:active,
 .btn-default.active,
-.open > .dropdown-toggle.btn-default {
+.open > .dropdown-toggle.btn-default,
+.nav-tabs > li > a:active,
+.nav-tabs > li > a.active,
+.open > .dropdown-toggle.nav-tabs > li > a {
   background-image: none;
 }
 .btn-default.disabled:hover,
@@ -2575,12 +2381,22 @@ fieldset[disabled] .btn-default:hover,
 fieldset[disabled] .btn-default:focus,
 .btn-default.disabled.focus,
 .btn-default[disabled].focus,
-fieldset[disabled] .btn-default.focus {
-  background-color: #d6dbdc;
-  border-color: #c8cfd0;
+fieldset[disabled] .btn-default.focus,
+.nav-tabs > li > a.disabled:hover,
+.nav-tabs > li > a[disabled]:hover,
+fieldset[disabled] .nav-tabs > li > a:hover,
+.nav-tabs > li > a.disabled:focus,
+.nav-tabs > li > a[disabled]:focus,
+fieldset[disabled] .nav-tabs > li > a:focus,
+.nav-tabs > li > a.disabled.focus,
+.nav-tabs > li > a[disabled].focus,
+fieldset[disabled] .nav-tabs > li > a.focus {
+  background-color: #eeeeee;
+  border-color: #e2e2e2;
 }
-.btn-default .badge {
-  color: #d6dbdc;
+.btn-default .badge,
+.nav-tabs > li > a .badge {
+  color: #eeeeee;
   background-color: #333333;
 }
 .btn-primary {
@@ -2905,17 +2721,6 @@ fieldset[disabled] .btn-link:focus {
 .btn-group-lg > .btn,
 .btn-group-lg > .btn,
 .btn-group-lg > button,
-.btn-group-lg > .btn,
-.btn-group-lg > button,
-.btn-group-lg > .btn,
-.btn-group-lg > button,
-.btn-group-lg > button,
-.btn-group-lg > .btn,
-.btn-group-lg > button,
-.btn-group-lg > button,
-.btn-group-lg > button,
-.btn-group-lg > button,
-.btn-group-lg > button,
 .btn-group-lg > button {
   padding: 10px 16px;
   font-size: 18px;
@@ -2927,17 +2732,6 @@ fieldset[disabled] .btn-link:focus {
 .modal-sm .modal-footer button,
 .btn-group-sm > .btn,
 .btn-group-sm > button,
-.btn-group-sm > .btn,
-.btn-group-sm > button,
-.btn-group-sm > .btn,
-.btn-group-sm > button,
-.btn-group-sm > button,
-.btn-group-sm > .btn,
-.btn-group-sm > button,
-.btn-group-sm > button,
-.btn-group-sm > button,
-.btn-group-sm > button,
-.btn-group-sm > button,
 .btn-group-sm > button {
   padding: 5px 10px;
   font-size: 12px;
@@ -2947,17 +2741,6 @@ fieldset[disabled] .btn-link:focus {
 .btn-xs,
 .btn-group-xs > .btn,
 .btn-group-xs > .btn,
-.btn-group-xs > button,
-.btn-group-xs > .btn,
-.btn-group-xs > button,
-.btn-group-xs > .btn,
-.btn-group-xs > button,
-.btn-group-xs > button,
-.btn-group-xs > .btn,
-.btn-group-xs > button,
-.btn-group-xs > button,
-.btn-group-xs > button,
-.btn-group-xs > button,
 .btn-group-xs > button,
 .btn-group-xs > button {
   padding: 1px 5px;
@@ -3966,28 +3749,6 @@ tbody.collapse.in {
 .btn-group-vertical > .btn,
 .btn-group > button,
 .btn-group-vertical > button,
-.btn-group > .btn,
-.btn-group-vertical > .btn,
-.btn-group > button,
-.btn-group-vertical > button,
-.btn-group > .btn,
-.btn-group-vertical > .btn,
-.btn-group > button,
-.btn-group-vertical > button,
-.btn-group > button,
-.btn-group-vertical > button,
-.btn-group > .btn,
-.btn-group-vertical > .btn,
-.btn-group > button,
-.btn-group-vertical > button,
-.btn-group > button,
-.btn-group-vertical > button,
-.btn-group > button,
-.btn-group-vertical > button,
-.btn-group > button,
-.btn-group-vertical > button,
-.btn-group > button,
-.btn-group-vertical > button,
 .btn-group > button,
 .btn-group-vertical > button {
   position: relative;
@@ -4017,94 +3778,6 @@ tbody.collapse.in {
 .btn-group-vertical > button:active,
 .btn-group > button.active,
 .btn-group-vertical > button.active,
-.btn-group > .btn:hover,
-.btn-group-vertical > .btn:hover,
-.btn-group > .btn:focus,
-.btn-group-vertical > .btn:focus,
-.btn-group > .btn:active,
-.btn-group-vertical > .btn:active,
-.btn-group > .btn.active,
-.btn-group-vertical > .btn.active,
-.btn-group > button:hover,
-.btn-group-vertical > button:hover,
-.btn-group > button:focus,
-.btn-group-vertical > button:focus,
-.btn-group > button:active,
-.btn-group-vertical > button:active,
-.btn-group > button.active,
-.btn-group-vertical > button.active,
-.btn-group > .btn:hover,
-.btn-group-vertical > .btn:hover,
-.btn-group > .btn:focus,
-.btn-group-vertical > .btn:focus,
-.btn-group > .btn:active,
-.btn-group-vertical > .btn:active,
-.btn-group > .btn.active,
-.btn-group-vertical > .btn.active,
-.btn-group > button:hover,
-.btn-group-vertical > button:hover,
-.btn-group > button:focus,
-.btn-group-vertical > button:focus,
-.btn-group > button:active,
-.btn-group-vertical > button:active,
-.btn-group > button.active,
-.btn-group-vertical > button.active,
-.btn-group > button:hover,
-.btn-group-vertical > button:hover,
-.btn-group > button:focus,
-.btn-group-vertical > button:focus,
-.btn-group > button:active,
-.btn-group-vertical > button:active,
-.btn-group > button.active,
-.btn-group-vertical > button.active,
-.btn-group > .btn:hover,
-.btn-group-vertical > .btn:hover,
-.btn-group > .btn:focus,
-.btn-group-vertical > .btn:focus,
-.btn-group > .btn:active,
-.btn-group-vertical > .btn:active,
-.btn-group > .btn.active,
-.btn-group-vertical > .btn.active,
-.btn-group > button:hover,
-.btn-group-vertical > button:hover,
-.btn-group > button:focus,
-.btn-group-vertical > button:focus,
-.btn-group > button:active,
-.btn-group-vertical > button:active,
-.btn-group > button.active,
-.btn-group-vertical > button.active,
-.btn-group > button:hover,
-.btn-group-vertical > button:hover,
-.btn-group > button:focus,
-.btn-group-vertical > button:focus,
-.btn-group > button:active,
-.btn-group-vertical > button:active,
-.btn-group > button.active,
-.btn-group-vertical > button.active,
-.btn-group > button:hover,
-.btn-group-vertical > button:hover,
-.btn-group > button:focus,
-.btn-group-vertical > button:focus,
-.btn-group > button:active,
-.btn-group-vertical > button:active,
-.btn-group > button.active,
-.btn-group-vertical > button.active,
-.btn-group > button:hover,
-.btn-group-vertical > button:hover,
-.btn-group > button:focus,
-.btn-group-vertical > button:focus,
-.btn-group > button:active,
-.btn-group-vertical > button:active,
-.btn-group > button.active,
-.btn-group-vertical > button.active,
-.btn-group > button:hover,
-.btn-group-vertical > button:hover,
-.btn-group > button:focus,
-.btn-group-vertical > button:focus,
-.btn-group > button:active,
-.btn-group-vertical > button:active,
-.btn-group > button.active,
-.btn-group-vertical > button.active,
 .btn-group > button:hover,
 .btn-group-vertical > button:hover,
 .btn-group > button:focus,
@@ -4125,39 +3798,6 @@ tbody.collapse.in {
 .btn-group button + button,
 .btn-group button + .btn-group,
 .btn-group .btn-group + button,
-.btn-group .btn + .btn,
-.btn-group .btn + .btn-group,
-.btn-group .btn-group + .btn,
-.btn-group button + button,
-.btn-group button + .btn-group,
-.btn-group .btn-group + button,
-.btn-group .btn + .btn,
-.btn-group .btn + .btn-group,
-.btn-group .btn-group + .btn,
-.btn-group button + button,
-.btn-group button + .btn-group,
-.btn-group .btn-group + button,
-.btn-group button + button,
-.btn-group button + .btn-group,
-.btn-group .btn-group + button,
-.btn-group .btn + .btn,
-.btn-group .btn + .btn-group,
-.btn-group .btn-group + .btn,
-.btn-group button + button,
-.btn-group button + .btn-group,
-.btn-group .btn-group + button,
-.btn-group button + button,
-.btn-group button + .btn-group,
-.btn-group .btn-group + button,
-.btn-group button + button,
-.btn-group button + .btn-group,
-.btn-group .btn-group + button,
-.btn-group button + button,
-.btn-group button + .btn-group,
-.btn-group .btn-group + button,
-.btn-group button + button,
-.btn-group button + .btn-group,
-.btn-group .btn-group + button,
 .btn-group button + button,
 .btn-group button + .btn-group,
 .btn-group .btn-group + button {
@@ -4171,17 +3811,6 @@ tbody.collapse.in {
 .btn-toolbar .input-group,
 .btn-toolbar .btn,
 .btn-toolbar button,
-.btn-toolbar .btn,
-.btn-toolbar button,
-.btn-toolbar .btn,
-.btn-toolbar button,
-.btn-toolbar button,
-.btn-toolbar .btn,
-.btn-toolbar button,
-.btn-toolbar button,
-.btn-toolbar button,
-.btn-toolbar button,
-.btn-toolbar button,
 .btn-toolbar button {
   float: left;
 }
@@ -4190,33 +3819,11 @@ tbody.collapse.in {
 .btn-toolbar > .input-group,
 .btn-toolbar > .btn,
 .btn-toolbar > button,
-.btn-toolbar > .btn,
-.btn-toolbar > button,
-.btn-toolbar > .btn,
-.btn-toolbar > button,
-.btn-toolbar > button,
-.btn-toolbar > .btn,
-.btn-toolbar > button,
-.btn-toolbar > button,
-.btn-toolbar > button,
-.btn-toolbar > button,
-.btn-toolbar > button,
 .btn-toolbar > button {
   margin-left: 5px;
 }
 .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
-.btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
 .btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle),
 .btn-group > button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
@@ -4224,33 +3831,11 @@ tbody.collapse.in {
 .btn-group > .btn:first-child,
 .btn-group > .btn:first-child,
 .btn-group > button:first-child,
-.btn-group > .btn:first-child,
-.btn-group > button:first-child,
-.btn-group > .btn:first-child,
-.btn-group > button:first-child,
-.btn-group > button:first-child,
-.btn-group > .btn:first-child,
-.btn-group > button:first-child,
-.btn-group > button:first-child,
-.btn-group > button:first-child,
-.btn-group > button:first-child,
-.btn-group > button:first-child,
 .btn-group > button:first-child {
   margin-left: 0;
 }
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
-.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
-.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
-.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
-.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
-.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
-.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
-.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
-.btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
 .btn-group > button:first-child:not(:last-child):not(.dropdown-toggle),
 .btn-group > button:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
@@ -4259,17 +3844,6 @@ tbody.collapse.in {
 .btn-group > .btn:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child),
 .btn-group > .btn:last-child:not(:first-child),
-.btn-group > button:last-child:not(:first-child),
-.btn-group > .btn:last-child:not(:first-child),
-.btn-group > button:last-child:not(:first-child),
-.btn-group > .btn:last-child:not(:first-child),
-.btn-group > button:last-child:not(:first-child),
-.btn-group > button:last-child:not(:first-child),
-.btn-group > .btn:last-child:not(:first-child),
-.btn-group > button:last-child:not(:first-child),
-.btn-group > button:last-child:not(:first-child),
-.btn-group > button:last-child:not(:first-child),
-.btn-group > button:last-child:not(:first-child),
 .btn-group > button:last-child:not(:first-child),
 .btn-group > button:last-child:not(:first-child) {
   border-bottom-left-radius: 0;
@@ -4281,17 +3855,6 @@ tbody.collapse.in {
 .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn,
 .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn,
 .btn-group > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn,
-.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn,
-.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn,
-.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group > .btn-group:not(:first-child):not(:last-child) > button,
 .btn-group > .btn-group:not(:first-child):not(:last-child) > button {
   border-radius: 0;
 }
@@ -4299,34 +3862,12 @@ tbody.collapse.in {
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle,
 .btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > button:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > button:last-child {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child,
 .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
 .btn-group > .btn-group:last-child:not(:first-child) > button:first-child,
 .btn-group > .btn-group:last-child:not(:first-child) > button:first-child {
   border-bottom-left-radius: 0;
@@ -4338,17 +3879,6 @@ tbody.collapse.in {
 }
 .btn-group > .btn + .dropdown-toggle,
 .btn-group > .btn + .dropdown-toggle,
-.btn-group > button + .dropdown-toggle,
-.btn-group > .btn + .dropdown-toggle,
-.btn-group > button + .dropdown-toggle,
-.btn-group > .btn + .dropdown-toggle,
-.btn-group > button + .dropdown-toggle,
-.btn-group > button + .dropdown-toggle,
-.btn-group > .btn + .dropdown-toggle,
-.btn-group > button + .dropdown-toggle,
-.btn-group > button + .dropdown-toggle,
-.btn-group > button + .dropdown-toggle,
-.btn-group > button + .dropdown-toggle,
 .btn-group > button + .dropdown-toggle,
 .btn-group > button + .dropdown-toggle {
   padding-left: 8px;
@@ -4369,17 +3899,6 @@ tbody.collapse.in {
 .btn .caret,
 .btn .caret,
 button .caret,
-.btn .caret,
-button .caret,
-.btn .caret,
-button .caret,
-button .caret,
-.btn .caret,
-button .caret,
-button .caret,
-button .caret,
-button .caret,
-button .caret,
 button .caret {
   margin-left: 0;
 }
@@ -4397,28 +3916,6 @@ button .caret {
 .btn-group-vertical > .btn-group > .btn,
 .btn-group-vertical > button,
 .btn-group-vertical > .btn-group > button,
-.btn-group-vertical > .btn,
-.btn-group-vertical > .btn-group > .btn,
-.btn-group-vertical > button,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > .btn,
-.btn-group-vertical > .btn-group > .btn,
-.btn-group-vertical > button,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > button,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > .btn,
-.btn-group-vertical > .btn-group > .btn,
-.btn-group-vertical > button,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > button,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > button,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > button,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > button,
-.btn-group-vertical > .btn-group > button,
 .btn-group-vertical > button,
 .btn-group-vertical > .btn-group > button {
   display: block;
@@ -4428,17 +3925,6 @@ button .caret {
 }
 .btn-group-vertical > .btn-group > .btn,
 .btn-group-vertical > .btn-group > .btn,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > .btn-group > .btn,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > .btn-group > .btn,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > .btn-group > .btn,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > .btn-group > button,
-.btn-group-vertical > .btn-group > button,
 .btn-group-vertical > .btn-group > button,
 .btn-group-vertical > .btn-group > button {
   float: none;
@@ -4453,39 +3939,6 @@ button .caret {
 .btn-group-vertical > button + button,
 .btn-group-vertical > button + .btn-group,
 .btn-group-vertical > .btn-group + button,
-.btn-group-vertical > .btn + .btn,
-.btn-group-vertical > .btn + .btn-group,
-.btn-group-vertical > .btn-group + .btn,
-.btn-group-vertical > button + button,
-.btn-group-vertical > button + .btn-group,
-.btn-group-vertical > .btn-group + button,
-.btn-group-vertical > .btn + .btn,
-.btn-group-vertical > .btn + .btn-group,
-.btn-group-vertical > .btn-group + .btn,
-.btn-group-vertical > button + button,
-.btn-group-vertical > button + .btn-group,
-.btn-group-vertical > .btn-group + button,
-.btn-group-vertical > button + button,
-.btn-group-vertical > button + .btn-group,
-.btn-group-vertical > .btn-group + button,
-.btn-group-vertical > .btn + .btn,
-.btn-group-vertical > .btn + .btn-group,
-.btn-group-vertical > .btn-group + .btn,
-.btn-group-vertical > button + button,
-.btn-group-vertical > button + .btn-group,
-.btn-group-vertical > .btn-group + button,
-.btn-group-vertical > button + button,
-.btn-group-vertical > button + .btn-group,
-.btn-group-vertical > .btn-group + button,
-.btn-group-vertical > button + button,
-.btn-group-vertical > button + .btn-group,
-.btn-group-vertical > .btn-group + button,
-.btn-group-vertical > button + button,
-.btn-group-vertical > button + .btn-group,
-.btn-group-vertical > .btn-group + button,
-.btn-group-vertical > button + button,
-.btn-group-vertical > button + .btn-group,
-.btn-group-vertical > .btn-group + button,
 .btn-group-vertical > button + button,
 .btn-group-vertical > button + .btn-group,
 .btn-group-vertical > .btn-group + button {
@@ -4495,73 +3948,29 @@ button .caret {
 .btn-group-vertical > .btn:not(:first-child):not(:last-child),
 .btn-group-vertical > .btn:not(:first-child):not(:last-child),
 .btn-group-vertical > button:not(:first-child):not(:last-child),
-.btn-group-vertical > .btn:not(:first-child):not(:last-child),
-.btn-group-vertical > button:not(:first-child):not(:last-child),
-.btn-group-vertical > .btn:not(:first-child):not(:last-child),
-.btn-group-vertical > button:not(:first-child):not(:last-child),
-.btn-group-vertical > button:not(:first-child):not(:last-child),
-.btn-group-vertical > .btn:not(:first-child):not(:last-child),
-.btn-group-vertical > button:not(:first-child):not(:last-child),
-.btn-group-vertical > button:not(:first-child):not(:last-child),
-.btn-group-vertical > button:not(:first-child):not(:last-child),
-.btn-group-vertical > button:not(:first-child):not(:last-child),
-.btn-group-vertical > button:not(:first-child):not(:last-child),
 .btn-group-vertical > button:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 .btn-group-vertical > .btn:first-child:not(:last-child),
 .btn-group-vertical > .btn:first-child:not(:last-child),
 .btn-group-vertical > button:first-child:not(:last-child),
-.btn-group-vertical > .btn:first-child:not(:last-child),
-.btn-group-vertical > button:first-child:not(:last-child),
-.btn-group-vertical > .btn:first-child:not(:last-child),
-.btn-group-vertical > button:first-child:not(:last-child),
-.btn-group-vertical > button:first-child:not(:last-child),
-.btn-group-vertical > .btn:first-child:not(:last-child),
-.btn-group-vertical > button:first-child:not(:last-child),
-.btn-group-vertical > button:first-child:not(:last-child),
-.btn-group-vertical > button:first-child:not(:last-child),
-.btn-group-vertical > button:first-child:not(:last-child),
-.btn-group-vertical > button:first-child:not(:last-child),
 .btn-group-vertical > button:first-child:not(:last-child) {
-  border-top-right-radius: 0px;
-  border-top-left-radius: 0px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 .btn-group-vertical > .btn:last-child:not(:first-child),
 .btn-group-vertical > .btn:last-child:not(:first-child),
 .btn-group-vertical > button:last-child:not(:first-child),
-.btn-group-vertical > .btn:last-child:not(:first-child),
-.btn-group-vertical > button:last-child:not(:first-child),
-.btn-group-vertical > .btn:last-child:not(:first-child),
-.btn-group-vertical > button:last-child:not(:first-child),
-.btn-group-vertical > button:last-child:not(:first-child),
-.btn-group-vertical > .btn:last-child:not(:first-child),
-.btn-group-vertical > button:last-child:not(:first-child),
-.btn-group-vertical > button:last-child:not(:first-child),
-.btn-group-vertical > button:last-child:not(:first-child),
-.btn-group-vertical > button:last-child:not(:first-child),
-.btn-group-vertical > button:last-child:not(:first-child),
 .btn-group-vertical > button:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn,
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn,
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn,
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn,
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn,
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button,
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > button {
   border-radius: 0;
@@ -4570,34 +3979,12 @@ button .caret {
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > button:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child,
 .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
 .btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child,
 .btn-group-vertical > .btn-group:last-child:not(:first-child) > button:first-child {
   border-top-right-radius: 0;
@@ -4613,17 +4000,6 @@ button .caret {
 .btn-group-justified > .btn-group,
 .btn-group-justified > .btn,
 .btn-group-justified > button,
-.btn-group-justified > .btn,
-.btn-group-justified > button,
-.btn-group-justified > .btn,
-.btn-group-justified > button,
-.btn-group-justified > button,
-.btn-group-justified > .btn,
-.btn-group-justified > button,
-.btn-group-justified > button,
-.btn-group-justified > button,
-.btn-group-justified > button,
-.btn-group-justified > button,
 .btn-group-justified > button {
   float: none;
   display: table-cell;
@@ -4631,17 +4007,6 @@ button .caret {
 }
 .btn-group-justified > .btn-group .btn,
 .btn-group-justified > .btn-group .btn,
-.btn-group-justified > .btn-group button,
-.btn-group-justified > .btn-group .btn,
-.btn-group-justified > .btn-group button,
-.btn-group-justified > .btn-group .btn,
-.btn-group-justified > .btn-group button,
-.btn-group-justified > .btn-group button,
-.btn-group-justified > .btn-group .btn,
-.btn-group-justified > .btn-group button,
-.btn-group-justified > .btn-group button,
-.btn-group-justified > .btn-group button,
-.btn-group-justified > .btn-group button,
 .btn-group-justified > .btn-group button,
 .btn-group-justified > .btn-group button {
   width: 100%;
@@ -4657,50 +4022,6 @@ button .caret {
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
-[data-toggle="buttons"] > button input[type="radio"],
-[data-toggle="buttons"] > .btn-group > button input[type="radio"],
-[data-toggle="buttons"] > button input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
-[data-toggle="buttons"] > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
-[data-toggle="buttons"] > button input[type="radio"],
-[data-toggle="buttons"] > .btn-group > button input[type="radio"],
-[data-toggle="buttons"] > button input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
-[data-toggle="buttons"] > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
-[data-toggle="buttons"] > button input[type="radio"],
-[data-toggle="buttons"] > .btn-group > button input[type="radio"],
-[data-toggle="buttons"] > button input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
-[data-toggle="buttons"] > button input[type="radio"],
-[data-toggle="buttons"] > .btn-group > button input[type="radio"],
-[data-toggle="buttons"] > button input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
-[data-toggle="buttons"] > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
-[data-toggle="buttons"] > button input[type="radio"],
-[data-toggle="buttons"] > .btn-group > button input[type="radio"],
-[data-toggle="buttons"] > button input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
-[data-toggle="buttons"] > button input[type="radio"],
-[data-toggle="buttons"] > .btn-group > button input[type="radio"],
-[data-toggle="buttons"] > button input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
-[data-toggle="buttons"] > button input[type="radio"],
-[data-toggle="buttons"] > .btn-group > button input[type="radio"],
-[data-toggle="buttons"] > button input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
-[data-toggle="buttons"] > button input[type="radio"],
-[data-toggle="buttons"] > .btn-group > button input[type="radio"],
-[data-toggle="buttons"] > button input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > button input[type="checkbox"],
 [data-toggle="buttons"] > button input[type="radio"],
 [data-toggle="buttons"] > .btn-group > button input[type="radio"],
 [data-toggle="buttons"] > button input[type="checkbox"],
@@ -4738,39 +4059,17 @@ button .caret {
 .input-group-lg > .input-group-btn > .btn,
 .input-group-lg > .input-group-btn > .btn,
 .input-group-lg > .input-group-btn > button,
-.input-group-lg > .input-group-btn > .btn,
-.input-group-lg > .input-group-btn > button,
-.input-group-lg > .input-group-btn > .btn,
-.input-group-lg > .input-group-btn > button,
-.input-group-lg > .input-group-btn > button,
-.input-group-lg > .input-group-btn > .btn,
-.input-group-lg > .input-group-btn > button,
-.input-group-lg > .input-group-btn > button,
-.input-group-lg > .input-group-btn > button,
-.input-group-lg > .input-group-btn > button,
-.input-group-lg > .input-group-btn > button,
 .input-group-lg > .input-group-btn > button {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
-  border-radius: 6px;
+  border-radius: 0;
 }
 select.input-group-lg > .form-control,
 select.input-group-lg > .input-group-addon,
 select.input-group-lg > .input-group-btn > .btn,
 select.input-group-lg > .input-group-btn > .btn,
-select.input-group-lg > .input-group-btn > button,
-select.input-group-lg > .input-group-btn > .btn,
-select.input-group-lg > .input-group-btn > button,
-select.input-group-lg > .input-group-btn > .btn,
-select.input-group-lg > .input-group-btn > button,
-select.input-group-lg > .input-group-btn > button,
-select.input-group-lg > .input-group-btn > .btn,
-select.input-group-lg > .input-group-btn > button,
-select.input-group-lg > .input-group-btn > button,
-select.input-group-lg > .input-group-btn > button,
-select.input-group-lg > .input-group-btn > button,
 select.input-group-lg > .input-group-btn > button,
 select.input-group-lg > .input-group-btn > button {
   height: 46px;
@@ -4786,28 +4085,6 @@ textarea.input-group-lg > .input-group-btn > .btn,
 select[multiple].input-group-lg > .input-group-btn > .btn,
 textarea.input-group-lg > .input-group-btn > button,
 select[multiple].input-group-lg > .input-group-btn > button,
-textarea.input-group-lg > .input-group-btn > .btn,
-select[multiple].input-group-lg > .input-group-btn > .btn,
-textarea.input-group-lg > .input-group-btn > button,
-select[multiple].input-group-lg > .input-group-btn > button,
-textarea.input-group-lg > .input-group-btn > .btn,
-select[multiple].input-group-lg > .input-group-btn > .btn,
-textarea.input-group-lg > .input-group-btn > button,
-select[multiple].input-group-lg > .input-group-btn > button,
-textarea.input-group-lg > .input-group-btn > button,
-select[multiple].input-group-lg > .input-group-btn > button,
-textarea.input-group-lg > .input-group-btn > .btn,
-select[multiple].input-group-lg > .input-group-btn > .btn,
-textarea.input-group-lg > .input-group-btn > button,
-select[multiple].input-group-lg > .input-group-btn > button,
-textarea.input-group-lg > .input-group-btn > button,
-select[multiple].input-group-lg > .input-group-btn > button,
-textarea.input-group-lg > .input-group-btn > button,
-select[multiple].input-group-lg > .input-group-btn > button,
-textarea.input-group-lg > .input-group-btn > button,
-select[multiple].input-group-lg > .input-group-btn > button,
-textarea.input-group-lg > .input-group-btn > button,
-select[multiple].input-group-lg > .input-group-btn > button,
 textarea.input-group-lg > .input-group-btn > button,
 select[multiple].input-group-lg > .input-group-btn > button {
   height: auto;
@@ -4817,39 +4094,17 @@ select[multiple].input-group-lg > .input-group-btn > button {
 .input-group-sm > .input-group-btn > .btn,
 .input-group-sm > .input-group-btn > .btn,
 .input-group-sm > .input-group-btn > button,
-.input-group-sm > .input-group-btn > .btn,
-.input-group-sm > .input-group-btn > button,
-.input-group-sm > .input-group-btn > .btn,
-.input-group-sm > .input-group-btn > button,
-.input-group-sm > .input-group-btn > button,
-.input-group-sm > .input-group-btn > .btn,
-.input-group-sm > .input-group-btn > button,
-.input-group-sm > .input-group-btn > button,
-.input-group-sm > .input-group-btn > button,
-.input-group-sm > .input-group-btn > button,
-.input-group-sm > .input-group-btn > button,
 .input-group-sm > .input-group-btn > button {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  border-radius: 0;
 }
 select.input-group-sm > .form-control,
 select.input-group-sm > .input-group-addon,
 select.input-group-sm > .input-group-btn > .btn,
 select.input-group-sm > .input-group-btn > .btn,
-select.input-group-sm > .input-group-btn > button,
-select.input-group-sm > .input-group-btn > .btn,
-select.input-group-sm > .input-group-btn > button,
-select.input-group-sm > .input-group-btn > .btn,
-select.input-group-sm > .input-group-btn > button,
-select.input-group-sm > .input-group-btn > button,
-select.input-group-sm > .input-group-btn > .btn,
-select.input-group-sm > .input-group-btn > button,
-select.input-group-sm > .input-group-btn > button,
-select.input-group-sm > .input-group-btn > button,
-select.input-group-sm > .input-group-btn > button,
 select.input-group-sm > .input-group-btn > button,
 select.input-group-sm > .input-group-btn > button {
   height: 30px;
@@ -4863,28 +4118,6 @@ select[multiple].input-group-sm > .input-group-addon,
 select[multiple].input-group-sm > .input-group-btn > .btn,
 textarea.input-group-sm > .input-group-btn > .btn,
 select[multiple].input-group-sm > .input-group-btn > .btn,
-textarea.input-group-sm > .input-group-btn > button,
-select[multiple].input-group-sm > .input-group-btn > button,
-textarea.input-group-sm > .input-group-btn > .btn,
-select[multiple].input-group-sm > .input-group-btn > .btn,
-textarea.input-group-sm > .input-group-btn > button,
-select[multiple].input-group-sm > .input-group-btn > button,
-textarea.input-group-sm > .input-group-btn > .btn,
-select[multiple].input-group-sm > .input-group-btn > .btn,
-textarea.input-group-sm > .input-group-btn > button,
-select[multiple].input-group-sm > .input-group-btn > button,
-textarea.input-group-sm > .input-group-btn > button,
-select[multiple].input-group-sm > .input-group-btn > button,
-textarea.input-group-sm > .input-group-btn > .btn,
-select[multiple].input-group-sm > .input-group-btn > .btn,
-textarea.input-group-sm > .input-group-btn > button,
-select[multiple].input-group-sm > .input-group-btn > button,
-textarea.input-group-sm > .input-group-btn > button,
-select[multiple].input-group-sm > .input-group-btn > button,
-textarea.input-group-sm > .input-group-btn > button,
-select[multiple].input-group-sm > .input-group-btn > button,
-textarea.input-group-sm > .input-group-btn > button,
-select[multiple].input-group-sm > .input-group-btn > button,
 textarea.input-group-sm > .input-group-btn > button,
 select[multiple].input-group-sm > .input-group-btn > button,
 textarea.input-group-sm > .input-group-btn > button,
@@ -4908,7 +4141,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
   vertical-align: middle;
 }
 .input-group-addon {
-  padding: 6px 15px;
+  padding: 4px 15px;
   font-size: 14px;
   font-weight: normal;
   line-height: 1;
@@ -4916,17 +4149,17 @@ select[multiple].input-group-sm > .input-group-btn > button {
   text-align: center;
   background-color: #eeeeee;
   border: 1px solid #d6dbdc;
-  border-radius: 4px;
+  border-radius: 0;
 }
 .input-group-addon.input-sm {
   padding: 5px 10px;
   font-size: 12px;
-  border-radius: 3px;
+  border-radius: 0;
 }
 .input-group-addon.input-lg {
   padding: 10px 16px;
   font-size: 18px;
-  border-radius: 6px;
+  border-radius: 0;
 }
 .input-group-addon input[type="radio"],
 .input-group-addon input[type="checkbox"] {
@@ -4943,50 +4176,6 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .input-group-btn:first-child > .btn-group > .btn,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > .btn-group > button,
-.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > button,
-.input-group-btn:first-child > .btn,
-.input-group-btn:first-child > .btn-group > .btn,
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > .btn-group > button,
-.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > button,
-.input-group-btn:first-child > .btn,
-.input-group-btn:first-child > .btn-group > .btn,
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > .btn-group > button,
-.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > button,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > .btn-group > button,
-.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > button,
-.input-group-btn:first-child > .btn,
-.input-group-btn:first-child > .btn-group > .btn,
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > .btn-group > button,
-.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > button,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > .btn-group > button,
-.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > button,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > .btn-group > button,
-.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > button,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > .btn-group > button,
-.input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > button,
 .input-group-btn:first-child > button,
 .input-group-btn:first-child > .btn-group > button,
 .input-group-btn:last-child > button:not(:last-child):not(.dropdown-toggle),
@@ -5016,50 +4205,6 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .input-group-btn:last-child > .btn-group > button,
 .input-group-btn:first-child > button:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > button,
-.input-group-btn:last-child > .btn,
-.input-group-btn:last-child > .btn-group > .btn,
-.input-group-btn:first-child > .btn:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > .btn-group > button,
-.input-group-btn:first-child > button:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > button,
-.input-group-btn:last-child > .btn,
-.input-group-btn:last-child > .btn-group > .btn,
-.input-group-btn:first-child > .btn:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > .btn-group > button,
-.input-group-btn:first-child > button:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > button,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > .btn-group > button,
-.input-group-btn:first-child > button:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > button,
-.input-group-btn:last-child > .btn,
-.input-group-btn:last-child > .btn-group > .btn,
-.input-group-btn:first-child > .btn:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > .btn-group > button,
-.input-group-btn:first-child > button:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > button,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > .btn-group > button,
-.input-group-btn:first-child > button:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > button,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > .btn-group > button,
-.input-group-btn:first-child > button:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > button,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > .btn-group > button,
-.input-group-btn:first-child > button:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > button,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > .btn-group > button,
-.input-group-btn:first-child > button:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > button,
 .input-group-btn:last-child > button,
 .input-group-btn:last-child > .btn-group > button,
 .input-group-btn:first-child > button:not(:first-child),
@@ -5078,33 +4223,11 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .input-group-btn > .btn,
 .input-group-btn > .btn,
 .input-group-btn > button,
-.input-group-btn > .btn,
-.input-group-btn > button,
-.input-group-btn > .btn,
-.input-group-btn > button,
-.input-group-btn > button,
-.input-group-btn > .btn,
-.input-group-btn > button,
-.input-group-btn > button,
-.input-group-btn > button,
-.input-group-btn > button,
-.input-group-btn > button,
 .input-group-btn > button {
   position: relative;
 }
 .input-group-btn > .btn + .btn,
 .input-group-btn > .btn + .btn,
-.input-group-btn > button + button,
-.input-group-btn > .btn + .btn,
-.input-group-btn > button + button,
-.input-group-btn > .btn + .btn,
-.input-group-btn > button + button,
-.input-group-btn > button + button,
-.input-group-btn > .btn + .btn,
-.input-group-btn > button + button,
-.input-group-btn > button + button,
-.input-group-btn > button + button,
-.input-group-btn > button + button,
 .input-group-btn > button + button,
 .input-group-btn > button + button {
   margin-left: -1px;
@@ -5118,39 +4241,6 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .input-group-btn > button:hover,
 .input-group-btn > button:focus,
 .input-group-btn > button:active,
-.input-group-btn > .btn:hover,
-.input-group-btn > .btn:focus,
-.input-group-btn > .btn:active,
-.input-group-btn > button:hover,
-.input-group-btn > button:focus,
-.input-group-btn > button:active,
-.input-group-btn > .btn:hover,
-.input-group-btn > .btn:focus,
-.input-group-btn > .btn:active,
-.input-group-btn > button:hover,
-.input-group-btn > button:focus,
-.input-group-btn > button:active,
-.input-group-btn > button:hover,
-.input-group-btn > button:focus,
-.input-group-btn > button:active,
-.input-group-btn > .btn:hover,
-.input-group-btn > .btn:focus,
-.input-group-btn > .btn:active,
-.input-group-btn > button:hover,
-.input-group-btn > button:focus,
-.input-group-btn > button:active,
-.input-group-btn > button:hover,
-.input-group-btn > button:focus,
-.input-group-btn > button:active,
-.input-group-btn > button:hover,
-.input-group-btn > button:focus,
-.input-group-btn > button:active,
-.input-group-btn > button:hover,
-.input-group-btn > button:focus,
-.input-group-btn > button:active,
-.input-group-btn > button:hover,
-.input-group-btn > button:focus,
-.input-group-btn > button:active,
 .input-group-btn > button:hover,
 .input-group-btn > button:focus,
 .input-group-btn > button:active {
@@ -5160,34 +4250,12 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .input-group-btn:first-child > .btn-group,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > button,
-.input-group-btn:first-child > .btn,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > .btn,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > .btn,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > button,
-.input-group-btn:first-child > button,
 .input-group-btn:first-child > button {
   margin-right: -1px;
 }
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group,
 .input-group-btn:last-child > .btn,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > .btn,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > .btn,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > .btn,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > button,
-.input-group-btn:last-child > button,
 .input-group-btn:last-child > button,
 .input-group-btn:last-child > button {
   z-index: 2;
@@ -5210,7 +4278,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #c8c8c8;
 }
 .nav > li.disabled > a {
   color: #777777;
@@ -5225,7 +4293,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #eeeeee;
+  background-color: #c8c8c8;
   border-color: #2d83c4;
 }
 .nav .nav-divider {
@@ -5238,7 +4306,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
   max-width: none;
 }
 .nav-tabs {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #1bbcb6;
 }
 .nav-tabs > li {
   float: left;
@@ -5251,14 +4319,14 @@ select[multiple].input-group-sm > .input-group-btn > button {
   border-radius: 4px 4px 0 0;
 }
 .nav-tabs > li > a:hover {
-  border-color: #eeeeee #eeeeee #ddd;
+  border-color: #bdbdbd #bdbdbd #1bbcb6;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #555555;
+  color: #1bbcb6;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #1bbcb6;
   border-bottom-color: transparent;
   cursor: default;
 }
@@ -5293,11 +4361,11 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .nav-tabs.nav-justified > .active > a,
 .nav-tabs.nav-justified > .active > a:hover,
 .nav-tabs.nav-justified > .active > a:focus {
-  border: 1px solid #ddd;
+  border: 1px solid #1bbcb6;
 }
 @media (min-width: 768px) {
   .nav-tabs.nav-justified > li > a {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #1bbcb6;
     border-radius: 4px 4px 0 0;
   }
   .nav-tabs.nav-justified > .active > a,
@@ -5361,11 +4429,11 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .nav-tabs-justified > .active > a,
 .nav-tabs-justified > .active > a:hover,
 .nav-tabs-justified > .active > a:focus {
-  border: 1px solid #ddd;
+  border: 1px solid #1bbcb6;
 }
 @media (min-width: 768px) {
   .nav-tabs-justified > li > a {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #1bbcb6;
     border-radius: 4px 4px 0 0;
   }
   .nav-tabs-justified > .active > a,
@@ -5447,9 +4515,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
 .container > .navbar-header,
 .container-fluid > .navbar-header,
 .container > .navbar-collapse,
-.container-fluid > .navbar-collapse,
-#silverback-main > .navbar-header,
-#silverback-main > .navbar-collapse {
+.container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -5457,9 +4523,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
   .container > .navbar-header,
   .container-fluid > .navbar-header,
   .container > .navbar-collapse,
-  .container-fluid > .navbar-collapse,
-  #silverback-main > .navbar-header,
-  #silverback-main > .navbar-collapse {
+  .container-fluid > .navbar-collapse {
     margin-right: 0;
     margin-left: 0;
   }
@@ -5511,8 +4575,7 @@ select[multiple].input-group-sm > .input-group-btn > button {
 }
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
-  .navbar > .container-fluid .navbar-brand,
-  .navbar > #silverback-main .navbar-brand {
+  .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
   }
 }
@@ -5596,8 +4659,8 @@ select[multiple].input-group-sm > .input-group-btn > button {
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 @media (min-width: 768px) {
   .navbar-form .form-group {
@@ -5682,8 +4745,8 @@ select[multiple].input-group-sm > .input-group-btn > button {
   border-bottom-left-radius: 0;
 }
 .navbar-btn {
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 .navbar-btn.btn-sm,
 .navbar-btn.modal-sm .modal-footer button {
@@ -5946,7 +5009,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > span {
   position: relative;
   float: left;
-  padding: 6px 15px;
+  padding: 4px 15px;
   line-height: 1.71428571;
   text-decoration: none;
   color: #2d83c4;
@@ -6091,17 +5154,6 @@ a.label:focus {
 .btn .label,
 .btn .label,
 button .label,
-.btn .label,
-button .label,
-.btn .label,
-button .label,
-button .label,
-.btn .label,
-button .label,
-button .label,
-button .label,
-button .label,
-button .label,
 button .label {
   position: relative;
   top: -1px;
@@ -6168,17 +5220,6 @@ button .label {
 .btn .badge,
 .btn .badge,
 button .badge,
-.btn .badge,
-button .badge,
-.btn .badge,
-button .badge,
-button .badge,
-.btn .badge,
-button .badge,
-button .badge,
-button .badge,
-button .badge,
-button .badge,
 button .badge {
   position: relative;
   top: -1px;
@@ -6186,17 +5227,6 @@ button .badge {
 .btn-xs .badge,
 .btn-group-xs > .btn .badge,
 .btn-group-xs > .btn .badge,
-.btn-group-xs > button .badge,
-.btn-group-xs > .btn .badge,
-.btn-group-xs > button .badge,
-.btn-group-xs > .btn .badge,
-.btn-group-xs > button .badge,
-.btn-group-xs > button .badge,
-.btn-group-xs > .btn .badge,
-.btn-group-xs > button .badge,
-.btn-group-xs > button .badge,
-.btn-group-xs > button .badge,
-.btn-group-xs > button .badge,
 .btn-group-xs > button .badge,
 .btn-group-xs > button .badge {
   top: 0;
@@ -6242,8 +5272,7 @@ a.badge:focus {
   border-top-color: #d5d5d5;
 }
 .container .jumbotron,
-.container-fluid .jumbotron,
-#silverback-main .jumbotron {
+.container-fluid .jumbotron {
   border-radius: 6px;
   padding-left: 15px;
   padding-right: 15px;
@@ -6257,8 +5286,7 @@ a.badge:focus {
     padding-bottom: 48px;
   }
   .container .jumbotron,
-  .container-fluid .jumbotron,
-  #silverback-main .jumbotron {
+  .container-fluid .jumbotron {
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -6711,18 +5739,18 @@ button.list-group-item-danger.active:focus {
   margin-bottom: 24px;
   background-color: #fff;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 0;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .panel-body {
-  padding: 15px;
+  padding: 20px;
 }
 .panel-heading {
-  padding: 10px 15px;
+  padding: 20px;
   border-bottom: 1px solid transparent;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
+  border-top-right-radius: -1;
+  border-top-left-radius: -1;
 }
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
@@ -6741,11 +5769,11 @@ button.list-group-item-danger.active:focus {
   color: inherit;
 }
 .panel-footer {
-  padding: 10px 15px;
+  padding: 20px;
   background-color: #f5f5f5;
   border-top: 1px solid #ddd;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: -1;
+  border-bottom-left-radius: -1;
 }
 .panel > .list-group,
 .panel > .panel-collapse > .list-group {
@@ -6759,14 +5787,14 @@ button.list-group-item-danger.active:focus {
 .panel > .list-group:first-child .list-group-item:first-child,
 .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
   border-top: 0;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
+  border-top-right-radius: -1;
+  border-top-left-radius: -1;
 }
 .panel > .list-group:last-child .list-group-item:last-child,
 .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
   border-bottom: 0;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: -1;
+  border-bottom-left-radius: -1;
 }
 .panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
   border-top-right-radius: 0;
@@ -6786,20 +5814,20 @@ button.list-group-item-danger.active:focus {
 .panel > .table caption,
 .panel > .table-responsive > .table caption,
 .panel > .panel-collapse > .table caption {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .panel > .table:first-child,
 .panel > .table-responsive:first-child > .table:first-child {
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
+  border-top-right-radius: -1;
+  border-top-left-radius: -1;
 }
 .panel > .table:first-child > thead:first-child > tr:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: -1;
+  border-top-right-radius: -1;
 }
 .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
@@ -6809,7 +5837,7 @@ button.list-group-item-danger.active:focus {
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
-  border-top-left-radius: 3px;
+  border-top-left-radius: -1;
 }
 .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
@@ -6819,19 +5847,19 @@ button.list-group-item-danger.active:focus {
 .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
 .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
 .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
-  border-top-right-radius: 3px;
+  border-top-right-radius: -1;
 }
 .panel > .table:last-child,
 .panel > .table-responsive:last-child > .table:last-child {
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: -1;
+  border-bottom-left-radius: -1;
 }
 .panel > .table:last-child > tbody:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: -1;
+  border-bottom-right-radius: -1;
 }
 .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
@@ -6841,7 +5869,7 @@ button.list-group-item-danger.active:focus {
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
-  border-bottom-left-radius: 3px;
+  border-bottom-left-radius: -1;
 }
 .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
@@ -6851,7 +5879,7 @@ button.list-group-item-danger.active:focus {
 .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
 .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
 .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
-  border-bottom-right-radius: 3px;
+  border-bottom-right-radius: -1;
 }
 .panel > .panel-body + .table,
 .panel > .panel-body + .table-responsive,
@@ -6924,7 +5952,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel-group .panel {
   margin-bottom: 0;
-  border-radius: 4px;
+  border-radius: 0;
 }
 .panel-group .panel + .panel {
   margin-top: 5px;
@@ -7188,34 +6216,12 @@ button.close {
 .modal-footer .btn + .btn,
 .modal-footer .btn + .btn,
 .modal-footer button + button,
-.modal-footer .btn + .btn,
-.modal-footer button + button,
-.modal-footer .btn + .btn,
-.modal-footer button + button,
-.modal-footer button + button,
-.modal-footer .btn + .btn,
-.modal-footer button + button,
-.modal-footer button + button,
-.modal-footer button + button,
-.modal-footer button + button,
-.modal-footer button + button,
 .modal-footer button + button {
   margin-left: 5px;
   margin-bottom: 0;
 }
 .modal-footer .btn-group .btn + .btn,
 .modal-footer .btn-group .btn + .btn,
-.modal-footer .btn-group button + button,
-.modal-footer .btn-group .btn + .btn,
-.modal-footer .btn-group button + button,
-.modal-footer .btn-group .btn + .btn,
-.modal-footer .btn-group button + button,
-.modal-footer .btn-group button + button,
-.modal-footer .btn-group .btn + .btn,
-.modal-footer .btn-group button + button,
-.modal-footer .btn-group button + button,
-.modal-footer .btn-group button + button,
-.modal-footer .btn-group button + button,
 .modal-footer .btn-group button + button,
 .modal-footer .btn-group button + button {
   margin-left: -1px;
@@ -7690,17 +6696,6 @@ button.close {
 .carousel-caption .btn,
 .carousel-caption .btn,
 .carousel-caption button,
-.carousel-caption .btn,
-.carousel-caption button,
-.carousel-caption .btn,
-.carousel-caption button,
-.carousel-caption button,
-.carousel-caption .btn,
-.carousel-caption button,
-.carousel-caption button,
-.carousel-caption button,
-.carousel-caption button,
-.carousel-caption button,
 .carousel-caption button {
   text-shadow: none;
 }
@@ -7763,18 +6758,10 @@ button.close {
 .modal-header:after,
 .modal-footer:before,
 .modal-footer:after,
-#silverback-main .gorilla-nest:before,
-#silverback-main .gorilla-nest:after,
-.header-colorbar > div:before,
-.header-colorbar > div:after,
-#fonts .specimen-main-modules > div:first-child:before,
-#fonts .specimen-main-modules > div:first-child:after,
-.panel-heading-elements:before,
-.panel-heading-elements:after,
-.panel-footer-buttons:before,
-.panel-footer-buttons:after,
-#silverback-main:before,
-#silverback-main:after {
+.panel-rio > .panel-heading .panel-heading-content:before,
+.panel-rio > .panel-heading .panel-heading-content:after,
+.panel-rio > .panel-footer .panel-footer-content:before,
+.panel-rio > .panel-footer .panel-footer-content:after {
   content: " ";
   display: table;
 }
@@ -7794,12 +6781,8 @@ button.close {
 .panel-body:after,
 .modal-header:after,
 .modal-footer:after,
-#silverback-main .gorilla-nest:after,
-.header-colorbar > div:after,
-#fonts .specimen-main-modules > div:first-child:after,
-.panel-heading-elements:after,
-.panel-footer-buttons:after,
-#silverback-main:after {
+.panel-rio > .panel-heading .panel-heading-content:after,
+.panel-rio > .panel-footer .panel-footer-content:after {
   clear: both;
 }
 .center-block {
@@ -8045,765 +7028,13 @@ button.close {
     display: none !important;
   }
 }
-/*
-Open Sans
-300 - Light
-400 - Regular
-600 - Semi-bold
-700 - Bold
-800 - Extra-Bold
-*/
-/*******************************************************************************
-slvrbck docs
-*/
-.panel.basic .panel-footer:first-child {
-  border-top-color: transparent;
-}
-a.anchor {
-  display: block;
-  position: relative;
-  top: -200px;
-  visibility: hidden;
-}
-section.panel-examples .panel {
-  margin-bottom: 50px;
-}
-.btn + .btn,
-.btn + .btn,
-button + button,
-.btn + .btn,
-button + button,
-.btn + .btn,
-button + button,
-button + button,
-.btn + .btn,
-button + button,
-button + button,
-button + button,
-button + button,
-button + button,
-button + button {
-  margin-left: 10px;
-}
-.buttons #disabled .row,
-.buttons #active .row {
-  margin-bottom: 30px;
-}
-.buttons #ghost .well {
-  background-color: #1a202e;
-  padding: 30px;
-}
-.buttons button + div code,
-.buttons a + div code {
-  position: relative;
-  top: 10px;
-}
-#slvrbck-example-modal.modal {
-  position: relative;
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
-  z-index: 1;
-  display: block;
-}
-/*******************************************************************************
-<header>
-navbar.less
-*/
-#silverback-header .navbar {
-  margin-bottom: 0;
-}
-#silverback-header .navbar-inverse {
-  background-color: #738596;
-  border-color: transparent;
-}
-#silverback-header .navbar-inverse .navbar-nav > li > a,
-#silverback-header .navbar-inverse .navbar-brand {
-  color: #d9d9d9;
-}
-@media (min-width: 768px) {
-  #silverback-header .navbar {
-    border-radius: 0;
-  }
-}
-/*******************************************************************************
-<main>
-*/
-#silverback-main .gorilla-nest {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-/***************************************
-main-secondary
-*/
-.main-secondary {
-  display: none;
-}
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .main-secondary {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: fixed;
-    top: 52px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #fff;
-    border-right: 1px solid #eee;
-  }
-}
-@media (min-width: 768px) and (min-width: 768px) {
-  .main-secondary {
-    float: left;
-    width: 25%;
-  }
-}
-@media (min-width: 768px) and (min-width: 992px) {
-  .main-secondary {
-    float: left;
-    width: 16.66666667%;
-  }
-}
-/***************************************
-navs.less
-*/
-nav.sidebar.left {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-nav.sidebar.left li a {
-  padding: 10px 35px;
-  color: #354a53;
-}
-.sidebar.left .nav.nested {
-  display: none;
-}
-.sidebar.left .nav > li.active .nav.nested,
-.sidebar.left .nav > .active > .nav.nested,
-.sidebar.left .nav > .current-menu-parent > .nav.nested {
-  display: block;
-}
-.sidebar.left .nav > .current-page-parent .mdi-chevron-right:before,
-.sidebar.left .nav > .active .mdi-chevron-right:before {
-  content: "\F140";
-}
-.sidebar.left .nav.nested a {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 55px;
-}
-.sidebar.left .current-menu-parent {
-  background-color: #fbfbfb;
-}
-.sidebar.left .current_page_item.active > a {
-  background-color: #dfd4e0;
-  border-left: 5px solid #7f5384;
-  color: #602966;
-  padding-left: 50px;
-}
-/***************************************
-main-secondary
-*/
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .main-primary {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-left: 100px;
-  }
-}
-@media (min-width: 768px) and (min-width: 768px) {
-  .main-primary {
-    float: left;
-    width: 75%;
-  }
-}
-@media (min-width: 768px) and (min-width: 768px) {
-  .main-primary {
-    margin-left: 8.33333333%;
-  }
-}
-@media (min-width: 768px) and (min-width: 992px) {
-  .main-primary {
-    float: left;
-    width: 83.33333333%;
-  }
-}
-@media (min-width: 768px) and (min-width: 992px) {
-  .main-primary {
-    margin-left: 16.66666667%;
-  }
-}
-.main-primary .main-primary-header {
-  margin: 0 -15px 30px -15px;
-  padding: 25px 15px 10px 15px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 5px 15px rgba(68, 68, 68, 0.27);
-  box-shadow: 0 5px 15px rgba(68, 68, 68, 0.27);
-}
-.main-primary .main-primary-header .entry-title h6 {
-  margin-top: 0;
-  margin-bottom: 6px;
-  display: none;
-}
-.main-primary .main-primary-header .entry-title h1 {
-  margin-top: 0;
-  text-transform: lowercase;
-}
-.main-primary .main-primary-container {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  max-width: 1170px;
-}
-@media (min-width: 992px) {
-  .main-primary .main-primary-container {
-    float: left;
-    width: 100%;
-  }
-}
-.main-primary .main-primary-container.has-tertiary {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  max-width: none;
-}
-@media (min-width: 992px) {
-  .main-primary .main-primary-container.has-tertiary {
-    float: left;
-    width: 75%;
-  }
-}
-.main-primary .main-tertiary {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 992px) {
-  .main-primary .main-tertiary {
-    float: left;
-    width: 25%;
-  }
-}
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .main-primary .main-primary-header {
-    margin: 0 -15px 30px -100px;
-    padding: 25px 25px 10px 85px;
-  }
-  .main-primary .main-primary-header .entry-title h6 {
-    display: block;
-  }
-}
-h1 .parent_page,
-h1 .current_page {
-  color: #777777;
-}
-h1 .current_page_child {
-  font-weight: 600;
-}
-.header-colorbar {
-  width: 24px;
-  position: relative;
-  margin-left: -85px;
-  margin-top: -25px;
-  margin-bottom: -79.56px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  display: none;
-}
-.header-colorbar > div {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-.header-colorbar [class^="colorbar-item-"] {
-  position: relative;
-  float: left;
-  width: 50%;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 47%;
-}
-.colorbar-item-1 {
-  background-color: #1a202e;
-}
-.colorbar-item-2 {
-  background-color: #1bbcb6;
-}
-.colorbar-item-3 {
-  background-color: #fff;
-}
-.colorbar-item-4 {
-  background-color: #ebaa20;
-}
-.colorbar-item-5 {
-  background-color: #76d7d3;
-}
-.colorbar-item-6 {
-  background-color: #2d83c4;
-}
-.colorbar-item-7 {
-  background-color: #602966;
-}
-.colorbar-item-8 {
-  background-color: #1a202e;
-}
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-  .header-colorbar {
-    display: block;
-  }
-}
-/*******************************************************************************
-main-primary main-primary-container
-*/
-.main-primary h4 {
-  color: #5d6e75;
-}
-section.section-contents {
-  margin-top: 30px;
-  padding-bottom: 30px;
-}
-section.section-contents:first-of-type {
-  margin-top: inherit;
-}
-section.colors {
-  margin: 45px 0;
-}
-.colors td {
-  width: 40%;
-}
-.colors td.colors-less {
-  width: 20%;
-}
-.swatches-panel {
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-}
-.swatches-panel,
-.swatches-less {
-  min-height: 50px;
-}
-.swatches-less {
-  padding-top: 7%;
-}
-.swatches.bc-p01 .swatches-panel {
-  background-color: #1a202e;
-}
-.swatches.bc-p01 .swatches-panel:nth-of-type(2n) {
-  background-color: #474c57;
-}
-.swatches.bc-p01 .swatches-panel:nth-of-type(3n) {
-  background-color: #757981;
-}
-.swatches.bc-p01 .swatches-panel:nth-of-type(4n) {
-  background-color: #a3a5ab;
-}
-.swatches.bc-p01 .swatches-panel:nth-of-type(5n) {
-  background-color: #d1d2d5;
-}
-.swatches.bc-p02 .swatches-panel {
-  background-color: #ebaa20;
-}
-.swatches.bc-p02 .swatches-panel:nth-of-type(2n) {
-  background-color: #efba4a;
-}
-.swatches.bc-p02 .swatches-panel:nth-of-type(3n) {
-  background-color: #f3cc79;
-}
-.swatches.bc-p02 .swatches-panel:nth-of-type(4n) {
-  background-color: #f7dca3;
-}
-.swatches.bc-p02 .swatches-panel:nth-of-type(5n) {
-  background-color: #fbeed2;
-}
-.swatches.bc-s01 .swatches-panel {
-  background-color: #1bbcb6;
-}
-.swatches.bc-s01 .swatches-panel:nth-of-type(2n) {
-  background-color: #48c9c4;
-}
-.swatches.bc-s01 .swatches-panel:nth-of-type(3n) {
-  background-color: #76d7d3;
-}
-.swatches.bc-s01 .swatches-panel:nth-of-type(4n) {
-  background-color: #a3e4e2;
-}
-.swatches.bc-s01 .swatches-panel:nth-of-type(5n) {
-  background-color: #d1f2f0;
-}
-.swatches.bc-s02 .swatches-panel {
-  background-color: #354a53;
-}
-.swatches.bc-s02 .swatches-panel:nth-of-type(2n) {
-  background-color: #5d6e75;
-}
-.swatches.bc-s02 .swatches-panel:nth-of-type(3n) {
-  background-color: #859297;
-}
-.swatches.bc-s02 .swatches-panel:nth-of-type(4n) {
-  background-color: #aeb6ba;
-}
-.swatches.bc-s02 .swatches-panel:nth-of-type(5n) {
-  background-color: #d6dbdc;
-}
-.swatches.bc-s03 .swatches-panel {
-  background-color: #2d83c4;
-}
-.swatches.bc-s03 .swatches-panel:nth-of-type(2n) {
-  background-color: #56a0d8;
-}
-.swatches.bc-s03 .swatches-panel:nth-of-type(3n) {
-  background-color: #7fb7e2;
-}
-.swatches.bc-s03 .swatches-panel:nth-of-type(4n) {
-  background-color: #add1ec;
-}
-.swatches.bc-s03 .swatches-panel:nth-of-type(5n) {
-  background-color: #d7e8f6;
-}
-.swatches.bc-sp01 .swatches-panel {
-  background-color: #602966;
-}
-.swatches.bc-sp01 .swatches-panel:nth-of-type(2n) {
-  background-color: #7f5384;
-}
-.swatches.bc-sp01 .swatches-panel:nth-of-type(3n) {
-  background-color: #9f7ea3;
-}
-.swatches.bc-sp01 .swatches-panel:nth-of-type(4n) {
-  background-color: #bfa9c2;
-}
-.swatches.bc-sp01 .swatches-panel:nth-of-type(5n) {
-  background-color: #dfd4e0;
-}
-.swatches.bc-sp02 .swatches-panel {
-  background-color: #b21876;
-}
-.swatches.bc-sp02 .swatches-panel:nth-of-type(2n) {
-  background-color: #c14691;
-}
-.swatches.bc-sp02 .swatches-panel:nth-of-type(3n) {
-  background-color: #d174ac;
-}
-.swatches.bc-sp02 .swatches-panel:nth-of-type(4n) {
-  background-color: #e0a2c8;
-}
-.swatches.bc-sp02 .swatches-panel:nth-of-type(5n) {
-  background-color: #f0d0e3;
-}
-.swatches.bc-sp03 .swatches-panel {
-  background-color: #65ae45;
-}
-.swatches.bc-sp03 .swatches-panel:nth-of-type(2n) {
-  background-color: #83be6a;
-}
-.swatches.bc-sp03 .swatches-panel:nth-of-type(3n) {
-  background-color: #a2ce8f;
-}
-.swatches.bc-sp03 .swatches-panel:nth-of-type(4n) {
-  background-color: #c2e2b5;
-}
-.swatches.bc-sp03 .swatches-panel:nth-of-type(5n) {
-  background-color: #e3f1dd;
-}
-.swatches.bc-sp04 .swatches-panel {
-  background-color: #ed722d;
-}
-.swatches.bc-sp04 .swatches-panel:nth-of-type(2n) {
-  background-color: #f18e57;
-}
-.swatches.bc-sp04 .swatches-panel:nth-of-type(3n) {
-  background-color: #f4ab82;
-}
-.swatches.bc-sp04 .swatches-panel:nth-of-type(4n) {
-  background-color: #f8c7ac;
-}
-.swatches.bc-sp04 .swatches-panel:nth-of-type(5n) {
-  background-color: #fbe4d6;
-}
-.swatches.bc-sp05 .swatches-panel {
-  background-color: #ea2032;
-}
-.swatches.bc-sp05 .swatches-panel:nth-of-type(2n) {
-  background-color: #ee4f5d;
-}
-.swatches.bc-sp05 .swatches-panel:nth-of-type(3n) {
-  background-color: #f27983;
-}
-.swatches.bc-sp05 .swatches-panel:nth-of-type(4n) {
-  background-color: #f6a3aa;
-}
-.swatches.bc-sp05 .swatches-panel:nth-of-type(5n) {
-  background-color: #fbd1d5;
-}
-.swatches.bc-sp06 .swatches-panel {
-  background-color: #f8f8f8;
-}
-.swatches.bc-sp07 .swatches-panel {
-  background-color: #333333;
-}
-.swatches.bc-sp08 .swatches-panel {
-  background-color: #fff;
-}
-.swatches.bc-sp06 .swatches-panel,
-.swatches.bc-sp07 .swatches-panel,
-.swatches.bc-sp08 .swatches-panel {
-  border-radius: 50%;
-  margin: 0 auto;
-  height: 100px;
-  width: 100px;
-  -webkit-box-shadow: 0 5px 15px rgba(68, 68, 68, 0.27);
-  box-shadow: 0 5px 15px rgba(68, 68, 68, 0.27);
-}
-.principle-list .mdi {
-  position: absolute;
-  margin-top: -20px;
-  font-size: 50px;
-}
-.principle-list .mdi.mdi-human-male-female {
-  color: #354a53;
-}
-.principle-list .mdi.mdi-arrange-send-backward {
-  color: #1bbcb6;
-}
-.principle-list .mdi.mdi-lightbulb-on-outline {
-  color: #602966;
-}
-.principle-list .mdi.mdi-gender-male-female {
-  color: #2d83c4;
-}
-.principle-list dl {
-  margin-left: 100px;
-  margin-bottom: 50px;
-}
-#fonts .specimen-main-modules > div:first-child {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-#fonts .specimen-modules {
-  margin-bottom: 70px;
-}
-#fonts .specimen-modules:last-of-type {
-  margin-bottom: inherit;
-}
-#fonts .specimen-module {
-  margin-bottom: 40px;
-}
-#fonts .specimen-characters-module {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  #fonts .specimen-characters-module {
-    float: left;
-    width: 50%;
-  }
-}
-#fonts .specimen-variants-module {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  #fonts .specimen-variants-module {
-    float: left;
-    width: 41.66666667%;
-  }
-}
-@media (min-width: 768px) {
-  #fonts .specimen-variants-module {
-    margin-left: 8.33333333%;
-  }
-}
-#fonts .specimen-characters-module-content {
-  font-size: 36px;
-  line-height: 40px;
-}
-#fonts .specimen-variants-module-content {
-  font-size: 36px;
-  line-height: 1.10909;
-}
-#fonts .specimen-characters-module-content,
-#fonts .specimen-variants-module-content {
-  font-family: Roboto, "Open Sans", Arial, sans-serif;
-}
-.roboto .variants-preview-variants li.light {
-  font-weight: 300;
-}
-.roboto .variants-preview-variants li.regular {
-  font-weight: 400;
-}
-.roboto .variants-preview-variants li.bold {
-  font-weight: 700;
-}
-.open-sans .variants-preview-variants li.regular {
-  font-weight: 400;
-}
-.open-sans .variants-preview-variants li.semi-bold {
-  font-weight: 600;
-}
-h3.line-height-example {
-  line-height: 1.25;
-}
-p.line-height-example {
-  line-height: 1.5;
-}
-/*******************************************************************************
-prism.less Overrides
-//keep seperate from Prism.less
-*/
-.main-primary pre {
-  position: relative;
-  padding: 35px 15px 30px;
-}
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: #3c3c3c;
-}
-code[class*="language-"],
-pre[class*="language-"] {
-  font-size: 14px;
-}
-/* Fallback, in case JS does not run, to ensure the code is at least visible */
-.lang-markup script[type='text/plain'],
-.language-markup script[type='text/plain'],
-script[type='text/plain'].lang-markup,
-script[type='text/plain'].language-markup {
-  display: block;
-  font: 100% Consolas, Monaco, monospace;
-  white-space: pre;
-  overflow: auto;
-}
-.sidebar.right {
-  display: none;
-  border-left: 1px solid #d6dbdc;
-  margin-left: 20px;
-  padding-left: 20px;
-}
-span.sidebar-title {
-  margin-left: 15px;
-}
-@media (min-width: 992px) {
-  .sidebar.right {
-    display: block;
-  }
-}
-/* Show and affix the side nav when space allows it */
-@media (min-width: 992px) {
-  /* Widen the fixed sidebar */
-  .sidebar.right.affix,
-  .sidebar.right.affix-bottom {
-    width: 204px;
-  }
-  .sidebar.right.affix {
-    position: fixed;
-    top: 100px;
-  }
-  .sidebar.right.affix-bottom {
-    position: absolute;
-    /* Undo the static from mobile first approach */
-  }
-}
-@media (min-width: 1200px) {
-  /* Widen the fixed sidebar */
-  .sidebar.right.affix,
-  .sidebar.right.affix-bottom {
-    width: 18.25%;
-  }
-}
-.sidebar.right a.active,
-.sidebar.right li.active {
-  font-weight: 600;
-}
-/*******************************************************************************
-type.less
-*/
-p {
-  margin: 0 0 24px;
-}
-p + ul {
-  margin-top: -12px;
-}
-.loud {
-  color: #b21876;
-}
-@media (min-width: 768px) {
-  .lead,
-  .section-page-heading + p {
-    font-size: 20px;
-  }
-}
-/*******************************************************************************
-tables.less
-*/
-.table > thead > tr > th {
-  font-size: 13px;
-  text-transform: uppercase;
-  color: #555555;
-}
-.table-hover > tbody > tr:hover,
-.table-hover.table-striped > tbody > tr:nth-of-type(odd):hover {
-  background-color: #eeeeee;
-}
-.table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #eeeeee;
-}
-/*******************************************************************************
-scafffolding.less
-*/
-body {
-  padding-top: 51px;
-}
-/*******************************************************************************
-buttons.less
-*/
-.btn,
-button,
-button,
-.btn,
-button,
-button,
-button {
-  outline: 0!important;
-}
-.panel.prism {
-  border-color: #d6dbdc;
-}
-.panel.prism .panel-heading {
-  background-color: #5d6e75;
-  color: #fff;
-}
-.panel.prism .panel-footer {
-  background-color: #d1d2d5;
-}
 /*******************************************************************************
 While building the design system, use this file for quick styling.
-  - Note which Bootstrap Less files you are overriding ex: components/modals.less
-  - Once development is complete, create the required less files for override in
-    /troops/bestcaseonline/___________/filename.less and move the css
-    from this file to the new file.
-  - Once the css have been moved, create an import in this file to the new file.
+- Note which Bootstrap Less files you are overriding ex: components/modals.less
+- Once development is complete, create the required less files for override in
+/troops/bestcaseonline/___________/filename.less and move the css
+from this file to the new file.
+- Once the css have been moved, create an import in this file to the new file.
 */
 @media (min-width: 768px) {
   .navbar {
@@ -8820,10 +7051,6 @@ type.less
 buttons.less
 */
 .btn,
-button,
-.btn,
-button,
-button,
 button,
 button {
   outline: 0!important;
@@ -8945,25 +7172,25 @@ fieldset[disabled] .btn-secondary.focus {
 .btn-outline-default {
   color: #333333;
   background-color: transparent;
-  border-color: #c8cfd0;
+  border-color: #e2e2e2;
 }
 .btn-outline-default:focus,
 .btn-outline-default.focus {
   color: #333333;
-  background-color: #e4e7e8;
-  border-color: #c8cfd0;
+  background-color: #fbfbfb;
+  border-color: #e2e2e2;
 }
 .btn-outline-default:hover {
   color: #333333;
-  background-color: #e4e7e8;
-  border-color: #c8cfd0;
+  background-color: #fbfbfb;
+  border-color: #e2e2e2;
 }
 .btn-outline-default:active,
 .btn-outline-default.active,
 .open > .dropdown-toggle.btn-outline-default {
   color: #333333;
-  background-color: #e4e7e8;
-  border-color: #c8cfd0;
+  background-color: #fbfbfb;
+  border-color: #e2e2e2;
 }
 .btn-outline-default:active:hover,
 .btn-outline-default.active:hover,
@@ -8975,8 +7202,8 @@ fieldset[disabled] .btn-secondary.focus {
 .btn-outline-default.active.focus,
 .open > .dropdown-toggle.btn-outline-default.focus {
   color: #333333;
-  background-color: #e4e7e8;
-  border-color: #c8cfd0;
+  background-color: #fbfbfb;
+  border-color: #e2e2e2;
 }
 .btn-outline-default:active,
 .btn-outline-default.active,
@@ -8993,7 +7220,7 @@ fieldset[disabled] .btn-outline-default:focus,
 .btn-outline-default[disabled].focus,
 fieldset[disabled] .btn-outline-default.focus {
   background-color: transparent;
-  border-color: #c8cfd0;
+  border-color: #e2e2e2;
 }
 .btn-outline-primary {
   color: #48c9c4;
@@ -9049,25 +7276,25 @@ fieldset[disabled] .btn-outline-primary.focus {
   border-color: #a3e4e2;
 }
 .btn-outline-secondary {
-  color: #56a0d8;
+  color: #2d83c4;
   background-color: transparent;
   border-color: #add1ec;
 }
 .btn-outline-secondary:focus,
 .btn-outline-secondary.focus {
-  color: #56a0d8;
+  color: #2d83c4;
   background-color: #d7e8f6;
   border-color: #add1ec;
 }
 .btn-outline-secondary:hover {
-  color: #56a0d8;
+  color: #2d83c4;
   background-color: #d7e8f6;
   border-color: #add1ec;
 }
 .btn-outline-secondary:active,
 .btn-outline-secondary.active,
 .open > .dropdown-toggle.btn-outline-secondary {
-  color: #56a0d8;
+  color: #2d83c4;
   background-color: #d7e8f6;
   border-color: #add1ec;
 }
@@ -9080,7 +7307,7 @@ fieldset[disabled] .btn-outline-primary.focus {
 .btn-outline-secondary:active.focus,
 .btn-outline-secondary.active.focus,
 .open > .dropdown-toggle.btn-outline-secondary.focus {
-  color: #56a0d8;
+  color: #2d83c4;
   background-color: #d7e8f6;
   border-color: #add1ec;
 }
@@ -9395,94 +7622,102 @@ fieldset[disabled] .btn-ghost-danger.focus {
   border-color: transparent;
 }
 /*******************************************************************************
-panels.less
+Extend panels.less
 */
-.panel.basic {
+/************************************
+Rio Panel
+*/
+.panel-rio {
   border: 1px solid #d6dbdc;
   border-top: 5px solid #1a202e;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.panel.basic .panel-heading,
-.panel.basic .panel-body,
-.panel.basic .panel-footer {
-  padding: 20px;
-}
-.panel.basic > .panel-heading,
-.panel.basic > .panel-footer {
+.panel-rio > .panel-heading,
+.panel-rio .panel-footer {
   background-color: transparent;
   border-color: transparent;
 }
-.panel.basic .panel-footer {
-  border-top-color: #d6dbdc;
-}
-.panel.basic .panel-heading .panel-title {
+.panel-rio > .panel-heading .panel-title {
   font-size: 19px;
 }
-.panel-heading-elements {
+.panel-rio > .panel-heading .panel-heading-content {
   margin-left: -15px;
   margin-right: -15px;
 }
-.panel-heading-elements > div:first-of-type,
-.panel-heading-elements > div:last-of-type {
+.panel-rio > .panel-heading .panel-heading-content > .heading-content-left,
+.panel-rio > .panel-heading .panel-heading-content > .heading-content-right {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .panel-heading-elements > div:first-of-type,
-  .panel-heading-elements > div:last-of-type {
+  .panel-rio > .panel-heading .panel-heading-content > .heading-content-left,
+  .panel-rio > .panel-heading .panel-heading-content > .heading-content-right {
     float: left;
     width: 50%;
   }
 }
-.panel-heading-elements > div:first-of-type:last-of-type {
+.panel-rio > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .panel-heading-elements > div:first-of-type:last-of-type {
+  .panel-rio > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
     float: left;
     width: 100%;
   }
 }
-.panel-footer-buttons {
+.panel-rio > .panel-footer {
+  padding: 20px 30px;
+  border-top-color: #d6dbdc;
+}
+.panel-rio > .panel-footer .panel-footer-content {
   margin-left: -15px;
   margin-right: -15px;
 }
-.panel-footer-buttons > div:first-of-type,
-.panel-footer-buttons > div:last-of-type {
+.panel-rio > .panel-footer .panel-footer-content > .footer-content-left,
+.panel-rio > .panel-footer .panel-footer-content .footer-content-right {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .panel-footer-buttons > div:first-of-type,
-  .panel-footer-buttons > div:last-of-type {
+  .panel-rio > .panel-footer .panel-footer-content > .footer-content-left,
+  .panel-rio > .panel-footer .panel-footer-content .footer-content-right {
     float: left;
     width: 50%;
   }
 }
-.panel-footer-buttons > div:first-of-type:last-of-type {
+.panel-rio > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .panel-footer-buttons > div:first-of-type:last-of-type {
+  .panel-rio > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
     float: left;
     width: 100%;
   }
 }
 @media (min-width: 768px) {
-  .panel-heading-elements .heading-element-right,
-  .panel-footer-buttons .footer-buttons-right {
+  .panel-rio .panel-heading-content .heading-content-right,
+  .panel-rio .panel-footer-content .footer-content-right {
     text-align: right;
+  }
+}
+@media (min-width: 992px) {
+  .panel-rio > .panel-heading,
+  .panel-rio .panel-body {
+    padding: 30px;
+  }
+  .panel-rio > .panel-heading + .panel-body {
+    padding-top: 0px;
   }
 }
 /*******************************************************************************
@@ -9506,6 +7741,7 @@ alerts.less (notifications)
   border: none;
   border-radius: 0;
   border-top: 10px solid transparent;
+  -webkit-box-shadow: 0 5px 15px rgba(68, 68, 68, 0.27);
   box-shadow: 0 5px 15px rgba(68, 68, 68, 0.27);
 }
 .alert .close {
@@ -9543,4 +7779,94 @@ alerts.less (notifications)
 }
 .alert-error .alert-title {
   color: #ea2032;
+}
+/*******************************************************************************
+tabs.less
+*/
+.nav-tabs > li > a {
+  padding: 5px 15px;
+  font-size: 13px;
+  border-bottom-color: #1bbcb6;
+  border-radius: 0;
+}
+.tab-content {
+  padding: 0 15px;
+}
+/***********************************
+Nav-tabs Dropdown
+https://bootsnipp.com/snippets/featured/nav-tabs-dropdown
+*/
+.nav-tabs-dropdown {
+  display: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.nav-tabs-dropdown:before {
+  content: "\e114";
+  font-family: 'Glyphicons Halflings';
+  position: absolute;
+  right: 55px;
+}
+@media screen and (min-width: 769px) {
+  #nav-tabs-wrapper {
+    display: block!important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav-tabs-dropdown {
+    display: block;
+  }
+  #nav-tabs-wrapper {
+    display: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    text-align: center;
+  }
+  .nav-tabs-horizontal {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  }
+  .nav-tabs-horizontal > li {
+    float: none;
+  }
+  .nav-tabs-horizontal > li + li {
+    margin-left: 2px;
+  }
+  .nav-tabs-horizontal > li,
+  .nav-tabs-horizontal > li > a {
+    background: transparent;
+    width: 100%;
+  }
+  .nav-tabs-horizontal > li > a {
+    border-radius: 4px;
+  }
+  .nav-tabs-horizontal > li.active > a,
+  .nav-tabs-horizontal > li.active > a:hover,
+  .nav-tabs-horizontal > li.active > a:focus {
+    color: #ffffff;
+    background-color: #428bca;
+  }
+}
+/*******************************************************************************
+forms.less
+*/
+.form-group label,
+.form-group .form-control {
+  font-size: 13px;
+}
+.form-group .form-control {
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+@media (min-width: 768px) {
+  .form-group .form-control {
+    height: 30px;
+  }
 }

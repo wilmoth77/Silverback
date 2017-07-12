@@ -30,11 +30,76 @@ Open Sans
 @cin-s08:                #b0b7c1; //Soft silver
 @cin-s09:                #3d8764; //green teal
 
+//Best Case Colors
+//Primary
+@bc-p01:                 #1a202e; //CINight
+@bc-p01-80:              lighten(desaturate(spin(@bc-p01, -0.7500), 17.6512), 16.8627); //#474c57
+@bc-p01-60:              lighten(desaturate(spin(@bc-p01, -2.0000), 22.8997), 34.1176); //#757981
+@bc-p01-40:              lighten(desaturate(spin(@bc-p01, 3.0000), 23.2323), 51.3725); //#a3a5ab
+@bc-p01-20:              lighten(desaturate(spin(@bc-p01, 3.0000), 23.2323), 68.6275); //#d1d2d5
+@bc-p02:                 #ebaa20; //Goldfinger
+@bc-p02-80:              lighten(@bc-p02, 9%); //#efbb4c
+@bc-p02-60:              lighten(@bc-p02, 19%); //#f3cc79
+@bc-p02-40:              lighten(@bc-p02, 28%); //#f7dda5
+@bc-p02-20:              lighten(@bc-p02, 38%); //#fbeed2
+
+//Secondary
+@bc-s01:                 #1bbcb6; //Celeste
+@bc-s01-80:              lighten(desaturate(spin(@bc-s01, -0.0896), 20.4533), 11.3725); //#48c9c4
+@bc-s01-60:              lighten(desaturate(spin(@bc-s01, -0.2382), 20.0815), 23.1373); //#76d7d3
+@bc-s01-40:              lighten(desaturate(spin(@bc-s01, 0.3899), 20.2619), 34.5098); //#a3e4e2
+@bc-s01-20:              lighten(desaturate(spin(@bc-s01, -1.4003), 18.9515), 46.2745); //#d1f2f0
+@bc-s02:                 #354a53; //Aquaman
+@bc-s02-80:              lighten(desaturate(spin(@bc-s02, -0.5000), 10.6303), 14.5098); //#5d6e75
+@bc-s02-60:              lighten(desaturate(spin(@bc-s02, -1.3333), 14.0942), 29.0196); //#859297
+@bc-s02-40:              lighten(desaturate(spin(@bc-s02, 2.0000), 14.0588), 43.9216); //#aeb6ba
+@bc-s02-20:              lighten(desaturate(spin(@bc-s02, -8.0000), 14.1641), 58.4314); //#d6dbdc
+@bc-s03:                 #2d83c4; //Skydiver
+@bc-s03-80:              lighten(@bc-s03, 12%); //#56a0d8
+@bc-s03-60:              lighten(@bc-s03, 22%); //#81b4db
+@bc-s03-40:              lighten(@bc-s03, 33%); //#abcde7
+@bc-s03-20:              lighten(@bc-s03, 43%);//#d5e6f3
+
+//Supporting
+@bc-sp01:               #602966; //Wonka
+@bc-sp01-80:            lighten(desaturate(spin(@bc-sp01, -0.2208), 19.8666), 14.1176); //#7f5384
+@bc-sp01-60:            lighten(desaturate(spin(@bc-sp01, -0.5848), 25.9153), 28.6275); //#9f7ea3
+@bc-sp01-40:            lighten(desaturate(spin(@bc-sp01, -1.2984), 25.6505), 43.1373); //#bfa9c2
+@bc-sp01-20:            lighten(desaturate(spin(@bc-sp01, 0.9016), 26.4411), 57.4510); //#dfd4e0
+
+@bc-sp02:              #b21876; //80's Hair
+@bc-sp02-80:            lighten(desaturate(spin(@bc-sp02, 0.0380), 26.4401), 11.9608); //#c14691
+@bc-sp02-60:            lighten(desaturate(spin(@bc-sp02, 0.4943), 25.9674), 24.1176); //#d174ac
+@bc-sp02-40:            lighten(desaturate(spin(@bc-sp02, -0.1508), 26.2376), 36.0784); //#e0a2c8
+@bc-sp02-20:            lighten(desaturate(spin(@bc-sp02, 0.9984), 24.6247), 48.2353); //#f0d0e3
+@bc-sp03:              #65ae45; //Success
+@bc-sp03-80:            lighten(desaturate(spin(@bc-sp03, 0.4286), 3.9575), 10.3922); //#83be6a
+@bc-sp03-60:            lighten(desaturate(spin(@bc-sp03,0.1905), 4.0794), 20.7843); //#a2ce8f
+@bc-sp03-40:            lighten(@bc-sp03, 32%); //#c1dfb4
+@bc-sp03-20:            lighten(@bc-sp03, 43%); //#e0efda
+@bc-sp04:              #ed722d; //Warning
+@bc-sp04-80:            lighten(@bc-sp04, 9%); //#f08e57
+@bc-sp04-60:            lighten(@bc-sp04, 18%); //#f4aa81
+@bc-sp04-40:            lighten(@bc-sp04, 27%); //#f8c6ab
+@bc-sp04-20:            lighten(@bc-sp04, 36%); //#fce3d5
+@bc-sp05:              #ea2032; //Danger
+@bc-sp05-80:            lighten(@bc-sp05, 10%);  //#ee4c5b
+@bc-sp05-60:            lighten(@bc-sp05, 19%); //#f27984
+@bc-sp05-40:            lighten(@bc-sp05, 28%); //#f7a5ad
+@bc-sp05-20:            lighten(@bc-sp05, 38%); //#fbd2d6
+
+@bc-sp06:               #f8f8f8; //Lodon Fog
+@bc-sp07:               @gray-dark; //Inkstain
+@bc-sp08:               #fff; //Whitesox
+
+@white:                 #fff; //Set a white variable incase we want to change
+                            //what we consider "white"
+
 //== Colors
 
 @brand-primary:         @cin-p02;
 @brand-success:         @cin-s07;
-@brand-info:            @cin-s03;
+@brand-info:            @cin-s09;
 @brand-warning:         @cin-s04;
 @brand-danger:          #d9534f;
 
@@ -54,6 +119,36 @@ Open Sans
 //## Font, line-height, and color for body text, headings, and more.
 
 @font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+//Bootstrap 4 heading sizes
+/*
+@font-size-h1:         floor((@font-size-base * 2.85)); // 40px
+@font-size-h2:         ceil((@font-size-base * 2.25)); // 32px
+@font-size-h3:         ceil((@font-size-base * 2.0)); //  28px
+@font-size-h4:         ceil((@font-size-base * 1.7)); //  24px
+@font-size-h5:         ceil((@font-size-base * 1.4)); // 20px
+@font-size-h6:         ceil((@font-size-base * 1.1)); // 16px
+*/
+
+//Bootstrap 4 heading ratio of base (14px)
+
+@font-size-h1:         floor((@font-size-base * 2.5)); // 35px
+@font-size-h2:         floor((@font-size-base * 2)); // 28px
+@font-size-h3:         ceil((@font-size-base * 1.75)); //  24px
+@font-size-h4:         ceil((@font-size-base * 1.5)); //  21px
+@font-size-h5:         ceil((@font-size-base * 1.25)); // 18px
+@font-size-h6:         @font-size-base; // 14px
+
+
+//Bootstrap 3 for quick reference - don't uncomment
+/*
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:            @font-size-base;
+@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+*/
 
 //== Buttons
 //
@@ -84,6 +179,10 @@ Open Sans
 @btn-danger-color:               #fff;
 @btn-danger-bg:                  @brand-danger;
 @btn-danger-border:              darken(@btn-danger-bg, 5%);
+
+@btn-copy-color:                #fff;
+@btn-copy-bg:                   @brand-info;
+@btn-copy-border:               darken(@btn-copy-bg, 5%);
 
 @btn-link-disabled-color:        @gray-light;
 

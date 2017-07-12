@@ -31,18 +31,22 @@
           $('[data-toggle="tooltip"]').tooltip();
           $('[data-toggle="popover"]').popover();
           $('#myTabs a').click(function (e) {
-            e.preventDefault()
-            $(this).tab('show')
-          })
+            e.preventDefault();
+            $(this).tab('show');
+          });
           $('body').scrollspy({ target: '.sidebar.right' });
           $('body').each(function () {
             var $spy = $(this).scrollspy('refresh');
           });
         });
+
         $(function(){
           if ( $('nav .documentation > li:nth-child(1)').hasClass('active') ) {
             $('nav .documentation > li:nth-child(2)').addClass('active');
           }
+
+          //Remove these classes from the wp body classes because they
+          //get Bootstrap styles applied
           if ( $('body').hasClass('panel') ) {
             $('body').removeClass('panel');
           }
@@ -54,11 +58,13 @@
           }
         });
 
+        //Stick the right content menu
         $('.sidebar.right').affix({
           offset: {
             top: 100,
           }
         });
+        //Add active classes to the right content menu
         $(function() {
           $(".sidebar.right a").on("click", function() {
             $("a.active").removeClass("active");
@@ -66,6 +72,62 @@
           });
         });
 
+        //Nav-tabs dropdown
+        //https://bootsnipp.com/snippets/featured/nav-tabs-dropdown
+        $('.nav-tabs-dropdown').each(function(i, elm) {
+          $(elm).text($(elm).next('ul').find('li.active a').text());
+        });
+        $('.nav-tabs-dropdown').on('click', function(e) {
+          e.preventDefault();
+          $(e.target).toggleClass('open').next('ul').slideToggle();
+        });
+        $('#nav-tabs-wrapper a[data-toggle="tab"]').on('click', function(e) {
+          e.preventDefault();
+          $(e.target).closest('ul').hide().prev('a').removeClass('open').text($(this).text());
+        });
+
+        $(function(){
+          var pre = document.getElementsByTagName('pre');
+          for (var i = 0; i < pre.length; i++) {
+            var isLanguage = pre[i].children[0].className.indexOf('language-');
+            if ( isLanguage === 0 ) {
+              var button           = document.createElement('button');
+              button.className = 'copy-button sb-btn btn btn-copy';
+              button.textContent = 'Copy';
+
+              pre[i].appendChild(button);
+            }
+          }
+          var copyCode = new Clipboard('.copy-button', {
+            target: function(trigger) {
+              return trigger.previousElementSibling;
+            }
+          });
+          copyCode.on('success', function(event) {
+            event.clearSelection();
+            event.trigger.textContent = 'Copied';
+            window.setTimeout(function() {
+              event.trigger.textContent = 'Copy';
+            }, 2000);
+          });//end onSuccess
+          copyCode.on('error', function(event) {
+            event.trigger.textContent = 'Press "Ctrl + C" to copy';
+            window.setTimeout(function() {
+              event.trigger.textContent = 'Copy';
+            }, 2000);
+          });//end onError
+        });//end function
+
+        //Change the text on the view code button
+        $('.view-code').click(function(){
+          var $this = $(this);
+          $this.toggleClass('view-code');
+          if($this.hasClass('view-code')){
+            $this.text('View code');
+          } else {
+            $this.text('Hide code');
+          }
+        });
       }
     },
     // Home page

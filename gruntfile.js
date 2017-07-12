@@ -32,7 +32,9 @@ module.exports = function(grunt) {
         files: {
           "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
           "./public/css/prism.min.css":"./assets/less/prism.less",
-          "./public/css/main.min.css":"./assets/less/main.less",
+          //"./public/css/main.min.css":"./assets/less/main.less",
+          "./public/css/silverback.min.css":"./assets/less/silverback/main-silverback.less",
+          "./public/css/bestcaseonline.min.css":"./assets/less/troops/bestcaseonline/main-bestcaseonline.less",
         },
         options: {
           compress: true,
@@ -47,7 +49,7 @@ module.exports = function(grunt) {
       },
       pretty: {
         files: {
-          "./assets/css/main-pretty.css":"./assets/less/main.less",
+          "./assets/css/bestcaseonline.pretty.css":"./assets/less/bestcaseonline.pretty.less",
         },
         plugins: [
           new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
@@ -57,7 +59,9 @@ module.exports = function(grunt) {
         files: {
           "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
           "./public/css/prism.min.css":"./assets/less/prism.less",
-          "./public/css/main.min.css":"./assets/less/main.less",
+          //"./public/css/main.min.css":"./assets/less/main.less",
+          "./public/css/silverback.min.css":"./assets/less/silverback/main-silverback.less",
+          "./public/css/bestcaseonline.min.css":"./assets/less/silverback/troops/bestcaseonline/main-bestcaseonline.less"
         },
         options: {
           compress: true,
@@ -109,7 +113,7 @@ module.exports = function(grunt) {
       less: {
         files: [
           './assets/less/*.less',
-          './assets/less/**/*.less'
+          './assets/less/**/*.less',
         ],
         tasks: ['less:development'],
       },
@@ -127,7 +131,7 @@ module.exports = function(grunt) {
         },
         files: [
           '**/*.php',
-          './public/css/main.min.css',
+          './public/css/*.css',
           './assets/js/*.js'
         ]
       }
