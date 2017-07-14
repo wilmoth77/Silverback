@@ -6,6 +6,9 @@
 */
 ?>
 <div class="main-secondary">
+  <div class="main-brand" itemtype="http://schema.org/Organization">
+    <a class="main-brand-logo" href="/"><?php bloginfo( 'name' ); ?></a>
+  </div>
   <?php get_template_part( 'template-parts/sidebar', 'secondary' ); ?>
 </div>
 <div class="main-primary">

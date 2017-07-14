@@ -7,8 +7,105 @@
 //Always last
 @import "variables";             // New and override variables
 
+/*******************************************************************************
+Home page
+*/
+body.home {
+  background-color: @cin-p01;
+
+  &.menu-open {
+    & nav.navbar {
+      background-color: transparent !important;
+    }
+    & .main-hero {
+      .opacity(.3);
+    }
+  }
+  & .navbar-form {
+    display: none;
+  }
+
+  & .main-hero {
+    background-color: @cin-p01;
+    & .silverback-welcome {
+      .make-md-column(10);
+      .make-md-column-offset(1);
+      padding-top: 100px;
+      padding-bottom: 100px;
+      color: @white;
+      .text-center;
+      > img {
+        max-width: 200px;
+        margin: 0 auto 50px auto;
+      }
+      > .silverback-welcome-search{
+        & .mdi-magnify {
+          font-size: @font-size-h2;
+          color: @gray-light;
+          position: absolute;
+          left: 26px;
+          margin-top: 26px;
+        }
+        & input[type="search"] {
+          padding: 25px 45px;
+          font-size: @font-size-base + 2;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  body.home {
+    & .main-hero {
+      & .silverback-welcome {
+        > .lead {
+          font-size: 32px;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}
 
 
+/*******************************************************************************
+Best Case Silverback Styling
+Target the .bestcaseonline body class
+*/
+
+.bestcaseonline {
+  & .font-example-roboto span,
+  .font-example-opensans span {
+    &:extend(h2);
+  }
+  & .font-example-roboto span {
+    &.example-roboto-light {
+      font-weight: 300;
+    }
+    &.example-roboto-regular {
+      font-weight: 400;
+    }
+    &.example-roboto-bold {
+      font-weight: 700;
+    }
+  }
+  & .font-example-opensans span {
+    &.example-opensans-regular {
+      font-weight: 400;
+    }
+    &.example-opensans-semibold {
+      font-weight: 600;
+    }
+  }
+}
+
+/***********************************
+Hide sections or pages that aren't done from the sidenav
+*/
+.menu-item-77 {
+  //display: none !important;
+}
 
 /*******************************************************************************
 SB Doc Sections
@@ -43,16 +140,18 @@ SB Doc Sections
       > .example-container-body {
         background-color: @bc-sp06;
         &:extend(.panel-body all);
+        padding: 24px;
       }
 
       > .example-container-footer {
         &:extend(.panel-footer all);
+        padding: 15px 24px;
       }
     }
     & .prismjs-code {
       margin-top: 25px;
       overflow: auto;
-      > h4 {
+      > h5 {
         font-weight: 600;
         color: @cin-s09;
       }
@@ -62,7 +161,7 @@ SB Doc Sections
 }
 
 .sb-docs-section {
-  h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     //font-weight: 400;
     margin-top: 0;
   }
@@ -144,6 +243,72 @@ a.sb-btn,
   }
 }
 
+//Add outline buttons
+// Mixin for the outline button variant
+
+.button-outline-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:focus,
+  &.focus {
+    color: @color;
+    background-color: lighten(@border, 10%);
+    border-color: @border;
+  }
+  &:hover {
+    color: darken(@border, 40%);
+    background-color: lighten(@border, 0%);
+    border-color: @border;
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @color;
+    background-color: lighten(@border, 10%);
+    border-color: @border;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @color;
+      background-color: lighten(@border, 10%);
+      border-color: @border;
+    }
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: @background;
+      border-color: @border;
+    }
+  }
+
+}
+
+// Style the outline buttons
+.btn-outline-default {
+  .button-outline-variant(@text-color; transparent; @btn-default-border);
+}
+.btn-outline-primary {
+  .button-outline-variant(@cin-p01; transparent; @cin-p01);
+}
+.btn-outline-secondary {
+  .button-outline-variant(@cin-p02; transparent; @cin-p02);
+}
+.btn-outline-danger {
+  .button-outline-variant(@brand-danger; transparent; @brand-danger);
+}
+
 
 /*******************************************************************************
 slvrbck docs
@@ -218,16 +383,26 @@ navbar.less
       }
     }
     & .navbar-nav>.active>a,
-      .navbar-nav>.active>a:hover,
-      .navbar-nav>.active>a:focus,
-      .navbar-nav>.current-page-ancestor>a,
-      .navbar-nav>.current-page-ancestor>a:hover,
-      .navbar-nav>.current-page-ancestor>a:focus{
-        color: @white;
-        background-color: lighten(@cin-p01, 3%);
-        border-top: 4px solid lighten(@cin-p02, 1%);
-        padding-top: 9px;
-      }
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus,
+    .navbar-nav>.current-page-ancestor>a,
+    .navbar-nav>.current-page-ancestor>a:hover,
+    .navbar-nav>.current-page-ancestor>a:focus{
+      color: @white;
+      background-color: lighten(@cin-p01, 3%);
+      border-top: 4px solid lighten(@cin-p02, 1%);
+      padding-top: 9px;
+    }
+  }
+  & .navbar-form {
+    & .mdi-magnify {
+      position: absolute;
+      top: 15px;
+      margin-left: 5px;
+    }
+    & input[type="search"]{
+      padding-left: 20px;
+    }
   }
 }
 /*******************************************************************************
@@ -250,7 +425,7 @@ main-secondary
   display: none;
 
   > .sidebar {
-    margin: 15px -15px 0 -15px;
+    margin: 0px -15px 0 -15px;
   }
   > .sidebar li a {
     padding: 10px 35px;
@@ -292,6 +467,24 @@ main-secondary
     color: darken(@cin-p02, 15%);
     font-weight: 600;
     padding-left: 50px;
+  }
+}
+
+.main-secondary {
+  .main-brand {
+    padding: 15px;
+
+    > .main-brand-logo {
+      background: url(/wp-content/uploads/silverback-logo.svg) 50% 50% no-repeat;
+      background-size: 87px 70px;
+      display: flex;
+      height: 70px;
+      width: 87px;
+      margin: 0 auto;
+      overflow: hidden;
+      text-indent: 100%;
+      white-space: nowrap;
+    }
   }
 }
 
@@ -337,27 +530,27 @@ main-tertiary
       margin-left: 15px;
       font-size: @font-size-h4 - 4;
     }
-/* Add this if you want to do something with the nested tertiary nav
+    /* Add this if you want to do something with the nested tertiary nav
     & .nav.nested a {
-      padding-left: 15px;
+    padding-left: 15px;
+  }
+  */
+  & li {
+    &.active {
+      font-weight: 600;
     }
-*/
-    & li {
-      &.active {
+    > a {
+      font-size: @font-size-base - 1;
+      & .active {
         font-weight: 600;
       }
-      > a {
-        font-size: @font-size-base - 1;
-        & .active {
-          font-weight: 600;
-        }
-        &:hover,
-        :focus {
-          background-color: lighten(@cin-p02, 31%);
-        }
+      &:hover,
+      :focus {
+        background-color: lighten(@cin-p02, 31%);
       }
     }
   }
+}
 }
 
 @media (min-width: @screen-md-min) {
@@ -414,7 +607,7 @@ main-primary
 @media (min-width: @screen-sm-min) {
   .main-primary {
     .make-sm-column(9);
-    .make-sm-column-offset(1);
+    .make-sm-column-offset(3);
     .make-md-column(10);
     .make-md-column-offset(2);
     padding-left: 100px;
@@ -424,8 +617,9 @@ main-primary
 .main-primary {
   & .main-primary-header {
     margin: 0 -15px 30px -15px;
-    padding: 25px 15px 10px 15px;
-    background-color: #fff;
+    padding: 25px 15px 7px 100px;
+    background-color: @cin-s06;
+    color: @white;
     @shadow: @dropshadow;
     .box-shadow(@shadow);
 
@@ -462,9 +656,6 @@ main-primary
   .main-primary {
     .main-primary-header {
       margin: 0 -15px 30px -100px;
-      padding: 25px 25px 10px 85px;
-      background-color: @cin-s06;
-      color: #fff;
 
       & .entry-title h6 {
         display: block;
@@ -544,6 +735,28 @@ h1 .current_page_child {
 main-primary main-primary-container
 */
 
+/***********************************
+General styles for elements in container
+*/
+
+section.section-contents {
+  margin-top: 30px;
+  padding-bottom: 30px;
+
+  &:first-of-type {
+    margin-top: inherit;
+  }
+}
+
+mark.censored {
+  padding: 3px;
+  background-color: @cin-p01;
+}
+
+/***********************************
+components/grid
+*/
+
 //Grid for Michael
 .fluidGridSystem,
 .fluidGridSystem-sidebar {
@@ -576,22 +789,17 @@ main-primary main-primary-container
   min-height: 886px;
 }
 
-
-
+/*********************************
+components/tabs
+*/
 .tab-col {
   height: 50px;
   background-color: @bc-s03-20;
 }
 
-section.section-contents {
-  margin-top: 30px;
-  padding-bottom: 30px;
-
-  &:first-of-type {
-    margin-top: inherit;
-  }
-}
-
+/*********************************
+styles/colors
+*/
 section.colors {
   margin: 45px 0;
 }
@@ -800,6 +1008,10 @@ section.colors {
   .box-shadow(@shadow);
 }
 
+/*********************************
+guidelines/principles
+*/
+
 .principle-list .mdi {
   position: absolute;
   margin-top: -20px;
@@ -824,78 +1036,30 @@ section.colors {
   margin-bottom: 50px;
 }
 
+/*********************************
+styles/typography
+*/
+
 #fonts {
 
-  & .specimen-main-modules > div:first-child {
-    .make-row();
+  h3.line-height-example {
+    line-height: 1.25;
   }
 
-  & .specimen-modules {
-    margin-bottom: 70px;
-
-    &:last-of-type {
-      margin-bottom: inherit;
-    }
-  }
-
-  & .specimen-module {
-    margin-bottom: 40px;
-  }
-
-  & .specimen-characters-module {
-    .make-sm-column(6);
-  }
-
-  & .specimen-variants-module {
-    .make-sm-column (5);
-    .make-sm-column-offset (1);
-  }
-
-  & .specimen-characters-module-content {
-    font-size: 36px;
-    line-height: 40px;
-  }
-
-  .specimen-variants-module-content {
-    font-size: 36px;
-    line-height: 1.10909;
-  }
-
-  & .specimen-characters-module-content,
-  .specimen-variants-module-content {
-    font-family: @headings-font-family;
+  p.line-height-example {
+    line-height: 1.5;
   }
 }
 
-
-.roboto .variants-preview-variants li{
-  &.light {
-    font-weight: 300;
+.section-example .table {
+  & tr:first-child td {
+    border-top: 0;
   }
-  &.regular {
-    font-weight: 400;
-  }
-  &.bold {
-    font-weight: 700;
+  & td {
+    padding: 16px;
   }
 }
 
-.open-sans .variants-preview-variants li{
-  &.regular {
-    font-weight: 400;
-  }
-  &.semi-bold {
-    font-weight: 600;
-  }
-}
-
-h3.line-height-example {
-  line-height: 1.25;
-}
-
-p.line-height-example {
-  line-height: 1.5;
-}
 
 
 

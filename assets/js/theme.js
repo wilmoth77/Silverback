@@ -40,6 +40,13 @@
           if ( $('nav .documentation > li:nth-child(1)').hasClass('active') ) {
             $('nav .documentation > li:nth-child(2)').addClass('active');
           }
+          $('#silverback-header button.navbar-toggle').on("click", function() {
+            if ($("body").hasClass("menu-open")) {
+              $("body").removeClass("menu-open");
+            }  else {
+              $("body").addClass("menu-open");
+            }
+          });
 
           //Remove these classes from the wp body classes because they
           //get Bootstrap styles applied

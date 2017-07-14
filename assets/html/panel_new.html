@@ -42,198 +42,192 @@ and <code>.footer-content-right</code> give us the markup for the possible foote
         </button>
         <div class="collapse" id="basic-panel-code">
               <div class="prismjs-code">
-                  <h4>HTML</h4>
-        <pre class="snippet">
-        <code class="language-markup"><!--<div class="panel panel-rio">
-          <div class="panel-heading">
-            <div class="panel-heading-content">
-              <div class="heading-content-left">
-                <h3 class="panel-title">Panel Title</h3>
-              </div>
-            </div>
-          </div>
-          <div class="panel-body">
-            <p>Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-          </div>
-          <div class="panel-footer">
-            <div class="panel-footer-content">
-              <div class="footer-content-left">
-                <button type="button" class="btn btn-primary">Primary</button>
-              </div>
-            </div>
-          </div>
-        </div>--></code>
-              </pre>
+                  <h5>HTML</h5>
+        <pre class="snippet"><code class="language-markup"><!--<div class="panel panel-rio">
+  <div class="panel-heading">
+    <div class="panel-heading-content">
+      <div class="heading-content-left">
+        <h3 class="panel-title">Panel Title</h3>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <p>Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+  </div>
+  <div class="panel-footer">
+    <div class="panel-footer-content">
+      <div class="footer-content-left">
+        <button type="button" class="btn btn-primary">Primary</button>
+      </div>
+    </div>
+  </div>
+</div>--></code></pre>
               </div>
               <div class="prismjs-code">
-              <h4>Less</h4>
-        <pre class="snippet">
-        <code class="language-less">.panel-rio {
-          border: 1px solid @bc-s02-20;
-          border-top: 5px solid @bc-p01;
-          @shadow: none;
-          .box-shadow(@shadow);
+              <h5>Less</h5>
+        <pre class="snippet"><code class="language-less">.panel-rio {
+border: 1px solid @bc-s02-20;
+border-top: 5px solid @bc-p01;
+@shadow: none;
+.box-shadow(@shadow);
 
-          > .panel-heading,
-          .panel-footer {
-            background-color: transparent;
-            border-color: transparent;
-          }
+  > .panel-heading,
+  .panel-footer {
+    background-color: transparent;
+    border-color: transparent;
+  }
 
-          > .panel-heading {
-            & .panel-title {
-              font-size: @font-size-h3 + 1;
-            }
-            & .panel-heading-content {
-              .make-row ();
-              & > .heading-content-left,
-              > .heading-content-right {
-                .make-sm-column (6);
-              }
-              & > div:first-of-type:last-of-type {
-                .make-sm-column (12);
-              }
-            }
-          }
+  > .panel-heading {
+    & .panel-title {
+      font-size: @font-size-h3 + 1;
+    }
+    & .panel-heading-content {
+      .make-row ();
+      & > .heading-content-left,
+      > .heading-content-right {
+        .make-sm-column (6);
+      }
+      & > div:first-of-type:last-of-type {
+        .make-sm-column (12);
+      }
+    }
+  }
 
-          > .panel-footer {
-            padding: 20px 30px;
-            border-top-color: @bc-s02-20;
-            & .panel-footer-content {
-              .make-row();
-              > .footer-content-left,
-                .footer-content-right {
-                .make-sm-column (6);
-              }
-              > div:first-of-type:last-of-type {
-                .make-sm-column (12);
-              }
-            }
-          }
-        }
+  > .panel-footer {
+    padding: 20px 30px;
+    border-top-color: @bc-s02-20;
+    & .panel-footer-content {
+      .make-row();
+      > .footer-content-left,
+        .footer-content-right {
+        .make-sm-column (6);
+      }
+      > div:first-of-type:last-of-type {
+        .make-sm-column (12);
+      }
+    }
+  }
+}
 
-        //Small devices (tablets, 768px and up)
-        @media (min-width: @screen-sm-min) {
-          .panel-rio {
-            & .panel-heading-content .heading-content-right,
-              .panel-footer-content .footer-content-right {
-              text-align: right;
-            }
-          }
-        }
+//Small devices (tablets, 768px and up)
+@media (min-width: @screen-sm-min) {
+  .panel-rio {
+    & .panel-heading-content .heading-content-right,
+      .panel-footer-content .footer-content-right {
+      text-align: right;
+    }
+  }
+}
 
-        //Medium devices (desktops, 992px and up)
-        @media (min-width: @screen-md-min) {
-          .panel-rio {
-            > .panel-heading,
-              .panel-body {
-              padding: 30px;
-            }
+//Medium devices (desktops, 992px and up)
+@media (min-width: @screen-md-min) {
+  .panel-rio {
+    > .panel-heading,
+      .panel-body {
+      padding: 30px;
+    }
 
-            > .panel-heading+.panel-body {
-              padding-top: 0px;
-            }
-          }
-        }</code>
-        </pre>
+    > .panel-heading+.panel-body {
+      padding-top: 0px;
+    }
+  }
+}</code></pre>
             </div>
               <div class="prismjs-code">
-                <h4>CSS</h4>
-          <pre class="snippet">
-          <code class="language-css">.panel-rio {
-            border: 1px solid #d6dbdc;
-            border-top: 5px solid #1a202e;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-          }
-          .panel-rio > .panel-heading,
-          .panel-rio .panel-footer {
-            background-color: transparent;
-            border-color: transparent;
-          }
-          .panel-rio > .panel-heading .panel-title {
-            font-size: 19px;
-          }
-          .panel-rio > .panel-heading .panel-heading-content {
-            margin-left: -15px;
-            margin-right: -15px;
-          }
-          .panel-rio > .panel-heading .panel-heading-content > .heading-content-left,
-          .panel-rio > .panel-heading .panel-heading-content > .heading-content-right {
-            position: relative;
-            min-height: 1px;
-            padding-left: 15px;
-            padding-right: 15px;
-          }
-          @media (min-width: 768px) {
-            .panel-rio > .panel-heading .panel-heading-content > .heading-content-left,
-            .panel-rio > .panel-heading .panel-heading-content > .heading-content-right {
-              float: left;
-              width: 50%;
-            }
-          }
-          .panel-rio > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
-            position: relative;
-            min-height: 1px;
-            padding-left: 15px;
-            padding-right: 15px;
-          }
-          @media (min-width: 768px) {
-            .panel-rio > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
-              float: left;
-              width: 100%;
-            }
-          }
-          .panel-rio > .panel-footer {
-            padding: 20px 30px;
-            border-top-color: #d6dbdc;
-          }
-          .panel-rio > .panel-footer .panel-footer-content {
-            margin-left: -15px;
-            margin-right: -15px;
-          }
-          .panel-rio > .panel-footer .panel-footer-content > .footer-content-left,
-          .panel-rio > .panel-footer .panel-footer-content .footer-content-right {
-            position: relative;
-            min-height: 1px;
-            padding-left: 15px;
-            padding-right: 15px;
-          }
-          @media (min-width: 768px) {
-            .panel-rio > .panel-footer .panel-footer-content > .footer-content-left,
-            .panel-rio > .panel-footer .panel-footer-content .footer-content-right {
-              float: left;
-              width: 50%;
-            }
-          }
-          .panel-rio > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
-            position: relative;
-            min-height: 1px;
-            padding-left: 15px;
-            padding-right: 15px;
-          }
-          @media (min-width: 768px) {
-            .panel-rio > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
-              float: left;
-              width: 100%;
-            }
-          }
-          @media (min-width: 768px) {
-            .panel-rio .panel-heading-content .heading-content-right,
-            .panel-rio .panel-footer-content .footer-content-right {
-              text-align: right;
-            }
-          }
-          @media (min-width: 992px) {
-            .panel-rio > .panel-heading,
-            .panel-rio .panel-body {
-              padding: 30px;
-            }
-            .panel-rio > .panel-heading + .panel-body {
-              padding-top: 0px;
-            }
-          }</code>
-          </pre>
+                <h5>CSS</h5>
+          <pre class="snippet"><code class="language-css">.panel-rio {
+  border: 1px solid #d6dbdc;
+  border-top: 5px solid #1a202e;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.panel-rio > .panel-heading,
+.panel-rio .panel-footer {
+  background-color: transparent;
+  border-color: transparent;
+}
+.panel-rio > .panel-heading .panel-title {
+  font-size: 19px;
+}
+.panel-rio > .panel-heading .panel-heading-content {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.panel-rio > .panel-heading .panel-heading-content > .heading-content-left,
+.panel-rio > .panel-heading .panel-heading-content > .heading-content-right {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .panel-rio > .panel-heading .panel-heading-content > .heading-content-left,
+  .panel-rio > .panel-heading .panel-heading-content > .heading-content-right {
+    float: left;
+    width: 50%;
+  }
+}
+.panel-rio > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .panel-rio > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
+    float: left;
+    width: 100%;
+  }
+}
+.panel-rio > .panel-footer {
+  padding: 20px 30px;
+  border-top-color: #d6dbdc;
+}
+.panel-rio > .panel-footer .panel-footer-content {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.panel-rio > .panel-footer .panel-footer-content > .footer-content-left,
+.panel-rio > .panel-footer .panel-footer-content .footer-content-right {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .panel-rio > .panel-footer .panel-footer-content > .footer-content-left,
+  .panel-rio > .panel-footer .panel-footer-content .footer-content-right {
+    float: left;
+    width: 50%;
+  }
+}
+.panel-rio > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .panel-rio > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .panel-rio .panel-heading-content .heading-content-right,
+  .panel-rio .panel-footer-content .footer-content-right {
+    text-align: right;
+  }
+}
+@media (min-width: 992px) {
+  .panel-rio > .panel-heading,
+  .panel-rio .panel-body {
+    padding: 30px;
+  }
+  .panel-rio > .panel-heading + .panel-body {
+    padding-top: 0px;
+  }
+}</code></pre>
         </div>
         </div>
       </div>
@@ -264,18 +258,16 @@ and <code>.footer-content-right</code> give us the markup for the possible foote
           </button>
           <div class="collapse" id="basic-heading-code">
             <div class="prismjs-code">
-              <h4>HTML</h4>
-              <pre class="snippet">
-                <code class="language-markup"><!--<div class="panel panel-rio">
-                  <div class="panel-heading">
-                    <div class="panel-heading-content">
-                      <div class="heading-content-left">
-                        <h3 class="panel-title">Panel Title</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>--></code>
-              </pre>
+              <h5>HTML</h5>
+              <pre class="snippet"><code class="language-markup"><!--<div class="panel panel-rio">
+  <div class="panel-heading">
+    <div class="panel-heading-content">
+      <div class="heading-content-left">
+        <h3 class="panel-title">Panel Title</h3>
+      </div>
+    </div>
+  </div>
+</div>--></code></pre>
             </div>
           </div>
         </div>

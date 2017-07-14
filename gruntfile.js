@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 
     //Less tasks
     less: {
-    dev_one: {
+    dev_slvrbck: {
       options: {
         compress: true,
         sourceMap: true,
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
             "./public/css/silverback.min.css":"./assets/less/silverback/main-silverback.less",
         }
     },
-    dev_two: {
+    dev_bestcaseonline: {
       options: {
         compress: true,
         sourceMap: true,
@@ -63,13 +63,14 @@ module.exports = function(grunt) {
             "./public/css/bestcaseonline.min.css":"./assets/less/troops/bestcaseonline/main-bestcaseonline.less",
         }
     },
-    pretty: {
-      files: {
-        "./assets/css/bestcaseonline.pretty.css":"./assets/less/bestcaseonline.pretty.less",
-      },
+    dev_misc: {
       plugins: [
         new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
       ],
+      files: {
+        "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
+        "./assets/css/bestcaseonline.pretty.css":"./assets/less/bestcaseonline.pretty.less",
+      },
     },
     dist: {
       options: {
@@ -128,7 +129,7 @@ module.exports = function(grunt) {
           './assets/less/*.less',
           './assets/less/**/*.less',
         ],
-        tasks: ['less:development'],
+        tasks: ['less:dev_slvrbck', 'less:dev_bestcaseonline', 'less:dev_misc'],
       },
       images: {
         files: ['./assets/img/**/*.{png,jpg,gif}'],
@@ -164,7 +165,7 @@ module.exports = function(grunt) {
 
   });
   // Compile tasks
-  grunt.registerTask('compile', ['clean', 'concat', 'less:dev_one', 'less:dev_two', 'less:pretty', 'uglify', 'jshint', 'copy']);
+  grunt.registerTask('compile', ['clean', 'concat', 'less:dev_slvrbck', 'less:dev_bestcaseonline', 'less:dev_misc', 'uglify', 'jshint', 'copy']);
   grunt.registerTask('build', ['clean','concat', 'less:dist', 'uglify', 'jshint', 'copy']);
   // Set default task
   grunt.registerTask('default', ['watch']);

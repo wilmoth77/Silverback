@@ -64,14 +64,14 @@
             );
           endif;
           ?>
-          <form role="search" method="get" class="navbar-form navbar-right" action="<?php echo esc_url(home_url('/')); ?>">
+          <form role="search" class="navbar-form navbar-right" method="get" action="<?php echo esc_url(home_url('/')); ?>">
             <label class="sr-only"><?php _e('Search for:', 'slvrbk'); ?></label>
-              <div class="form-group input-group">
-                <span class="input-group-addon" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
-                <label for="filter-by"></label>
-                <input type="search" id="filter-by" value="<?php echo get_search_query(); ?>" name="s" class="navbar-form-field form-control" placeholder="<?php _e('Search Silverback...', 'slvrbk'); ?>">
-              </div>
-            </form>
+            <div class="form-group">
+              <label for="filter-by"></label>
+              <i class="mdi mdi-magnify"></i>
+              <input type="search" class="navbar-form-field form-control" value="<?php echo get_search_query(); ?>" name="s" placeholder="<?php _e('Search Silverback...', 'slvrbk'); ?>" autocomplete="off">
+            </div>
+          </form>    
           </div><!--/.nav-collapse -->
         </div>
       </nav>

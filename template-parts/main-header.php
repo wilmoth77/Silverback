@@ -22,7 +22,7 @@
 <div class="main-hero">
   <div class="container">
     <?php
-    echo do_shortcode( '[content_block id="24"]' );
+    echo do_shortcode( '[content_block id="683" suppress_content_filters="yes"]' );
     ?>
   </div>
 </div>
