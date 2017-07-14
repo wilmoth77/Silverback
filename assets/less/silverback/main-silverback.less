@@ -98,6 +98,11 @@ Target the .bestcaseonline body class
       font-weight: 600;
     }
   }
+  #montane-panel-footer-left .panel-montane,
+  #montane-panel-footer-right .panel-montane,
+  #montane-panel-footer-split .panel-montane {
+    border-top-width: 0;
+  }
 }
 
 /***********************************
@@ -337,7 +342,7 @@ section.panel-examples .panel {
   margin-bottom: 30px;
 }
 
-.buttons #ghost .well {
+.buttons #buttons-ghost .well {
   background-color: @bc-p01;
   padding: 30px;
 }
@@ -1168,6 +1173,17 @@ button {
   //border-color: transparent !important;
 }
 
+button,
+.btn {
+  margin-right: 10px;
+  &:first-of-type:last-of-type,
+  &:last-of-type {
+    margin-right: 0;
+  }
+  &+a {
+    margin-left: 10px;
+  }
+}
 
 
 

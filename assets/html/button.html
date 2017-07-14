@@ -1,187 +1,320 @@
-<section class="section-contents">
-  <h2>Buttons</h2>
-  <p class="lead">Button styles and sizes for actions in forms, dialogs, and more.</p>
+<section class="sb-docs-section intro">
+  <header>
+    <h2 class="section-intro-heading">Buttons</h2>
+    <p>Button styles and sizes for actions in forms, dialogs, and more.</p>
+  </header>
 </section>
-<section class="section-contents">
-  <h3 id="basics">The Basics</h3>
-  <p>A button can be created with minimal markup. Because buttons can be used for many purposes, it's important to use the right tag.</p>
-  <ul>
-    <li>Use the <code>&lt;a&gt;</code> tag if the button is a link to another page, or a link to an anchor within a page. Generally anchors don't require JavaScript to work.</li>
-    <li>Use the <code>&lt;button&gt;</code> tag if the button performs an action that changes something on the current page, or if you'd prefer to use an <code>&lt;a&gt;</code> tag,
-      give the link a <code>role="button"</code> to appropriately convey their purpose to assistive technologies such as screen readers.
-    </li>
-  </ul>
-</section>
-<section class="section-contents">
-  <h3 id="sizes">Button Sizes</h3>
-  <div class="row">
-    <div class="col-md-2">
-      <button type="button" class="btn btn-default">Default size</button>
-    </div>
-    <div class="col-md-2">
-      <button type="button" class="btn btn-default btn-sm">Small button</button>
-      <div>
-        <code>.btn-sm</code>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <button type="button" class="btn btn-default btn-block">Block level button</button>
-      <div>
-        <code>.btn-block</code>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="styles" class="section-contents">
-  <h3 id="standard">Standard Buttons</h3>
-  <div class="row">
-    <div class="col-md-2">
-      <button type="button" class="btn btn-default">Default</button>
-      <div>
-        <code>.btn-default</code>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button type="button" class="btn btn-primary">Primary</button>
-      <div>
-        <code>.btn-primary</code>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button type="button" class="btn btn-secondary">Secondary</button>
-      <div>
-        <code>.btn-secondary</code>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button type="button" class="btn btn-danger">Delete</button>
-      <div>
-        <code>.btn-danger</code>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button type="button" class="btn btn-link">Link</button>
-      <div>
-        <code>.btn-link</code>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section-contents">
-  <h3 id="outline">Outline Buttons</h3>
-  <p>All the contextual variations of solid buttons, without the hefty background colors.</p>
-  <div class="row">
-    <div class="col-md-2">
-      <button type="button" class="btn btn-outline-default">Default</button>
-      <div>
-        <code>.btn-outline-default</code>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button type="button" class="btn btn-outline-primary">Primary</button>
-      <div>
-        <code>.btn-outline-primary</code>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button type="button" class="btn btn-outline-secondary">Secondary</button>
-      <div>
-        <code>.btn-outline-secondary</code>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button type="button" class="btn btn-outline-danger">Delete</button>
-      <div>
-        <code>.btn-outline-danger</code>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="ghost" class="section-contents">
-  <h3>Ghost Buttons</h3>
-  <p>Occasionally we'll use this soulless button style on dark backgrounds.</p>
-  <div class="well">
-    <div class="row">
-      <div class="col-md-3">
-        <button type="button" class="btn btn-ghost-default">Default</button>
-        <div>
-          <code>.btn-ghost-default</code>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <button type="button" class="btn btn-ghost-primary">Primary</button>
-        <div>
-          <code>.btn-ghost-primary</code>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <button type="button" class="btn btn-ghost-secondary">Secondary</button>
-        <div>
-          <code>.btn-ghost-secondary</code>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <button type="button" class="btn btn-ghost-danger">Delete</button>
-        <div>
-          <code>.btn-ghost-danger</code>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="active" class="section-contents">
-  <h3>Active State</h3>
-  <p>Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. There’s no need to add a class to
-    <code>&lt;button&gt;</code>s as they use a pseudo-class. However, you can still force the same active appearance with <code>.active</code>
-    (and include the <code>aria-pressed="true"</code> attribute) should you need to replicate the state programmatically.</p>
-    <div class="row">
-      <div class="col-md-5">
-        <h5>Button elements</h5>
-        <p class="small">Add the <code>.active</code> class to force the <code>:active</code> appearance.</p>
-        <button type="button" class="btn btn-primary active" aria-pressed="true">Primary button</button>
-        <button type="button" class="btn btn-default active" aria-pressed="true">Button</button>
-        <div>
-          <code>.active</code> <code>aria-pressed="true"</code>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <h5>Anchor elements</h5>
-        <p class="small">Add the <code>.active</code> class to <code>&lt;a&gt;</code> buttons.</p>
-        <a href="#" class="btn btn-primary active" role="button">Primary link</a>
-        <a href="#" class="btn btn-default active" role="button">Link</a>
-        <div>
-          <code>.active</code> <code>role="button"</code>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="disabled" class="section-contents">
-    <h3>Disabled State</h3>
-    <p>Make buttons look inactive by adding the <code>disabled</code> boolean attribute to any <code>&lt;button&gt;</code> element.</p>
-    <div class="row">
-      <div class="col-md-5">
-        <h5>Button elements</h5>
-        <p class="small">Add the <code>disabled</code> attribute to <code>&lt;button&gt;</code> buttons.</p>
-        <button type="button" class="btn btn-primary" disabled>Primary button</button>
-        <button type="button" class="btn btn-default" disabled>Button</button>
-        <div>
-          <code>disabled</code>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <h5>Anchor elements</h5>
-        <p class="small">Add the <code>.disabled</code> class to <code>&lt;a&gt;</code> buttons.</p>
-        <a href="#" class="btn btn-primary disabled" role="button" aria-disabled="true">Link button</a>
-        <a href="#" class="btn btn-default disabled" role="button" aria-disabled="true">Link button</a>
-        <div>
-          <code>.disabled</code> <code>role="button"</code> <code>aria-disabled="true"</code>
-        </div>
-      </div>
-    </div>
-    <p>Disabled buttons using the <code>&lt;a&gt;</code> element behave a bit different:</p>
+<section id="bestcase-buttons" class="sb-docs-section">
+  <h3 class="section-heading">Buttons of Best Case</h3>
+  <section id="buttons-basics" class="sb-docs-subsection">
+    <h4 class="section-subheading">The basics</h4>
+    <p>A button can be created with minimal markup. Because buttons can be used for many purposes, it's important to use the right tag.</p>
     <ul>
-      <li><code>&lt;a&gt;</code>s don’t support the <code>disabled</code> attribute, so you must add the <code>.disabled</code> class to make it visually appear disabled.</li>
-      <li>Some future-friendly styles are included to disable all <code>pointer-events</code> on anchor buttons. In browsers which support that property, you won’t see the disabled cursor at all.</li>
-      <li>Disabled buttons should include the <code>aria-disabled="true"</code> attribute to indicate the state of the element to assistive technologies.</li>
+      <li>Use the <code>&lt;a&gt;</code> tag if the button is a link to another page, or a link to an anchor within a page. Generally anchors don't require JavaScript to work.</li>
+      <li>Use the <code>&lt;button&gt;</code> tag if the button performs an action that changes something on the current page, or if you'd prefer to use an <code>&lt;a&gt;</code> tag,
+        give the link a <code>role="button"</code> to appropriately convey their purpose to assistive technologies such as screen readers.
+      </li>
     </ul>
   </section>
+  <section id="buttons-sizes" class="sb-docs-subsection">
+    <h4 class="section-subheading">Button sizes</h4>
+    <p>We only use two button sizes throughout the application - standard and small. Default receives its styling via the base <code>.btn</code> class, while small is styled courtesy of the <code>.btn-small</code> class.</p>
+    <section class="section-example">
+      <div class="example-container">
+        <div class="example-container-body">
+          <div class="row">
+            <div class="col-md-4">
+              <button type="button" class="btn btn-primary">Standard size</button>
+              <a href="#" class="btn btn-default" role="button">Standard size</a>
+              <div>
+                <code>.btn</code>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-primary btn-sm">Small size</button>
+              <a href="#" class="btn btn-default btn-sm" role="button">Small size</a>
+              <div>
+                <code>.btn-sm</code>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="example-container-footer">
+          <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#buttons-sizes-code" aria-expanded="false" aria-controls="buttons-sizes-code">
+            View code
+          </button>
+          <div class="collapse" id="buttons-sizes-code">
+            <div class="prismjs-code">
+              <h5>HTML</h5>
+              <pre class="snippet"><code class="language-markup"><script type="prism-html-markup"><!-- Standard size button -->
+<button type="button" class="btn btn-primary">Standard size</button>
+<a href="#" class="btn btn-default" role="button">Standard size</a>
+
+<!-- Small size button -->
+<button type="button" class="btn btn-primary btn-sm">Small size</button>
+<a href="#" class="btn btn-default btn-sm" role="button">Small size</a></script></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section id="buttons-standard" class="sb-docs-subsection">
+    <h4 class="section-subheading">Standard buttons</h4>
+    <p>All standard buttons start with a <code>.btn</code> base class, then receive a <code>.btn-*</code> option class for solid color styling.</p>
+    <section class="section-example">
+      <div class="example-container">
+        <div class="example-container-body">
+          <div class="row">
+            <div class="col-md-2">
+              <button type="button" class="btn btn-default">Default</button>
+              <div>
+                <code>.btn-default</code>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-primary">Primary</button>
+              <div>
+                <code>.btn-primary</code>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-secondary">Secondary</button>
+              <div>
+                <code>.btn-secondary</code>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-danger">Delete</button>
+              <div>
+                <code>.btn-danger</code>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-link">Link</button>
+              <div>
+                <code>.btn-link</code>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="example-container-footer">
+          <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#buttons-standard-code" aria-expanded="false" aria-controls="buttons-standard-code">
+            View code
+          </button>
+          <div class="collapse" id="buttons-standard-code">
+            <div class="prismjs-code">
+              <h5>HTML</h5>
+              <pre class="snippet"><code class="language-markup"><script type="prism-html-markup"><!-- Default button -->
+<button type="button" class="btn btn-default">Default</button>
+
+<!-- Primary button -->
+<button type="button" class="btn btn-primary">Primary</button>
+
+<!-- Secondary button -->
+<button type="button" class="btn btn-secondary">Secondary</button>
+
+<!-- Delete button -->
+<button type="button" class="btn btn-danger">Delete</button>
+
+<!-- Link button -->
+<button type="button" class="btn btn-link">Link</button></script></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section id="buttons-outline" class="sb-docs-subsection">
+    <h4 class="section-subheading">Outline buttons</h4>
+    <p>All outline buttons start with a <code>.btn</code> base class, then receive a <code>.btn-outline-*</code> option class for no <code>.background-color</code> color styling.</p>
+    <section class="section-example">
+      <div class="example-container">
+        <div class="example-container-body">
+          <div class="row">
+            <div class="col-md-3">
+              <button type="button" class="btn btn-outline-default">Default</button>
+              <div>
+                <code>.btn-outline-default</code>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn btn-outline-primary">Primary</button>
+              <div>
+                <code>.btn-outline-primary</code>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn btn-outline-secondary">Secondary</button>
+              <div>
+                <code>.btn-outline-secondary</code>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn btn-outline-danger">Delete</button>
+              <div>
+                <code>.btn-outline-danger</code>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="example-container-footer">
+          <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#buttons-outline-code" aria-expanded="false" aria-controls="buttons-outline-code">
+            View code
+          </button>
+          <div class="collapse" id="buttons-outline-code">
+            <div class="prismjs-code">
+              <h5>HTML</h5>
+              <pre class="snippet"><code class="language-markup"><script type="prism-html-markup"><!-- Default outline button -->
+<button type="button" class="btn btn-outline-default">Default</button>
+
+<!-- Primary outline button -->
+<button type="button" class="btn btn-outline-primary">Primary</button>
+
+<!-- Secondary outline button -->
+<button type="button" class="btn btn-outline-secondary">Secondary</button>
+
+<!-- Delete outline button -->
+<button type="button" class="btn btn-outline-danger">Delete</button></script></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section id="buttons-ghost" class="sb-docs-subsection">
+    <h4 class="section-subheading">Ghost buttons</h4>
+    <p>All ghost buttons start with a <code>.btn</code> base class, then receive a <code>.btn-ghost-*</code> option class for a soulless, monochomatic styling for use on dark backgrounds.</p>
+    <section class="section-example">
+      <div class="example-container">
+        <div class="example-container-body">
+          <div class="well">
+            <div class="row">
+              <div class="col-md-3">
+                <button type="button" class="btn btn-ghost-default">Default</button>
+                <div>
+                  <code>.btn-ghost-default</code>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <button type="button" class="btn btn-ghost-primary">Primary</button>
+                <div>
+                  <code>.btn-ghost-primary</code>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <button type="button" class="btn btn-ghost-secondary">Secondary</button>
+                <div>
+                  <code>.btn-ghost-secondary</code>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <button type="button" class="btn btn-ghost-danger">Delete</button>
+                <div>
+                  <code>.btn-ghost-danger</code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="example-container-footer">
+          <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#buttons-ghost-code" aria-expanded="false" aria-controls="buttons-ghost-code">
+            View code
+          </button>
+          <div class="collapse" id="buttons-ghost-code">
+            <div class="prismjs-code">
+              <h5>HTML</h5>
+              <pre class="snippet"><code class="language-markup"><script type="prism-html-markup"><!-- Default ghost button -->
+<button type="button" class="btn btn-ghost-default">Default</button>
+
+<!-- Primary ghost button -->
+<button type="button" class="btn btn-ghost-primary">Primary</button>
+
+<!-- Secondary ghost button -->
+<button type="button" class="btn btn-ghost-secondary">Secondary</button>
+
+<!-- Delete ghost button -->
+<button type="button" class="btn btn-ghost-danger">Delete</button></script></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</section>
+<section id="buttons-states" class="sb-docs-section">
+  <h3 class="section-heading">Button states</h3>
+  <section id="buttons-states-active" class="sb-docs-subsection">
+    <h4 class="section-subheading">Active state</h4>
+    <p>Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. There’s no need to add a class to
+      <code>&lt;button&gt;</code>s as they use a pseudo-class. However, you can still force the same active appearance with <code>.active</code>
+      (and include the <code>aria-pressed="true"</code> attribute) should you need to replicate the state programmatically.</p>
+      <section class="section-example">
+        <div class="example-container">
+          <div class="example-container-body">
+            <div class="row">
+                  <div class="col-md-5">
+                    <h5>Button elements</h5>
+                    <p class="small">Add the <code>.active</code> class to force the <code>:active</code> appearance.</p>
+                    <button type="button" class="btn btn-primary active" aria-pressed="true">Primary button</button>
+                    <button type="button" class="btn btn-default active" aria-pressed="true">Button</button>
+                    <div>
+                      <code>.active</code> <code>aria-pressed="true"</code>
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <h5>Anchor elements</h5>
+                    <p class="small">Add the <code>.active</code> class to <code>&lt;a&gt;</code> buttons.</p>
+                    <a href="#" class="btn btn-primary active" role="button">Primary link</a>
+                    <a href="#" class="btn btn-default active" role="button">Link</a>
+                    <div>
+                      <code>.active</code> <code>role="button"</code>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <div class="example-container-footer">
+          </div>
+        </div>
+      </section>
+  </section>
+  <section id="buttons-states-disabled" class="sb-docs-subsection">
+    <h4 class="section-subheading">Disabled state</h4>
+    <p>Make buttons look inactive by adding the <code>disabled</code> boolean attribute to any <code>&lt;button&gt;</code> element.</p>
+      <section class="section-example">
+        <div class="example-container">
+          <div class="example-container-body">
+            <div class="row">
+              <div class="col-md-5">
+                <h5>Button elements</h5>
+                <p class="small">Add the <code>disabled</code> attribute to <code>&lt;button&gt;</code> buttons.</p>
+                <button type="button" class="btn btn-primary" disabled>Primary button</button>
+                <button type="button" class="btn btn-default" disabled>Button</button>
+                <div>
+                  <code>disabled</code>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <h5>Anchor elements</h5>
+                <p class="small">Add the <code>.disabled</code> class to <code>&lt;a&gt;</code> buttons.</p>
+                <a href="#" class="btn btn-primary disabled" role="button" aria-disabled="true">Link button</a>
+                <a href="#" class="btn btn-default disabled" role="button" aria-disabled="true">Link button</a>
+                <div>
+                  <code>.disabled</code> <code>role="button"</code> <code>aria-disabled="true"</code>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="example-container-footer">
+            <h5>Note about anchor elements</h5>
+            <p>Disabled buttons using the <code>&lt;a&gt;</code> element behave a bit different:</p>
+            <ul>
+              <li><code>&lt;a&gt;</code>s don’t support the <code>disabled</code> attribute, so you must add the <code>.disabled</code> class to make it visually appear disabled.</li>
+              <li>Some future-friendly styles are included to disable all <code>pointer-events</code> on anchor buttons. In browsers which support that property, you won’t see the disabled cursor at all.</li>
+              <li>Disabled buttons should include the <code>aria-disabled="true"</code> attribute to indicate the state of the element to assistive technologies.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+  </section>
+</section>

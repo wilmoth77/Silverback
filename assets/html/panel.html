@@ -1,549 +1,439 @@
-<section class="section-contents">
-  <h2>Panels</h2>
-  <p class="lead">A panel is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.</p>
-  <p>Basic panels have no fixed width, so they'll naturally fill the full width of their parent element.</p>
+<section class="sb-docs-section intro">
+  <header>
+    <h2 class="section-intro-heading">Panel</h2>
+    <p>A panel is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.</p>
+  </header>
 </section>
-<section class="section-contents">
-  <h3 id="example">Basic Panel</h3>
-  <h5>Panel with heading, body, footer.</h5>
-
-<div class="doc-example">
-
-</div>
-
-  <div class="panel basic">
-    <div class="panel-heading">
-      <div class="panel-heading-elements">
-        <div>
-          <h2 class="panel-title">H2 Panel Title </h2>
-        </div>
-      </div>
-    </div>
-    <div class="panel-body">
-      <p>Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-    </div>
-    <div class="panel-footer">
-      <div class="panel-footer-buttons">
-        <div>
-          <button type="button" class="btn btn-primary">Primary</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section-contents">
-  <h3 id="header-examples">Panel Heading</h3>
-  <h5>Title only</h5>
-  <div class="panel basic">
-    <div class="panel-heading">
-      <div class="panel-heading-elements">
-        <div>
-          <h2 class="panel-title">H2 Panel Title</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h5>Title and link</h5>
-  <div class="panel basic">
-    <div class="panel-heading">
-      <div class="panel-heading-elements">
-        <div>
-          <h2 class="panel-title">H2 Panel Title</h2>
-        </div>
-        <div class="heading-element-right">
-          <button type="button" class="btn btn-link">Panel heading link</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h5>Title and button plus optional icon</h5>
-  <div class="panel basic">
-    <div class="panel-heading">
-      <div class="panel-heading-elements">
-        <div>
-          <h2 class="panel-title">H2 Panel Title <i class="mdi mdi-pencil" data-toggle="tooltip" data-placement="top" title="Optional accompanying icon"></i></h2>
-        </div>
-        <div class="heading-element-right">
-          <button type="button" class="btn btn-default">Panel heading button</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section-contents">
-  <h3 id="body-examples">Panel Body</h3>
-  <div class="row">
-    <div class="col-md-6">
-      <h5>Padded Content</h5>
-      <p>Content is placed inside the <code>&lt;.panel-body&gt;</code> to receive the defined padding.</p>
-      <div class="panel basic">
-        <div class="panel-body">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Jeff</td>
-                <td>Wilmoth</td>
-                <td>jwilmoth@cingroup.com</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Michael</td>
-                <td>Whitaker</td>
-                <td>mwhitaker@cingroup.com</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Sammy</td>
-                <td>Gonzalez</td>
-                <td>sgonzalez@cingroup.com</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Julia</td>
-                <td>Hayden</td>
-                <td>jhayden@cingroup.com</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Analisa</td>
-                <td>Meyer</td>
-                <td>ameyer@cingroup.com</td>
-              </tr>
-              <tr>
-                <th scope="row">6</th>
-                <td>Jay</td>
-                <td>Navar</td>
-                <td>jnavar@cingroup.com</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <h5>Edge Content</h5>
-      <p>Content is placed <em>outside</em> or without a <code>&lt;.panel-body&gt;</code>.</p>
-      <div class="panel basic">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Jeff</td>
-              <td>Wilmoth</td>
-              <td>jwilmoth@cingroup.com</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Michael</td>
-              <td>Whitaker</td>
-              <td>mwhitaker@cingroup.com</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Sammy</td>
-              <td>Gonzalez</td>
-              <td>sgonzalez@cingroup.com</td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Julia</td>
-              <td>Hayden</td>
-              <td>jhayden@cingroup.com</td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>Analisa</td>
-              <td>Meyer</td>
-              <td>ameyer@cingroup.com</td>
-            </tr>
-            <tr>
-              <th scope="row">6</th>
-              <td>Jay</td>
-              <td>Navar</td>
-              <td>jnavar@cingroup.com</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section-contents">
-  <h3 id="footer-examples">Panel Footer</h3>
-  <h5>Left aligned buttons</h5>
-  <div class="panel basic">
-    <div class="panel-footer">
-      <div class="panel-footer-buttons">
-        <div>
-          <button type="button" class="btn btn-primary">Primary</button>
-          <button type="button" class="btn btn-default">Default</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h5>Right aligned buttons</h5>
-  <div class="panel basic">
-    <div class="panel-footer">
-      <div class="panel-footer-buttons">
-        <div class="footer-buttons-right">
-          <button type="button" class="btn btn-primary">Primary</button>
-          <button type="button" class="btn btn-default">Default</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h5>Left and right aligned buttons</h5>
-  <div class="panel basic">
-    <div class="panel-footer">
-      <div class="panel-footer-buttons">
-        <div>
-          <button type="button" class="btn btn-default">Default</button>
-          <button type="button" class="btn btn-default">Default</button>
-        </div>
-        <div class="footer-buttons-right">
-          <button type="button" class="btn btn-primary">Primary</button>
-          <button type="button" class="btn btn-default">Default</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section-contents">
-  <h3 id="code-examples">Code Examples</h3>
-<h5>Basic panel </h5>
-<div class="panel-group" id="accordion-one" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default prism">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h2 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion-one" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          TWBSMVC
-        </a>
-      </h2>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        <pre>
-          <code class="language-aspnet">@using (var p = Html.Bootstrap().Begin(new Panel()))
-            {
-              @p.Heading("H2 Panel Title <i class="mdi mdi-pencil" data-toggle="tooltip" data-placement="top" title="Optional accompanying icon"></i>")
-              using (p.BeginBody())
-              {
-                <p>Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-              }
-              @p.Footer("...")
-            }</code>
-          </pre>
-        </div>
-        <div class="panel-footer">
-          <div class="panel-footer-buttons">
-            <div>
+  <section id="montane-panel" class="sb-docs-section">
+    <h3 class="section-heading">Montane panel</h3>
+    <section id="montane-panel-example" class="sb-docs-subsection">
+    <h4 class="section-subheading">Example</h4>
+    <p>For the montane panel we start with the basic markup of the <a href="http://getbootstrap.com/components/#panels" title="Bootstrap v3 Docs - Panel" target="_blank">Bootstrap panel</a>, then extend the panel by replacing the
+    <code>.panel-default</code> class with <code>.panel-montane</code>. Next, we add a <code>.panel-heading-content</code> <code>div</code> to the <code>.panel-heading</code> container. This new <code>div</code><code>div</code>, and it's children <code>.heading-content-left</code>
+  and <code>.heading-content-right</code> give us the markup for the possible headings of the montane Panel. Similarly, we add a <code>.panel-footer-content</code> <code>div</code> to the <code>.panel-footer</code> container. This new <code>div</code>, and it's children <code>.footer-content-left</code>
+and <code>.footer-content-right</code> give us the markup for the possible footers of the montane Panel.</p>
+<p>Montane panels have no fixed width, so they'll naturally fill the full width of their parent element.</p>
+  <section class="section-example">
+    <div class="example-container">
+      <div class="example-container-body">
+        <div class="panel panel-montane">
+          <div class="panel-heading">
+            <div class="panel-heading-content">
+              <div class="heading-content-left">
+                <h3 class="panel-title">Panel Title</h3>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <p>Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
+          </div>
+          <div class="panel-footer">
+            <div class="panel-footer-content">
+              <div class="footer-content-left">
+                <button type="button" class="btn btn-primary">Primary</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="panel panel-default prism">
-      <div class="panel-heading" role="tab" id="headingTwo">
-        <h2 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion-one" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            HTML Output
-          </a>
-        </h2>
+      <div class="example-container-footer">
+        <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#basic-panel-code" aria-expanded="false" aria-controls="basic-panel-code">
+          View code
+        </button>
+        <div class="collapse" id="basic-panel-code">
+              <div class="prismjs-code">
+                  <h5>HTML</h5>
+        <pre class="snippet"><code class="language-markup"><!--<div class="panel panel-montane">
+  <div class="panel-heading">
+    <div class="panel-heading-content">
+      <div class="heading-content-left">
+        <h3 class="panel-title">Panel Title</h3>
       </div>
-      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-        <div class="panel-body">
-          <pre>
-            <code class="language-markup"><!--<div class="panel basic">
-              <div class="panel-heading">
-                <div class="panel-heading-elements">
-                  <div>
-                    <h2 class="panel-title">H2 Panel Title </h2>
-                  </div>
-                </div>
-              </div>
-              <div class="panel-body">
-                <p>Some quick example text to build on the panel title and make up the bulk of the panel’s content.</p>
-              </div>
-              <div class="panel-footer">
-                <div class="panel-footer-buttons">
-                  <div>
-                    <button type="button" class="btn btn-primary">Primary</button>
-                  </div>
-                </div>
-              </div>
-            </div>--></code>
-</pre>
-</div>
-<div class="panel-footer">
-<div class="panel-footer-buttons">
-  <div>
+    </div>
   </div>
-</div>
-</div>
-</div>
-</div>
-<div class="panel panel-default prism">
-<div class="panel-heading" role="tab" id="headingThree">
-  <h2 class="panel-title">
-    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-one" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-      Less
-    </a>
-  </h2>
-</div>
-<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
   <div class="panel-body">
-    <pre>
-      <code class="language-css">.panel.basic {
-        border: 1px solid @bc-s02-20;
-        border-top: 5px solid @bc-p01;
-        .box-shadow(none);
-
-        & .panel-heading,
-        .panel-body,
-        .panel-footer {
-          padding: 20px;
-        }
-
-        & >.panel-heading,
-        & >.panel-footer {
-          background-color: transparent;
-          border-color: transparent;
-        }
-
-        & .panel-footer {
-          border-top-color: @bc-s02-20;
-        }
-
-      }
-
-      .panel.basic .panel-heading {
-
-        & .panel-title {
-          font-size: @font-size-h3 + 1;
-        }
-
-      }
-
-      .panel-heading-elements {
-        .make-row ();
-
-        & > div:first-of-type,
-        > div:last-of-type {
-          .make-sm-column (6);
-        }
-
-        & > div:first-of-type:last-of-type {
-          .make-sm-column (12);
-        }
-
-      }
-
-      .panel-footer-buttons {
-        .make-row();
-
-        & > div:first-of-type,
-        > div:last-of-type {
-          .make-sm-column (6);
-        }
-
-        & > div:first-of-type:last-of-type {
-          .make-sm-column (12);
-        }
-
-      }
-
-      @media (min-width: @screen-sm-min) {
-        .panel-heading-elements .heading-element-right,
-        .panel-footer-buttons .footer-buttons-right {
-          text-align: right;
-        }
-      }</code>
-    </pre>
+    <p>Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
   </div>
   <div class="panel-footer">
-    <div class="panel-footer-buttons">
-      <div>
+    <div class="panel-footer-content">
+      <div class="footer-content-left">
+        <button type="button" class="btn btn-primary">Primary</button>
       </div>
     </div>
   </div>
-</div>
-</div>
-<div class="panel panel-default prism">
-<div class="panel-heading" role="tab" id="headingFour">
-  <h2 class="panel-title">
-    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion-one" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-      CSS
-    </a>
-  </h2>
-</div>
-<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-  <div class="panel-body">
-    <pre>
-      <code class="language-css">.panel.basic {
-        border: 1px solid #d6dbdc;
-        border-top: 5px solid #1a202e;
-        -webkit-box-shadow: none;
-        box-shadow: none;
+</div>--></code></pre>
+              </div>
+              <div class="prismjs-code">
+              <h5>Less</h5>
+        <pre class="snippet"><code class="language-less">.panel-montane {
+border: 1px solid @bc-s02-20;
+border-top: 5px solid @bc-p01;
+@shadow: none;
+.box-shadow(@shadow);
+
+  > .panel-heading,
+  .panel-footer {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  > .panel-heading {
+    & .panel-title {
+      font-size: @font-size-h3 + 1;
+    }
+    & .panel-heading-content {
+      .make-row ();
+      & > .heading-content-left,
+      > .heading-content-right {
+        .make-sm-column (6);
       }
-      .panel.basic .panel-heading,
-      .panel.basic .panel-body,
-      .panel.basic .panel-footer {
-        padding: 20px;
+      & > div:first-of-type:last-of-type {
+        .make-sm-column (12);
       }
-      .panel.basic > .panel-heading,
-      .panel.basic > .panel-footer {
-        background-color: transparent;
-        border-color: transparent;
+    }
+  }
+
+  > .panel-footer {
+    padding: 20px 30px;
+    border-top-color: @bc-s02-20;
+    & .panel-footer-content {
+      .make-row();
+      > .footer-content-left,
+        .footer-content-right {
+        .make-sm-column (6);
       }
-      .panel.basic .panel-footer {
-        border-top-color: #d6dbdc;
+      > div:first-of-type:last-of-type {
+        .make-sm-column (12);
       }
-      .panel.basic .panel-heading .panel-title {
-        font-size: 25px;
-      }
-      .panel-heading-elements {
-        margin-left: -15px;
-        margin-right: -15px;
-      }
-      .panel-heading-elements > div:first-of-type,
-      .panel-heading-elements > div:last-of-type {
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-      @media (min-width: 768px) {
-        .panel-heading-elements > div:first-of-type,
-        .panel-heading-elements > div:last-of-type {
-          float: left;
-          width: 50%;
-        }
-      }
-      .panel-heading-elements > div:first-of-type:last-of-type {
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-      @media (min-width: 768px) {
-        .panel-heading-elements > div:first-of-type:last-of-type {
-          float: left;
-          width: 100%;
-        }
-      }
-      .panel-footer-buttons {
-        margin-left: -15px;
-        margin-right: -15px;
-      }
-      .panel-footer-buttons > div:first-of-type,
-      .panel-footer-buttons > div:last-of-type {
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-      @media (min-width: 768px) {
-        .panel-footer-buttons > div:first-of-type,
-        .panel-footer-buttons > div:last-of-type {
-          float: left;
-          width: 50%;
-        }
-      }
-      .panel-footer-buttons > div:first-of-type:last-of-type {
-        position: relative;
-        min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-      @media (min-width: 768px) {
-        .panel-footer-buttons > div:first-of-type:last-of-type {
-          float: left;
-          width: 100%;
-        }
-      }
-      @media (min-width: 768px) {
-        .panel-heading-elements .heading-element-right,
-        .panel-footer-buttons .footer-buttons-right {
-          text-align: right;
-        }
-      }</code>
-    </pre>
-  </div>
-  <div class="panel-footer">
-    <div class="panel-footer-buttons">
-      <div>
+    }
+  }
+}
+
+//Small devices (tablets, 768px and up)
+@media (min-width: @screen-sm-min) {
+  .panel-montane {
+    & .panel-heading-content .heading-content-right,
+      .panel-footer-content .footer-content-right {
+      text-align: right;
+    }
+  }
+}
+
+//Medium devices (desktops, 992px and up)
+@media (min-width: @screen-md-min) {
+  .panel-montane {
+    > .panel-heading,
+      .panel-body {
+      padding: 30px;
+    }
+
+    > .panel-heading+.panel-body {
+      padding-top: 0px;
+    }
+  }
+}</code></pre>
+            </div>
+              <div class="prismjs-code">
+                <h5>CSS</h5>
+          <pre class="snippet"><code class="language-css">.panel-montane {
+  border: 1px solid #d6dbdc;
+  border-top: 5px solid #1a202e;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.panel-montane > .panel-heading,
+.panel-montane .panel-footer {
+  background-color: transparent;
+  border-color: transparent;
+}
+.panel-montane > .panel-heading .panel-title {
+  font-size: 19px;
+}
+.panel-montane > .panel-heading .panel-heading-content {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.panel-montane > .panel-heading .panel-heading-content > .heading-content-left,
+.panel-montane > .panel-heading .panel-heading-content > .heading-content-right {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .panel-montane > .panel-heading .panel-heading-content > .heading-content-left,
+  .panel-montane > .panel-heading .panel-heading-content > .heading-content-right {
+    float: left;
+    width: 50%;
+  }
+}
+.panel-montane > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .panel-montane > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
+    float: left;
+    width: 100%;
+  }
+}
+.panel-montane > .panel-footer {
+  padding: 20px 30px;
+  border-top-color: #d6dbdc;
+}
+.panel-montane > .panel-footer .panel-footer-content {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.panel-montane > .panel-footer .panel-footer-content > .footer-content-left,
+.panel-montane > .panel-footer .panel-footer-content .footer-content-right {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .panel-montane > .panel-footer .panel-footer-content > .footer-content-left,
+  .panel-montane > .panel-footer .panel-footer-content .footer-content-right {
+    float: left;
+    width: 50%;
+  }
+}
+.panel-montane > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .panel-montane > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .panel-montane .panel-heading-content .heading-content-right,
+  .panel-montane .panel-footer-content .footer-content-right {
+    text-align: right;
+  }
+}
+@media (min-width: 992px) {
+  .panel-montane > .panel-heading,
+  .panel-montane .panel-body {
+    padding: 30px;
+  }
+  .panel-montane > .panel-heading + .panel-body {
+    padding-top: 0px;
+  }
+}</code></pre>
+        </div>
+        </div>
       </div>
+    </div><!--/section-example-container-->
+  </section><!--/section-example-->
+</section><!--/montane-panel-example-->
+<section id="montane-panel-heading-basic" class="sb-docs-subsection">
+  <h4 class="section-subheading">Basic heading</h4>
+    <p>The basic heading of the montane Panel has a <code>.heading-content-left</code> container with a <code>.panel-title</code> element.</p>
+    <section class="section-example">
+      <div class="example-container">
+        <div class="example-container-body">
+          <div class="panel panel-montane">
+            <div class="panel-heading">
+              <div class="panel-heading-content">
+                <div class="heading-content-left">
+                  <h3 class="panel-title">Panel Title</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="example-container-footer">
+          <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#basic-heading-code" aria-expanded="false" aria-controls="basic-heading-code">
+            View code
+          </button>
+          <div class="collapse" id="basic-heading-code">
+            <div class="prismjs-code">
+              <h5>HTML</h5>
+              <pre class="snippet"><code class="language-markup"><!--<div class="panel-heading">
+  <div class="panel-heading-content">
+    <div class="heading-content-left">
+      <h3 class="panel-title">Panel Title</h3>
     </div>
   </div>
-</div>
-</div>
-</div>
-<h5>Title and button heading with left and right aligned footer buttons</h5>
-<div class="panel-group" id="accordion-two" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-default prism">
-      <div class="panel-heading" role="tab" id="headingFive">
-        <h2 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion-two" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-            HTML Output
-          </a>
-        </h2>
+</div>--></code></pre>
+            </div>
+          </div>
+        </div>
+      </div><!--/.section-example-container-->
+    </section><!--/.section-example-->
+  </section><!--/#montane-panel-heading-basic-->
+<section id="montane-panel-heading-split" class="sb-docs-subsection">
+  <h4 class="section-subheading">Heading with split content</h4>
+  <p>A split content heading has <code>.heading-content-left</code> &amp; <code>.heading-content-right</code> containers to accomodate a <code>.panel-title</code> element and a right aligned element(s) such as a button or link.</p>
+  <section class="section-example">
+    <div class="example-container">
+      <div class="example-container-body">
+        <div class="panel panel-montane">
+          <div class="panel-heading">
+            <div class="panel-heading-content">
+              <div class="heading-content-left">
+                <h3 class="panel-title">Panel Title</h3>
+              </div>
+              <div class="heading-content-right">
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-link">Panel heading link</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
-        <div class="panel-body">
-          <pre>
-            <code class="language-markup"><!--<div class="panel basic">
-              <div class="panel-heading">
-                <div class="panel-heading-elements">
-                  <div>
-                    <h2 class="panel-title">H2 Panel Title <i class="mdi mdi-pencil" data-toggle="tooltip" data-placement="top" title="Optional accompanying icon"></i></h2>
-                  </div>
-                  <div class="heading-element-right">
-                    <button type="button" class="btn btn-default">Panel heading button</button>
-                  </div>
-                </div>
-              </div>
-              <div class="panel-body">
-                <p>Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-              </div>
-              <div class="panel-footer">
-                <div class="panel-footer-buttons">
-                  <div>
-                    <button type="button" class="btn btn-primary">Primary</button>
-                    <button type="button" class="btn btn-default">Default</button>
-                  </div>
-                  <div class="footer-buttons-right">
-                    <button type="button" class="btn btn-default">Default</button>
-                    <button type="button" class="btn btn-default">Default</button>
-                  </div>
-                </div>
-              </div>
-            </div>--></code>
-</pre>
-</div>
-<div class="panel-footer">
-<div class="panel-footer-buttons">
-  <div>
+      <div class="example-container-footer">
+        <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#split-heading-code" aria-expanded="false" aria-controls="split-heading-code">
+          View code
+        </button>
+        <div class="collapse" id="split-heading-code">
+          <div class="prismjs-code">
+            <h5>HTML</h5>
+            <pre class="snippet"><code class="language-markup"><!--<div class="panel-heading">
+  <div class="panel-heading-content">
+    <div class="heading-content-left">
+      <h3 class="panel-title">Panel Title</h3>
+    </div>
+    <div class="heading-content-right">
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-link">Panel heading link</button>
+    </div>
   </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+</div>--></code></pre>
+          </div>
+        </div>
+      </div>
+    </div><!--/.section-example-container-->
+  </section><!--/.section-example-->
+</section><!--/#montane-panel-heading-->
+<section id="montane-panel-footer-left" class="sb-docs-subsection">
+  <h4 class="section-subfooter">Footer with left content</h4>
+  <p>A footer with left content only has a <code>.footer-content-left</code> container to accomodate left aligned element(s).</p>
+  <section class="section-example">
+    <div class="example-container">
+      <div class="example-container-body">
+        <div class="panel panel-montane">
+          <div class="panel-footer">
+            <div class="panel-footer-content">
+              <div class="footer-content-left">
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-link">Panel heading link</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="example-container-footer">
+        <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#left-footer-code" aria-expanded="false" aria-controls="left-footer-code">
+          View code
+        </button>
+        <div class="collapse" id="left-footer-code">
+          <div class="prismjs-code">
+            <h5>HTML</h5>
+            <pre class="snippet"><code class="language-markup"><!--<div class="panel-footer">
+  <div class="panel-footer-content">
+    <div class="footer-content-left">
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-link">Panel heading link</button>
+    </div>
+  </div>
+</div>--></code></pre>
+          </div>
+        </div>
+      </div>
+    </div><!--/.section-example-container-->
+  </section><!--/.section-example-->
+</section><!--/#montane-panel-footer-->
+<section id="montane-panel-footer-right" class="sb-docs-subsection">
+  <h4 class="section-subfooter">Footer with right content</h4>
+  <p>A footer with right content only has a <code>.footer-content-right</code> container to accomodate right aligned element(s).</p>
+  <section class="section-example">
+    <div class="example-container">
+      <div class="example-container-body">
+        <div class="panel panel-montane">
+          <div class="panel-footer">
+            <div class="panel-footer-content">
+              <div class="footer-content-right">
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-link">Panel heading link</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="example-container-footer">
+        <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#right-footer-code" aria-expanded="false" aria-controls="right-footer-code">
+          View code
+        </button>
+        <div class="collapse" id="right-footer-code">
+          <div class="prismjs-code">
+            <h5>HTML</h5>
+            <pre class="snippet"><code class="language-markup"><!--<div class="panel-footer">
+  <div class="panel-footer-content">
+    <div class="footer-content-right">
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-link">Panel heading link</button>
+    </div>
+  </div>
+</div>--></code></pre>
+          </div>
+        </div>
+      </div>
+    </div><!--/.section-example-container-->
+  </section><!--/.section-example-->
+</section><!--/#montane-panel-footer-->
+<section id="montane-panel-footer-split" class="sb-docs-subsection">
+  <h4 class="section-subfooter">footer with split content</h4>
+  <p>A split content footer has <code>.footer-content-left</code> &amp; <code>.footer-content-right</code> containers to accomodate left <em>and</em> right aligned element(s).</p>
+  <section class="section-example">
+    <div class="example-container">
+      <div class="example-container-body">
+        <div class="panel panel-montane">
+          <div class="panel-footer">
+            <div class="panel-footer-content">
+              <div class="footer-content-left">
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-outline-default">Default</button>
+              </div>
+              <div class="footer-content-right">
+                <button type="button" class="btn btn-outline-default">Default</button>
+                <button type="button" class="btn btn-link">Panel footer link</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="example-container-footer">
+        <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#split-footer-code" aria-expanded="false" aria-controls="split-footer-code">
+          View code
+        </button>
+        <div class="collapse" id="split-footer-code">
+          <div class="prismjs-code">
+            <h5>HTML</h5>
+            <pre class="snippet"><code class="language-markup"><!--<div class="panel-footer">
+  <div class="panel-footer-content">
+    <div class="footer-content-left">
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-outline-default">Default</button>
+    </div>
+    <div class="footer-content-right">
+      <button type="button" class="btn btn-outline-default">Default</button>
+      <button type="button" class="btn btn-link">Panel footer link</button>
+    </div>
+  </div>
+</div>--></code></pre>
+          </div>
+        </div>
+      </div>
+    </div><!--/.section-example-container-->
+  </section><!--/.section-example-->
+</section><!--/#montane-panel-footer-->
+</section><!--/#montane-panel-->

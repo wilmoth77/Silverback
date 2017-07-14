@@ -6758,10 +6758,10 @@ button.close {
 .modal-header:after,
 .modal-footer:before,
 .modal-footer:after,
-.panel-rio > .panel-heading .panel-heading-content:before,
-.panel-rio > .panel-heading .panel-heading-content:after,
-.panel-rio > .panel-footer .panel-footer-content:before,
-.panel-rio > .panel-footer .panel-footer-content:after {
+.panel-montane > .panel-heading .panel-heading-content:before,
+.panel-montane > .panel-heading .panel-heading-content:after,
+.panel-montane > .panel-footer .panel-footer-content:before,
+.panel-montane > .panel-footer .panel-footer-content:after {
   content: " ";
   display: table;
 }
@@ -6781,8 +6781,8 @@ button.close {
 .panel-body:after,
 .modal-header:after,
 .modal-footer:after,
-.panel-rio > .panel-heading .panel-heading-content:after,
-.panel-rio > .panel-footer .panel-footer-content:after {
+.panel-montane > .panel-heading .panel-heading-content:after,
+.panel-montane > .panel-footer .panel-footer-content:after {
   clear: both;
 }
 .center-block {
@@ -7044,6 +7044,12 @@ from this file to the new file.
 /*******************************************************************************
 type.less
 */
+p {
+  margin: 0 0 21px;
+}
+p + ul {
+  margin-top: -12px;
+}
 .loud {
   color: #b21876;
 }
@@ -7054,6 +7060,32 @@ buttons.less
 button,
 button {
   outline: 0!important;
+}
+button,
+.btn,
+.btn,
+button,
+button {
+  margin-right: 10px;
+}
+button:first-of-type:last-of-type,
+.btn:first-of-type:last-of-type,
+button:last-of-type,
+.btn:last-of-type,
+.btn:first-of-type:last-of-type,
+.btn:last-of-type,
+button:first-of-type:last-of-type,
+button:last-of-type,
+button:first-of-type:last-of-type,
+button:last-of-type {
+  margin-right: 0;
+}
+button + a,
+.btn + a,
+.btn + a,
+button + a,
+button + a {
+  margin-left: 10px;
 }
 .btn-hair {
   color: #fff;
@@ -7621,108 +7653,114 @@ fieldset[disabled] .btn-ghost-danger.focus {
   background-color: #757981;
   border-color: transparent;
 }
-.btn + .btn,
-.btn + .btn,
-button + button,
-button + button {
-  margin-left: 10px;
+ > div:first-of-type:last-of-type {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+   > div:first-of-type:last-of-type {
+    float: left;
+    width: 100%;
+  }
 }
 /*******************************************************************************
 Extend panels.less
 */
 /************************************
-Rio Panel
+montane Panel
 */
-.panel-rio {
+.panel-montane {
   border: 1px solid #d6dbdc;
   border-top: 5px solid #1a202e;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.panel-rio > .panel-heading,
-.panel-rio .panel-footer {
+.panel-montane > .panel-heading,
+.panel-montane .panel-footer {
   background-color: transparent;
   border-color: transparent;
 }
-.panel-rio > .panel-heading .panel-title {
+.panel-montane > .panel-heading .panel-title {
   font-size: 19px;
 }
-.panel-rio > .panel-heading .panel-heading-content {
+.panel-montane > .panel-heading .panel-heading-content {
   margin-left: -15px;
   margin-right: -15px;
 }
-.panel-rio > .panel-heading .panel-heading-content > .heading-content-left,
-.panel-rio > .panel-heading .panel-heading-content > .heading-content-right {
+.panel-montane > .panel-heading .panel-heading-content > .heading-content-left,
+.panel-montane > .panel-heading .panel-heading-content > .heading-content-right {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .panel-rio > .panel-heading .panel-heading-content > .heading-content-left,
-  .panel-rio > .panel-heading .panel-heading-content > .heading-content-right {
+  .panel-montane > .panel-heading .panel-heading-content > .heading-content-left,
+  .panel-montane > .panel-heading .panel-heading-content > .heading-content-right {
     float: left;
     width: 50%;
   }
 }
-.panel-rio > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
+.panel-montane > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .panel-rio > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
+  .panel-montane > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
     float: left;
     width: 100%;
   }
 }
-.panel-rio > .panel-footer {
+.panel-montane > .panel-footer {
   padding: 20px 30px;
   border-top-color: #d6dbdc;
 }
-.panel-rio > .panel-footer .panel-footer-content {
+.panel-montane > .panel-footer .panel-footer-content {
   margin-left: -15px;
   margin-right: -15px;
 }
-.panel-rio > .panel-footer .panel-footer-content > .footer-content-left,
-.panel-rio > .panel-footer .panel-footer-content .footer-content-right {
+.panel-montane > .panel-footer .panel-footer-content > .footer-content-left,
+.panel-montane > .panel-footer .panel-footer-content .footer-content-right {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .panel-rio > .panel-footer .panel-footer-content > .footer-content-left,
-  .panel-rio > .panel-footer .panel-footer-content .footer-content-right {
+  .panel-montane > .panel-footer .panel-footer-content > .footer-content-left,
+  .panel-montane > .panel-footer .panel-footer-content .footer-content-right {
     float: left;
     width: 50%;
   }
 }
-.panel-rio > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
+.panel-montane > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .panel-rio > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
+  .panel-montane > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
     float: left;
     width: 100%;
   }
 }
 @media (min-width: 768px) {
-  .panel-rio .panel-heading-content .heading-content-right,
-  .panel-rio .panel-footer-content .footer-content-right {
+  .panel-montane .panel-heading-content .heading-content-right,
+  .panel-montane .panel-footer-content .footer-content-right {
     text-align: right;
   }
 }
 @media (min-width: 992px) {
-  .panel-rio > .panel-heading,
-  .panel-rio .panel-body {
+  .panel-montane > .panel-heading,
+  .panel-montane .panel-body {
     padding: 30px;
   }
-  .panel-rio > .panel-heading + .panel-body {
+  .panel-montane > .panel-heading + .panel-body {
     padding-top: 0px;
   }
 }
