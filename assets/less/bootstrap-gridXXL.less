@@ -1,5 +1,5 @@
 /*
- * Create Bootstrap XL grid
+ * Create Bootstrap XXL grid
  *
  * Add new LESS and overrides here instead of modifying Bootstrap core files
  */
@@ -8,22 +8,22 @@
  variables.less
  ******************************************************************************/
 
-// xLarge screen / wide desktop
-@screen-xl:                  1400px;
-@screen-xl-min:              @screen-xl;
+// xxLarge screen / wide desktop
+@screen-xxl:                  1600px;
+@screen-xxl-min:              @screen-xxl;
 //** Deprecated `@screen-lg-desktop` as of v3.0.1
-@screen-xl-desktop:          @screen-xl-min;
+@screen-xxl-desktop:          @screen-xl-min;
 
 // So media queries don't overlap when required, provide a maximum
-@screen-lg-max:              (@screen-xl-min - 1);
+@screen-xl-max:              (@screen-xxl-min - 1);
 
 //== Container sizes
 //
 //## Define the maximum width of `.container` for different screen sizes.
 // xLarge screen / wide desktop
-@container-xlarge-desktop:      (1340px + @grid-gutter-width); //1370px container
+@container-xxlarge-desktop:      (1540px + @grid-gutter-width); //1370px container
 //** For `@screen-xl-min` and up.
-@container-xl:                 @container-xlarge-desktop;
+@container-xxl:                 @container-xxlarge-desktop;
 
 /******************************************************************************
  grid.less
@@ -35,14 +35,14 @@
 
 .container {
   .container-fixed();
-  @media (min-width: @screen-xl-min) {
-    width: @container-xl;
+  @media (min-width: @screen-xxl-min) {
+    width: @container-xxl;
   }
 }
 
-// xLarge grid
+// xxLarge grid
 //
-// Columns, offsets, pushes, and pulls for the xlarge desktop device range.
+// Columns, offsets, pushes, and pulls for the xxlarge desktop device range.
 
 @media (min-width: @screen-xl-min) {
   .make-grid(xl);
@@ -53,29 +53,29 @@
 ******************************************************************************/
 
 // Generate the xlarge columns
-.make-xl-column(@columns; @gutter: @grid-gutter-width) {
+.make-xxl-column(@columns; @gutter: @grid-gutter-width) {
   position: relative;
   min-height: 1px;
   padding-left:  (@gutter / 2);
   padding-right: (@gutter / 2);
 
-  @media (min-width: @screen-xl-min) {
+  @media (min-width: @screen-xxl-min) {
     float: left;
     width: percentage((@columns / @grid-columns));
   }
 }
-.make-xl-column-offset(@columns) {
-  @media (min-width: @screen-xl-min) {
+.make-xxl-column-offset(@columns) {
+  @media (min-width: @screen-xxl-min) {
     margin-left: percentage((@columns / @grid-columns));
   }
 }
-.make-xl-column-push(@columns) {
-  @media (min-width: @screen-xl-min) {
+.make-xxl-column-push(@columns) {
+  @media (min-width: @screen-xxl-min) {
     left: percentage((@columns / @grid-columns));
   }
 }
-.make-xl-column-pull(@columns) {
-  @media (min-width: @screen-xl-min) {
+.make-xxl-column-pull(@columns) {
+  @media (min-width: @screen-xxl-min) {
     right: percentage((@columns / @grid-columns));
   }
 }
@@ -92,75 +92,74 @@
 .make-grid-columns() {
   // Common styles for all sizes of grid columns, widths 1-12
   .col(@index) { // initial
-    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}, .col-xl-@{index}";
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}, .col-xl-@{index}, .col-xxl-@{index}";
     .col((@index + 1), @item);
   }
   .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
-    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}, .col-xl-@{index}";
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}, .col-xl-@{index}, .col-xxl-@{index}";
     .col((@index + 1), ~"@{list}, @{item}");
   }
 }
-
 
 /******************************************************************************
  responsive-utilities.less
 ******************************************************************************/
 
 // Visibility utilities
-.visible-xl {
+.visible-xxl {
   .responsive-invisibility();
 }
 
-.visible-xl-block,
-.visible-xl-inline,
-.visible-xl-inline-block {
+.visible-xxl-block,
+.visible-xxl-inline,
+.visible-xxl-inline-block {
   display: none !important;
 }
 
-.visible-lg {
-  @media (min-width: @screen-lg-min) and (max-width: @screen-lg-max){
-    .responsive-visibility();
-  }
-}
-.visible-lg-block {
-  @media (min-width: @screen-lg-min) and (max-width: @screen-lg-max){
-    display: block !important;
-  }
-}
-.visible-lg-inline {
-  @media (min-width: @screen-lg-min) and (max-width: @screen-lg-max){
-    display: inline !important;
-  }
-}
-.visible-lg-inline-block {
-  @media (min-width: @screen-lg-min) and (max-width: @screen-lg-max){
-    display: inline-block !important;
-  }
-}
-
 .visible-xl {
-  @media (min-width: @screen-xl-min) {
+  @media (min-width: @screen-xl-min) and (max-width: @screen-xl-max){
     .responsive-visibility();
   }
 }
 .visible-xl-block {
-  @media (min-width: @screen-xl-min) {
+  @media (min-width: @screen-xl-min) and (max-width: @screen-xl-max){
     display: block !important;
   }
 }
 .visible-xl-inline {
-  @media (min-width: @screen-xl-min) {
+  @media (min-width: @screen-xl-min) and (max-width: @screen-xl-max){
     display: inline !important;
   }
 }
 .visible-xl-inline-block {
-  @media (min-width: @screen-xl-min) {
+  @media (min-width: @screen-xl-min) and (max-width: @screen-xl-max){
     display: inline-block !important;
   }
 }
 
-.hidden-xl {
-  @media (min-width: @screen-xl-min) {
+.visible-xxl {
+  @media (min-width: @screen-xxl-min) {
+    .responsive-visibility();
+  }
+}
+.visible-xxl-block {
+  @media (min-width: @screen-xxl-min) {
+    display: block !important;
+  }
+}
+.visible-xxl-inline {
+  @media (min-width: @screen-xxl-min) {
+    display: inline !important;
+  }
+}
+.visible-xxl-inline-block {
+  @media (min-width: @screen-xxl-min) {
+    display: inline-block !important;
+  }
+}
+
+.hidden-xxl {
+  @media (min-width: @screen-xxl-min) {
     .responsive-invisibility();
   }
 }
