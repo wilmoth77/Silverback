@@ -5,6 +5,6 @@
 * @package Silverback
 */
 ?>
-<div class="main-grid">
+<div id="sb-docs-wrap-bestcaseonline" class="main-grid">
   <?php the_content(); ?>
 </div>

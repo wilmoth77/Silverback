@@ -4,8 +4,7 @@
 *
 * @package Silverback
 */
-get_header(); ?>
-      <?php
+get_template_part( 'template-parts/header', 'grid' );
       while ( have_posts() ) : the_post();
       get_template_part( 'template-parts/content', 'grid' );
       endwhile; // End of the loop.

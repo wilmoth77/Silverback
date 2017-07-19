@@ -103,6 +103,11 @@ Target the .bestcaseonline body class
   #montane-panel-footer-split .panel-montane {
     border-top-width: 0;
   }
+  &.grid {
+    background-color: @bc-sp06;
+    padding-top: 62px;
+  }
+
 }
 
 /***********************************
@@ -372,6 +377,7 @@ navbar.less
 #silverback-header {
   > .navbar {
     margin-bottom: 0;
+    padding-top: 0;
   }
 
   > .navbar-inverse {
@@ -404,6 +410,7 @@ navbar.less
       position: absolute;
       top: 15px;
       margin-left: 5px;
+      font-size: inherit;
     }
     & input[type="search"]{
       padding-left: 20px;
@@ -472,6 +479,9 @@ main-secondary
     color: darken(@cin-p02, 15%);
     font-weight: 600;
     padding-left: 50px;
+  }
+  & .mdi {
+    font-size: inherit;
   }
 }
 
