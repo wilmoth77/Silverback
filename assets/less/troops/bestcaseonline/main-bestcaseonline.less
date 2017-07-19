@@ -19,8 +19,14 @@ from this file to the new file.
 // Target main-primary-container for Best Case Online specific styles
 //  -Inject css??
 
+/*******************************************************************************
+Global
+*/
+.mdi-dots-vertical {
+  color: @text-color;
+  font-size: 26px;
 
-
+}
 
 /*******************************************************************************
 type.less
@@ -47,24 +53,25 @@ p {
 buttons.less
 */
 
-.btn,
-button {
-  &:extend(.btn all);
-  outline: 0!important;
-  //border-color: transparent !important;
+//Remove blue focus glow from links and buttons
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus,
+a:focus {
+  outline: 0;
+  outline-offset: 0;
 }
 
-button,
-.btn {
-  margin-right: 10px;
-  &:first-of-type:last-of-type,
-  &:last-of-type {
-    margin-right: 0;
-  }
-  &+a {
-    margin-left: 10px;
-  }
+.btn-sibling {
+  margin-left: 10px;
 }
+.btn.btn-sibling:first-of-type {
+  margin-left: 0;
+}
+
 
 
 
@@ -91,7 +98,7 @@ button,
     border-color: @border;
   }
   &:hover {
-    color: @color;
+    color: @white;
     background-color: lighten(@border, 10%);
     border-color: @border;
   }
@@ -125,10 +132,9 @@ button,
       border-color: @border;
     }
   }
-
 }
 
-// Style the outline buttons
+// Variables for the outline buttons
 .btn-outline-default {
   .button-outline-variant(@text-color; transparent; @btn-default-border);
 }
@@ -144,7 +150,6 @@ button,
 
 
 // Mixin for the ghost button variant
-
 .button-ghost-variant(@color; @background; @border) {
   color: @color;
   background-color: @background;
@@ -191,12 +196,17 @@ button,
       border-color: @border;
     }
   }
-
 }
 
 // Style the ghost buttons
 .btn-ghost-default {
   .button-ghost-variant(@white; transparent; @white);
+}
+.btn-ghost-secondary {
+  .button-ghost-variant(@white; transparent; @white);
+}
+.btn-ghost-danger {
+  .button-ghost-variant(@white; @bc-p01-60; transparent);
 }
 //Ghost primary has unique hover text color of @white
 .btn-ghost-primary {
@@ -214,22 +224,23 @@ button,
     &.focus {
       color: @white;
     }
-
   }
-
 }
 
-.btn-ghost-secondary {
-  .button-ghost-variant(@white; transparent; @white);
-}
-.btn-ghost-danger {
-  .button-ghost-variant(@white; @bc-p01-60; transparent);
+//Spoecify icon size on button
+
+.btn-icon {
+  padding-top: 1px;
+  padding-bottom: 0;
+  & .mdi {
+    font-size: @font-size-btn-icon;
+    vertical-align: middle;
+    margin-right: 7px;
+  }
 }
 
 
-& > div:first-of-type:last-of-type {
-  .make-sm-column (12);
-}
+
 
 
 
@@ -517,6 +528,28 @@ forms.less
   }
 }
 
+/*******************************************************************************
+tables.less
+*/
+.table th {
+  font-size: @font-size-base - 1;
+  color: @gray-light;
+  background-color: @gray-lighter;
+  & input[type="checkbox"] {
+    text-align: center;
+  }
+}
+
+//Reverse Bootstrap's stripe pattern
+.table-striped>tbody>tr {
+  background-color: #fff;
+  &:nth-of-type(even) {
+      background-color: #f9f9f9;
+  }
+  &:nth-of-type(odd) {
+      background-color: #fff;
+  }
+}
 
 
 //Extra small devices (phones, less than 768px)

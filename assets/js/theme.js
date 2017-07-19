@@ -26,6 +26,28 @@
     common: {
       init: function() {
         // JavaScript to be fired on all pages
+// Add a class to buttons and/or links when next to each other
+        $(function () {
+          var buttons = document.getElementsByClassName('btn');
+          var anchor = document.getElementsByTagName('a');
+          for(let i = 0; i < buttons.length; i++) {
+            var button = $(buttons[i]);
+            if ($(button).siblings(".btn").size() > 0) {
+              $(button).siblings(".btn").addClass("btn-sibling");
+            }
+            if ($(button).siblings("a").size() > 0) {
+              $(button).siblings("a").addClass("btn-sibling");
+              $(button).siblings("a").siblings(".btn").addClass("btn-sibling");
+            }
+            if ($(anchor).siblings("a").size() > 0) {
+              $(anchor).siblings("a").addClass("btn-sibling");
+            }
+            if ($(anchor).siblings(".btn").size() > 0) {
+              $(anchor).siblings(".btn").addClass("btn-sibling");
+              $(anchor).siblings(".btn").siblings("a").addClass("btn-sibling");
+            }
+          }
+        });
 
         $(function () {
           $('[data-toggle="tooltip"]').tooltip();

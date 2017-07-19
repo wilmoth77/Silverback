@@ -1056,14 +1056,6 @@ styles/typography
   }
 }
 
-.section-example .table {
-  & tr:first-child td {
-    border-top: 0;
-  }
-  & td {
-    padding: 16px;
-  }
-}
 
 
 
@@ -1140,20 +1132,6 @@ p {
 tables.less
 */
 
-.table>thead>tr>th {
-  font-size: @font-size-small + 1;
-  text-transform: uppercase;
-  color: @gray;
-}
-
-.table-hover>tbody>tr:hover,
-.table-hover.table-striped>tbody>tr:nth-of-type(odd):hover {
-  background-color: @gray-lighter;
-}
-
-.table-striped>tbody>tr:nth-of-type(odd) {
-  background-color: @gray-lighter;
-}
 
 
 /*******************************************************************************
@@ -1166,24 +1144,26 @@ body {
 /*******************************************************************************
 buttons.less
 */
-.btn,
-button {
-  &:extend(.btn all);
-  outline: 0!important;
-  //border-color: transparent !important;
+
+//Remove blue focus glow from links and buttons
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus,
+a:focus {
+  outline: 0;
+  outline-offset: 0;
 }
 
-button,
-.btn {
-  margin-right: 10px;
-  &:first-of-type:last-of-type,
-  &:last-of-type {
-    margin-right: 0;
-  }
-  &+a {
-    margin-left: 10px;
+.btn-sibling {
+  margin-left: 10px;
+  &:first-child {
+    margin-left: 0;
   }
 }
+
 
 
 

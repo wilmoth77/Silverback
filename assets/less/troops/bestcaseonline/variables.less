@@ -88,14 +88,14 @@
 @brand-primary:         @bc-s01; //Celeste
 @brand-success:         @bc-sp02; //80's Hair
 @brand-info:            @bc-p02; //Goldfinger
-@brand-warning:         @bc-sp04;
-@brand-danger:          @bc-sp05;
+@brand-warning:         @bc-sp04; //Warning
+@brand-danger:          @bc-sp05; //Danger
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 //** Global textual link color.
-@link-color:            @bc-s03;
+@link-color:            @bc-s03; //Skydiver
 
 //== Typography
 //
@@ -109,6 +109,9 @@
 @font-size-h4:            ceil((@font-size-base * 1.14)); // ~16px
 @font-size-h5:            @font-size-base; // 14px
 @font-size-h6:            ceil((@font-size-base * .85)); // ~12px
+
+// Set a font size for button icons
+@font-size-btn-icon:      19px;
 
 //** Unit-less `line-height` for use in components like buttons.
 @line-height-base:        1.5; //  1.7142857143;  BS= 1.428571429
@@ -170,6 +173,10 @@
 @btn-secondary-bg:               @bc-s03;
 @btn-secondary-border:           darken(@btn-secondary-bg, 5%);
 
+@btn-danger-color:               @white;
+@btn-danger-bg:                  @brand-danger;
+@btn-danger-border:              darken(@btn-danger-bg, 5%);
+
 @btn-success-color:              @white;
 @btn-success-bg:                 @brand-success;
 @btn-success-border:             darken(@btn-success-bg, 5%);
@@ -186,12 +193,10 @@
 @btn-warning-bg:                 @brand-warning;
 @btn-warning-border:             darken(@btn-warning-bg, 5%);
 
-@btn-danger-color:               @white;
-@btn-danger-bg:                  @brand-danger;
-@btn-danger-border:              darken(@btn-danger-bg, 5%);
+
 
 // Allows for customizing button radius independently from global border radius
-@btn-border-radius-base:         4px;
+@btn-border-radius-base:         @border-radius-base;
 
 //== Forms
 //

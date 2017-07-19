@@ -11,6 +11,7 @@ function Silverback_scripts() {
     $assets = array(
       //'css'       => '/public/css/main.min.css',
       'bestcaseonline'     => '/public/css/bestcaseonline.min.css',
+    //  'bestcaseonline-pretty'     => '/assets/css/bestcaseonline.pretty.css',
       'silverback'     => '/public/css/silverback.min.css',
       'clipboard'    => '/public/js/clipboard.min.js',
       'script'    => '/public/js/script.min.js',
@@ -18,9 +19,10 @@ function Silverback_scripts() {
     );
 
     wp_enqueue_style('silverback', get_stylesheet_directory_uri() . $assets['silverback'], false, filemtime( get_stylesheet_directory() . '/public/css/silverback.min.css' ), 'all');
-    
+
     if (is_tree(7)) { //enqueue the Best Case Online stylesheet if it's a Best Case page only
     wp_enqueue_style('bestcaseonline', get_stylesheet_directory_uri() . $assets['bestcaseonline'], false, filemtime( get_stylesheet_directory() . '/public/css/bestcaseonline.min.css' ), 'all');
+    // wp_enqueue_style('bestcaseonline-pretty', get_stylesheet_directory_uri() . $assets['bestcaseonline-pretty'], false, filemtime( get_stylesheet_directory() . '/assets/css/bestcaseonline.pretty.css' ), 'all');
     }
 
 

@@ -122,12 +122,13 @@ module.exports = function(grunt) {
           jsFileList,
           '<%= jshint.all %>'
         ],
-        tasks: ['jshint', 'concat', 'uglify'],
+        tasks: ['jshint', 'concat', 'copy:devJs'],
       },
       less: {
         files: [
           './assets/less/*.less',
           './assets/less/**/*.less',
+          './assets/less/troops/bestcaseonline/**/*.less',
         ],
         tasks: ['less:dev_slvrbck', 'less:dev_bestcaseonline', 'less:dev_misc'],
       },
@@ -152,20 +153,34 @@ module.exports = function(grunt) {
     },
 
     copy: {
-      main: {
-        files: [
-          {expand: true,
-            cwd: './node_modules/bootstrap/dist/fonts/',
-            src: ['*.*'],
-            dest: './assets/fonts'
-          },
-        ],
-      }
+      bsFonts: {
+        files: [{
+          expand: true,
+          cwd: './node_modules/bootstrap/dist/fonts/',
+          dest: './public/fonts',
+          src: [
+            '*.*'
+          ],
+        }],
     },
+    devJs: {
+      files: [{
+        expand: true,
+        cwd: './assets/js/',
+        dest: './public/js/',
+        src: [
+          'script.js'
+        ],
+        rename: function(dest, src) {
+          return dest + src.replace('.js','.min.js');
+        }
+      }],
+    }
+  },
 
   });
   // Compile tasks
-  grunt.registerTask('compile', ['clean', 'concat', 'less:dev_slvrbck', 'less:dev_bestcaseonline', 'less:dev_misc', 'uglify', 'jshint', 'copy']);
+  grunt.registerTask('compile', ['clean', 'concat', 'less:dev_slvrbck', 'less:dev_bestcaseonline', 'less:dev_misc', 'jshint', 'copy']);
   grunt.registerTask('build', ['clean','concat', 'less:dist', 'uglify', 'jshint', 'copy']);
   // Set default task
   grunt.registerTask('default', ['watch']);

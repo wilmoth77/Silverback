@@ -1,0 +1,93 @@
+<section id="buttons-split" class="sb-docs-subsection">
+  <h4 class="section-subheading">Standard buttons</h4>
+  <p>Split buttons are a <code>.btn-group</code> with a main action <code>button</code> and a dropdown toggle <code>button</code> that repeats the main action,
+  plus one or more alternate actions.</p>
+  <section class="section-example">
+    <div class="example-container">
+      <div class="example-container-body">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Standard split button</h5>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">Print</button>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Print</a></li>
+                    <li><a href="#">Print all</a></li>
+                </ul>
+            </div>
+            <div>
+              <code>.btn-group</code>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h5>Split button with icon</h5>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default"><i class="mdi mdi-printer"></i> Print</button>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Print</a></li>
+                    <li><a href="#">Print all</a></li>
+                </ul>
+            </div>
+            <div>
+              <code>.btn-group</code>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="example-container-footer">
+        <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#buttons-split-code" aria-expanded="false" aria-controls="buttons-split-code">
+          View code
+        </button>
+        <div class="collapse" id="buttons-split-code">
+          <div class="prismjs-code">
+            <h5>HTML</h5>
+            <pre class="snippet"><code class="language-markup"><script type="prism-html-markup"><!-- Standard split button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default">Print</button>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
+    <ul class="dropdown-menu">
+        <li><a href="#">Print</a></li>
+        <li><a href="#">Print all</a></li>
+    </ul>
+</div>
+
+<!-- Split button with icon -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default"><i class="mdi mdi-printer"></i> Print</button>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Print</a></li>
+      <li><a href="#">Print all</a></li>
+    </ul>
+  </div>
+</script></code></pre>
+          </div>
+          <div class="prismjs-code">
+            <h5>Less</h5>
+            <pre class="snippet"><code class="language-less">//Spoecify icon size on button
+button .mdi,
+.btn .mdi {
+  font-size: 24px;
+}
+            </code></pre>
+          </div>
+          <div class="prismjs-code">
+            <h5>CSS</h5>
+            <pre class="snippet"><code class="language-css">//Spoecify icon size on button
+button .mdi,
+.btn .mdi {
+  font-size: 24px;
+}
+            </code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
