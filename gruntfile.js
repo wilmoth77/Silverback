@@ -127,7 +127,7 @@ module.exports = function(grunt) {
       less: {
         files: [
           './assets/less/*.less',
-          './assets/less/**/*.less',
+          './assets/less/troops/**/*.less',
           './assets/less/troops/bestcaseonline/**/*.less',
         ],
         tasks: ['less:dev_slvrbck', 'less:dev_bestcaseonline', 'less:dev_misc'],

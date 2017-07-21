@@ -3463,27 +3463,26 @@ Prism.hooks.add('wrap', function(env) {
     common: {
       init: function() {
         // JavaScript to be fired on all pages
+        $("body").tooltip({
+          selector: "[title]",
+          container: "body",
+          trigger: "hover",
+          //placement: "bottom"
+        });
 
-        //Add BestCase css
-        /*
-$(function () {
-        var cssId = 'myCss';  // you could encode the css path itself to generate id..
-        if ( $('body').hasClass('bestcaseonline') )
-        {
-          var head  = document.getElementById('sb-docs-wrap-bestcaseonline');
-          var link  = document.createElement('link');
-          link.id   = cssId;
-          link.rel  = 'stylesheet';
-          link.type = 'text/css';
-          link.href = '/wp-content/themes/silverback/public/css/bestcaseonline.min.css';
-          link.media = 'all';
-          head.appendChild(link);
-        }
+        $(document).on('mouseenter', ".ellipsis", function() {
+          var $this = $(this);
+          if(this.offsetWidth < this.scrollWidth && !$this.attr('title')) {
+            $this.tooltip({
+              title: $this.text(),
+              placement: "top"
+            });
+            $this.tooltip('show');
+          }
+        });
 
-      });
-      */
 
-// Add a class to buttons and/or links when next to each other
+        // Add a class to buttons and/or links when next to each other
         $(function () {
           var buttons = document.getElementsByClassName('btn');
           var anchor = document.getElementsByTagName('a');

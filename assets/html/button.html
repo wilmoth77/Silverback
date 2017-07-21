@@ -585,28 +585,28 @@ fieldset[disabled] .btn-link:focus {
 
   &:focus,
   &.focus {
-    color: @color;
-    background-color: lighten(@border, 10%);
-    border-color: @border;
+    color: @white;
+    background-color: @color;
+    border-color: @color;
   }
   &:hover {
-    color: @color;
-    background-color: lighten(@border, 10%);
-    border-color: @border;
+    color: @white;
+    background-color: @color;
+    border-color: @color;
   }
   &:active,
   &.active,
   .open > .dropdown-toggle& {
-    color: @color;
-    background-color: lighten(@border, 10%);
-    border-color: @border;
+    color: @white;
+    background-color: @color;
+    border-color: @color;
 
     &:hover,
     &:focus,
     &.focus {
-      color: @color;
-      background-color: lighten(@border, 10%);
-      border-color: @border;
+      color: @white;
+      background-color: @color;
+      border-color: @color;
     }
   }
   &:active,
@@ -626,7 +626,7 @@ fieldset[disabled] .btn-link:focus {
   }
 }
 
-// Variables for the outline buttons
+// Style the outline buttons
 .btn-outline-default {
   .button-outline-variant(@text-color; transparent; @btn-default-border);
 }
@@ -638,6 +638,27 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-outline-danger {
   .button-outline-variant(@bc-sp05-80; transparent; @bc-sp05-40);
+}
+
+//Outline default has unique hover
+.btn-outline-default {
+  .button-outline-variant(@text-color; transparent; @btn-default-border);
+  &:focus,
+  &.focus,
+  &:hover,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle&  {
+    background-color: darken(@btn-default-border, 10%);
+    border-color: darken(@btn-default-border, 10%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: darken(@btn-default-border, 10%);
+      border-color: darken(@btn-default-border, 10%);
+    }
+  }
 }</code></pre>
             </div>
             <div class="prismjs-code">
@@ -649,21 +670,21 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-outline-default:focus,
 .btn-outline-default.focus {
-  color: #333333;
-  background-color: #fbfbfb;
-  border-color: #e2e2e2;
+  color: #fff;
+  background-color: #333333;
+  border-color: #333333;
 }
 .btn-outline-default:hover {
-  color: #333333;
-  background-color: #fbfbfb;
-  border-color: #e2e2e2;
+  color: #fff;
+  background-color: #333333;
+  border-color: #333333;
 }
 .btn-outline-default:active,
 .btn-outline-default.active,
 .open > .dropdown-toggle.btn-outline-default {
-  color: #333333;
-  background-color: #fbfbfb;
-  border-color: #e2e2e2;
+  color: #fff;
+  background-color: #333333;
+  border-color: #333333;
 }
 .btn-outline-default:active:hover,
 .btn-outline-default.active:hover,
@@ -674,9 +695,9 @@ fieldset[disabled] .btn-link:focus {
 .btn-outline-default:active.focus,
 .btn-outline-default.active.focus,
 .open > .dropdown-toggle.btn-outline-default.focus {
-  color: #333333;
-  background-color: #fbfbfb;
-  border-color: #e2e2e2;
+  color: #fff;
+  background-color: #333333;
+  border-color: #333333;
 }
 .btn-outline-default:active,
 .btn-outline-default.active,
@@ -702,21 +723,21 @@ fieldset[disabled] .btn-outline-default.focus {
 }
 .btn-outline-primary:focus,
 .btn-outline-primary.focus {
-  color: #48c9c4;
-  background-color: #caf0ee;
-  border-color: #a3e4e2;
+  color: #fff;
+  background-color: #48c9c4;
+  border-color: #48c9c4;
 }
 .btn-outline-primary:hover {
-  color: #48c9c4;
-  background-color: #caf0ee;
-  border-color: #a3e4e2;
+  color: #fff;
+  background-color: #48c9c4;
+  border-color: #48c9c4;
 }
 .btn-outline-primary:active,
 .btn-outline-primary.active,
 .open > .dropdown-toggle.btn-outline-primary {
-  color: #48c9c4;
-  background-color: #caf0ee;
-  border-color: #a3e4e2;
+  color: #fff;
+  background-color: #48c9c4;
+  border-color: #48c9c4;
 }
 .btn-outline-primary:active:hover,
 .btn-outline-primary.active:hover,
@@ -727,9 +748,9 @@ fieldset[disabled] .btn-outline-default.focus {
 .btn-outline-primary:active.focus,
 .btn-outline-primary.active.focus,
 .open > .dropdown-toggle.btn-outline-primary.focus {
-  color: #48c9c4;
-  background-color: #caf0ee;
-  border-color: #a3e4e2;
+  color: #fff;
+  background-color: #48c9c4;
+  border-color: #48c9c4;
 }
 .btn-outline-primary:active,
 .btn-outline-primary.active,
@@ -755,21 +776,21 @@ fieldset[disabled] .btn-outline-primary.focus {
 }
 .btn-outline-secondary:focus,
 .btn-outline-secondary.focus {
-  color: #2d83c4;
-  background-color: #d7e8f6;
-  border-color: #add1ec;
+  color: #fff;
+  background-color: #2d83c4;
+  border-color: #2d83c4;
 }
 .btn-outline-secondary:hover {
-  color: #2d83c4;
-  background-color: #d7e8f6;
-  border-color: #add1ec;
+  color: #fff;
+  background-color: #2d83c4;
+  border-color: #2d83c4;
 }
 .btn-outline-secondary:active,
 .btn-outline-secondary.active,
 .open > .dropdown-toggle.btn-outline-secondary {
-  color: #2d83c4;
-  background-color: #d7e8f6;
-  border-color: #add1ec;
+  color: #fff;
+  background-color: #2d83c4;
+  border-color: #2d83c4;
 }
 .btn-outline-secondary:active:hover,
 .btn-outline-secondary.active:hover,
@@ -780,9 +801,9 @@ fieldset[disabled] .btn-outline-primary.focus {
 .btn-outline-secondary:active.focus,
 .btn-outline-secondary.active.focus,
 .open > .dropdown-toggle.btn-outline-secondary.focus {
-  color: #2d83c4;
-  background-color: #d7e8f6;
-  border-color: #add1ec;
+  color: #fff;
+  background-color: #2d83c4;
+  border-color: #2d83c4;
 }
 .btn-outline-secondary:active,
 .btn-outline-secondary.active,
@@ -808,21 +829,21 @@ fieldset[disabled] .btn-outline-secondary.focus {
 }
 .btn-outline-danger:focus,
 .btn-outline-danger.focus {
-  color: #ee4f5d;
-  background-color: #fbd1d5;
-  border-color: #f6a3aa;
+  color: #fff;
+  background-color: #ee4f5d;
+  border-color: #ee4f5d;
 }
 .btn-outline-danger:hover {
-  color: #ee4f5d;
-  background-color: #fbd1d5;
-  border-color: #f6a3aa;
+  color: #fff;
+  background-color: #ee4f5d;
+  border-color: #ee4f5d;
 }
 .btn-outline-danger:active,
 .btn-outline-danger.active,
 .open > .dropdown-toggle.btn-outline-danger {
-  color: #ee4f5d;
-  background-color: #fbd1d5;
-  border-color: #f6a3aa;
+  color: #fff;
+  background-color: #ee4f5d;
+  border-color: #ee4f5d;
 }
 .btn-outline-danger:active:hover,
 .btn-outline-danger.active:hover,
@@ -833,9 +854,9 @@ fieldset[disabled] .btn-outline-secondary.focus {
 .btn-outline-danger:active.focus,
 .btn-outline-danger.active.focus,
 .open > .dropdown-toggle.btn-outline-danger.focus {
-  color: #ee4f5d;
-  background-color: #fbd1d5;
-  border-color: #f6a3aa;
+  color: #fff;
+  background-color: #ee4f5d;
+  border-color: #ee4f5d;
 }
 .btn-outline-danger:active,
 .btn-outline-danger.active,
@@ -853,6 +874,89 @@ fieldset[disabled] .btn-outline-danger:focus,
 fieldset[disabled] .btn-outline-danger.focus {
   background-color: transparent;
   border-color: #f6a3aa;
+}
+.btn-outline-default {
+  color: #333333;
+  background-color: transparent;
+  border-color: #e2e2e2;
+}
+.btn-outline-default:focus,
+.btn-outline-default.focus {
+  color: #fff;
+  background-color: #333333;
+  border-color: #333333;
+}
+.btn-outline-default:hover {
+  color: #fff;
+  background-color: #333333;
+  border-color: #333333;
+}
+.btn-outline-default:active,
+.btn-outline-default.active,
+.open > .dropdown-toggle.btn-outline-default {
+  color: #fff;
+  background-color: #333333;
+  border-color: #333333;
+}
+.btn-outline-default:active:hover,
+.btn-outline-default.active:hover,
+.open > .dropdown-toggle.btn-outline-default:hover,
+.btn-outline-default:active:focus,
+.btn-outline-default.active:focus,
+.open > .dropdown-toggle.btn-outline-default:focus,
+.btn-outline-default:active.focus,
+.btn-outline-default.active.focus,
+.open > .dropdown-toggle.btn-outline-default.focus {
+  color: #fff;
+  background-color: #333333;
+  border-color: #333333;
+}
+.btn-outline-default:active,
+.btn-outline-default.active,
+.open > .dropdown-toggle.btn-outline-default {
+  background-image: none;
+}
+.btn-outline-default.disabled:hover,
+.btn-outline-default[disabled]:hover,
+fieldset[disabled] .btn-outline-default:hover,
+.btn-outline-default.disabled:focus,
+.btn-outline-default[disabled]:focus,
+fieldset[disabled] .btn-outline-default:focus,
+.btn-outline-default.disabled.focus,
+.btn-outline-default[disabled].focus,
+fieldset[disabled] .btn-outline-default.focus {
+  background-color: transparent;
+  border-color: #e2e2e2;
+}
+.btn-outline-default:focus,
+.btn-outline-default.focus,
+.btn-outline-default:hover,
+.btn-outline-default:active,
+.btn-outline-default.active,
+.open > .dropdown-toggle.btn-outline-default {
+  background-color: #c8c8c8;
+  border-color: #c8c8c8;
+}
+.btn-outline-default:focus:hover,
+.btn-outline-default.focus:hover,
+.btn-outline-default:hover:hover,
+.btn-outline-default:active:hover,
+.btn-outline-default.active:hover,
+.open > .dropdown-toggle.btn-outline-default:hover,
+.btn-outline-default:focus:focus,
+.btn-outline-default.focus:focus,
+.btn-outline-default:hover:focus,
+.btn-outline-default:active:focus,
+.btn-outline-default.active:focus,
+.open > .dropdown-toggle.btn-outline-default:focus,
+.btn-outline-default:focus.focus,
+.btn-outline-default.focus.focus,
+.btn-outline-default:hover.focus,
+.btn-outline-default:active.focus,
+.btn-outline-default.active.focus,
+.open > .dropdown-toggle.btn-outline-default.focus {
+  background-color: #c8c8c8;
+  border-color: #c8c8c8;
 }</code></pre>
             </div>
           </div>
@@ -1324,7 +1428,7 @@ fieldset[disabled] .btn-ghost-danger.focus {
   <section id="buttons-misc-spacing" class="sb-docs-subsection">
     <h4 class="section-subheading">Button spacing</h4>
     <p>No one likes a crowded button. Using a small bit of jQuery, we add a custom class of <code>.btn-sibling</code> to any <code>.btn</code> or <code>&lt;a&gt;</code> that has a sibiling <code>.btn</code> or <code>&lt;a&gt;</code>. Left margin
-    is applied to the elements (other than the <code>:first-child</code>) to create uniform spacing.</p>
+    is applied to the elements (other than the <code>:first-of-type</code>) to create uniform spacing.</p>
       <section class="section-example">
         <div class="example-container">
           <div class="example-container-body">
@@ -1382,26 +1486,37 @@ fieldset[disabled] .btn-ghost-danger.focus {
                 </div>
                 <div class="prismjs-code">
                   <h5>Less</h5>
-                  <pre class="snippet"><code class="language-less">//Add left margin to create space between buttons
+                  <pre class="snippet"><code class="language-less">// Add left margin to button siblings
 .btn-sibling {
   margin-left: 10px;
 }
 
-//Reset left margin on first-of-type. Include the additional .btn selector so anchors next to buttons aren't targeted
+// Clear left margin when button is first sibling
+//Include the additional .btn selector so anchors next to buttons aren't targeted
 .btn.btn-sibling:first-of-type {
   margin-left: 0;
+}
+
+// Force left margin on an anchor sibling when it's not first sibling
+a.btn-sibling:not(first-of-type) {
+  margin-left: 10px !important;
 }</code></pre>
                 </div>
                 <div class="prismjs-code">
                   <h5>CSS</h5>
-                  <pre class="snippet"><code class="language-css">/*Add left margin to create space between buttons*/
+                  <pre class="snippet"><code class="language-css">/*Add left margin to button siblings*/
 .btn-sibling {
   margin-left: 10px;
 }
 
-/*Reset left margin on first-of-type. Include the additional .btn selector so anchors next to buttons aren't targeted */
+/*Clear left margin when button is first sibling .btn selector so anchors next to buttons aren't targeted */
 .btn.btn-sibling:first-of-type {
   margin-left: 0;
+}
+
+/*Force left margin on an anchor sibling when it's not first sibling */
+a.btn-sibling:not(first-of-type) {
+  margin-left: 10px !important;
 }</code></pre>
                 </div>
               </div>

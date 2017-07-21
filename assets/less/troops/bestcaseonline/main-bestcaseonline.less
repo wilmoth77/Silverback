@@ -9,8 +9,9 @@ from this file to the new file.
 // Bootstrap
 @import "../../bootstrap";
 
-@import "mixins/buttons";         // Button constructs
-@import "components/navbar";        // Nav styles
+@import "mixins/buttons";                 // Button constructs
+@import "mixins/box-shadow.less";         // Shadow layer constructs
+@import "components/navbar";              // Nav styles
 
 //Always last
 @import "variables";             // New and override variables
@@ -22,8 +23,15 @@ from this file to the new file.
 /*******************************************************************************
 Global
 */
+
+body.page-template-app-bestcase {
+  padding-top: 62px;
+  background-color: #f8f8f8;
+}
+
 .mdi {
   font-size: 24px;
+  vertical-align: middle;
   //Unique styles per icon
   &.mdi-dots-vertical {
     color: @text-color;
@@ -45,10 +53,75 @@ Global
   }
 }
 
+/*******************************************************************************
+main.app-main
+*/
+.app-main {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/*******************************************************************************
+Upcoming Events
+*/
+
+dt.upcoming-event-time {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+dt .upcoming-event-time-hour {
+  font-weight: 300;
+  font-size: @font-size-large + 2px;
+}
+.upcoming-event-title,
+.upcoming-event-location {
+  .text-overflow();
+}
+
+/* Large devices (large desktops, 1200px and up) */
+
+@media (min-width: @screen-lg-min) {
+
+  dl.upcoming-event {
+    .clearfix();
+    padding-top: 7px;
+  }
+  dt.upcoming-event-time {
+    position: relative;
+    float: left;
+    padding: 5px;
+    width: 25%;
+    text-align: right;
+    background-color: @bc-sp01;
+    margin-right: 15px;
+    margin-top: -7px;
+    color: @white;
+  }
+  dt .upcoming-event-time-hour {
+    display: block;
+    margin-bottom: -5px;
+  }
+  .upcoming-event-location {
+    .small;
+  }
+}
+
 
 /*******************************************************************************
 type.less
 */
+
+//Remove the top margin from all headings so paddings are true (standard in BS4.0)
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  //margin-bottom: (@line-height-computed / 2);
+}
 
 p {
   margin: 0 0 (@line-height-computed);
@@ -83,13 +156,22 @@ a:focus {
   outline-offset: 0;
 }
 
+// Add left margin to button siblings
 .btn-sibling {
   margin-left: 10px;
 }
+
+// Clear left margin when button is first sibling
 .btn.btn-sibling:first-of-type {
   margin-left: 0;
 }
 
+/*
+// Force left margin on an anchor sibling when it's not first sibling
+a.btn-sibling:not(first-of-type) {
+margin-left: 10px !important;
+}
+*/
 
 
 
@@ -111,28 +193,28 @@ a:focus {
 
   &:focus,
   &.focus {
-    color: @color;
-    background-color: lighten(@border, 10%);
-    border-color: @border;
+    color: @white;
+    background-color: @color;
+    border-color: @color;
   }
   &:hover {
     color: @white;
-    background-color: lighten(@border, 10%);
-    border-color: @border;
+    background-color: @color;
+    border-color: @color;
   }
   &:active,
   &.active,
   .open > .dropdown-toggle& {
-    color: @color;
-    background-color: lighten(@border, 10%);
-    border-color: @border;
+    color: @white;
+    background-color: @color;
+    border-color: @color;
 
     &:hover,
     &:focus,
     &.focus {
-      color: @color;
-      background-color: lighten(@border, 10%);
-      border-color: @border;
+      color: @white;
+      background-color: @color;
+      border-color: @color;
     }
   }
   &:active,
@@ -152,7 +234,7 @@ a:focus {
   }
 }
 
-// Variables for the outline buttons
+// Style the outline buttons
 .btn-outline-default {
   .button-outline-variant(@text-color; transparent; @btn-default-border);
 }
@@ -164,6 +246,27 @@ a:focus {
 }
 .btn-outline-danger {
   .button-outline-variant(@bc-sp05-80; transparent; @bc-sp05-40);
+}
+
+//Outline default has unique hover
+.btn-outline-default {
+  .button-outline-variant(@text-color; transparent; @btn-default-border);
+  &:focus,
+  &.focus,
+  &:hover,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle&  {
+    background-color: darken(@btn-default-border, 10%);
+    border-color: darken(@btn-default-border, 10%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: darken(@btn-default-border, 10%);
+      border-color: darken(@btn-default-border, 10%);
+    }
+  }
 }
 
 
@@ -262,11 +365,15 @@ a:focus {
 badges.less
 */
 
-.badge.super {
-position: absolute;
-right: 6px;
-top: 3px;
+.badge {
+  background-color: @bc-p02;
+  &.super {
+    position: absolute;
+    right: 6px;
+    top: 3px;
+  }
 }
+
 
 /*******************************************************************************
 Extend panels.less
@@ -276,10 +383,9 @@ Extend panels.less
 montane Panel
 */
 .panel-montane {
-  border: 1px solid @bc-s02-20;
+  border: none;
   border-top: 5px solid @bc-p01;
-  @shadow: none;
-  .box-shadow(@shadow);
+  .layer(1);
 
   > .panel-heading,
   .panel-footer {
@@ -354,45 +460,44 @@ Main nav
 */
 
 // navbar-nav
-header {
-  > .navbar-default {
-    padding-top: 12px;
-    background-color: @white;
-    border: none;
+header.navbar-default {
+  padding-top: 12px;
+  background-color: @white;
+  border: none;
+  .layer(2);
 
-    & #navbar {
-      > .navbar-nav:first-child {
-        margin-top: -6px;
-        > li {
-          &.active a {
-            border-bottom: 4px solid @bc-p01;
-            color: @bc-p01;
-            font-weight: 600;
-            background-color: transparent !important;
-          }
-          > a {
-            padding-left: 2px;
-            padding-right: 2px;
-            padding-bottom: 16px;
-            margin-left: 23px;
-            margin-right: 23px;
-          }
+  & #navbar {
+    > .navbar-nav:first-child {
+      margin-top: -6px;
+      > li {
+        &.active a {
+          border-bottom: 4px solid @bc-p01;
+          color: @bc-p01;
+          font-weight: 600;
+          background-color: transparent !important;
+        }
+        > a {
+          padding-left: 2px;
+          padding-right: 2px;
+          padding-bottom: 16px;
+          margin-left: 23px;
+          margin-right: 23px;
         }
       }
-      > .navbar-right {
-        margin-right: 0 !important;
-      }
     }
-    & .navbar-nav {
-      li {
-        & a {
-          color: @bc-p01-80;
-          &:hover,
-          :focus {
-            color:@bc-p01;
-            background-color: transparent;
-            text-decoration: none;
-          }
+    > .navbar-right {
+      margin-right: 0 !important;
+    }
+  }
+  & .navbar-nav {
+    li {
+      & a {
+        color: @bc-p01-80;
+        &:hover,
+        :focus {
+          color:@bc-p01;
+          background-color: transparent;
+          text-decoration: none;
         }
       }
     }
@@ -429,15 +534,19 @@ header {
 }
 
 .navbar-notification {
-  & .badge {
-    background-color: @bc-p02;
-  }
   &.dropdown.open>a,
   .dropdown>a:hover {
     color: @bc-p01;
     text-decoration: none;
     background-color: transparent;
   }
+}
+
+// navbar-right
+.navbar-right>li>div>a,
+.navbar-right>li>div>button {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .navbar-user {
@@ -453,19 +562,28 @@ header {
       display: inline-block;
       line-height: 1;
       &:extend(.hidden-xs all);
+      > .user-dropdown-label {
+        float: left;
+        padding-top: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 130px;
+      }
     }
-    > .user-dropdown-label {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 130px;
-    }
+
   }
   &.dropdown.open>a,
   .dropdown>a:hover {
     color: @bc-p01;
     text-decoration: none;
     background-color: transparent;
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  .user-dropdown-label {
+    max-width: 260px !important;
   }
 }
 
@@ -532,7 +650,6 @@ header {
   }
 }
 
-
 @media (min-width: @screen-md-min) {
   .panel-montane.notification {
     width:  @screen-md-min;
@@ -574,9 +691,9 @@ header {
       background-color: transparent !important;
     }
     > img {
-    border-radius: 50%;
+      border-radius: 50%;
+    }
   }
-}
 }
 
 //Small devices (tablets, 768px and up)
@@ -586,6 +703,63 @@ header {
   }
 }
 
+// Montane notification and user panel shadows
+.panel-montane.notification,
+.panel-montane.user {
+  border: none;
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  transition: all 250ms;
+  .layer(3);
+  &:hover {
+    .layer(5);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+.nav-stacked {
+  > li {
+    &.active {
+      > a {
+        color: @bc-s01;
+        background-color: transparent;
+        font-weight: 600;
+
+        > .badge {
+          color: @white;
+          background-color: @bc-p02;
+        }
+      }
+    }
+    > a {
+      font-size: @font-size-base - 1;
+      color: @gray;
+      border-bottom: 1px solid @bc-s02-20;
+      > .mdi {
+        margin-right: 10px;
+      }
+      > .badge {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+//Small devices (tablets, 768px and up)
+@media (min-width: @screen-sm-min) {
+  .nav-stacked {
+    > li {
+      > a {
+        > .badge {
+          float: right;
+          margin-top: 9px;
+        }
+      }
+    }
+  }
+}
 
 /*******************************************************************************
 modal.less
@@ -623,8 +797,17 @@ alerts.less (notifications)
   border: none;
   border-radius: 0;
   border-top: 10px solid transparent;
-  @shadow: @level-1;
-  .box-shadow(@shadow);
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  transition: all 250ms;
+  .layer(3);
+
+  &:hover {
+    .layer(5);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
 
   & .close {
     font-size: 27px;
