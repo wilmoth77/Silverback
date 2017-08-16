@@ -9,22 +9,35 @@
 
 function Silverback_scripts() {
   $assets = array(
-    'bestcaseonline'     => '/public/css/bestcaseonline.min.css',
-    'silverback'     => '/public/css/silverback.min.css',
-    'clipboard'    => '/public/js/clipboard.min.js',
-    'script'    => '/public/js/script.min.js',
-    'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
+    'opensans'                => '//fonts.googleapis.com/css?family=Open+Sans:300,400,600',
+    'roboto'                  => '//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900',
+    'materialdesignicons'     => '//cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css',
+    'bestcaseonline'          => '/public/css/bestcaseonline.min.css',
+    'silverback'              => '/public/css/silverback.min.css',
+    'clipboard'               => '/public/js/clipboard.min.js',
+    'script'                  => '/public/js/script.min.js',
+    'jquery'                  => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
   );
 
+  // Enqueue on all pages of the site
+  wp_enqueue_style('materialdesignicons', $assets['materialdesignicons'], false, 'all');
+  wp_enqueue_style('opensans', $assets['opensans'], false, 'all');
+  wp_enqueue_style('roboto', $assets['roboto'], false, 'all');
 
-  if (is_tree(874)) { //Is the Best Case Example Application
+
+  if ( is_singular( 'bc_examples' ) ) {
     wp_enqueue_style('bestcaseonline', get_stylesheet_directory_uri() . $assets['bestcaseonline'], false, filemtime( get_stylesheet_directory() . '/public/css/bestcaseonline.min.css' ), 'all');
   }
 
-  elseif (is_tree(7)) { //Is Best Case Docs
-    wp_enqueue_style('silverback', get_stylesheet_directory_uri() . $assets['silverback'], false, filemtime( get_stylesheet_directory() . '/public/css/silverback.min.css' ), 'all');
-    wp_enqueue_style('bestcaseonline', get_stylesheet_directory_uri() . $assets['bestcaseonline'], false, filemtime( get_stylesheet_directory() . '/public/css/bestcaseonline.min.css' ), 'all');
-  }
+    elseif (is_tree(874)) { //Is Best Case App pages
+      wp_enqueue_style('bestcaseonline', get_stylesheet_directory_uri() . $assets['bestcaseonline'], false, filemtime( get_stylesheet_directory() . '/public/css/bestcaseonline.min.css' ), 'all');
+    }
+
+
+  //  elseif (is_tree(7)) { //Is Best Case Docs
+  //    wp_enqueue_style('silverback', get_stylesheet_directory_uri() . $assets['silverback'], false, filemtime( get_stylesheet_directory() . '/public/css/silverback.min.css' ), 'all');
+  //    wp_enqueue_style('bestcaseonline', get_stylesheet_directory_uri() . $assets['bestcaseonline'], false, filemtime( get_stylesheet_directory() . '/public/css/bestcaseonline.min.css' ), 'all');
+  //  }
 
   else { //Is any other page
     wp_enqueue_style('silverback', get_stylesheet_directory_uri() . $assets['silverback'], false, filemtime( get_stylesheet_directory() . '/public/css/silverback.min.css' ), 'all');

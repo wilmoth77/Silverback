@@ -13,8 +13,8 @@
  get_header(); ?>
 
  <main class="content-area" role="main">
- 	<?php get_template_part( 'template-parts/main', 'header' ); ?>
- 	<?php get_template_part('template-parts/breadcrumbs'); ?>
+ 	<?php get_template_part( 'partials/main', 'header' ); ?>
+ 	<?php get_template_part('partials/breadcrumbs'); ?>
  	<div id="primary" class="container news">
  		<div class="row">
  			<div class="primary-main col-md-8">
@@ -28,7 +28,7 @@
  						* If you want to override this in a child theme, then include a file
  						* called content-___.php (where ___ is the Post Format name) and that will be used instead.
  						*/
- 						get_template_part( 'template-parts/content', get_post_format() );
+ 						get_template_part( 'partials/content', get_post_format() );
  						?>
 
  					<?php endwhile; ?>
@@ -37,7 +37,7 @@
 
  				<?php else : ?>
 
- 					<?php get_template_part( 'template-parts/content', 'none' ); ?>
+ 					<?php get_template_part( 'partials/content', 'none' ); ?>
 
  				<?php endif; ?>
  			</div>

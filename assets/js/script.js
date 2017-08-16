@@ -2346,6 +2346,19 @@
   })
 
 }(jQuery);
+;$(function () {
+  //add active class to sample app navs
+  if ( $('body').hasClass('one-column') ) {
+    $('#navbar .navbar-nav:first-child  li:nth-child(1)').addClass('active');
+  }
+  if ( $('body').hasClass('two-column') ) {
+    $('#navbar .navbar-nav:first-child  li:nth-child(2)').addClass('active');
+  }
+  if ( $('body').hasClass('three-column') ) {
+    $('#navbar .navbar-nav:first-child  li:nth-child(3)').addClass('active');
+  }
+
+});
 ;/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+aspnet+json+less+sass+scss&plugins=autolinker+unescaped-markup */
 var _self = (typeof window !== 'undefined')
 	? window   // if in browser
@@ -3481,6 +3494,16 @@ Prism.hooks.add('wrap', function(env) {
           }
         });
 
+        $("[data-toggle=popover-form]").popover({
+          html: true,
+          content: function() {
+            return $('#popover-content').html();
+          }
+        });
+
+
+
+
 
         // Add a class to buttons and/or links when next to each other
         $(function () {
@@ -3537,6 +3560,7 @@ Prism.hooks.add('wrap', function(env) {
           if ( $('body').hasClass('pagination') ) {
             $('body').removeClass('pagination');
           }
+
         });
 
         //Stick the right content menu

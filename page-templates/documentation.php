@@ -11,7 +11,7 @@ get_header(); ?>
 <div class="gorilla-nest">
       <?php
       while ( have_posts() ) : the_post();
-      get_template_part( 'template-parts/content', 'documentation' );
+      get_template_part( 'partials/content', 'documentation' );
       endwhile; // End of the loop.
       ?>
     </div>

@@ -9,7 +9,7 @@
  
  <main class="content-area" role="main">
  			<?php
- 		 get_template_part( 'template-parts/main', 'header' );
+ 		 get_template_part( 'partials/main', 'header' );
  		 ?>
  		 <div id="primary" class="container news">
  			 <div class="row">
@@ -29,7 +29,7 @@
  			 				 * If you want to overload this in a child theme then include a file
  			 				 * called content-search.php and that will be used instead.
  			 				 */
- 			 				get_template_part( 'template-parts/content', 'search' );
+ 			 				get_template_part( 'partials/content', 'search' );
  			 				?>
 
  			 			<?php endwhile; ?>
@@ -38,7 +38,7 @@
 
  			 		<?php else : ?>
 
- 			 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+ 			 			<?php get_template_part( 'partials/content', 'none' ); ?>
 
  			 		<?php endif; ?>
  				 </div>

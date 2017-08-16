@@ -183,3 +183,34 @@ function is_tree($pid)
 				 return false;
 		 return $cap;
  }
+
+ /**
+  * Custom post types for examples
+  * https://codex.wordpress.org/Post_Types
+  */
+
+	function create_post_type() {
+	  register_post_type( 'bc_examples',
+	    array(
+	      'labels' => array(
+	        'name' => __( 'Best Case Examples' ),
+	        'singular_name' => __( 'Example' )
+	      ),
+	      'public' => true,
+	      'has_archive' => true,
+				'rewrite' => array('slug' => 'examples'),
+	    )
+	  );
+	}
+	add_action( 'init', 'create_post_type' );
+
+
+	/**
+	 * Shortcode for iframes
+	 * https://www.sean-barton.co.uk/2013/07/create-simple-shortcode-embed-iframe-wordpress/
+	 */
+add_shortcode('example', 'example_iframe');
+
+function example_iframe($atts, $content) {
+ return '<iframe class="col-xs-12" src="' . $atts['src'] . '" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>';
+}

@@ -44,6 +44,16 @@
           }
         });
 
+        $("[data-toggle=popover-form]").popover({
+          html: true,
+          content: function() {
+            return $('#popover-content').html();
+          }
+        });
+
+
+
+
 
         // Add a class to buttons and/or links when next to each other
         $(function () {
@@ -100,6 +110,7 @@
           if ( $('body').hasClass('pagination') ) {
             $('body').removeClass('pagination');
           }
+
         });
 
         //Stick the right content menu

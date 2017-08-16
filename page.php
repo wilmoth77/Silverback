@@ -15,11 +15,11 @@ get_header(); ?>
 <main class="content-area" role="main">
 			<?php
 		 while ( have_posts() ) : the_post();
-		 get_template_part( 'template-parts/main', 'header' );
+		 get_template_part( 'partials/main', 'header' );
 		 ?>
 		 <div id="primary" class="container">
 			 <div class="row">
-			 <?php get_template_part( 'template-parts/content', 'page' ); ?>
+			 <?php get_template_part( 'partials/content', 'page' ); ?>
 		 </div>
 	 </div>
 		 <?php endwhile; // End of the loop.

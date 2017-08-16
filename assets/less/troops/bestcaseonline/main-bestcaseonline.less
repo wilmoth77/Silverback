@@ -17,12 +17,17 @@ from this file to the new file.
 @import "variables";             // New and override variables
 
 
-// Target main-primary-container for Best Case Online specific styles
-//  -Inject css??
+
 
 /*******************************************************************************
 Global
 */
+
+body,
+html {
+  height: 100%;
+  position: relative;
+}
 
 body.page-template-app-bestcase {
   padding-top: 62px;
@@ -30,15 +35,34 @@ body.page-template-app-bestcase {
 }
 
 .mdi {
+  // Base material design icon style
   font-size: 24px;
   vertical-align: middle;
-  //Unique styles per icon
-  &.mdi-dots-vertical {
+
+  // Vertical dots menu icon
+  a .mdi-dots-vertical& {
     color: @text-color;
     font-size: 26px;
+
+    // Vertical dots in list group item
+    .list-group-item & {
+      float: right;
+      margin-top: -8px;
+    }
   }
 
-  //Style icons that have an identifier class
+  // File type brand colors
+  .mdi-file-pdf {
+    color: #962100;
+  }
+  .mdi-file-excel {
+    color: #006600;
+  }
+  .mdi-file-word {
+    color: #336699;
+  }
+
+  // Material icons that have an identifier class (notifications)
   &.success {
     color: @brand-success;
   }
@@ -52,6 +76,135 @@ body.page-template-app-bestcase {
     color: @brand-warning;
   }
 }
+
+/*******************************************************************************
+Best Case App Layouts
+*/
+
+//////////////////////////////////////
+//        Testing template
+/////////////////////////////////////
+body.testing {
+  #app-content {
+    .grid-row {
+      margin-bottom: 20px;
+      &:nth-of-type(odd) {
+        .grid-box {
+          background-color: @bc-p01-20;
+        }
+      }
+      &:nth-of-type(even) {
+        .grid-box {
+          background-color: @bc-sp02-20;
+        }
+      }
+      .grid-box {
+        padding: 15px;
+      }
+    }
+  }
+}
+
+#app {
+  #app-outer {
+    #app-container {
+      &:extend(.container-fluid);
+      #app-content {
+        .make-row();
+        padding-top:30px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+
+.one-column {
+  .app-content-main {
+    @media (min-width: @screen-md-min) {
+      .make-md-column(10);
+      float: none !important;
+      margin-left: auto;
+      margin-right: auto;
+      .sidebar& {
+        float: left !important;
+        .make-md-column(12);
+      }
+    }
+  }
+
+}
+
+.two-column {
+  .app-content-left {
+    .make-md-column(3);
+    .make-lg-column(2);
+  }
+  .app-content-main {
+    .make-md-column(9);
+    .make-lg-column(10);
+  }
+}
+
+.three-column {
+  .app-content-left {
+    .make-md-column(3);
+    .make-lg-column(2);
+  }
+
+  .app-content-main {
+    .make-md-column(7);
+    .make-lg-column(7);
+  }
+
+  .app-content-right {
+    .make-md-column(3);
+    .make-lg-column(3);
+  }
+}
+
+.sidebar {
+
+  #app-container.collapsed {
+    .app-content-left-sidebar {
+      width: 54px !important;
+    }
+
+    .panel-sidenav {
+      width: 54px;
+      .panel-body {
+        .nav-pills-label,
+        .badge {
+          display: none;
+        }
+      }
+      .mdi-format-horizontal-align-left:before {
+        transform: rotate(180deg);
+      }
+    }
+    #app-content {
+      margin-left: 84px !important;
+    }
+  }
+
+
+  #app-content {
+    margin-left: 310px !important;
+    margin-right: 15px !important;
+  }
+
+  .app-content-left-sidebar {
+    position: absolute;
+    top: 62px;
+    bottom: 0;
+    left: 0;
+    z-index: 990;
+    display: block;
+    width:280px;
+    overflow: hidden;
+    .layer(2);
+  }
+}
+
 
 /*******************************************************************************
 main.app-main
@@ -353,11 +506,67 @@ margin-left: 10px !important;
 .btn-icon {
   padding-top: 1px;
   padding-bottom: 0;
-  & .mdi {
+  .mdi {
     font-size: @font-size-btn-icon;
     vertical-align: middle;
     margin-right: 7px;
+    top: -1px;
+    position: relative;
   }
+  &.btn-sm .mdi {
+    margin-right: 3px;
+  }
+  &.dropdown-toggle .mdi,
+  &.dropdown-toggle.btn-sm .mdi {
+    margin: 0 -5px 0 0;
+  }
+
+}
+
+//Create a icon only button
+.button-icon-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:focus,
+  &.focus {
+    color: @text-color;
+  }
+  &:hover {
+    color: @text-color;
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @text-color;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @text-color;
+    }
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}
+
+// Style the icon only buttons
+.btn-link-icon {
+  .button-icon-variant(@gray-light; transparent; transparent;);
+}
+
+.search-wrap + button,
+.search-wrap + .dropdown {
+  margin-bottom: 15px;
 }
 
 
@@ -368,9 +577,9 @@ badges.less
 .badge {
   background-color: @bc-p02;
   &.super {
-    position: absolute;
-    right: 6px;
-    top: 3px;
+    position: relative;
+    margin-left: -11px;
+    margin-top: -17px;
   }
 }
 
@@ -387,20 +596,20 @@ montane Panel
   border-top: 5px solid @bc-p01;
   .layer(1);
 
-  > .panel-heading,
+  .panel-heading,
   .panel-footer {
     background-color: transparent;
     border-color: transparent;
   }
 
-  > .panel-heading {
-    & .panel-title {
+  .panel-heading {
+    .panel-title {
       font-size: @font-size-h3 + 1;
     }
-    & .panel-heading-content {
+    .panel-heading-content {
       .make-row ();
-      & > .heading-content-left,
-      > .heading-content-right {
+      .heading-content-left,
+      .heading-content-right {
         .make-sm-column (6);
       }
       & > div:first-of-type:last-of-type {
@@ -409,42 +618,271 @@ montane Panel
     }
   }
 
-  > .panel-footer {
+  .panel-footer {
     padding: 20px 30px;
     border-top-color: @bc-s02-20;
-    & .panel-footer-content {
+    .panel-footer-content {
       .make-row();
-      > .footer-content-left,
+      .footer-content-left,
       .footer-content-right {
         .make-sm-column (6);
       }
-      > div:first-of-type:last-of-type {
+      & > div:first-of-type:last-of-type {
         .make-sm-column (12);
       }
     }
   }
-}
-
-//Small devices (tablets, 768px and up)
-@media (min-width: @screen-sm-min) {
-  .panel-montane {
-    & .panel-heading-content .heading-content-right,
+  @media (min-width: @screen-sm-min) {
+    .panel-heading-content .heading-content-right,
     .panel-footer-content .footer-content-right {
       text-align: right;
     }
   }
-}
-
-//Medium devices (desktops, 992px and up)
-@media (min-width: @screen-md-min) {
-  .panel-montane {
-    > .panel-heading,
+  @media (min-width: @screen-md-min) {
+    .panel-heading,
     .panel-body {
       padding: 30px;
     }
-
-    > .panel-heading+.panel-body {
+    .panel-heading+.panel-body {
       padding-top: 0px;
+    }
+  }
+}
+
+/************************************
+Sidebar navigation Panel
+*/
+.panel-sidenav {
+  height: 100%;
+  border: none;
+  box-shadow: none;
+  background-color: #fdfdfd;
+
+  .panel-heading,
+  .panel-footer {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .panel-heading {
+    .panel-title {
+      font-size: @font-size-h3 + 1;
+    }
+    .panel-heading-content {
+      .make-row ();
+      .heading-content-left,
+      .heading-content-right {
+        .make-sm-column (6);
+      }
+      & > div:first-of-type:last-of-type {
+        .make-sm-column (12);
+      }
+    }
+  }
+
+  .panel-body {
+    padding: 0;
+    height:93.75%;
+    overflow: hidden;
+    &:hover {
+      overflow-y: auto;
+    }
+    ul {
+      padding:8px 0;
+    }
+  }
+
+  .panel-footer {
+    padding: 10px 0px;
+    height: 6.25%;
+    border-top-color: @bc-s02-20;
+    background-color: lighten(@bc-s02-20, 10%); //#edf0f2;
+    .panel-footer-content {
+      .make-row();
+      .footer-content-left,
+      .footer-content-right {
+        .make-sm-column (6);
+      }
+      & > div:first-of-type:last-of-type {
+        .make-sm-column (12);
+      }
+      .btn-block {
+        text-align: right;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  @media (min-width: @screen-sm-min) {
+    .panel-heading-content .heading-content-right,
+    .panel-footer-content .footer-content-right {
+      text-align: right;
+    }
+  }
+  @media (min-width: @screen-md-min) {
+    .panel-heading+.panel-body {
+      padding-top: 0px;
+    }
+  }
+}
+
+.panel-body-filter-row {
+  .make-row();
+}
+
+/************************************
+Sidebar navigation Panel
+*/
+.panel-sideview {
+  height: 100%;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+
+  .panel-heading,
+  .panel-footer {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .panel-heading {
+    padding-top: 0;
+    padding-bottom: 0;
+    .panel-title {
+      font-size: @font-size-h6;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: @bc-s02-60;
+    }
+    .panel-heading-content {
+      .make-row ();
+      .heading-content-left,
+      .heading-content-right {
+        .make-sm-column (6);
+      }
+      & > div:first-of-type:last-of-type {
+        .make-sm-column (12);
+      }
+    }
+  }
+
+  .panel-body {
+    padding: 0;
+    height:93.75%;
+    overflow: hidden;
+    &:hover {
+      overflow-y: auto;
+    }
+    ul {
+      padding:8px 0;
+      &:first-of-type {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .panel-footer {
+    padding: 10px 0px;
+    height: 6.25%;
+    border-top-color: @bc-s02-20;
+    background-color: lighten(@bc-s02-20, 10%); //#edf0f2;
+    .panel-footer-content {
+      .make-row();
+      .footer-content-left,
+      .footer-content-right {
+        .make-sm-column (6);
+      }
+      & > div:first-of-type:last-of-type {
+        .make-sm-column (12);
+      }
+    }
+  }
+
+  @media (min-width: @screen-sm-min) {
+    .panel-heading-content .heading-content-right,
+    .panel-footer-content .footer-content-right {
+      text-align: right;
+    }
+  }
+  @media (min-width: @screen-md-min) {
+    .panel-heading+.panel-body {
+      padding-top: 0px;
+    }
+  }
+}
+
+/************************************
+Filter Panel
+*/
+.panel-filter {
+  border-color: @bc-s02-20;
+  border-top: 3px solid @bc-sp01;
+  .layer(2);
+  background-color: transparent;
+
+  .panel-heading,
+  .panel-footer {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .panel-heading {
+    .panel-title {
+      font-size: @font-size-h6;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: @bc-s02-60;
+    }
+    .panel-heading-content {
+      .make-row ();
+      .heading-content-left,
+      .heading-content-right {
+        .make-sm-column (6);
+      }
+      & > div:first-of-type:last-of-type {
+        .make-sm-column (12);
+      }
+    }
+  }
+
+  .panel-footer {
+    padding: 20px;
+    border-top-color: @bc-s02-20;
+    background-color: transparent;
+    .panel-footer-content {
+      .make-row();
+      .footer-content-left,
+      .footer-content-right {
+        .make-sm-column (6);
+      }
+      & > div:first-of-type:last-of-type {
+        .make-sm-column (12);
+      }
+    }
+  }
+
+  @media (min-width: @screen-sm-min) {
+    .panel-heading-content .heading-content-right,
+    .panel-footer-content .footer-content-right {
+      text-align: right;
+    }
+  }
+  @media (min-width: @screen-md-min) {
+    .panel-heading,
+    .panel-body {
+      padding: 20px;
+    }
+    .panel-heading+.panel-body {
+      padding-top: 0px;
+    }
+  }
+
+  .dropdown {
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 0;
     }
   }
 }
@@ -452,138 +890,148 @@ montane Panel
 
 
 /*******************************************************************************
-navbar.ess
+navbar.less
 */
 
 /************************************
-Main nav
+Main nav #app-header
 */
 
-// navbar-nav
-header.navbar-default {
-  padding-top: 12px;
+#app-header {
   background-color: @white;
   border: none;
   .layer(2);
 
-  & #navbar {
-    > .navbar-nav:first-child {
-      margin-top: -6px;
-      > li {
-        &.active a {
-          border-bottom: 4px solid @bc-p01;
-          color: @bc-p01;
-          font-weight: 600;
-          background-color: transparent !important;
+  @media (min-width: @screen-md-min) {
+    padding-top: 12px;
+  }
+
+
+  .navbar-header {
+    .navbar-brand {
+      .navbar-brand-logo {
+        background-image: url("/wp-content/uploads/bc-app-sphere.svg");
+        align-items: center;
+        background-repeat: no-repeat;
+        display: flex;
+        height: 34px;
+        padding-left: 42px;
+        margin-top: -7px;
+
+        @media (min-width: @screen-md-min) {
+          margin-top: -15px;
         }
-        > a {
-          padding-left: 2px;
-          padding-right: 2px;
-          padding-bottom: 16px;
-          margin-left: 23px;
-          margin-right: 23px;
+
+        .navbar-brand-wordmark {
+          &:extend(.hidden-sm);
+          background-image: url("/wp-content/uploads/bc-app-wordmark.svg");
+          background-position: left center;
+          background-repeat: no-repeat;
+          background-size: 124px auto;
+          margin: 0;
+          overflow: hidden;
+          text-indent: 100%;
+          white-space: nowrap;
+          width: 124px;
         }
       }
     }
-    > .navbar-right {
-      margin-right: 0 !important;
-    }
   }
-  & .navbar-nav {
-    li {
-      & a {
-        color: @bc-p01-80;
-        &:hover,
-        :focus {
-          color:@bc-p01;
-          background-color: transparent;
-          text-decoration: none;
+
+  #navbar {
+    max-height: none;
+
+    ul.navbar-nav {
+      li {
+        a:first-child {
+          color: @bc-p01-80;
+          &:hover,
+          &:focus {
+            color:@bc-p01;
+            background-color: transparent;
+            text-decoration: none;
+          }
+        }
+      }
+      &:first-child { //ul.navbar-nav:first-child
+        li {
+          &.active a {
+            border-bottom: 4px solid @bc-p01;
+            color: @bc-p01;
+            font-weight: 600;
+            background-color: transparent !important;
+          }
+          a {
+            padding-left: 2px;
+            padding-right: 2px;
+            padding-bottom: 16px;
+            margin-left: 10px;
+            margin-right: 10px;
+
+            @media (min-width: @screen-md-min) {
+              margin-left: 23px;
+              margin-right: 23px;
+            }
+          }
+        }
+
+        @media (min-width: @screen-md-min) {
+          margin-top: -6px;
+        }
+      }
+
+      &.navbar-right { //ul.navbar-nav.navbar-right
+        li>div>a,
+        li>div>button {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        .navbar-notification {
+          &.dropdown.open>a,
+          .dropdown>a:hover {
+            color: @bc-p01;
+            text-decoration: none;
+            background-color: transparent;
+          }
+        }
+        .navbar-user {
+          a {
+            .navbar-user-avatar {
+              height: 40px;
+              width: 40px;
+              margin-right: 15px;
+              border-radius: 50%;
+              &:extend(.hidden-xs);
+            }
+
+            .navbar-user-dropdown {
+              display: inline-block;
+              line-height: 1;
+              &:extend(.hidden-sm);
+
+              .user-dropdown-label {
+                float: left;
+                padding-top: 4px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 130px;
+
+                @media (min-width: @screen-lg-min) {
+                  max-width: 260px !important;
+                }
+              }
+            }
+          }
+          &.dropdown.open>a,
+          .dropdown>a:hover {
+            color: @bc-p01;
+            text-decoration: none;
+            background-color: transparent;
+          }
         }
       }
     }
-  }
-}
-
-
-
-
-
-
-// navbar-brand
-
-.navbar-brand-logo {
-  background-image: url("/wp-content/uploads/bc-app-sphere.svg");
-  align-items: center;
-  background-repeat: no-repeat;
-  display: flex;
-  height: 34px;
-  padding-left: 42px;
-  margin-top: -15px;
-}
-
-.navbar-brand-wordmark {
-  background-image: url("/wp-content/uploads/bc-app-wordmark.svg");
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-size: 124px auto;
-  margin: 0;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  width: 124px;
-}
-
-.navbar-notification {
-  &.dropdown.open>a,
-  .dropdown>a:hover {
-    color: @bc-p01;
-    text-decoration: none;
-    background-color: transparent;
-  }
-}
-
-// navbar-right
-.navbar-right>li>div>a,
-.navbar-right>li>div>button {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.navbar-user {
-  > a {
-
-    > .navbar-user-avatar {
-      height: 40px;
-      width: 40px;
-      margin-right: 15px;
-      border-radius: 50%;
-    }
-    > .navbar-user-dropdown {
-      display: inline-block;
-      line-height: 1;
-      &:extend(.hidden-xs all);
-      > .user-dropdown-label {
-        float: left;
-        padding-top: 4px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 130px;
-      }
-    }
-
-  }
-  &.dropdown.open>a,
-  .dropdown>a:hover {
-    color: @bc-p01;
-    text-decoration: none;
-    background-color: transparent;
-  }
-}
-
-@media (min-width: @screen-lg-min) {
-  .user-dropdown-label {
-    max-width: 260px !important;
   }
 }
 
@@ -591,55 +1039,42 @@ header.navbar-default {
 .panel-montane.notification {
   &:extend(.dropdown-menu all);
   &:extend(.dropdown-menu-right all);
-  > .panel-body {
+
+  @media (min-width: @screen-sm-min) {
+    width: @screen-sm-min;
+  }
+  .panel-body {
     padding: 15px 0;
-    > .list-group {
+    .list-group {
       &:extend(.container-fluid all);
       margin-bottom: 0;
-      > .list-group-item {
+      .list-group-item {
         .make-row();
+        padding: 10px 15px;
         border: none;
         font-size: @font-size-small;
-        &:nth-of-type(odd) {
+        &:nth-of-type(even) {
           background-color: #f9f9f9;
         }
-        > .navbar-notification-icon {
+        .navbar-notification-icon {
           &:extend(.hidden-xs all);
         }
-      }
-    }
-    & .panel-footer .btn-link {
-      color: @link-color;
-    }
-  }
-}
-
-
-//Small devices (tablets, 768px and up)
-@media (min-width: @screen-sm-min) {
-  .panel-montane.notification {
-    width:  @screen-sm-min;
-    > .panel-body {
-      & .list-group {
-
-        > .list-group-item {
-
-          &:hover .navbar-notification-icon,
-          :focus .navbar-notification-icon {
-            .opacity(1);
-          }
-
-          > .navbar-notification-icon {
+        &:hover .navbar-notification-icon,
+        &:focus .navbar-notification-icon {
+          .opacity(1);
+        }
+        @media (min-width: @screen-sm-min) {
+          .navbar-notification-icon {
             .opacity(.7);
             .make-sm-column(1);
           }
 
-          > .navbar-notification-message {
+          .navbar-notification-message {
             .make-sm-column(9);
             padding-top: 5px;
           }
 
-          > .navbar-notification-time {
+          .navbar-notification-time {
             .make-sm-column(2);
             padding-top: 5px;
             text-align: right;
@@ -648,11 +1083,8 @@ header.navbar-default {
       }
     }
   }
-}
-
-@media (min-width: @screen-md-min) {
-  .panel-montane.notification {
-    width:  @screen-md-min;
+  .panel-footer .btn-link {
+    color: @link-color;
   }
 }
 
@@ -690,8 +1122,10 @@ header.navbar-default {
     &:hover {
       background-color: transparent !important;
     }
+    &:extend(.hidden-xs,.hidden-sm);
     > img {
       border-radius: 50%;
+
     }
   }
 }
@@ -719,47 +1153,124 @@ header.navbar-default {
   }
 }
 
-.nav-stacked {
-  > li {
-    &.active {
-      > a {
-        color: @bc-s01;
-        background-color: transparent;
-        font-weight: 600;
-
-        > .badge {
-          color: @white;
-          background-color: @bc-p02;
-        }
-      }
-    }
-    > a {
-      font-size: @font-size-base - 1;
-      color: @gray;
-      border-bottom: 1px solid @bc-s02-20;
-      > .mdi {
-        margin-right: 10px;
-      }
-      > .badge {
-        margin-left: 10px;
-      }
-    }
-  }
-}
-
-//Small devices (tablets, 768px and up)
-@media (min-width: @screen-sm-min) {
+// Side navigation in the sidebar
+.panel-sidenav {
   .nav-stacked {
-    > li {
-      > a {
-        > .badge {
-          float: right;
-          margin-top: 9px;
+    li {
+      &.active {
+        a {
+          color: @bc-s01;
+          background-color: transparent;
+          //font-weight: 600;
+
+          &:hover,
+          &:focus {
+            color: @bc-s01;
+            background-color: transparent;
+          }
+
+          .badge {
+            color: @white;
+            background-color: @bc-p02;
+          }
+        }
+      }
+      a {
+        //font-size: @font-size-base - 1;
+        //border-bottom: 1px solid @bc-s02-20;
+        color: @gray;
+        border-radius: 0;
+
+        &:hover,
+        &:focus {
+          color: @white;
+          background-color: @bc-s01;
+        }
+        .mdi {
+          margin-right: 15px;
+        }
+        .badge {
+          margin-left: 10px;
+        }
+      }
+    }
+    @media (min-width: @screen-sm-min) {
+      li {
+        a {
+          .badge {
+            float: right;
+            margin-top: 9px;
+          }
         }
       }
     }
   }
 }
+
+// Side view menu in the app-content area - Not sidebar navigation
+
+.panel-sideview {
+  .nav-stacked {
+    li {
+      &.active {
+        a {
+          color: @bc-s01;
+          background-color: transparent;
+          font-weight: 600;
+
+          &:hover,
+          &:focus {
+            color: @bc-s01;
+            background-color: transparent;
+          }
+
+          .badge {
+            color: @white;
+            background-color: @bc-p02;
+          }
+        }
+      }
+      a {
+        //font-size: @font-size-base - 1;
+        //border-bottom: 1px solid @bc-s02-20;
+        color: @gray;
+        border-radius: 0;
+        border-bottom: 1px solid @bc-s02-20;
+
+        &:hover,
+        &:focus {
+          color: @white;
+          background-color: @bc-s01;
+        }
+        .mdi {
+          margin-right: 15px;
+        }
+        .badge {
+          margin-left: 10px;
+        }
+        @media (max-width: @screen-xl-min) {
+          font-size: 13px;
+          padding: 8px 5px;
+          .mdi {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    @media (min-width: @screen-sm-min) {
+      li {
+        a {
+          .badge {
+            float: right;
+            margin-top: 9px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 
 /*******************************************************************************
 modal.less
@@ -819,7 +1330,6 @@ alerts.less (notifications)
 
     & i.mdi {
       font-size: 36px;
-      top: 3px;
       position: relative;
     }
   }
@@ -978,6 +1488,30 @@ forms.less
   }
 }
 
+// Search bar
+.search-wrap {
+  margin-bottom: 25px;
+  .panel-search{
+    .form-group {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-bottom: 0;
+    }
+    .mdi {
+      font-size: @font-size-h2;
+      color: @gray-light;
+      position: absolute;
+      margin-left: 11px;
+      margin-top: 3px;
+    }
+    input[type="search"] {
+      padding: 20px 45px;
+      font-size: @font-size-base + 2;
+    }
+  }
+}
+
+
 /*******************************************************************************
 tables.less
 */
@@ -985,9 +1519,6 @@ tables.less
   font-size: @font-size-base - 1;
   color: @gray-light;
   background-color: @gray-lighter;
-  & input[type="checkbox"] {
-    text-align: center;
-  }
 }
 
 //Reverse Bootstrap's stripe pattern
@@ -1001,6 +1532,141 @@ tables.less
   }
 }
 
+// Restrict column width of checkboxes and vertical more-menu icon
+.th-checkbox {
+  width: 40px;
+}
+.th-vertMore {
+  width: 25px;
+}
+
+/*******************************************************************************
+list-group.less
+*/
+.list-group {
+  .list-group-item {
+    padding: 20px;
+    &:first-child,
+    &:last-child {
+      border-radius: 0;
+    }
+    &:nth-of-type(even) {
+      background-color: #f9f9f9;
+    }
+  }
+}
+
+
+/*******************************************************************************
+In app scrolling (Need to work on this so it doesn't apply to the main scroll bar)
+
+
+::-webkit-scrollbar {
+  height: 16px;
+  overflow: visible;
+  width: 16px;
+}
+::-webkit-scrollbar-button {
+  height: 0;
+  width: 0
+}
+::-webkit-scrollbar-track {
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 0 0 0 4px
+}
+::-webkit-scrollbar-track:horizontal {
+  border-width: 4px 0 0
+}
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(0, 0, 0, .05);
+  box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1)
+}
+::-webkit-scrollbar-track:horizontal:hover {
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, .1)
+}
+::-webkit-scrollbar-track:active {
+  background-color: rgba(0, 0, 0, .05);
+  box-shadow: inset 1px 0 0 rgba(0, 0, 0, .14), inset -1px 0 0 rgba(0, 0, 0, .07)
+}
+::-webkit-scrollbar-track:horizontal:active {
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, .14), inset 0 -1px 0 rgba(0, 0, 0, .07)
+}
+.jfk-scrollbar-dark::-webkit-scrollbar-track:hover {
+  background-color: rgba(255, 255, 255, .1);
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, .2)
+}
+.jfk-scrollbar-dark::-webkit-scrollbar-track:horizontal:hover {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2)
+}
+.jfk-scrollbar-dark::-webkit-scrollbar-track:active {
+  background-color: rgba(255, 255, 255, .1);
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, .25), inset -1px 0 0 rgba(255, 255, 255, .15)
+}
+.jfk-scrollbar-dark::-webkit-scrollbar-track:horizontal:active {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), inset 0 -1px 0 rgba(255, 255, 255, .15)
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .2);
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 1px 1px 1px 6px;
+  min-height: 28px;
+  padding: 100px 0 0;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07)
+}
+::-webkit-scrollbar-thumb:horizontal {
+  border-width: 6px 1px 1px;
+  padding: 0 0 0 100px;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset -1px 0 0 rgba(0, 0, 0, .07)
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, .4);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .25)
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.35)
+}
+.jfk-scrollbar-dark::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, .3);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .15), inset 0 -1px 0 rgba(255, 255, 255, .1)
+}
+.jfk-scrollbar-dark::-webkit-scrollbar-thumb:horizontal {
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .15), inset -1px 0 0 rgba(255, 255, 255, .1)
+}
+.jfk-scrollbar-dark::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, .6);
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .37)
+}
+.jfk-scrollbar-dark::-webkit-scrollbar-thumb:active {
+  background-color: rgba(255, 255, 255, .75);
+  box-shadow: inset 1px 1px 3px rgba(255, 255, 255, .5)
+}
+.jfk-scrollbar-borderless::-webkit-scrollbar-track {
+  border-width: 0 1px 0 6px
+}
+.jfk-scrollbar-borderless::-webkit-scrollbar-track:horizontal {
+  border-width: 6px 0 1px
+}
+.jfk-scrollbar-borderless::-webkit-scrollbar-track:hover {
+  background-color: rgba(0, 0, 0, .035);
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .14), inset -1px -1px 0 rgba(0, 0, 0, .07)
+}
+.jfk-scrollbar-borderless.jfk-scrollbar-dark::-webkit-scrollbar-track:hover {
+  background-color: rgba(255, 255, 255, .07);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .25), inset -1px -1px 0 rgba(255, 255, 255, .15)
+}
+.jfk-scrollbar-borderless::-webkit-scrollbar-thumb {
+  border-width: 0 1px 0 6px
+}
+.jfk-scrollbar-borderless::-webkit-scrollbar-thumb:horizontal {
+  border-width: 6px 0 1px
+}
+::-webkit-scrollbar-corner {
+  background: transparent
+}
+*/
 
 //Extra small devices (phones, less than 768px)
 //No media query since this is the default in Bootstrap

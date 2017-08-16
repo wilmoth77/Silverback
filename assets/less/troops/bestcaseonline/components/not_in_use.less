@@ -1,0 +1,154 @@
+/*******************************************************************************
+*
+* Components that got styled, but didn't make the cut. I saved them here in case
+* they could be used down the road.
+*
+*******************************************************************************/
+
+
+
+
+/*******************************************************************************
+This is the Google Analytics style, collapsable left sidebar menu styling
+*******************************************************************************/
+
+/******************************
+#app-container started with a class of .expanded. Class .collapsed was added on
+click of the collapse button.
+
+$('[data-toggle="collapse-sidenav"]').click(function () {
+if ($("#app-container").hasClass("expanded")) {
+$("#app-container").removeClass("expanded");
+$("#app-container").addClass("collapsed");
+}  else {
+$("#app-container").removeClass("collapsed")
+$("#app-container").addClass("expanded");
+}
+
+});
+
+******************************/
+
+
+/******************************
+The sidebar container
+******************************/
+
+#app-container.collapsed {
+  .app-content-left.sidebar {
+    width: 54px !important;
+  }
+
+  .panel-sidenav {
+    width: 54px;
+    .panel-body {
+      .nav-pills-label,
+      .badge {
+        display: none;
+      }
+    }
+    .mdi-format-horizontal-align-left:before {
+      transform: rotate(180deg);
+    }
+  }
+  #app-content {
+    margin-left: 84px !important;
+  }
+}
+
+
+#app-content {
+  margin-left: 310px !important;
+  margin-right: 15px !important;
+}
+
+.app-content-left.sidebar {
+  position: absolute;
+  top: 62px;
+  bottom: 0;
+  left: 0;
+  z-index: 990;
+  display: block;
+  width:280px;
+  overflow: hidden;
+  .layer(2);
+}
+
+
+/******************************
+The sidebar menu panel
+******************************/
+.panel-sidenav {
+  height: 100%;
+  border: none;
+  box-shadow: none;
+  background-color: #fdfdfd;
+
+  .panel-heading,
+  .panel-footer {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .panel-heading {
+    .panel-title {
+      font-size: @font-size-h3 + 1;
+    }
+    .panel-heading-content {
+      .make-row ();
+      .heading-content-left,
+      .heading-content-right {
+        .make-sm-column (6);
+      }
+      & div:first-of-type:last-of-type {
+        .make-sm-column (12);
+      }
+    }
+  }
+
+  .panel-body {
+    padding: 0;
+    height:93.75%;
+    overflow: hidden;
+    &:hover {
+      overflow-y: auto;
+    }
+    ul {
+      padding:8px 0;
+    }
+  }
+
+  .panel-footer {
+    padding: 10px 0px;
+    height: 6.25%;
+    border-top-color: @bc-s02-20;
+    background-color: lighten(@bc-s02-20, 10%); //#edf0f2;
+    .panel-footer-content {
+      .make-row();
+      .footer-content-left,
+      .footer-content-right {
+        .make-sm-column (6);
+      }
+      & div:first-of-type:last-of-type {
+        .make-sm-column (12);
+      }
+      .btn-block {
+        text-align: right;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  @media (min-width: @screen-sm-min) {
+    .panel-heading-content .heading-content-right,
+    .panel-footer-content .footer-content-right {
+      text-align: right;
+    }
+  }
+  @media (min-width: @screen-md-min) {
+    .panel-heading+.panel-body {
+      padding-top: 0px;
+    }
+  }
+}
