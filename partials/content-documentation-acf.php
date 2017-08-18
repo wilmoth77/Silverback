@@ -22,7 +22,9 @@
     * Check to see if the ACF setting for a right hand sidebar navigation is set
     */
     if( get_field('content_navigation') ): ?>
+
     <div class="main-primary-container has-tertiary ">
+
       <?php if( have_rows('docs_intro') ): ?>
         <?php while( have_rows('docs_intro') ): the_row(); ?>
           <section class="sb-docs-section intro">
@@ -49,11 +51,9 @@
             <?php if( have_rows('docs_subsection') ): ?>
               <?php while( have_rows('docs_subsection') ): the_row(); ?>
 
-                <?php if( have_rows('nav_item') ): ?>
-                  <?php while( have_rows('nav_item') ): the_row(); ?>
-                    <section id="<?php the_sub_field('page_anchor'); ?>" class="sb-docs-subsection">
-                    <?php endwhile; //can only have one row from the editor
-                  endif; //can only have one row from the editor?>
+                <?php if( get_sub_field('nav_anchor') ): ?>
+                  <section id="<?php the_sub_field('nav_anchor'); ?>" class="sb-docs-subsection">
+                  <?php endif; //can only have one row from the editor?>
 
                   <?php if( get_sub_field('section_subheading') ): ?>
                     <h4 class="section-subheading"><?php the_sub_field('section_subheading'); ?></h4>
@@ -103,15 +103,15 @@
                               <h5><?php echo $label; ?></h5>
 
                               <?php if( $value == 'markup' ): ?>
-                                <pre class="snippet"><code class="language-<?php echo $value; ?>"><script type="prism-html-markup"><?php the_sub_field('code_block'); ?></script>
+                                <pre class="snippet"><code class="language-<?php echo $value; ?>"><script type="prism-html-markup"><?php the_content(); ?></script>
                                 </code></pre>
-                                </div>
+                              </div>
 
-                                <?php else: ?>
-                                  <pre class="snippet"><code class="language-<?php echo $value; ?>"><?php the_sub_field('code_block'); ?>
-                                  </code></pre>
-                                    </div>
-                                  <?php endif; ?>
+                            <?php else: ?>
+                              <pre class="snippet"><code class="language-<?php echo $value; ?>"><?php the_sub_field('code_block'); ?>
+                              </code></pre>
+                            </div>
+                          <?php endif; ?>
 
                         <?php endwhile; //has code example(s) ?>
                       </div>
