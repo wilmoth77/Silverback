@@ -17,201 +17,25 @@
       <section class="section-example">
         <div class="example-container">
           <div class="example-container-body">
-<iframe class="col-xs-12" src="/montane-panel-example/" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
-            </div>
+            [example src="/montane-panel-example/"]
+          </div>
           <div class="example-container-footer">
             <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#basic-panel-code" aria-expanded="false" aria-controls="basic-panel-code">
               View code
             </button>
             <div class="collapse" id="basic-panel-code">
-                  <div class="prismjs-code">
-                      <h5>HTML</h5>
-            <pre class="snippet"><code class="language-markup"><!--<div class="panel panel-montane">
-      <div class="panel-heading">
-        <div class="panel-heading-content">
-          <div class="heading-content-left">
-            <h3 class="panel-title">Panel Title</h3>
-          </div>
-        </div>
-      </div>
-      <div class="panel-body">
-        <p>Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-      </div>
-      <div class="panel-footer">
-        <div class="panel-footer-content">
-          <div class="footer-content-left">
-            <button type="button" class="btn btn-primary">Primary</button>
-          </div>
-        </div>
-      </div>
-    </div>--></code></pre>
-                  </div>
-                  <div class="prismjs-code">
-                  <h5>Less</h5>
-            <pre class="snippet"><code class="language-less">.panel-montane {
-    border: 1px solid @bc-s02-20;
-    border-top: 5px solid @bc-p01;
-    @shadow: none;
-    .box-shadow(@shadow);
-
-      > .panel-heading,
-      .panel-footer {
-        background-color: transparent;
-        border-color: transparent;
-      }
-
-      > .panel-heading {
-        & .panel-title {
-          font-size: @font-size-h3 + 1;
-        }
-        & .panel-heading-content {
-          .make-row ();
-          & > .heading-content-left,
-          > .heading-content-right {
-            .make-sm-column (6);
-          }
-          & > div:first-of-type:last-of-type {
-            .make-sm-column (12);
-          }
-        }
-      }
-
-      > .panel-footer {
-        padding: 20px 30px;
-        border-top-color: @bc-s02-20;
-        & .panel-footer-content {
-          .make-row();
-          > .footer-content-left,
-            .footer-content-right {
-            .make-sm-column (6);
-          }
-          > div:first-of-type:last-of-type {
-            .make-sm-column (12);
-          }
-        }
-      }
-    }
-
-    //Small devices (tablets, 768px and up)
-    @media (min-width: @screen-sm-min) {
-      .panel-montane {
-        & .panel-heading-content .heading-content-right,
-          .panel-footer-content .footer-content-right {
-          text-align: right;
-        }
-      }
-    }
-
-    //Medium devices (desktops, 992px and up)
-    @media (min-width: @screen-md-min) {
-      .panel-montane {
-        > .panel-heading,
-          .panel-body {
-          padding: 30px;
-        }
-
-        > .panel-heading+.panel-body {
-          padding-top: 0px;
-        }
-      }
-    }</code></pre>
-                </div>
-                  <div class="prismjs-code">
-                    <h5>CSS</h5>
-              <pre class="snippet"><code class="language-css">.panel-montane {
-      border: 1px solid #d6dbdc;
-      border-top: 5px solid #1a202e;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-    }
-    .panel-montane > .panel-heading,
-    .panel-montane .panel-footer {
-      background-color: transparent;
-      border-color: transparent;
-    }
-    .panel-montane > .panel-heading .panel-title {
-      font-size: 19px;
-    }
-    .panel-montane > .panel-heading .panel-heading-content {
-      margin-left: -15px;
-      margin-right: -15px;
-    }
-    .panel-montane > .panel-heading .panel-heading-content > .heading-content-left,
-    .panel-montane > .panel-heading .panel-heading-content > .heading-content-right {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-    @media (min-width: 768px) {
-      .panel-montane > .panel-heading .panel-heading-content > .heading-content-left,
-      .panel-montane > .panel-heading .panel-heading-content > .heading-content-right {
-        float: left;
-        width: 50%;
-      }
-    }
-    .panel-montane > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-    @media (min-width: 768px) {
-      .panel-montane > .panel-heading .panel-heading-content > div:first-of-type:last-of-type {
-        float: left;
-        width: 100%;
-      }
-    }
-    .panel-montane > .panel-footer {
-      padding: 20px 30px;
-      border-top-color: #d6dbdc;
-    }
-    .panel-montane > .panel-footer .panel-footer-content {
-      margin-left: -15px;
-      margin-right: -15px;
-    }
-    .panel-montane > .panel-footer .panel-footer-content > .footer-content-left,
-    .panel-montane > .panel-footer .panel-footer-content .footer-content-right {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-    @media (min-width: 768px) {
-      .panel-montane > .panel-footer .panel-footer-content > .footer-content-left,
-      .panel-montane > .panel-footer .panel-footer-content .footer-content-right {
-        float: left;
-        width: 50%;
-      }
-    }
-    .panel-montane > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-    @media (min-width: 768px) {
-      .panel-montane > .panel-footer .panel-footer-content > div:first-of-type:last-of-type {
-        float: left;
-        width: 100%;
-      }
-    }
-    @media (min-width: 768px) {
-      .panel-montane .panel-heading-content .heading-content-right,
-      .panel-montane .panel-footer-content .footer-content-right {
-        text-align: right;
-      }
-    }
-    @media (min-width: 992px) {
-      .panel-montane > .panel-heading,
-      .panel-montane .panel-body {
-        padding: 30px;
-      }
-      .panel-montane > .panel-heading + .panel-body {
-        padding-top: 0px;
-      }
-    }</code></pre>
-            </div>
+              <div class="prismjs-code">
+                <h5>HTML</h5>
+                <pre class="snippet"><code class="language-markup"></code></pre>
+              </div>
+              <div class="prismjs-code">
+                <h5>Less</h5>
+                <pre class="snippet"><code class="language-less"></code></pre>
+              </div>
+              <div class="prismjs-code">
+                <h5>CSS</h5>
+                <pre class="snippet"><code class="language-css"></code></pre>
+              </div>
             </div>
           </div>
         </div><!--/section-example-container-->
@@ -223,15 +47,7 @@
       <section class="section-example">
         <div class="example-container">
           <div class="example-container-body">
-            <div class="panel panel-montane">
-              <div class="panel-heading">
-                <div class="panel-heading-content">
-                  <div class="heading-content-left">
-                    <h3 class="panel-title">Panel Title</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
+            [example src="/montane-heading-basic/"]
           </div>
           <div class="example-container-footer">
             <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#basic-heading-code" aria-expanded="false" aria-controls="basic-heading-code">
@@ -259,19 +75,7 @@
   <section class="section-example">
     <div class="example-container">
       <div class="example-container-body">
-        <div class="panel panel-montane">
-          <div class="panel-heading">
-            <div class="panel-heading-content">
-              <div class="heading-content-left">
-                <h3 class="panel-title">Panel Title</h3>
-              </div>
-              <div class="heading-content-right">
-                <button type="button" class="btn btn-primary">Primary</button>
-                <button type="button" class="btn btn-link">Panel heading link</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        [example src="/montane-heading-split/"]
       </div>
       <div class="example-container-footer">
         <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#split-heading-code" aria-expanded="false" aria-controls="split-heading-code">
@@ -303,16 +107,8 @@
   <section class="section-example">
     <div class="example-container">
       <div class="example-container-body">
-        <div class="panel panel-montane">
-          <div class="panel-footer">
-            <div class="panel-footer-content">
-              <div class="footer-content-left">
-                <button type="button" class="btn btn-primary">Primary</button>
-                <button type="button" class="btn btn-link">Panel heading link</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        [example src="/montane-footer-left/"]
+
       </div>
       <div class="example-container-footer">
         <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#left-footer-code" aria-expanded="false" aria-controls="left-footer-code">
@@ -341,16 +137,7 @@
   <section class="section-example">
     <div class="example-container">
       <div class="example-container-body">
-        <div class="panel panel-montane">
-          <div class="panel-footer">
-            <div class="panel-footer-content">
-              <div class="footer-content-right">
-                <button type="button" class="btn btn-primary">Primary</button>
-                <button type="button" class="btn btn-link">Panel heading link</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        [example src="/montane-footer-right/"]
       </div>
       <div class="example-container-footer">
         <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#right-footer-code" aria-expanded="false" aria-controls="right-footer-code">
@@ -379,20 +166,7 @@
   <section class="section-example">
     <div class="example-container">
       <div class="example-container-body">
-        <div class="panel panel-montane">
-          <div class="panel-footer">
-            <div class="panel-footer-content">
-              <div class="footer-content-left">
-                <button type="button" class="btn btn-primary">Primary</button>
-                <button type="button" class="btn btn-outline-default">Default</button>
-              </div>
-              <div class="footer-content-right">
-                <button type="button" class="btn btn-outline-default">Default</button>
-                <button type="button" class="btn btn-link">Panel footer link</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        [example src="/montane-footer-split/"]
       </div>
       <div class="example-container-footer">
         <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#split-footer-code" aria-expanded="false" aria-controls="split-footer-code">
