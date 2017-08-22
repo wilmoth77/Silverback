@@ -70,16 +70,14 @@ body.home {
 
 
 /*******************************************************************************
-Best Case Silverback Styling
-Target the .bestcaseonline body class
+Best Case Typography section
 */
 
-.bestcaseonline {
-  & .font-example-roboto span,
+.font-example-roboto span,
   .font-example-opensans span {
     &:extend(h2);
   }
-  & .font-example-roboto span {
+  .font-example-roboto span {
     &.example-roboto-light {
       font-weight: 300;
     }
@@ -90,7 +88,7 @@ Target the .bestcaseonline body class
       font-weight: 700;
     }
   }
-  & .font-example-opensans span {
+   .font-example-opensans span {
     &.example-opensans-regular {
       font-weight: 400;
     }
@@ -98,17 +96,6 @@ Target the .bestcaseonline body class
       font-weight: 600;
     }
   }
-  #montane-panel-footer-left .panel-montane,
-  #montane-panel-footer-right .panel-montane,
-  #montane-panel-footer-split .panel-montane {
-    border-top-width: 0;
-  }
-  &.grid {
-    background-color: @bc-sp06;
-    padding-top: 62px;
-  }
-
-}
 
 
 
@@ -466,6 +453,10 @@ main-secondary
     padding-left: 55px; //was 35px, added 20px
   }
 
+  > .sidebar .nav.nested .current_page_item.active a {
+    padding-left: 50px;
+  }
+
   > .sidebar .current-menu-parent {
     background-color: lighten(@cin-p02, 38%);
   }
@@ -474,7 +465,7 @@ main-secondary
     border-left: 5px solid @cin-p02;
     color: darken(@cin-p02, 15%);
     font-weight: 600;
-    padding-left: 50px;
+    padding-left: 30px;
   }
   & .mdi {
     font-size: inherit;

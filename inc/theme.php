@@ -161,7 +161,7 @@ function compose_title () {
 	$product_post_title = get_the_title( $product_post_id );
 
 	if( count( $ancestors ) > 0 ) {
-		echo '<h6><span class="product">' . $product_post_title . ' Style Guide 1.0</span></h6>';
+		echo '<h6><span class="product">' . $product_post_title . '</span></h6>';
 	}
 	else;
 	if( count( $ancestors ) == 1 ) {

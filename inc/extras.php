@@ -214,3 +214,13 @@ add_shortcode('example', 'example_iframe');
 function example_iframe($atts, $content) {
  return '<iframe class="col-xs-12" src="' . $atts['src'] . '" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>';
 }
+
+/**
+ * Disable wpautop on ACF wysiwyg
+ * https://support.advancedcustomfields.com/forums/topic/removing-paragraph-tags-from-wysiwyg-fields/
+ */
+ //Remove WPAUTOP from ACF TinyMCE Editor
+ function acf_wysiwyg_remove_wpautop() {
+     remove_filter('acf_the_content', 'wpautop' );
+ }
+ add_action('acf/init', 'acf_wysiwyg_remove_wpautop');
