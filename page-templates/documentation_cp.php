@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Documentation
+* Template Name: Documentation Client Portal
 *
 * The layout of the main content area for
 * the documentation pages of the style guide(s)

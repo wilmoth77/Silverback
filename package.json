@@ -28,6 +28,8 @@
     "Bootstrap"
   ],
   "dependencies": {
+    "jquery-bootstrap-scrolling-tabs": "^2.1.0",
+    "mdi": "^2.0.46",
     "prismjs": "^1.6.0"
   }
 }

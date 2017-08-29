@@ -17,6 +17,50 @@ from this file to the new file.
 @import "variables";             // New and override variables
 
 
+/*******************************************************************************
+Silverback
+Custom styling just for adjusting examples in the iframes in Silverback
+*/
+
+.bc_examples {
+  padding-top: 15px;
+  .btn+.btn-block {
+    margin-top: 50px;
+  }
+
+  #slvrbck-example-modal-standard,
+  #slvrbck-example-modal-small,
+  #slvrbck-example-modal-large,
+  #slvrbck-example-modal-doc {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    display: block;
+  }
+
+  //Tooltip example
+  &.post-1309 button {
+    margin-top: 50px;
+    &:first-of-type {
+      margin-left: 100px;
+    }
+  }
+
+  //Popover example
+  .popover-example {
+    .make-sm-column(5);
+    margin: 75px auto;
+    float: none !important;
+
+    button {
+      margin-bottom: 25px;
+    }
+  }
+
+}
 
 
 /*******************************************************************************
@@ -297,220 +341,56 @@ p {
 buttons.less
 */
 
-//Remove blue focus glow from links and buttons
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus,
-a:focus {
-  outline: 0;
-  outline-offset: 0;
+//Remove glow from items with focus
+.focus,
+:focus {
+  outline: 0 !important;
+  outline-offset: 0 !important;
 }
 
-// Add left margin to button siblings
-.btn-sibling {
+//Apply a left margin to buttons for spacing
+.btn {
   margin-left: 10px;
-}
 
-// Clear left margin when button is first sibling
-.btn.btn-sibling:first-of-type {
-  margin-left: 0;
+  //Remove the margin if:
+  &:first-of-type,
+  &+.dropdown-toggle,
+  &.btn-block {
+    margin-left: 0;
+  }
 }
 
 /*
-// Force left margin on an anchor sibling when it's not first sibling
-a.btn-sibling:not(first-of-type) {
-margin-left: 10px !important;
+//Outline
+.btn-secondary {
+.button-variant(@text-color; transparent; @bc-s02-20);
 }
 */
 
-
-
-// Alternate color buttons
-.btn-hair {
-  .button-variant(@btn-hair-color; @btn-hair-bg; @btn-hair-border);
-}
+//New secondary button class
 .btn-secondary {
-  .button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
-}
-
-
-// Mixin for the outline button variant
-
-.button-outline-variant(@color; @background; @border) {
-  color: @color;
-  background-color: @background;
-  border-color: @border;
-
-  &:focus,
-  &.focus {
-    color: @white;
-    background-color: @color;
-    border-color: @color;
-  }
-  &:hover {
-    color: @white;
-    background-color: @color;
-    border-color: @color;
-  }
-  &:active,
-  &.active,
-  .open > .dropdown-toggle& {
-    color: @white;
-    background-color: @color;
-    border-color: @color;
-
-    &:hover,
-    &:focus,
-    &.focus {
-      color: @white;
-      background-color: @color;
-      border-color: @color;
-    }
-  }
-  &:active,
-  &.active,
-  .open > .dropdown-toggle& {
-    background-image: none;
-  }
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    &:hover,
-    &:focus,
-    &.focus {
-      background-color: @background;
-      border-color: @border;
-    }
+  .button-variant(@text-color; lighten(@bc-s02-20, 5%); lighten(@bc-s02-20, 5%););
+  &.dropdown-toggle {
+    border-left-color: darken(@bc-s02-20, 5%);
   }
 }
 
-// Style the outline buttons
-.btn-outline-default {
-  .button-outline-variant(@text-color; transparent; @btn-default-border);
-}
-.btn-outline-primary {
-  .button-outline-variant(@bc-s01-80; transparent; @bc-s01-40);
-}
-.btn-outline-secondary {
-  .button-outline-variant(@bc-s03; transparent; @bc-s03-40);
-}
-.btn-outline-danger {
-  .button-outline-variant(@bc-sp05-80; transparent; @bc-sp05-40);
-}
-
-//Outline default has unique hover
-.btn-outline-default {
-  .button-outline-variant(@text-color; transparent; @btn-default-border);
-  &:focus,
-  &.focus,
-  &:hover,
-  &:active,
-  &.active,
-  .open > .dropdown-toggle&  {
-    background-color: darken(@btn-default-border, 10%);
-    border-color: darken(@btn-default-border, 10%);
-
-    &:hover,
-    &:focus,
-    &.focus {
-      background-color: darken(@btn-default-border, 10%);
-      border-color: darken(@btn-default-border, 10%);
-    }
+//New tertiary button class
+.btn-tertiary {
+  .button-variant(@white; @bc-s03; @bc-s03;);
+  &.dropdown-toggle {
+    border-left-color: darken(@bc-s03, 5%);
   }
 }
 
-
-// Mixin for the ghost button variant
-.button-ghost-variant(@color; @background; @border) {
-  color: @color;
-  background-color: @background;
-  border-color: @border;
-
-  &:focus,
-  &.focus {
-    color: @color;
-    background-color: @bc-p01-80;
-    border-color: @border;
-  }
-  &:hover {
-    color: @color;
-    background-color: @bc-p01-80;
-    border-color: @border;
-  }
-  &:active,
-  &.active,
-  .open > .dropdown-toggle& {
-    color: @color;
-    background-color: @bc-p01-80;
-    border-color: @border;
-
-    &:hover,
-    &:focus,
-    &.focus {
-      color: @color;
-      background-color: @bc-p01-80;
-      border-color: @border;
-    }
-  }
-  &:active,
-  &.active,
-  .open > .dropdown-toggle& {
-    background-image: none;
-  }
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    &:hover,
-    &:focus,
-    &.focus {
-      background-color: @background;
-      border-color: @border;
-    }
-  }
-}
-
-// Style the ghost buttons
-.btn-ghost-default {
-  .button-ghost-variant(@white; transparent; @white);
-}
-.btn-ghost-secondary {
-  .button-ghost-variant(@white; transparent; @white);
-}
-.btn-ghost-danger {
-  .button-ghost-variant(@white; @bc-p01-60; transparent);
-}
-//Ghost primary has unique hover text color of @white
-.btn-ghost-primary {
-  .button-ghost-variant(@text-color; @white; transparent);
-  &:focus,
-  &.focus,
-  &:hover,
-  &:active,
-  &.active,
-  .open > .dropdown-toggle&  {
-    color: @white;
-
-    &:hover,
-    &:focus,
-    &.focus {
-      color: @white;
-    }
-  }
-}
-
-//Spoecify icon size on button
 
 .btn-icon {
-  padding-top: 1px;
+  padding-top: 2px;
   padding-bottom: 0;
   .mdi {
     font-size: @font-size-btn-icon;
     vertical-align: middle;
-    margin-right: 7px;
-    top: -1px;
+    margin-right: 5px;
     position: relative;
   }
   &.btn-sm .mdi {
@@ -520,10 +400,9 @@ margin-left: 10px !important;
   &.dropdown-toggle.btn-sm .mdi {
     margin: 0 -5px 0 0;
   }
-
 }
 
-//Create a icon only button
+//Create an icon only button
 .button-icon-variant(@color; @background; @border) {
   color: @color;
   background-color: @background;
@@ -582,6 +461,16 @@ badges.less
     margin-top: -17px;
   }
 }
+
+/*******************************************************************************
+labels.less
+*/
+
+.label {
+  text-transform: uppercase;
+}
+
+
 
 
 /*******************************************************************************
@@ -1280,18 +1169,42 @@ modal.less
 
   & .modal-header,
   .modal-footer {
-    border-bottom-color: @bc-s02-20;
+    border-bottom-color: transparent;
 
     & .modal-title {
       &:extend(h2 all);
+      margin-top: 21px;
+      margin-bottom: 10.5px;
     }
   }
 }
 
-.modal-sm .modal-footer button {
-  &:extend(.btn-sm all);
+.modal-sm {
+  .modal-footer button {
+    &:extend(.btn-sm all);
+  }
+  @media (min-width: @screen-sm-min) {
+    width: 400px;
+  }
 }
 
+.modal-doc {
+  width: 90%;
+  height: 90vh;
+  max-height: 90vh;
+
+  .modal-content {
+    height: 100%;
+  }
+  .modal-body {
+    height: 74.5vh;
+  }
+  object#documentPreview {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
 
 
 
@@ -1312,13 +1225,6 @@ alerts.less (notifications)
   -moz-transition: all 250ms;
   transition: all 250ms;
   .layer(3);
-
-  &:hover {
-    .layer(5);
-    -webkit-transform: translateY(-5px);
-    -moz-transform: translateY(-5px);
-    transform: translateY(-5px);
-  }
 
   & .close {
     font-size: 27px;
@@ -1374,7 +1280,32 @@ alerts.less (notifications)
 tabs.less
 */
 
+.scrtabs-tab-scroll-arrow-mdi {
+  color: @bc-s01;
+  cursor: pointer;
+  display: none;
+  float: left;
+  font-size: 12px;
+  height: 42px;
+  margin-bottom: -1px;
+  padding-top: 5px;
+  width: 20px;
+
+  &.scrtabs-disable {
+    .opacity(.35);
+    cursor: default;
+  }
+  .mdi-chevron-left {
+    margin-left: -10px;
+  }
+  .mdi-chevron-right {
+    margin-left: 10px;
+  }
+}
+
 .nav-tabs {
+  //Hidden until scrolling tabs plugin is ready
+  display: none;
   > li {
 
     > a {
@@ -1400,70 +1331,7 @@ tabs.less
   padding: 0 15px;
 }
 
-/***********************************
-Nav-tabs Dropdown
-https://bootsnipp.com/snippets/featured/nav-tabs-dropdown
-*/
 
-.nav-tabs-dropdown {
-  display: none;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.nav-tabs-dropdown:before {
-  content: "\e114";
-  font-family: 'Glyphicons Halflings';
-  position: absolute;
-  right: 55px;
-}
-
-@media screen and (min-width: 769px) {
-  #nav-tabs-wrapper {
-    display: block!important;
-  }
-}
-@media screen and (max-width: 768px) {
-  .nav-tabs-dropdown {
-    display: block;
-  }
-  #nav-tabs-wrapper {
-    display: none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    text-align: center;
-  }
-  .nav-tabs-horizontal {
-    min-height: 20px;
-    padding: 19px;
-    margin-bottom: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #e3e3e3;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-  }
-  .nav-tabs-horizontal  > li {
-    float: none;
-  }
-  .nav-tabs-horizontal  > li + li {
-    margin-left: 2px;
-  }
-  .nav-tabs-horizontal > li,
-  .nav-tabs-horizontal > li > a {
-    background: transparent;
-    width: 100%;
-  }
-  .nav-tabs-horizontal  > li > a {
-    border-radius: 4px;
-  }
-  .nav-tabs-horizontal  > li.active > a,
-  .nav-tabs-horizontal  > li.active > a:hover,
-  .nav-tabs-horizontal  > li.active > a:focus {
-    color: #ffffff;
-    background-color: #428bca;
-  }
-}
 
 /*******************************************************************************
 forms.less
@@ -1562,109 +1430,109 @@ In app scrolling (Need to work on this so it doesn't apply to the main scroll ba
 
 
 ::-webkit-scrollbar {
-  height: 16px;
-  overflow: visible;
-  width: 16px;
+height: 16px;
+overflow: visible;
+width: 16px;
 }
 ::-webkit-scrollbar-button {
-  height: 0;
-  width: 0
+height: 0;
+width: 0
 }
 ::-webkit-scrollbar-track {
-  background-clip: padding-box;
-  border: solid transparent;
-  border-width: 0 0 0 4px
+background-clip: padding-box;
+border: solid transparent;
+border-width: 0 0 0 4px
 }
 ::-webkit-scrollbar-track:horizontal {
-  border-width: 4px 0 0
+border-width: 4px 0 0
 }
 ::-webkit-scrollbar-track:hover {
-  background-color: rgba(0, 0, 0, .05);
-  box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1)
+background-color: rgba(0, 0, 0, .05);
+box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1)
 }
 ::-webkit-scrollbar-track:horizontal:hover {
-  box-shadow: inset 0 1px 0 rgba(0, 0, 0, .1)
+box-shadow: inset 0 1px 0 rgba(0, 0, 0, .1)
 }
 ::-webkit-scrollbar-track:active {
-  background-color: rgba(0, 0, 0, .05);
-  box-shadow: inset 1px 0 0 rgba(0, 0, 0, .14), inset -1px 0 0 rgba(0, 0, 0, .07)
+background-color: rgba(0, 0, 0, .05);
+box-shadow: inset 1px 0 0 rgba(0, 0, 0, .14), inset -1px 0 0 rgba(0, 0, 0, .07)
 }
 ::-webkit-scrollbar-track:horizontal:active {
-  box-shadow: inset 0 1px 0 rgba(0, 0, 0, .14), inset 0 -1px 0 rgba(0, 0, 0, .07)
+box-shadow: inset 0 1px 0 rgba(0, 0, 0, .14), inset 0 -1px 0 rgba(0, 0, 0, .07)
 }
 .jfk-scrollbar-dark::-webkit-scrollbar-track:hover {
-  background-color: rgba(255, 255, 255, .1);
-  box-shadow: inset 1px 0 0 rgba(255, 255, 255, .2)
+background-color: rgba(255, 255, 255, .1);
+box-shadow: inset 1px 0 0 rgba(255, 255, 255, .2)
 }
 .jfk-scrollbar-dark::-webkit-scrollbar-track:horizontal:hover {
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2)
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2)
 }
 .jfk-scrollbar-dark::-webkit-scrollbar-track:active {
-  background-color: rgba(255, 255, 255, .1);
-  box-shadow: inset 1px 0 0 rgba(255, 255, 255, .25), inset -1px 0 0 rgba(255, 255, 255, .15)
+background-color: rgba(255, 255, 255, .1);
+box-shadow: inset 1px 0 0 rgba(255, 255, 255, .25), inset -1px 0 0 rgba(255, 255, 255, .15)
 }
 .jfk-scrollbar-dark::-webkit-scrollbar-track:horizontal:active {
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), inset 0 -1px 0 rgba(255, 255, 255, .15)
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), inset 0 -1px 0 rgba(255, 255, 255, .15)
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, .2);
-  background-clip: padding-box;
-  border: solid transparent;
-  border-width: 1px 1px 1px 6px;
-  min-height: 28px;
-  padding: 100px 0 0;
-  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07)
+background-color: rgba(0, 0, 0, .2);
+background-clip: padding-box;
+border: solid transparent;
+border-width: 1px 1px 1px 6px;
+min-height: 28px;
+padding: 100px 0 0;
+box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07)
 }
 ::-webkit-scrollbar-thumb:horizontal {
-  border-width: 6px 1px 1px;
-  padding: 0 0 0 100px;
-  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset -1px 0 0 rgba(0, 0, 0, .07)
+border-width: 6px 1px 1px;
+padding: 0 0 0 100px;
+box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset -1px 0 0 rgba(0, 0, 0, .07)
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, .4);
-  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .25)
+background-color: rgba(0, 0, 0, .4);
+box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .25)
 }
 ::-webkit-scrollbar-thumb:active {
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.35)
+background-color: rgba(0, 0, 0, 0.5);
+box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.35)
 }
 .jfk-scrollbar-dark::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, .3);
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .15), inset 0 -1px 0 rgba(255, 255, 255, .1)
+background-color: rgba(255, 255, 255, .3);
+box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .15), inset 0 -1px 0 rgba(255, 255, 255, .1)
 }
 .jfk-scrollbar-dark::-webkit-scrollbar-thumb:horizontal {
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .15), inset -1px 0 0 rgba(255, 255, 255, .1)
+box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .15), inset -1px 0 0 rgba(255, 255, 255, .1)
 }
 .jfk-scrollbar-dark::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, .6);
-  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .37)
+background-color: rgba(255, 255, 255, .6);
+box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .37)
 }
 .jfk-scrollbar-dark::-webkit-scrollbar-thumb:active {
-  background-color: rgba(255, 255, 255, .75);
-  box-shadow: inset 1px 1px 3px rgba(255, 255, 255, .5)
+background-color: rgba(255, 255, 255, .75);
+box-shadow: inset 1px 1px 3px rgba(255, 255, 255, .5)
 }
 .jfk-scrollbar-borderless::-webkit-scrollbar-track {
-  border-width: 0 1px 0 6px
+border-width: 0 1px 0 6px
 }
 .jfk-scrollbar-borderless::-webkit-scrollbar-track:horizontal {
-  border-width: 6px 0 1px
+border-width: 6px 0 1px
 }
 .jfk-scrollbar-borderless::-webkit-scrollbar-track:hover {
-  background-color: rgba(0, 0, 0, .035);
-  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .14), inset -1px -1px 0 rgba(0, 0, 0, .07)
+background-color: rgba(0, 0, 0, .035);
+box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .14), inset -1px -1px 0 rgba(0, 0, 0, .07)
 }
 .jfk-scrollbar-borderless.jfk-scrollbar-dark::-webkit-scrollbar-track:hover {
-  background-color: rgba(255, 255, 255, .07);
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .25), inset -1px -1px 0 rgba(255, 255, 255, .15)
+background-color: rgba(255, 255, 255, .07);
+box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .25), inset -1px -1px 0 rgba(255, 255, 255, .15)
 }
 .jfk-scrollbar-borderless::-webkit-scrollbar-thumb {
-  border-width: 0 1px 0 6px
+border-width: 0 1px 0 6px
 }
 .jfk-scrollbar-borderless::-webkit-scrollbar-thumb:horizontal {
-  border-width: 6px 0 1px
+border-width: 6px 0 1px
 }
 ::-webkit-scrollbar-corner {
-  background: transparent
+background: transparent
 }
 */
 

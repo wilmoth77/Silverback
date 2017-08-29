@@ -26,12 +26,40 @@
     common: {
       init: function() {
         // JavaScript to be fired on all pages
+
+
+        // This will detect and set the height properly when the window resizes
+        var callback = function () {
+          jQuery('.modal').each(function (idx, item) {
+            var modalObj = $(item).find('.modal-content');
+            $(modalObj).height('auto');
+            if ($(modalObj).height() > ($(window).height() * 0.9)) {
+              $(modalObj).height($(window).height() * 0.9);
+            }
+          });
+        };
+
+        // Binding the callback in document.ready is not required, just on window.resize
+        $(window).resize(callback);
+
+        /* ========================================================================
+        * Enable tooltips and popovers for silverback
+        * ======================================================================== */
+
         $("body").tooltip({
           selector: "[title]",
           container: "body",
           trigger: "hover",
           //placement: "bottom"
         });
+
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
+
+        /* ========================================================================
+        * On mouseenter of element with class ellipsis, put the content in a title
+        * element and enable tooltip
+        * ======================================================================== */
 
         $(document).on('mouseenter', ".ellipsis", function() {
           var $this = $(this);
@@ -44,53 +72,59 @@
           }
         });
 
-        $("[data-toggle=popover-form]").popover({
-          html: true,
-          content: function() {
-            return $('#popover-content').html();
-          }
+        /* ========================================================================
+        * Initialize Bootstrap Tooltips and Popovers
+        * ======================================================================== */
+
+
+        $('#myTabs a').click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
         });
 
-
-
-
-
-        // Add a class to buttons and/or links when next to each other
-        $(function () {
-          var buttons = document.getElementsByClassName('btn');
-          var anchor = document.getElementsByTagName('a');
-          for(let i = 0; i < buttons.length; i++) {
-            var button = $(buttons[i]);
-            if ($(button).siblings(".btn").size() > 0) {
-              $(button).siblings(".btn").addClass("btn-sibling");
-            }
-            if ($(button).siblings("a").size() > 0) {
-              $(button).siblings("a").addClass("btn-sibling");
-              $(button).siblings("a").siblings(".btn").addClass("btn-sibling");
-            }
-            if ($(anchor).siblings("a").size() > 0) {
-              $(anchor).siblings("a").addClass("btn-sibling");
-            }
-            if ($(anchor).siblings(".btn").size() > 0) {
-              $(anchor).siblings(".btn").addClass("btn-sibling");
-              $(anchor).siblings(".btn").siblings("a").addClass("btn-sibling");
-            }
-          }
-        });
-
-        $(function () {
-          $('[data-toggle="tooltip"]').tooltip();
-          $('[data-toggle="popover"]').popover();
-          $('#myTabs a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-          });
-        });
 
         $(function(){
-          if ( $('nav .documentation > li:nth-child(1)').hasClass('active') ) {
-            $('nav .documentation > li:nth-child(2)').addClass('active');
+          var $rotatePhone = $('#screen-rotation button.screen-rotation-phone');
+          var $rotateTablet = $('#screen-rotation button.screen-rotation-tablet');
+
+          $rotatePhone.click(function (e) {
+            var $orientationPhone = $('#orientation.phone');
+            e.preventDefault();
+            if ($($orientationPhone).hasClass("landscape")) {
+              $($orientationPhone).removeClass("landscape");
+            }  else {
+              $($orientationPhone).addClass("landscape");
+            }
+          });
+
+          $rotateTablet.click(function (e) {
+            var $orientationTablet = $('#orientation.tablet');
+            e.preventDefault();
+            if ($($orientationTablet).hasClass("landscape")) {
+              $($orientationTablet).removeClass("landscape");
+            }  else {
+              $($orientationTablet).addClass("landscape");
+            }
+          });
+
+        });
+
+        $(function () {
+          //add active class to sample app navs
+          if ( $('body').hasClass('one-column') ) {
+            $('#navbar .navbar-nav:first-child  li:nth-child(1)').addClass('active');
           }
+          if ( $('body').hasClass('two-column') ) {
+            $('#navbar .navbar-nav:first-child  li:nth-child(2)').addClass('active');
+          }
+          if ( $('body').hasClass('three-column') ) {
+            $('#navbar .navbar-nav:first-child  li:nth-child(3)').addClass('active');
+          }
+
+        });
+
+
+        $(function(){
           $('#silverback-header button.navbar-toggle').on("click", function() {
             if ($("body").hasClass("menu-open")) {
               $("body").removeClass("menu-open");
@@ -110,6 +144,12 @@
           if ( $('body').hasClass('pagination') ) {
             $('body').removeClass('pagination');
           }
+          if ( $('body').hasClass('tooltip') ) {
+            $('body').removeClass('tooltip');
+          }
+          if ( $('body').hasClass('popover') ) {
+            $('body').removeClass('popover');
+          }
 
         });
 
@@ -127,21 +167,7 @@
           });
         });
 
-        //Nav-tabs dropdown
-        //https://bootsnipp.com/snippets/featured/nav-tabs-dropdown
-        $('.nav-tabs-dropdown').each(function(i, elm) {
-          $(elm).text($(elm).next('ul').find('li.active a').text());
-        });
-        $('.nav-tabs-dropdown').on('click', function(e) {
-          e.preventDefault();
-          $(e.target).toggleClass('open').next('ul').slideToggle();
-        });
-        $('#nav-tabs-wrapper a[data-toggle="tab"]').on('click', function(e) {
-          e.preventDefault();
-          $(e.target).closest('ul').hide().prev('a').removeClass('open').text($(this).text());
-        });
-
-        $(function(){
+        $(document).ready(function () {
           var pre = document.getElementsByTagName('pre');
           for (var i = 0; i < pre.length; i++) {
             var isLanguage = pre[i].children[0].className.indexOf('language-');

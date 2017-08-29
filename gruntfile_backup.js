@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   // Show elapsed time
   require('time-grunt')(grunt);
 
-  var bootstrapJs = [
+  var jsFileList = [
     './node_modules/bootstrap/js/transition.js',
     './node_modules/bootstrap/js/alert.js',
     './node_modules/bootstrap/js/button.js',
@@ -18,19 +18,9 @@ module.exports = function(grunt) {
     './node_modules/bootstrap/js/scrollspy.js',
     './node_modules/bootstrap/js/tab.js',
     './node_modules/bootstrap/js/affix.js',
-  ];
-
-  var silverbackJs = [
-    './assets/js/silverback/plugins/prism/addons/*.js',
-    './assets/js/silverback/plugins/prism/prism.js',
-    './assets/js/silverback/plugins/*.js',
-    './assets/js/silverback/theme.js',
-  ];
-
-  var bestcaseJs = [
-    './assets/js/troops/bestcaseonline/plugins/*.js',
-    './assets/js/troops/bestcaseonline/plugins/**/*.js',
-    './assets/js/troops/bestcaseonline/theme.js'
+    './assets/js/plugins/*.js',
+    './assets/js/plugins/**/*.js',
+    './assets/js/theme.js'
   ];
 
   // Initialize configuration object
@@ -38,7 +28,7 @@ module.exports = function(grunt) {
 
     //Delete existing CSS
     clean: {
-      contents: ['./public/js/*','./public/css/*', './assets/css/*'],
+      contents: ['./public/css/*', './assets/css/*'],
     },
 
     //Less tasks
@@ -92,7 +82,7 @@ module.exports = function(grunt) {
       files: {
         "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
         "./public/css/silverback.min.css":"./assets/less/silverback/main-silverback.less",
-        "./public/css/bestcaseonline.min.css":"./assets/less/troops/bestcaseonline/main-bestcaseonline.less"
+        "./public/css/bestcaseonline.min.css":"./assets/less/silverback/troops/bestcaseonline/main-bestcaseonline.less"
       },
     },
 },
@@ -103,25 +93,15 @@ module.exports = function(grunt) {
       options: {
         separator: ';',
       },
-      bootstrap: {
-        src: [bootstrapJs],
-        dest: './assets/js/bootstrap.js',
-      },
-      silverback: {
-        src: [silverbackJs],
-        dest: './assets/js/silverback/silverback.js',
-      },
-      bestcase: {
-        src: [bestcaseJs],
-        dest: './assets/js/troops/bestcaseonline/bestcase.js',
+      development: {
+        src: [jsFileList],
+        dest: './assets/js/script.js',
       },
     },
     uglify: {
       dist: {
         files: {
-          './public/js/silverback.min.js': './assets/js/silverback/silverback.js',
-          './public/js/bestcase.min.js': './assets/js/troops/bestcaseonline/bestcase.js',
-          './public/js/bootstrap.min.js': './assets/js/bootstrap.js',
+          './public/js/script.min.js': './assets/js/script.js',
         }
       }
     },
@@ -131,15 +111,15 @@ module.exports = function(grunt) {
       },
       all: [
         'gruntfile.js',
-        'assets/js/silverback/theme.js',
-        'assets/js/troops/bestcaseonline/theme.js',
+        'assets/js/*.js',
+        '!assets/js/script.js',
       ]
     },
 
     watch: {
       js: {
         files: [
-          bootstrapJs, silverbackJs, bestcaseJs,
+          jsFileList,
           '<%= jshint.all %>'
         ],
         tasks: ['jshint', 'concat', 'copy:devJs'],
@@ -208,7 +188,7 @@ scrollingTabsJs: {
   files: [{
     expand: true,
     cwd: './node_modules/jquery-bootstrap-scrolling-tabs/dist/',
-    dest: './assets/js/troops/bestcaseonline/plugins/',
+    dest: './assets/js/plugins',
     src: [
       'jquery.scrolling-tabs.js'
     ],
@@ -224,22 +204,26 @@ scrollingTabsCss: {
     ],
   }],
 },
-clipboardJs: {
-  files: [{
-    expand: true,
-    cwd: './node_modules/clipboard/dist',
-    dest: './assets/js/silverback/plugins/prism/addons/',
-    src: [
-      'clipboard.js'
-    ],
-  }],
-},
+
+    devJs: {
+      files: [{
+        expand: true,
+        cwd: './assets/js/',
+        dest: './public/js/',
+        src: [
+          'script.js'
+        ],
+        rename: function(dest, src) {
+          return dest + src.replace('.js','.min.js');
+        }
+      }],
+    }
   },
 
   });
   // Compile tasks
-  grunt.registerTask('compile', ['clean', 'concat', 'uglify', 'less:dev_slvrbck', 'less:dev_bestcaseonline', 'less:dev_misc', 'jshint', 'copy']);
-  grunt.registerTask('build',   ['clean', 'concat', 'uglify', 'less:dist', 'jshint', 'copy']);
+  grunt.registerTask('compile', ['clean', 'concat', 'less:dev_slvrbck', 'less:dev_bestcaseonline', 'less:dev_misc', 'jshint', 'copy']);
+  grunt.registerTask('build', ['clean','concat', 'less:dist', 'jshint', 'copy']); //Removed uglify, need to separate out BootStrap
   // Set default task
   grunt.registerTask('default', ['watch']);
 };

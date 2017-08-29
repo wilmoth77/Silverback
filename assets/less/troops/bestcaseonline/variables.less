@@ -108,7 +108,8 @@
 @font-size-h6:            ceil((@font-size-base * .85)); // ~12px
 
 // Set a font size for button icons
-@font-size-btn-icon:      19px;
+@font-size-btn-icon:      18px;
+
 
 //** Unit-less `line-height` for use in components like buttons.
 @line-height-base:        1.5; //  1.7142857143;  BS= 1.428571429
@@ -158,37 +159,32 @@
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
+// New values for Bootstrap default button
 @btn-default-color:              @text-color;
-@btn-default-bg:                 @gray-lighter;
-@btn-default-border:             darken(@gray-lighter, 5%);
+@btn-default-bg:                 lighten(@bc-s02-20, 10%);
+@btn-default-border:             @btn-default-bg;
 
+// New values for Bootstrap primary button
 @btn-primary-color:              @white;
 @btn-primary-bg:                 @brand-primary;
-@btn-primary-border:             darken(@btn-primary-bg, 5%);
+@btn-primary-border:             @btn-primary-bg;
 
-@btn-secondary-color:            @white;
-@btn-secondary-bg:               @bc-s03;
-@btn-secondary-border:           darken(@btn-secondary-bg, 5%);
-
-@btn-danger-color:               @white;
-@btn-danger-bg:                  @brand-danger;
-@btn-danger-border:              darken(@btn-danger-bg, 5%);
+// New values for Bootstrap danger button
+@btn-danger-color:               @brand-danger;
+@btn-danger-bg:                  transparent;
+@btn-danger-border:              @brand-danger;
 
 @btn-success-color:              @white;
 @btn-success-bg:                 @brand-success;
-@btn-success-border:             darken(@btn-success-bg, 5%);
-
-@btn-hair-color:                @white;
-@btn-hair-bg:                   @bc-sp02;
-@btn-hair-border:               darken(@btn-hair-bg, 5%);
+@btn-success-border:             @btn-success-bg
 
 @btn-info-color:                 @white;
 @btn-info-bg:                    @brand-info;
-@btn-info-border:                darken(@btn-info-bg, 5%);
+@btn-info-border:                @btn-info-bg
 
 @btn-warning-color:              @white;
 @btn-warning-bg:                 @brand-warning;
-@btn-warning-border:             darken(@btn-warning-bg, 5%);
+@btn-warning-border:             @btn-warning-bg
 
 
 

@@ -23,8 +23,7 @@
     */
     if( get_field('content_navigation') ): ?>
 
-    <div class="main-primary-container has-tertiary ">
-
+    <div class="main-primary-container has-tertiary">
       <?php if( have_rows('docs_intro') ): ?>
         <?php while( have_rows('docs_intro') ): the_row(); ?>
           <section class="sb-docs-section intro">
@@ -62,87 +61,148 @@
                 <?php if( get_sub_field('nav_anchor') ): ?>
                   <section id="<?php the_sub_field('nav_anchor'); ?>" class="sb-docs-subsection">
                   <?php else: ?>
-                    <section id="fsdfsdfdsf" class="sb-docs-subsection">
-                  <?php endif; //can only have one row from the editor?>
+                    <section class="sb-docs-subsection">
+                    <?php endif; //can only have one row from the editor?>
 
-                  <?php if( get_sub_field('section_subheading') ): ?>
-                    <h4 class="section-subheading"><?php the_sub_field('section_subheading'); ?></h4>
-                  <?php endif; ?>
+                    <?php if( get_sub_field('section_subheading') ): ?>
+                      <h4 class="section-subheading"><?php the_sub_field('section_subheading'); ?></h4>
+                    <?php endif; ?>
 
-                  <?php if( get_sub_field('section_copy') ): ?>
-                    <div>
-                      <?php the_sub_field('section_copy'); ?>
-                    </div>
-                  <?php endif; ?>
+                    <?php if( get_sub_field('section_copy') ): ?>
+                      <div>
+                        <?php the_sub_field('section_copy'); ?>
+                      </div>
+                    <?php endif; ?>
 
-                  <?php
 
-                  $visual_example = get_sub_field('visual_example');
+                    <?php if( have_rows('iframe') ):
+                      while( have_rows('iframe') ): the_row();
+                      ?>
 
-                  if( $visual_example ):
+                      <?php $visual_example = get_sub_field('visual_example');
 
-                    // override $post
-                    $post = $visual_example;
-                    setup_postdata( $post );
+                      if( $visual_example ):
 
-                    ?>
-                    <section class="section-example">
-                      <div class="example-container">
-                        <div class="example-container-body">
-                          <iframe class="col-xs-12" src="<?php the_permalink(); ?>" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
-                        </div>
+                        // override $post
+                        $post = $visual_example;
+                        setup_postdata( $post );
 
-                        <?php if( have_rows('code_example') ): ?>
-                          <div class="example-container-footer">
-                            <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#exampleId-<?php echo get_the_ID() ?>" aria-expanded="false" aria-controls="exampleId-<?php echo get_the_ID() ?>">
-                              View code
-                            </button>
-                            <?php
-                            echo '<div class="collapse" id="exampleId-'.get_the_ID().'">';
-                            while( have_rows('code_example') ): the_row();
-                            ?>
-                            <div class="prismjs-code">
+                        ?>
 
+
+                        <section class="section-example">
+                          <div class="example-container">
+                            <div class="example-container-body">
                               <?php
                               // vars
-                              $code_type = get_sub_field_object('code_type');
-                              $value = $code_type['value'];
-                              $label = $code_type['choices'][ $value ];
+                              $example_type = get_sub_field_object('example_media_type');
+                              $value = $example_type['value'];
+                              $label = $example_type['choices'][ $value ];
                               ?>
 
-                              <h5><?php echo $label; ?></h5>
+                              <?php if( $value == 'phone' ): ?>
+                                <div id="screen-rotation">
+                                  <button class="btn btn-link screen-rotation-phone"><i class="mdi mdi-screen-rotation"></i>Rotate device</button>
+                                </div>
+                                <div id="orientation" class="iframe-container phone">
+                                <iframe class="iframe-phone" src="<?php the_permalink(); ?>" frameborder="0" scrolling="no"></iframe>
+                                </div>
+                                <span class="small"><em>iPhone 6 shown in example - 375x667 viewport</em></span>
 
-                              <?php if( $value == 'markup' ): ?>
-                                <pre class="snippet"><code class="language-<?php echo $value; ?>"><script type="prism-html-markup"><?php the_content(); ?></script>
-                                </code></pre>
-                              </div>
+                              <?php elseif( $value == 'tablet' ): ?>
+                                <div id="screen-rotation">
+                                  <button class="btn btn-link screen-rotation-tablet"><i class="mdi mdi-screen-rotation"></i>Rotate device</button>
+                                </div>
+                                <div id="orientation" class="iframe-container tablet">
+                                  <iframe class="iframe-tablet" src="<?php the_permalink(); ?>" frameborder="0" scrolling="no" height="1024px" width="768px"></iframe>
+                                </div>
+                                <span class="small"><em>Standard iPad shown in example - 768x1024 viewport</em></span>
 
-                            <?php else: ?>
-                              <pre class="snippet"><code class="language-<?php echo $value; ?>"><?php the_sub_field('code_block'); ?>
-                              </code></pre>
+                              <?php else: ?>
+                                  <iframe class="col-xs-12 iframe-desktop" src="<?php the_permalink(); ?>" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+
+                              <?php endif; ?>
                             </div>
-                          <?php endif; ?>
+                            <?php if( have_rows('code_example') ): ?>
+                              <?php
+                              // vars
+                              $exampleId = get_the_ID();
+                              $rando = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 5)), 0, 5);
+                              ?>
+                              <div class="example-container-footer">
+                                <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#exampleId-<?php echo $exampleId.$rando;?>" aria-expanded="false" aria-controls="exampleId-<?php echo $exampleId.$rando;?>">
+                                  View code
+                                </button>
+                                <?php
+                                echo '<div class="collapse" id="exampleId-'.$exampleId.$rando.'">';
+                                while( have_rows('code_example') ): the_row();
+                                ?>
+                                <div class="prismjs-code">
 
-                        <?php endwhile; //has code example(s) ?>
-                      </div>
+                                  <?php
+                                  // vars
+                                  $code_type = get_sub_field_object('code_type');
+                                  $value = $code_type['value'];
+                                  $label = $code_type['choices'][ $value ];
+                                  ?>
+
+                                  <h5><?php echo $label; ?></h5>
+
+                                  <?php if( $value == 'markup' ): ?>
+                                    <pre class="snippet"><code class="language-<?php echo $value; ?>"><script type="prism-html-markup"><?php the_content(); ?></script>
+                                    </code></pre>
+                                  </div>
+
+                                <?php else: ?>
+                                  <pre class="snippet"><code class="language-<?php echo $value; ?>"><?php the_sub_field('code_block'); ?>
+                                  </code></pre>
+                                </div>
+                              <?php endif; ?>
+
+                            <?php endwhile; //has code example(s) ?>
+                          </div>
+                        </div>
+                      <?php endif; //has code example(s)?>
+
                     </div>
-                  <?php endif; //has code example(s)?>
+                  </section> <!-- /section-example -->
 
-                </div>
-              </section> <!-- /section-example -->
-              <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 
-            <?php endif; //has visual example?>
+
+                  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                <?php endif; //has visual example?>
+
+              <?php endwhile; //has iframe
+            endif; //has iframe ?>
 
           </section> <!-- /sb-docs-subsection -->
         <?php endwhile; //has more subsections
       endif; //has more docs subsections ?>
 
     </section> <!-- /sb-docs-section -->
-  <?php endwhile; //has more docs sections
-endif; //has more docs sections ?>
+    <?php endwhile; //has more docs sections
+    endif; //has more docs sections ?>
 
-</div> <!-- /#main-primary-containern -->
+    <?php if( have_rows('icon_library') ): ?>
+      <section id="icon-library" class="sb-docs-subsection">
+        <ul class="icons-list">
+          <?php  while ( have_rows('icon_library') ) : the_row(); ?>
+            <li>
+              <div class="media">
+                <div class="media-left">
+                    <button><i class="mdi mdi-<?php the_sub_field('icon_class'); ?> media-object" title="Copy Class"></i></button>
+                </div>
+                <div class="media-body">
+                  <h6 class="media-heading"><?php the_sub_field('icon_description'); ?></h6>
+                  <span><code>mdi-<?php the_sub_field('icon_class'); ?></code></span>
+                </div>
+              </div>
+            </li>
+          <?php  endwhile; ?>
+        </ul>
+      </section>
+    <?php endif; ?>
+    </div> <!-- /#main-primary-container -->
 
 <div class="main-tertiary">
   <?php get_template_part( 'partials/sidebar-tertiary', 'acf' ); ?>
@@ -190,8 +250,8 @@ else: ?>
             <?php if( get_sub_field('nav_anchor') ): ?>
               <section id="<?php the_sub_field('nav_anchor'); ?>" class="sb-docs-subsection">
               <?php else: ?>
-                <section id="fsdfsdfdsf" class="sb-docs-subsection">
-              <?php endif; //can only have one row from the editor?>
+                <section class="sb-docs-subsection">
+                <?php endif; //can only have one row from the editor?>
 
                 <?php if( get_sub_field('section_subheading') ): ?>
                   <h4 class="section-subheading"><?php the_sub_field('section_subheading'); ?></h4>
@@ -203,70 +263,112 @@ else: ?>
                   </div>
                 <?php endif; ?>
 
-                <?php
 
-                $visual_example = get_sub_field('visual_example');
-
-                if( $visual_example ):
-
-                  // override $post
-                  $post = $visual_example;
-                  setup_postdata( $post );
-
+                <?php if( have_rows('iframe') ):
+                  while( have_rows('iframe') ): the_row();
                   ?>
-                  <section class="section-example">
-                    <div class="example-container">
-                      <div class="example-container-body">
-                        <iframe class="col-xs-12" src="<?php the_permalink(); ?>" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
-                      </div>
 
-                      <?php if( have_rows('code_example') ): ?>
-                        <div class="example-container-footer">
-                          <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#exampleId-<?php echo get_the_ID() ?>" aria-expanded="false" aria-controls="exampleId-<?php echo get_the_ID() ?>">
-                            View code
-                          </button>
+                  <?php $visual_example = get_sub_field('visual_example');
+
+                  if( $visual_example ):
+
+                    // override $post
+                    $post = $visual_example;
+                    setup_postdata( $post );
+
+                    ?>
+
+
+                    <section class="section-example">
+                      <div class="example-container">
+                        <div class="example-container-body">
                           <?php
-                          echo '<div class="collapse" id="exampleId-'.get_the_ID().'">';
-                          while( have_rows('code_example') ): the_row();
+                          // vars
+                          $example_type = get_sub_field_object('example_media_type');
+                          $value = $example_type['value'];
+                          $label = $example_type['choices'][ $value ];
                           ?>
-                          <div class="prismjs-code">
 
-                            <?php
-                            // vars
-                            $code_type = get_sub_field_object('code_type');
-                            $value = $code_type['value'];
-                            $label = $code_type['choices'][ $value ];
-                            ?>
-
-                            <h5><?php echo $label; ?></h5>
-
-                            <?php if( $value == 'markup' ): ?>
-                              <pre class="snippet"><code class="language-<?php echo $value; ?>"><script type="prism-html-markup"><?php the_content(); ?></script>
-                              </code></pre>
+                          <?php if( $value == 'phone' ): ?>
+                            <div id="screen-rotation">
+                              <button class="btn btn-link screen-rotation-phone"><i class="mdi mdi-screen-rotation"></i>Rotate device</button>
                             </div>
+                            <div id="orientation" class="iframe-container phone">
+                            <iframe class="iframe-phone" src="<?php the_permalink(); ?>" frameborder="0" scrolling="yes"></iframe>
+                            </div>
+                            <span class="small"><em>iPhone 6 shown in example - 375x667 viewport</em></span>
+
+                          <?php elseif( $value == 'tablet' ): ?>
+                            <div id="screen-rotation">
+                              <button class="btn btn-link screen-rotation-tablet"><i class="mdi mdi-screen-rotation"></i>Rotate device</button>
+                            </div>
+                            <div id="orientation" class="iframe-container tablet">
+                              <iframe class="iframe-tablet" src="<?php the_permalink(); ?>" frameborder="0" scrolling="yes" height="1024px" width="768px"></iframe>
+                            </div>
+                            <span class="small"><em>Standard iPad shown in example - 768x1024 viewport</em></span>
 
                           <?php else: ?>
-                            <pre class="snippet"><code class="language-<?php echo $value; ?>"><?php the_sub_field('code_block'); ?>
-                            </code></pre>
-                          </div>
-                        <?php endif; ?>
+                              <iframe class="col-xs-12 iframe-desktop" src="<?php the_permalink(); ?>" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
 
-                      <?php endwhile; //has code example(s) ?>
+                          <?php endif; ?>
+                        </div>
+                        <?php if( have_rows('code_example') ): ?>
+                          <?php
+                          // vars
+                          $exampleId = get_the_ID();
+                          $rando = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 5)), 0, 5);
+                          ?>
+                          <div class="example-container-footer">
+                            <button class="sb-btn btn btn-primary view-code" type="button" data-toggle="collapse" data-target="#exampleId-<?php echo $exampleId.$rando;?>" aria-expanded="false" aria-controls="exampleId-<?php echo $exampleId.$rando;?>">
+                              View code
+                            </button>
+                            <?php
+                            echo '<div class="collapse" id="exampleId-'.$exampleId.$rando.'">';
+                            while( have_rows('code_example') ): the_row();
+                            ?>
+                            <div class="prismjs-code">
+
+                              <?php
+                              // vars
+                              $code_type = get_sub_field_object('code_type');
+                              $value = $code_type['value'];
+                              $label = $code_type['choices'][ $value ];
+                              ?>
+
+                              <h5><?php echo $label; ?></h5>
+
+                              <?php if( $value == 'markup' ): ?>
+                                <pre class="snippet"><code class="language-<?php echo $value; ?>"><script type="prism-html-markup"><?php the_content(); ?></script>
+                                </code></pre>
+                              </div>
+
+                            <?php else: ?>
+                              <pre class="snippet"><code class="language-<?php echo $value; ?>"><?php the_sub_field('code_block'); ?>
+                              </code></pre>
+                            </div>
+                          <?php endif; ?>
+
+                        <?php endwhile; //has code example(s) ?>
+                      </div>
                     </div>
-                  </div>
-                <?php endif; //has code example(s)?>
+                  <?php endif; //has code example(s)?>
 
-              </div>
-            </section> <!-- /section-example -->
-            <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                </div>
+              </section> <!-- /section-example -->
 
-          <?php endif; //has visual example?>
 
-        </section> <!-- /sb-docs-subsection -->
-      <?php endwhile; //has more subsections
-    endif; //has more docs subsections ?>
 
-  </section> <!-- /sb-docs-section -->
+              <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+            <?php endif; //has visual example?>
+
+          <?php endwhile; //has iframe
+        endif; //has iframe ?>
+
+      </section> <!-- /sb-docs-subsection -->
+    <?php endwhile; //has more subsections
+  endif; //has more docs subsections ?>
+
+</section> <!-- /sb-docs-section -->
 <?php endwhile; //has more docs sections
 endif; //has more docs sections ?>
 </div>

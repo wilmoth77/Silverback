@@ -1,5 +1,6 @@
 @import "../bootstrap";          // Bootstrap
-@import "../prism.less";         // Prism.js styles
+@import "../prism";         // Prism.js styles
+//@import (less) "node_modules/mdi/css/materialdesignicons.css";
 
 @import "mixins/buttons";         // Button constructs
 @import "components/navs";        // Nav styles
@@ -68,34 +69,190 @@ body.home {
   }
 }
 
+/*******************************************************************************
+Responsive Examples
+*/
+#screen-rotation {
+  text-align: right;
+
+  .mdi {
+    margin-right: 7px;
+  }
+}
+.iframe-container {
+  &.phone {
+    height: 883px;
+    width: 438px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    background: url(/wp-content/uploads/iphone6-black.png) 50% 50% no-repeat;
+
+    .iframe-phone {
+      height:667px;
+      width: 375px;
+      margin-top: 108px;
+      margin-left: 32px;
+    }
+
+
+    &.landscape {
+      height: 438px;
+      width: 883px;
+      background: url(/wp-content/uploads/iphone6-black-landscape.png) 50% 50% no-repeat;
+
+      .iframe-phone {
+        height:375px;
+        width: 667px;
+        margin-top: 32px;
+        margin-left: 107px;
+      }
+    }
+  }
+
+  &.tablet {
+    height: 1250px;
+    width: 884px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    background: url(/wp-content/uploads/ipad-black.png) 50% 50% no-repeat;
+
+    .iframe-tablet {
+      height:1024px;
+      width: 768px;
+      margin-top: 113px;
+      margin-left: 58px;
+    }
+
+
+    &.landscape {
+      height: 884px;
+      width: 1250px;
+      background: url(/wp-content/uploads/ipad-black-landscape.png) 50% 50% no-repeat;
+      margin-left: -11.5%;
+
+      .iframe-tablet {
+        height:768px;
+        width: 1024px;
+        margin-top: 58px;
+        margin-left: 113px;
+      }
+    }
+  }
+
+
+  &+span {
+    display: block;
+    text-align: center;
+  }
+
+}
+
+.modal-doc {
+  width: 90%;
+  height: 90vh;
+  max-height: 90vh;
+
+  .modal-content {
+    height: 100%;
+  }
+  .modal-body {
+    height: 74.5vh;
+  }
+  object#documentPreview {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+
+/*******************************************************************************
+MDI Icons
+*/
+
+.mdi {
+  // Base material design icon style
+  font-size: 24px;
+  vertical-align: middle;
+
+  // Vertical dots menu icon
+  a .mdi-dots-vertical& {
+    color: @text-color;
+    font-size: 26px;
+
+    // Vertical dots in list group item
+    .list-group-item & {
+      float: right;
+      margin-top: -8px;
+    }
+  }
+}
+
+#icon-library {
+  margin-top: -45px;
+  margin-bottom: 45px;
+  margin-left: 5px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  border-left: 1px solid lighten(@cin-p02, 40%);
+  .icons-list {
+    &:extend(.list-unstyled);
+    .make-row();
+    li {
+      .make-md-column (3);
+      border-right: 1px solid lighten(@cin-s08, 20%);
+      font-size: 10px;
+      margin-bottom: 20px;
+
+      &:nth-child(4n) {
+        border-right: none;
+      }
+
+      .mdi{
+        font-size: 36px;
+      }
+
+      button {
+        display: block;
+        margin: 0 auto;
+        border: none;
+        background-color: transparent;
+      }
+
+      @media (min-width: @screen-sm-min) {
+        font-size: 12px;
+      }
+    }
+  }
+}
 
 /*******************************************************************************
 Best Case Typography section
 */
 
 .font-example-roboto span,
-  .font-example-opensans span {
-    &:extend(h2);
+.font-example-opensans span {
+  &:extend(h2);
+}
+.font-example-roboto span {
+  &.example-roboto-light {
+    font-weight: 300;
   }
-  .font-example-roboto span {
-    &.example-roboto-light {
-      font-weight: 300;
-    }
-    &.example-roboto-regular {
-      font-weight: 400;
-    }
-    &.example-roboto-bold {
-      font-weight: 700;
-    }
+  &.example-roboto-regular {
+    font-weight: 400;
   }
-   .font-example-opensans span {
-    &.example-opensans-regular {
-      font-weight: 400;
-    }
-    &.example-opensans-semibold {
-      font-weight: 600;
-    }
+  &.example-roboto-bold {
+    font-weight: 700;
   }
+}
+.font-example-opensans span {
+  &.example-opensans-regular {
+    font-weight: 400;
+  }
+  &.example-opensans-semibold {
+    font-weight: 600;
+  }
+}
 
 
 
@@ -127,18 +284,29 @@ SB Doc Sections
     margin-top: 30px;
     > .example-container {
       &:extend(.panel all);
-      &:extend(.panel-default all);
+      //&:extend(.panel-default all);
+      @shadow: none;
+      .box-shadow(@shadow);
       margin-bottom: 0;
 
       > .example-container-body {
-        background-color: @bc-sp06;
         &:extend(.panel-body all);
-        padding: 24px;
+        border: 5px solid #f7f7f9;
+        background-color: @white;
+        //padding: 24px;
+        overflow-y: hidden;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
       }
 
       > .example-container-footer {
-        &:extend(.panel-footer all);
-        padding: 15px 24px;
+        //&:extend(.panel-footer all);
+        background-color: #f7f7f9;
+        padding: 10px 24px 15px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
       }
     }
     & .prismjs-code {
