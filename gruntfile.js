@@ -36,69 +36,77 @@ module.exports = function(grunt) {
   // Initialize configuration object
   grunt.initConfig({
 
-    //Delete existing CSS
+    //Delete existing public assets
     clean: {
       contents: ['./public/js/*','./public/css/*', './assets/css/*'],
     },
+    // end clean task
 
-    //Less tasks
     less: {
-    dev_slvrbck: {
-      options: {
-        compress: true,
-        sourceMap: true,
-        sourceMapFilename: 'assets/css/silverback.css.map',
-        sourceMapRootpath: '/wp-content/themes/silverback/',
-        sourceMapURL: '/wp-content/themes/silverback/assets/css/silverback.css.map'
-      },
-      plugins: [
-        new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
-      ],
+
+      //Compile, minify and SourceMap the silverback Less/CSS
+      silverbackDev: {
+        options: {
+          compress: true,
+          sourceMap: true,
+          sourceMapFilename: 'assets/css/silverback.css.map',
+          sourceMapRootpath: '/wp-content/themes/silverback/',
+          sourceMapURL: '/wp-content/themes/silverback/assets/css/silverback.css.map'
+        },
+        plugins: [
+          new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
+        ],
         files: {
-            "./public/css/silverback.min.css":"./assets/less/silverback/main-silverback.less",
+          "./public/css/silverback.min.css":"./assets/less/silverback/main-silverback.less",
         }
-    },
-    dev_bestcaseonline: {
-      options: {
-        compress: true,
-        sourceMap: true,
-        sourceMapFilename: 'assets/css/bestcaseonline.css.map',
-        sourceMapRootpath: '/wp-content/themes/silverback/',
-        sourceMapURL: '/wp-content/themes/silverback/assets/css/bestcaseonline.css.map'
       },
-      plugins: [
-        new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
-      ],
+
+      //Compile, minify and SourceMap the bestcaseonline Less/CSS
+      bestcaseDev: {
+        options: {
+          compress: true,
+          sourceMap: true,
+          sourceMapFilename: 'assets/css/bestcaseonline.css.map',
+          sourceMapRootpath: '/wp-content/themes/silverback/',
+          sourceMapURL: '/wp-content/themes/silverback/assets/css/bestcaseonline.css.map'
+        },
+        plugins: [
+          new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
+        ],
         files: {
-            "./public/css/bestcaseonline.min.css":"./assets/less/troops/bestcaseonline/main-bestcaseonline.less",
+          "./public/css/bestcaseonline.min.css":"./assets/less/troops/bestcaseonline/main-bestcaseonline.less",
         }
-    },
-    dev_misc: {
-      plugins: [
-        new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
-      ],
-      files: {
-        "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
-        "./assets/css/bestcaseonline.pretty.css":"./assets/less/bestcaseonline.pretty.less",
       },
-    },
-    dist: {
-      options: {
-        compress: true,
+
+      // Compile and but do not minify misc Less/CSS
+      miscDev: {
+        plugins: [
+          new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
+        ],
+        files: {
+          "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
+          "./assets/css/bestcaseonline.pretty.css":"./assets/less/bestcaseonline.pretty.less",
+        },
       },
-      plugins: [
-        new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
-      ],
-      files: {
-        "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
-        "./public/css/silverback.min.css":"./assets/less/silverback/main-silverback.less",
-        "./public/css/bestcaseonline.min.css":"./assets/less/troops/bestcaseonline/main-bestcaseonline.less"
+
+      //Compile and minify Less/CSS for production - No SourceMap
+      production: {
+        options: {
+          compress: true,
+        },
+        plugins: [
+          new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
+        ],
+        files: {
+          "./public/css/wp-login.min.css":"./assets/less/wp-login.less",
+          "./public/css/silverback.min.css":"./assets/less/silverback/main-silverback.less",
+          "./public/css/bestcaseonline.min.css":"./assets/less/troops/bestcaseonline/main-bestcaseonline.less"
+        },
       },
-    },
-},
+    }, //end less task
 
 
-    // Concatenate and minify
+    // Concatenate js production
     concat: {
       options: {
         separator: ';',
@@ -115,16 +123,36 @@ module.exports = function(grunt) {
         src: [bestcaseJs],
         dest: './assets/js/troops/bestcaseonline/bestcase.js',
       },
-    },
+
+// Concatenate js dev - Not Minified
+      bootstrapDev: {
+        src: [bootstrapJs],
+        dest: './public/js/silverback.min.js',
+      },
+      silverbackDev: {
+        src: [silverbackJs],
+        dest: './public/js/bestcase.min.js',
+      },
+      bestcaseDev: {
+        src: [bestcaseJs],
+        dest: './public/js/bootstrap.min.js',
+      },
+    }, //end concat task
+
+
+    // Minify js
     uglify: {
-      dist: {
+
+      //Minify js for production
+      production: {
         files: {
           './public/js/silverback.min.js': './assets/js/silverback/silverback.js',
           './public/js/bestcase.min.js': './assets/js/troops/bestcaseonline/bestcase.js',
           './public/js/bootstrap.min.js': './assets/js/bootstrap.js',
         }
       }
-    },
+    }, //end uglify task
+
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -134,7 +162,7 @@ module.exports = function(grunt) {
         'assets/js/silverback/theme.js',
         'assets/js/troops/bestcaseonline/theme.js',
       ]
-    },
+    }, //end jshint task
 
     watch: {
       js: {
@@ -142,8 +170,9 @@ module.exports = function(grunt) {
           bootstrapJs, silverbackJs, bestcaseJs,
           '<%= jshint.all %>'
         ],
-        tasks: ['jshint', 'concat', 'copy:devJs'],
+        tasks: ['jshint', 'concat:bootstrapDev', 'concat:bestcaseDev', 'concat:silverbackDev'],
       },
+
       less: {
         files: [
           './assets/less/*.less',
@@ -151,16 +180,14 @@ module.exports = function(grunt) {
           './assets/less/troops/**/*.less',
           './assets/less/troops/bestcaseonline/**/*.less',
         ],
-        tasks: ['less:dev_slvrbck', 'less:dev_bestcaseonline', 'less:dev_misc'],
+        tasks: ['less:silverbackDev', 'less:bestcaseDev', 'less:miscDev'],
       },
-      images: {
-        files: ['./assets/img/**/*.{png,jpg,gif}'],
-        tasks: ['imagemin'],
-      },
+
       html: {
         files: ['**/*.php'],
         tasks: [],
       },
+
       livereload: {
         options: {
           livereload: true
@@ -168,10 +195,11 @@ module.exports = function(grunt) {
         files: [
           '**/*.php',
           './public/css/*.css',
-          './assets/js/*.js'
+          './public/js/*.js'
         ]
       }
-    },
+
+    }, //end watch task
 
     copy: {
       bsFonts: {
@@ -183,63 +211,63 @@ module.exports = function(grunt) {
             '*.*'
           ],
         }],
+      },
+      mdiFonts: {
+        files: [{
+          expand: true,
+          cwd: './node_modules/mdi/fonts/',
+          dest: './public/fonts',
+          src: [
+            '*.*'
+          ],
+        }],
+      },
+      mdiCSS: {
+        files: [{
+          expand: true,
+          cwd: './node_modules/mdi/css/',
+          dest: './public/css',
+          src: [
+            'materialdesignicons.min.css'
+          ],
+        }],
+      },
+      scrollingTabsJs: {
+        files: [{
+          expand: true,
+          cwd: './node_modules/jquery-bootstrap-scrolling-tabs/dist/',
+          dest: './assets/js/troops/bestcaseonline/plugins/',
+          src: [
+            'jquery.scrolling-tabs.js'
+          ],
+        }],
+      },
+      scrollingTabsCss: {
+        files: [{
+          expand: true,
+          cwd: './node_modules/jquery-bootstrap-scrolling-tabs/dist/',
+          dest: './public/css',
+          src: [
+            'jquery.scrolling-tabs.min.css'
+          ],
+        }],
+      },
+      clipboardJs: {
+        files: [{
+          expand: true,
+          cwd: './node_modules/clipboard/dist',
+          dest: './assets/js/silverback/plugins/prism/addons/',
+          src: [
+            'clipboard.js'
+          ],
+        }],
+      },
     },
-    mdiFonts: {
-      files: [{
-        expand: true,
-        cwd: './node_modules/mdi/fonts/',
-        dest: './public/fonts',
-        src: [
-          '*.*'
-        ],
-      }],
-  },
-  mdiCSS: {
-    files: [{
-      expand: true,
-      cwd: './node_modules/mdi/css/',
-      dest: './public/css',
-      src: [
-        'materialdesignicons.min.css'
-      ],
-    }],
-},
-scrollingTabsJs: {
-  files: [{
-    expand: true,
-    cwd: './node_modules/jquery-bootstrap-scrolling-tabs/dist/',
-    dest: './assets/js/troops/bestcaseonline/plugins/',
-    src: [
-      'jquery.scrolling-tabs.js'
-    ],
-  }],
-},
-scrollingTabsCss: {
-  files: [{
-    expand: true,
-    cwd: './node_modules/jquery-bootstrap-scrolling-tabs/dist/',
-    dest: './public/css',
-    src: [
-      'jquery.scrolling-tabs.min.css'
-    ],
-  }],
-},
-clipboardJs: {
-  files: [{
-    expand: true,
-    cwd: './node_modules/clipboard/dist',
-    dest: './assets/js/silverback/plugins/prism/addons/',
-    src: [
-      'clipboard.js'
-    ],
-  }],
-},
-  },
 
   });
   // Compile tasks
-  grunt.registerTask('compile', ['clean', 'concat', 'uglify', 'less:dev_slvrbck', 'less:dev_bestcaseonline', 'less:dev_misc', 'jshint', 'copy']);
-  grunt.registerTask('build',   ['clean', 'concat', 'uglify', 'less:dist', 'jshint', 'copy']);
+  grunt.registerTask('compile', ['clean', 'concat:bootstrapDev', 'concat:bestcaseDev', 'concat:silverbackDev', 'less:silverbackDev', 'less:bestcaseDev', 'less:miscDev', 'jshint', 'copy']);
+  grunt.registerTask('build',   ['clean', 'concat:bootstrap', 'concat:bestcase', 'concat:silverback', 'uglify', 'less:production', 'jshint', 'copy']);
   // Set default task
   grunt.registerTask('default', ['watch']);
 };
