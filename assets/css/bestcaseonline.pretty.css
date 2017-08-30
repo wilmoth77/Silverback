@@ -7613,18 +7613,6 @@ a .mdi-dots-vertical.mdi {
 /*******************************************************************************
 Best Case App Layouts
 */
-body.testing #app-content .grid-row {
-  margin-bottom: 20px;
-}
-body.testing #app-content .grid-row:nth-of-type(odd) .grid-box {
-  background-color: #d1d2d5;
-}
-body.testing #app-content .grid-row:nth-of-type(even) .grid-box {
-  background-color: #f0d0e3;
-}
-body.testing #app-content .grid-row .grid-box {
-  padding: 15px;
-}
 #app #app-outer #app-container #app-content {
   margin-left: -15px;
   margin-right: -15px;
@@ -7722,12 +7710,6 @@ body.testing #app-content .grid-row .grid-box {
     width: 75%;
   }
 }
-@media (min-width: 1200px) {
-  .at3 .app-content-primary {
-    float: left;
-    width: 83.33333333%;
-  }
-}
 .at3 .app-content-tertiary {
   position: relative;
   min-height: 1px;
@@ -7738,12 +7720,6 @@ body.testing #app-content .grid-row .grid-box {
   .at3 .app-content-tertiary {
     float: left;
     width: 25%;
-  }
-}
-@media (min-width: 1200px) {
-  .at3 .app-content-tertiary {
-    float: left;
-    width: 16.66666667%;
   }
 }
 .at4 .app-content-secondary {
@@ -7773,7 +7749,7 @@ body.testing #app-content .grid-row .grid-box {
 @media (min-width: 992px) {
   .at4 .app-content-primary {
     float: left;
-    width: 58.33333333%;
+    width: 50%;
   }
 }
 @media (min-width: 1200px) {
@@ -7789,12 +7765,6 @@ body.testing #app-content .grid-row .grid-box {
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .at4 .app-content-tertiary {
-    float: left;
-    width: 25%;
-  }
-}
-@media (min-width: 1200px) {
   .at4 .app-content-tertiary {
     float: left;
     width: 25%;

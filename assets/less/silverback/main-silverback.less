@@ -124,6 +124,27 @@ body.home {
   }
 }
 
+
+/*******************************************************************************
+Grid
+*/
+
+.grid-row {
+  margin-bottom: 20px;
+  &:nth-of-type(odd) {
+    .grid-box {
+      background-color: @bc-p01-20;
+    }
+  }
+  &:nth-of-type(even) {
+    .grid-box {
+      background-color: @bc-sp02-20;
+    }
+  }
+  .grid-box {
+    padding: 15px;
+  }
+}
 /*******************************************************************************
 Responsive Examples
 */

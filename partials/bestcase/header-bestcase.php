@@ -68,10 +68,10 @@ break;
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/bestcase/app/at1/">AT1</a></li>
-            <li><a href="/bestcase/app/at2/">AT2</a></li>
-            <li><a href="/bestcase/app/at3/">AT3</a></li>
-            <li><a href="/bestcase/app/at4/">AT4</a></li>
+            <li><a href="/bestcase/layout/app-templates/at1/">AT1</a></li>
+            <li><a href="/bestcase/layout/app-templates/at2/">AT2</a></li>
+            <li><a href="/bestcase/layout/app-templates/at3/">AT3</a></li>
+            <li><a href="/bestcase/layout/app-templates/at4/">AT4</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>

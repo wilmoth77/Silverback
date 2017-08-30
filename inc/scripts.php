@@ -32,7 +32,7 @@ function Silverback_scripts() {
     wp_enqueue_style('scrollingtabs', get_stylesheet_directory_uri() . $assets['scrollingtabs'], false, 'all');
   }
 
-    elseif (is_tree(874)) { //Is Best Case App pages
+    elseif (is_tree(1356) && !is_page(1356)) { //Is Best Case App pages
       wp_enqueue_style('bestcaseonline', get_stylesheet_directory_uri() . $assets['bestcaseonline'], false, filemtime( get_stylesheet_directory() . '/public/css/bestcaseonline.min.css' ), 'all');
     }
 
