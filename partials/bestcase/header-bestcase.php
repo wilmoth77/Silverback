@@ -20,7 +20,35 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+// Get the queried object and sanitize it
+$current_page = sanitize_post( $GLOBALS['wp_the_query']->get_queried_object() );
+// Get the page slug
+$slug = $current_page->post_name;
+//debug_to_console( $slug );
+// Set var showpage to the post slug
+$showPage = $slug;
+
+switch ( $showPage ) {
+
+case 'at1':
+echo '<body class="at1 page-template-app-bestcase">';
+break;
+
+case 'at2':
+echo '<body class="at2 page-template-app-bestcase">';
+break;
+
+case 'at3':
+echo '<body class="at3 page-template-app-bestcase">';
+break;
+
+case 'at4':
+echo '<body class="at4 page-template-app-bestcase">';
+break;
+
+}
+?>
 
   <div id="app">
   <header id="app-header" class="navbar navbar-default navbar-fixed-top">
@@ -40,9 +68,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/bestcase/app/one-column/">One Col</a></li>
-            <li><a href="/bestcase/app/two-column/">Two Col</a></li>
-            <li><a href="/bestcase/app/three-column/">Three Col</a></li>
+            <li><a href="/bestcase/app/at1/">AT1</a></li>
+            <li><a href="/bestcase/app/at2/">AT2</a></li>
+            <li><a href="/bestcase/app/at3/">AT3</a></li>
+            <li><a href="/bestcase/app/at4/">AT4</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
@@ -114,9 +143,11 @@
                 <div class="panel panel-montane user" aria-labelledby="dropdownMenu2">
                   <div class="panel-body">
                     <div class="list-group">
+                      <!--
                       <a href="#" class="navbar-user-panel-avatar list-group-item" title="Edit profile picture">
                         <img class="img-responsive" alt="Jeff Wilmoth" src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/20294289_10213892974429318_9029462014244210871_n.jpg?oh=72a310b0558334e78fb4207068c357d5&oe=5A0DDF68">
                       </a>
+                    -->
                       <a href="#" class="list-group-item">Personal Settings</a>
                       <a href="#" class="list-group-item">Firm Settings</a>
                       <a href="#" class="list-group-item">Integration Hub</a>

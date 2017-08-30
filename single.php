@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main class="content-area" role="main">
+<main class="content-area blog-area" role="main">
 			<?php	get_template_part( 'partials/main', 'header' );		 ?>
 		 <div id="primary" class="container news">
 			 <div class="row">

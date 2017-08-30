@@ -29,43 +29,44 @@ $showPage = $slug;
     switch ( $showPage ) {
 
       // One column //////////////////////////////////////////////////////////
-      case 'one-column':
+      case 'at1':
       ?>
       <div id="app-content">
-        <?php get_template_part( 'partials/bestcase/views/contentMain'); ?>
+        <?php get_template_part( 'partials/bestcase/views/primary'); ?>
       </div> <!-- /#app-content -->
       <?php
       break;
 
 
       // Two column //////////////////////////////////////////////////////////
-      case 'two-column': ?>
+      case 'at2': ?>
+      <div id="app-content" class="secondary-offcanvas">
+        <?php get_template_part( 'partials/bestcase/views/secondary'); ?>
+        <?php get_template_part( 'partials/bestcase/views/primary'); ?>
+      </div> <!-- /#app-content -->
+      <?php
+      break;
+
+      // Two column //////////////////////////////////////////////////////////
+      case 'at3': ?>
       <div id="app-content">
-        <?php get_template_part( 'partials/bestcase/views/contentLeft'); ?>
-        <?php get_template_part( 'partials/bestcase/views/contentMain'); ?>
+        <?php get_template_part( 'partials/bestcase/views/primary'); ?>
+        <?php get_template_part( 'partials/bestcase/views/tertiary'); ?>
       </div> <!-- /#app-content -->
       <?php
       break;
 
 
       // Three column ////////////////////////////////////////////////////////
-      case 'three-column': ?>
-      <div id="app-content">
-        <?php get_template_part( 'partials/bestcase/views/contentLeft'); ?>
-        <?php get_template_part( 'partials/bestcase/views/contentMain'); ?>
-        <?php get_template_part( 'partials/bestcase/views/contentRight'); ?>
-      </div> <!-- /#app-content -->
+      case 'at4': ?>
+      <div id="app-content" class="secondary-offcanvas">
+        <?php get_template_part( 'partials/bestcase/views/secondary'); ?>
+        <?php get_template_part( 'partials/bestcase/views/primary'); ?>
+        <?php get_template_part( 'partials/bestcase/views/tertiary'); ?>
+      </div> <!-- /#app-at4!! -->
       <?php
       break;
 
-
-      // Testing template //////////////////////////////
-      case 'testing': ?>
-      <div id="app-content">
-      <?php get_template_part( 'partials/bestcase/views/contentTestTemplate'); ?>
-      </div> <!-- /#app-content -->
-      <?php
-      break;
     }
     ?>
   </div> <!-- /#app-container -->

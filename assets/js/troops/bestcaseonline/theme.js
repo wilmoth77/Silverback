@@ -3,6 +3,14 @@
 *
 * @package Silverback
 */
+/* ========================================================================
+* Toggle the secondary template container off canvas
+* ======================================================================== */
+$(document).ready(function () {
+  $('[data-toggle="offcanvas"]').click(function () {
+    $('.secondary-offcanvas').toggleClass('active');
+  });
+});
 
 /* ========================================================================
 * jQuery Bootstrap Scrolling Tabs

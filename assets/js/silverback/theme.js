@@ -27,21 +27,6 @@
       init: function() {
         // JavaScript to be fired on all pages
 
-
-        // This will detect and set the height properly when the window resizes
-        var callback = function () {
-          jQuery('.modal').each(function (idx, item) {
-            var modalObj = $(item).find('.modal-content');
-            $(modalObj).height('auto');
-            if ($(modalObj).height() > ($(window).height() * 0.9)) {
-              $(modalObj).height($(window).height() * 0.9);
-            }
-          });
-        };
-
-        // Binding the callback in document.ready is not required, just on window.resize
-        $(window).resize(callback);
-
         /* ========================================================================
         * Enable tooltips and popovers for silverback
         * ======================================================================== */
@@ -111,14 +96,17 @@
 
         $(function () {
           //add active class to sample app navs
-          if ( $('body').hasClass('one-column') ) {
+          if ( $('body').hasClass('at1') ) {
             $('#navbar .navbar-nav:first-child  li:nth-child(1)').addClass('active');
           }
-          if ( $('body').hasClass('two-column') ) {
+          if ( $('body').hasClass('at2') ) {
             $('#navbar .navbar-nav:first-child  li:nth-child(2)').addClass('active');
           }
-          if ( $('body').hasClass('three-column') ) {
+          if ( $('body').hasClass('at3') ) {
             $('#navbar .navbar-nav:first-child  li:nth-child(3)').addClass('active');
+          }
+          if ( $('body').hasClass('at4') ) {
+            $('#navbar .navbar-nav:first-child  li:nth-child(4)').addClass('active');
           }
 
         });

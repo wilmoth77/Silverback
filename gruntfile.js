@@ -194,6 +194,10 @@ module.exports = function(grunt) {
         },
         files: [
           '**/*.php',
+          './assets/less/*.less',
+          './assets/less/**/*.less',
+          './assets/less/troops/**/*.less',
+          './assets/less/troops/bestcaseonline/**/*.less',
           './public/css/*.css',
           './public/js/*.js'
         ]

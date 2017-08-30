@@ -69,6 +69,61 @@ body.home {
   }
 }
 
+.blog-area {
+  .silverback-blog-hero,
+  .silverback-post-hero {
+    color: @white;
+    margin-top: -20px;
+    -webkit-box-shadow: 0 0 1000px 1000px rgba(26,32,46,0.5) inset;
+    moz-box-shadow: 0 0 1000px 1000px rgba(26,32,46,0.5) inset;
+    box-shadow: 0 0 1000px 1000px rgba(26,32,46,0.5) inset;
+
+    .silverback-welcome {
+      padding-top: 305px;
+      padding-bottom: 25px;
+      color: @white;
+      .text-center;
+
+      @media (min-width: @screen-lg-min) {
+        h1 {
+          font-size: 50px;
+          text-transform: uppercase;
+          text-shadow:1px 1px 1px #000;
+        }
+      }
+
+    }
+  }
+
+  .silverback-post-hero {
+    -webkit-box-shadow: 0 0 1000px 1000px rgba(26,32,46,0.85) inset;
+    moz-box-shadow: 0 0 1000px 1000px rgba(26,32,46,0.85) inset;
+    box-shadow: 0 0 1000px 1000px rgba(26,32,46,0.85) inset;
+    .silverback-welcome {
+      padding-top: 50px;
+      padding-bottom: 50px;
+
+      @media (min-width: @screen-lg-min) {
+        h1 {
+          font-size: @font-size-h1;
+          text-transform: uppercase;
+          text-shadow:1px 1px 1px #000;
+        }
+      }
+    }
+  }
+  .container.news {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    max-width: @screen-lg-min;
+
+    .entry-header {
+      margin-bottom: 30px;
+    }
+
+  }
+}
+
 /*******************************************************************************
 Responsive Examples
 */
@@ -559,12 +614,11 @@ navbar.less
   & .navbar-form {
     & .mdi-magnify {
       position: absolute;
-      top: 15px;
-      margin-left: 5px;
-      font-size: inherit;
+      top: 10px;
+      margin-left: 6px;
     }
     & input[type="search"]{
-      padding-left: 20px;
+      padding-left: 35px;
     }
   }
 }
@@ -587,10 +641,10 @@ main-secondary
 .main-secondary {
   display: none;
 
-  > .sidebar {
+   .sidebar {
     margin: 0px -15px 0 -15px;
-  }
-  > .sidebar li a {
+
+   li a {
     padding: 10px 35px;
     color: @cin-p01;
     font-size: @font-size-base - 1;
@@ -601,42 +655,60 @@ main-secondary
     }
   }
 
-  > .sidebar .nav.nested {
+  li.menu-item-has-children {
+    margin-bottom: 10px;
+    &>a {
+      font-size: @font-size-base + 2;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding-bottom: 5px;
+    }
+  }
+}
+
+
+
+/* Hide the nested nav until active
+   .sidebar .nav.nested {
     display: none;
   }
+
   > .sidebar .nav>li.active .nav.nested,
   .sidebar .nav>.active>.nav.nested,
   .sidebar .nav>.current-menu-parent>.nav.nested  {
     display: block;
   }
 
-  > .sidebar .nav>.current-page-parent .mdi-chevron-right:before,
+   .sidebar .nav>.current-page-parent .mdi-chevron-right:before,
   .sidebar .nav>.active .mdi-chevron-right:before {
     content: "\F140";
   }
 
-  > .sidebar .nav.nested a {
+*/
+   .sidebar .nav.nested a {
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 55px; //was 35px, added 20px
+    padding-left: 50px; //was 35px, added 15px
   }
 
-  > .sidebar .nav.nested .current_page_item.active a {
-    padding-left: 50px;
+   .sidebar .nav.nested .current_page_item.active a {
+    padding-left: 45px;
   }
-
-  > .sidebar .current-menu-parent {
+/*
+   .sidebar .current-menu-parent {
     background-color: lighten(@cin-p02, 38%);
   }
-  > .sidebar .current_page_item.active>a {
-    background-color: lighten(@cin-p02, 31%);
-    border-left: 5px solid @cin-p02;
-    color: darken(@cin-p02, 15%);
+  */
+   .sidebar .current_page_item.active>a {
+    background-color: @cin-p02;
+    border-left: 5px solid @cin-p01;
+    color: @white;
     font-weight: 600;
     padding-left: 30px;
   }
   & .mdi {
-    font-size: inherit;
+    font-size: 24px;
+    display: none; //Hide the chevron unless I switch back to hidden nested ul's
   }
 }
 

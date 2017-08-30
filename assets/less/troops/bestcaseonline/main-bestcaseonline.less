@@ -62,6 +62,25 @@ Custom styling just for adjusting examples in the iframes in Silverback
 
 }
 
+.offcanvas-toggle {
+  display: none;
+@media screen and (max-width: @screen-md-min) {
+  body.at2 &,
+  body.at4 & {
+    display: inline-block;
+  }
+  }
+}
+
+#app-footer {
+  background-color: @gray-light;
+  .panel {
+    text-align: center;
+    margin-bottom: 0;
+    background-color: transparent;
+  }
+}
+
 
 /*******************************************************************************
 Global
@@ -160,103 +179,108 @@ body.testing {
       }
     }
   }
+  #app-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    #footer-container {
+      &:extend(.container-fluid);
+      #footer-content {
+        .make-row();
+        #footer-content-primary {
+          @media (min-width: @screen-md-min) {
+            .make-md-column(10);
+            float: none !important;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+  }
 }
 
-.one-column {
-  .app-content-main {
+
+.at1 {
+  .app-content-primary {
     @media (min-width: @screen-md-min) {
       .make-md-column(10);
       float: none !important;
       margin-left: auto;
       margin-right: auto;
-      .sidebar& {
-        float: left !important;
-        .make-md-column(12);
-      }
     }
   }
 
 }
 
-.two-column {
-  .app-content-left {
-    .make-md-column(3);
-    .make-lg-column(2);
-  }
-  .app-content-main {
+.at2 {
+  .app-content-primary {
     .make-md-column(9);
     .make-lg-column(10);
   }
+
+  .app-content-secondary {
+    .make-md-column(3);
+    .make-lg-column(2);
+  }
 }
 
-.three-column {
-  .app-content-left {
+.at3 {
+  .app-content-primary {
+    .make-md-column(9);
+    .make-lg-column(10);
+  }
+
+  .app-content-tertiary {
+    .make-md-column(3);
+    .make-lg-column(2);
+  }
+}
+
+.at4 {
+  .app-content-secondary {
     .make-md-column(3);
     .make-lg-column(2);
   }
 
-  .app-content-main {
+  .app-content-primary {
     .make-md-column(7);
     .make-lg-column(7);
   }
 
-  .app-content-right {
+  .app-content-tertiary {
     .make-md-column(3);
     .make-lg-column(3);
   }
 }
 
-.sidebar {
-
-  #app-container.collapsed {
-    .app-content-left-sidebar {
-      width: 54px !important;
-    }
-
-    .panel-sidenav {
-      width: 54px;
-      .panel-body {
-        .nav-pills-label,
-        .badge {
-          display: none;
-        }
-      }
-      .mdi-format-horizontal-align-left:before {
-        transform: rotate(180deg);
-      }
-    }
-    #app-content {
-      margin-left: 84px !important;
-    }
-  }
-
-
-  #app-content {
-    margin-left: 310px !important;
-    margin-right: 15px !important;
-  }
-
-  .app-content-left-sidebar {
-    position: absolute;
-    top: 62px;
-    bottom: 0;
-    left: 0;
-    z-index: 990;
-    display: block;
-    width:280px;
-    overflow: hidden;
-    .layer(2);
-  }
-}
-
-
-/*******************************************************************************
-main.app-main
+/*
+* Off Canvas
+* --------------------------------------------------
 */
-.app-main {
-  padding-top: 30px;
-  padding-bottom: 30px;
+@media screen and (max-width: @screen-md-min) {
+  .secondary-offcanvas {
+    left: 0;
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+
+    .app-content-secondary {
+      left: -50%; /* 6 columns */
+      position: absolute !important;
+      top: 30px;
+      width: 50%; /* 6 columns */
+    }
+
+    &.active {
+      left: 50%; /* 6 columns */
+    }
+  }
 }
+
+
+
 
 /*******************************************************************************
 Upcoming Events

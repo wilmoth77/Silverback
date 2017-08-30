@@ -805,6 +805,7 @@ pre code {
 }
 .container-fluid,
 #app #app-outer #app-container,
+#app #app-footer #footer-container,
 .panel-montane.notification .panel-body .list-group,
 .panel-montane.user > .panel-body > .list-group {
   margin-right: auto;
@@ -6606,6 +6607,8 @@ button.close {
 .container:after,
 #app #app-outer #app-container #app-content:before,
 #app #app-outer #app-container #app-content:after,
+#app #app-footer #footer-container #footer-content:before,
+#app #app-footer #footer-container #footer-content:after,
 .panel-montane .panel-heading .panel-heading-content:before,
 .panel-montane .panel-heading .panel-heading-content:after,
 .panel-montane .panel-footer .panel-footer-content:before,
@@ -6630,6 +6633,8 @@ button.close {
 .panel-montane.user > .panel-body > .list-group .list-group-item:after,
 #app #app-outer #app-container:before,
 #app #app-outer #app-container:after,
+#app #app-footer #footer-container:before,
+#app #app-footer #footer-container:after,
 .panel-montane.notification .panel-body .list-group:before,
 .panel-montane.notification .panel-body .list-group:after,
 .panel-montane.user > .panel-body > .list-group:before,
@@ -6656,6 +6661,7 @@ button.close {
 .container:after,
 .container:after,
 #app #app-outer #app-container #app-content:after,
+#app #app-footer #footer-container #footer-content:after,
 .panel-montane .panel-heading .panel-heading-content:after,
 .panel-montane .panel-footer .panel-footer-content:after,
 .panel-sidenav .panel-heading .panel-heading-content:after,
@@ -6668,6 +6674,7 @@ button.close {
 .panel-montane.notification .panel-body .list-group .list-group-item:after,
 .panel-montane.user > .panel-body > .list-group .list-group-item:after,
 #app #app-outer #app-container:after,
+#app #app-footer #footer-container:after,
 .panel-montane.notification .panel-body .list-group:after,
 .panel-montane.user > .panel-body > .list-group:after {
   clear: both;
@@ -7541,6 +7548,23 @@ Custom styling just for adjusting examples in the iframes in Silverback
 .bc_examples .popover-example button {
   margin-bottom: 25px;
 }
+.offcanvas-toggle {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  body.at2 .offcanvas-toggle,
+  body.at4 .offcanvas-toggle {
+    display: inline-block;
+  }
+}
+#app-footer {
+  background-color: #777777;
+}
+#app-footer .panel {
+  text-align: center;
+  margin-bottom: 0;
+  background-color: transparent;
+}
 /*******************************************************************************
 Global
 */
@@ -7607,8 +7631,17 @@ body.testing #app-content .grid-row .grid-box {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+#app #app-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+#app #app-footer #footer-container #footer-content {
+  margin-left: -15px;
+  margin-right: -15px;
+}
 @media (min-width: 992px) {
-  .one-column .app-content-main {
+  #app #app-footer #footer-container #footer-content #footer-content-primary {
     position: relative;
     min-height: 1px;
     padding-left: 15px;
@@ -7617,153 +7650,180 @@ body.testing #app-content .grid-row .grid-box {
     margin-left: auto;
     margin-right: auto;
   }
-  .sidebar.one-column .app-content-main {
-    float: left !important;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
 }
 @media (min-width: 992px) and (min-width: 992px) {
-  .one-column .app-content-main {
+  #app #app-footer #footer-container #footer-content #footer-content-primary {
     float: left;
     width: 83.33333333%;
   }
 }
+@media (min-width: 992px) {
+  .at1 .app-content-primary {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: none !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media (min-width: 992px) and (min-width: 992px) {
-  .sidebar.one-column .app-content-main {
+  .at1 .app-content-primary {
     float: left;
-    width: 100%;
+    width: 83.33333333%;
   }
 }
-.two-column .app-content-left {
+.at2 .app-content-primary {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .two-column .app-content-left {
-    float: left;
-    width: 25%;
-  }
-}
-@media (min-width: 1200px) {
-  .two-column .app-content-left {
-    float: left;
-    width: 16.66666667%;
-  }
-}
-.two-column .app-content-main {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 992px) {
-  .two-column .app-content-main {
+  .at2 .app-content-primary {
     float: left;
     width: 75%;
   }
 }
 @media (min-width: 1200px) {
-  .two-column .app-content-main {
+  .at2 .app-content-primary {
     float: left;
     width: 83.33333333%;
   }
 }
-.three-column .app-content-left {
+.at2 .app-content-secondary {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .three-column .app-content-left {
+  .at2 .app-content-secondary {
     float: left;
     width: 25%;
   }
 }
 @media (min-width: 1200px) {
-  .three-column .app-content-left {
+  .at2 .app-content-secondary {
     float: left;
     width: 16.66666667%;
   }
 }
-.three-column .app-content-main {
+.at3 .app-content-primary {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .three-column .app-content-main {
+  .at3 .app-content-primary {
     float: left;
-    width: 58.33333333%;
+    width: 75%;
   }
 }
 @media (min-width: 1200px) {
-  .three-column .app-content-main {
+  .at3 .app-content-primary {
     float: left;
-    width: 58.33333333%;
+    width: 83.33333333%;
   }
 }
-.three-column .app-content-right {
+.at3 .app-content-tertiary {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 992px) {
-  .three-column .app-content-right {
+  .at3 .app-content-tertiary {
     float: left;
     width: 25%;
   }
 }
 @media (min-width: 1200px) {
-  .three-column .app-content-right {
+  .at3 .app-content-tertiary {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+.at4 .app-content-secondary {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .at4 .app-content-secondary {
     float: left;
     width: 25%;
   }
 }
-.sidebar #app-container.collapsed .app-content-left-sidebar {
-  width: 54px !important;
+@media (min-width: 1200px) {
+  .at4 .app-content-secondary {
+    float: left;
+    width: 16.66666667%;
+  }
 }
-.sidebar #app-container.collapsed .panel-sidenav {
-  width: 54px;
+.at4 .app-content-primary {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-.sidebar #app-container.collapsed .panel-sidenav .panel-body .nav-pills-label,
-.sidebar #app-container.collapsed .panel-sidenav .panel-body .badge {
-  display: none;
+@media (min-width: 992px) {
+  .at4 .app-content-primary {
+    float: left;
+    width: 58.33333333%;
+  }
 }
-.sidebar #app-container.collapsed .panel-sidenav .mdi-format-horizontal-align-left:before {
-  transform: rotate(180deg);
+@media (min-width: 1200px) {
+  .at4 .app-content-primary {
+    float: left;
+    width: 58.33333333%;
+  }
 }
-.sidebar #app-container.collapsed #app-content {
-  margin-left: 84px !important;
+.at4 .app-content-tertiary {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-.sidebar #app-content {
-  margin-left: 310px !important;
-  margin-right: 15px !important;
+@media (min-width: 992px) {
+  .at4 .app-content-tertiary {
+    float: left;
+    width: 25%;
+  }
 }
-.sidebar .app-content-left-sidebar {
-  position: absolute;
-  top: 62px;
-  bottom: 0;
-  left: 0;
-  z-index: 990;
-  display: block;
-  width: 280px;
-  overflow: hidden;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+@media (min-width: 1200px) {
+  .at4 .app-content-tertiary {
+    float: left;
+    width: 25%;
+  }
 }
-/*******************************************************************************
-main.app-main
+/*
+* Off Canvas
+* --------------------------------------------------
 */
-.app-main {
-  padding-top: 30px;
-  padding-bottom: 30px;
+@media screen and (max-width: 992px) {
+  .secondary-offcanvas {
+    left: 0;
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+  .secondary-offcanvas .app-content-secondary {
+    left: -50%;
+    /* 6 columns */
+    position: absolute !important;
+    top: 30px;
+    width: 50%;
+    /* 6 columns */
+  }
+  .secondary-offcanvas.active {
+    left: 50%;
+    /* 6 columns */
+  }
 }
 /*******************************************************************************
 Upcoming Events

@@ -8,11 +8,15 @@
 */
 ?>
 <footer id="app-footer">
-  <?php
-  dynamic_sidebar( 'footer' ); // Display the footer sidebar
-  ?>
-</footer>
-      <?php wp_footer(); ?>
-    </div> <!-- /#app -->
-  </body>
+  <div id="footer-container">
+    <div id="footer-content">
+      <div id="footer-content-primary">
+        <?php get_template_part( 'partials/bestcase/views/footer'); ?>
+      </div> <!-- /#footer-content-primary -->
+    </div> <!-- /#footer-content -->
+  </div> <!-- /#footer-container -->
+</footer> <!-- /#app-footer -->
+<?php wp_footer(); ?>
+</div> <!-- /#app -->
+</body>
 </html>
