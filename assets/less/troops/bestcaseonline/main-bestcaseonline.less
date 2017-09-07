@@ -64,11 +64,11 @@ Custom styling just for adjusting examples in the iframes in Silverback
 
 .offcanvas-toggle {
   display: none;
-@media screen and (max-width: @screen-md-min) {
-  body.at2 &,
-  body.at4 & {
-    display: inline-block;
-  }
+  @media screen and (max-width: @screen-md-min) {
+    body.at2 &,
+    body.at4 & {
+      display: inline-block;
+    }
   }
 }
 
@@ -619,40 +619,13 @@ Sidebar navigation Panel
 }
 
 /************************************
-Sidebar navigation Panel
+Secondary Container Menu
 */
-.panel-sideview {
+.panel-nav-stacked {
   height: 100%;
   border: none;
   box-shadow: none;
   background-color: transparent;
-
-  .panel-heading,
-  .panel-footer {
-    background-color: transparent;
-    border-color: transparent;
-  }
-
-  .panel-heading {
-    padding-top: 0;
-    padding-bottom: 0;
-    .panel-title {
-      font-size: @font-size-h6;
-      font-weight: 400;
-      text-transform: uppercase;
-      color: @bc-s02-60;
-    }
-    .panel-heading-content {
-      .make-row ();
-      .heading-content-left,
-      .heading-content-right {
-        .make-sm-column (6);
-      }
-      & > div:first-of-type:last-of-type {
-        .make-sm-column (12);
-      }
-    }
-  }
 
   .panel-body {
     padding: 0;
@@ -668,36 +641,58 @@ Sidebar navigation Panel
       }
     }
   }
+}
 
-  .panel-footer {
-    padding: 10px 0px;
-    height: 6.25%;
-    border-top-color: @bc-s02-20;
-    background-color: lighten(@bc-s02-20, 10%); //#edf0f2;
-    .panel-footer-content {
-      .make-row();
-      .footer-content-left,
-      .footer-content-right {
-        .make-sm-column (6);
+.nav-stacked {
+  li {
+    &.active {
+      a {
+        color: @bc-s01;
+        background-color: transparent;
+
+        &:hover,
+        &:focus {
+          color: @bc-s01;
+          background-color: transparent;
+        }
+
+        .badge {
+          color: @white;
+          background-color: @bc-p02;
+        }
       }
-      & > div:first-of-type:last-of-type {
-        .make-sm-column (12);
+    }
+    a {
+      border-bottom: 1px solid @bc-s02-20;
+      color: @gray;
+      border-radius: 0;
+
+      &:hover,
+      &:focus {
+        color: @bc-s01;
+        background-color: transparent;
+      }
+      .mdi {
+        margin-right: 15px;
+      }
+      .badge {
+        margin-left: 10px;
       }
     }
   }
-
   @media (min-width: @screen-sm-min) {
-    .panel-heading-content .heading-content-right,
-    .panel-footer-content .footer-content-right {
-      text-align: right;
-    }
-  }
-  @media (min-width: @screen-md-min) {
-    .panel-heading+.panel-body {
-      padding-top: 0px;
+    li {
+      a {
+        .badge {
+          float: right;
+          margin-top: 9px;
+        }
+      }
     }
   }
 }
+
+
 
 /************************************
 Filter Panel
@@ -792,130 +787,130 @@ Main nav #app-header
   @media (min-width: @screen-md-min) {
     padding-top: 12px;
   }
+}
 
+.navbar-header {
+  .navbar-brand {
+    .navbar-brand-logo {
+      background-image: url("/wp-content/uploads/bc-app-sphere.svg");
+      align-items: center;
+      background-repeat: no-repeat;
+      display: flex;
+      height: 34px;
+      padding-left: 42px;
+      margin-top: -7px;
 
-  .navbar-header {
-    .navbar-brand {
-      .navbar-brand-logo {
-        background-image: url("/wp-content/uploads/bc-app-sphere.svg");
-        align-items: center;
+      @media (min-width: @screen-md-min) {
+        margin-top: -15px;
+      }
+
+      .navbar-brand-wordmark {
+        &:extend(.hidden-sm);
+        background-image: url("/wp-content/uploads/bc-app-wordmark.svg");
+        background-position: left center;
         background-repeat: no-repeat;
-        display: flex;
-        height: 34px;
-        padding-left: 42px;
-        margin-top: -7px;
-
-        @media (min-width: @screen-md-min) {
-          margin-top: -15px;
-        }
-
-        .navbar-brand-wordmark {
-          &:extend(.hidden-sm);
-          background-image: url("/wp-content/uploads/bc-app-wordmark.svg");
-          background-position: left center;
-          background-repeat: no-repeat;
-          background-size: 124px auto;
-          margin: 0;
-          overflow: hidden;
-          text-indent: 100%;
-          white-space: nowrap;
-          width: 124px;
-        }
+        background-size: 124px auto;
+        margin: 0;
+        overflow: hidden;
+        text-indent: 100%;
+        white-space: nowrap;
+        width: 124px;
       }
     }
   }
+}
 
-  #navbar {
-    max-height: none;
+#app-header-navbar {
+  max-height: none;
 
-    ul.navbar-nav {
+  ul.navbar-nav {
+    li,
+    .navbar-user {
+      > a {
+        color: @bc-p01-80;
+        &:hover,
+        &:focus {
+          color:@bc-p01;
+          background-color: transparent;
+          text-decoration: none;
+        }
+      }
+    }
+    &:first-child {
       li {
-        a:first-child {
-          color: @bc-p01-80;
-          &:hover,
-          &:focus {
-            color:@bc-p01;
-            background-color: transparent;
-            text-decoration: none;
+        &.active a {
+          border-bottom: 4px solid @bc-p01;
+          color: @bc-p01;
+          font-weight: 600;
+          background-color: transparent !important;
+        }
+        a {
+          padding-left: 2px;
+          padding-right: 2px;
+          padding-bottom: 16px;
+          margin-left: 10px;
+          margin-right: 10px;
+
+          @media (min-width: @screen-md-min) {
+            margin-left: 23px;
+            margin-right: 23px;
           }
         }
       }
-      &:first-child { //ul.navbar-nav:first-child
-        li {
-          &.active a {
-            border-bottom: 4px solid @bc-p01;
-            color: @bc-p01;
-            font-weight: 600;
-            background-color: transparent !important;
-          }
-          a {
-            padding-left: 2px;
-            padding-right: 2px;
-            padding-bottom: 16px;
-            margin-left: 10px;
-            margin-right: 10px;
 
-            @media (min-width: @screen-md-min) {
-              margin-left: 23px;
-              margin-right: 23px;
-            }
-          }
-        }
+      @media (min-width: @screen-md-min) {
+        margin-top: -6px;
+      }
+    }
 
-        @media (min-width: @screen-md-min) {
-          margin-top: -6px;
+    &.navbar-right {
+      li>div>a,
+      li>div>button {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      .navbar-notification {
+        &.dropdown.open>a,
+        .dropdown>a:hover {
+          color: @bc-p01;
+          text-decoration: none;
+          background-color: transparent;
         }
       }
-
-      &.navbar-right { //ul.navbar-nav.navbar-right
-        li>div>a,
-        li>div>button {
-          padding-left: 15px;
-          padding-right: 15px;
-        }
-        .navbar-notification {
-          &.dropdown.open>a,
-          .dropdown>a:hover {
-            color: @bc-p01;
-            text-decoration: none;
-            background-color: transparent;
+      .navbar-user {
+        a {
+          .navbar-user-avatar {
+            height: 40px;
+            width: 40px;
+            margin-right: 15px;
+            border-radius: 50%;
+            &:extend(.hidden-xs);
           }
-        }
-        .navbar-user {
-          a {
-            .navbar-user-avatar {
-              height: 40px;
-              width: 40px;
-              margin-right: 15px;
-              border-radius: 50%;
-              &:extend(.hidden-xs);
-            }
 
-            .navbar-user-dropdown {
-              display: inline-block;
-              line-height: 1;
-              &:extend(.hidden-sm);
+          .navbar-user-dropdown {
+            display: inline-block;
+            line-height: 1;
+            &:extend(.hidden-sm);
 
-              .user-dropdown-label {
-                float: left;
-                padding-top: 4px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 130px;
+            .user-dropdown-label {
+              float: left;
+              padding-top: 4px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 130px;
 
-                @media (min-width: @screen-lg-min) {
-                  max-width: 260px !important;
-                }
+              @media (min-width: @screen-lg-min) {
+                max-width: 260px !important;
               }
             }
           }
-          &.dropdown.open>a,
-          .dropdown>a:hover {
-            color: @bc-p01;
-            text-decoration: none;
-            background-color: transparent;
-          }
+        }
+        &.dropdown.open>a,
+        .dropdown>a:hover {
+          color: @bc-p01;
+          text-decoration: none;
+          background-color: transparent;
         }
       }
     }
@@ -923,9 +918,10 @@ Main nav #app-header
 }
 
 //Montane Notification List Panel
-.panel-montane.notification {
+.panel-notification-list {
   &:extend(.dropdown-menu all);
   &:extend(.dropdown-menu-right all);
+  .panel-montane;
 
   @media (min-width: @screen-sm-min) {
     width: @screen-sm-min;
@@ -975,187 +971,43 @@ Main nav #app-header
   }
 }
 
-//Montane Navbar User Panel
-.panel-montane.user {
+.panel-user {
   &:extend(.dropdown-menu all);
   &:extend(.dropdown-menu-right all);
-  > .panel-body {
-    padding: 15px 0;
-    > .list-group {
-      &:extend(.container-fluid all);
-      margin-bottom: 0;
-      & .list-group-item {
-        .make-row();
-        color: @link-color;
+  .panel-montane;
+  border: none;
+  .layer(3);
+
+  .panel-body {
+    padding: 20px;
+
+    .list-group {
+      a.list-group-item {
+        color: @gray;
+
+        &:hover,
+        &:focus {
+          color: @bc-s01;
+          background-color: transparent;
+        }
+      }
+      .list-group-item {
+        padding: 5px;
         border: none;
       }
-      & a.list-group-item:hover {
-        background-color: #f9f9f9;
-      }
-      > dl {
-        font-size: @font-size-small;
-        > dt.list-group-item {
-          padding-bottom: 1px;
-          color: @text-color;
-        }
-        > dd.list-group-item {
-          padding-top: 1px;
-          color: @text-color;
-        }
+      .list-group-title {
+        font-size: @font-size-h5;
+        font-weight: 600;
       }
     }
   }
-  & .navbar-user-panel-avatar {
-    &:hover {
-      background-color: transparent !important;
-    }
-    &:extend(.hidden-xs,.hidden-sm);
-    > img {
-      border-radius: 50%;
-
-    }
+  @media (min-width: @screen-sm-min) {
+    min-width: 250px;
   }
 }
 
-//Small devices (tablets, 768px and up)
-@media (min-width: @screen-sm-min) {
-  .panel-montane.user {
-    min-width: 200px;
-  }
-}
 
-// Montane notification and user panel shadows
-.panel-montane.notification,
-.panel-montane.user {
-  border: none;
-  -webkit-transition: all 250ms;
-  -moz-transition: all 250ms;
-  transition: all 250ms;
-  .layer(3);
-  &:hover {
-    .layer(5);
-    -webkit-transform: translateY(-5px);
-    -moz-transform: translateY(-5px);
-    transform: translateY(-5px);
-  }
-}
 
-// Side navigation in the sidebar
-.panel-sidenav {
-  .nav-stacked {
-    li {
-      &.active {
-        a {
-          color: @bc-s01;
-          background-color: transparent;
-          //font-weight: 600;
-
-          &:hover,
-          &:focus {
-            color: @bc-s01;
-            background-color: transparent;
-          }
-
-          .badge {
-            color: @white;
-            background-color: @bc-p02;
-          }
-        }
-      }
-      a {
-        //font-size: @font-size-base - 1;
-        //border-bottom: 1px solid @bc-s02-20;
-        color: @gray;
-        border-radius: 0;
-
-        &:hover,
-        &:focus {
-          color: @white;
-          background-color: @bc-s01;
-        }
-        .mdi {
-          margin-right: 15px;
-        }
-        .badge {
-          margin-left: 10px;
-        }
-      }
-    }
-    @media (min-width: @screen-sm-min) {
-      li {
-        a {
-          .badge {
-            float: right;
-            margin-top: 9px;
-          }
-        }
-      }
-    }
-  }
-}
-
-// Side view menu in the app-content area - Not sidebar navigation
-
-.panel-sideview {
-  .nav-stacked {
-    li {
-      &.active {
-        a {
-          color: @bc-s01;
-          background-color: transparent;
-          font-weight: 600;
-
-          &:hover,
-          &:focus {
-            color: @bc-s01;
-            background-color: transparent;
-          }
-
-          .badge {
-            color: @white;
-            background-color: @bc-p02;
-          }
-        }
-      }
-      a {
-        //font-size: @font-size-base - 1;
-        //border-bottom: 1px solid @bc-s02-20;
-        color: @gray;
-        border-radius: 0;
-        border-bottom: 1px solid @bc-s02-20;
-
-        &:hover,
-        &:focus {
-          color: @white;
-          background-color: @bc-s01;
-        }
-        .mdi {
-          margin-right: 15px;
-        }
-        .badge {
-          margin-left: 10px;
-        }
-        @media (max-width: @screen-xl-min) {
-          font-size: 13px;
-          padding: 8px 5px;
-          .mdi {
-            margin-right: 10px;
-          }
-        }
-      }
-    }
-    @media (min-width: @screen-sm-min) {
-      li {
-        a {
-          .badge {
-            float: right;
-            margin-top: 9px;
-          }
-        }
-      }
-    }
-  }
-}
 
 
 
@@ -1406,21 +1258,7 @@ tables.less
   width: 25px;
 }
 
-/*******************************************************************************
-list-group.less
-*/
-.list-group {
-  .list-group-item {
-    padding: 20px;
-    &:first-child,
-    &:last-child {
-      border-radius: 0;
-    }
-    &:nth-of-type(even) {
-      background-color: #f9f9f9;
-    }
-  }
-}
+
 
 
 /*******************************************************************************

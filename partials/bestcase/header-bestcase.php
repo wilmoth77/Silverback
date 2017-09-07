@@ -66,7 +66,7 @@ break;
             </a>
           </div>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="app-header-navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/bestcase/layout/app-templates/at1/">AT1</a></li>
             <li><a href="/bestcase/layout/app-templates/at2/">AT2</a></li>
@@ -79,7 +79,7 @@ break;
                 <button type="button" class="btn btn-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-placement="bottom" title="View Notifications">
                   <i class="mdi mdi-bell"></i><span class="badge super">3</span>
                 </button>
-                <div class="panel panel-montane notification" aria-labelledby="dropdownMenu1">
+                <div class="panel panel-notification-list" aria-labelledby="dropdownMenu1">
                   <div class="panel-body">
                     <div class="list-group">
                       <a href="#" class="list-group-item" title="Manage CM/ECF Logins">
@@ -140,19 +140,17 @@ break;
                     <i class="mdi mdi-menu-down"></i>
                   </div>
                 </a>
-                <div class="panel panel-montane user" aria-labelledby="dropdownMenu2">
+                <div class="panel panel-user" aria-labelledby="dropdownMenu2">
                   <div class="panel-body">
                     <div class="list-group">
-                      <!--
-                      <a href="#" class="navbar-user-panel-avatar list-group-item" title="Edit profile picture">
-                        <img class="img-responsive" alt="Jeff Wilmoth" src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/20294289_10213892974429318_9029462014244210871_n.jpg?oh=72a310b0558334e78fb4207068c357d5&oe=5A0DDF68">
-                      </a>
-                    -->
-                      <a href="#" class="list-group-item">Personal Settings</a>
-                      <a href="#" class="list-group-item">Firm Settings</a>
+                      <span class="list-group-item list-group-title">Settings</span>
+                      <a href="#" class="list-group-item">Personal</a>
+                      <a href="#" class="list-group-item">Firm</a>
                       <a href="#" class="list-group-item">Integration Hub</a>
+                    </div>
+                    <div class="list-group">
                       <dl>
-                        <dt class="list-group-item">Firm Name:</dt>
+                        <dt class="list-group-item list-group-title">Firm</dt>
                         <dd class="list-group-item">Jones, Johns, &amp; Jans</dd>
                       </dl>
                     </div>

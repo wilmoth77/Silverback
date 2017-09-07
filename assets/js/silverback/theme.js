@@ -97,16 +97,16 @@
         $(function () {
           //add active class to sample app navs
           if ( $('body').hasClass('at1') ) {
-            $('#navbar .navbar-nav:first-child  li:nth-child(1)').addClass('active');
+            $('#app-header-navbar .navbar-nav:first-child  li:nth-child(1)').addClass('active');
           }
           if ( $('body').hasClass('at2') ) {
-            $('#navbar .navbar-nav:first-child  li:nth-child(2)').addClass('active');
+            $('#app-header-navbar .navbar-nav:first-child  li:nth-child(2)').addClass('active');
           }
           if ( $('body').hasClass('at3') ) {
-            $('#navbar .navbar-nav:first-child  li:nth-child(3)').addClass('active');
+            $('#app-header-navbar .navbar-nav:first-child  li:nth-child(3)').addClass('active');
           }
           if ( $('body').hasClass('at4') ) {
-            $('#navbar .navbar-nav:first-child  li:nth-child(4)').addClass('active');
+            $('#app-header-navbar .navbar-nav:first-child  li:nth-child(4)').addClass('active');
           }
 
         });

@@ -92,7 +92,7 @@ module.exports = function(grunt) {
       //Compile and minify Less/CSS for production - No SourceMap
       production: {
         options: {
-          compress: true,
+          compress: false, //minify true or false
         },
         plugins: [
           new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})
