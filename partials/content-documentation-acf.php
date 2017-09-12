@@ -70,7 +70,7 @@
 
                     <?php if( get_sub_field('section_copy') ): ?>
                       <div>
-                        <?php the_sub_field('section_copy'); ?>
+                        <?php the_sub_field('section_copy', false); ?>
                       </div>
                     <?php endif; ?>
 
@@ -297,7 +297,7 @@ else: ?>
 
                 <?php if( get_sub_field('section_copy') ): ?>
                   <div>
-                    <?php the_sub_field('section_copy'); ?>
+                    <?php the_sub_field('section_copy', false); ?>
                   </div>
                 <?php endif; ?>
 
@@ -401,7 +401,45 @@ else: ?>
 
           <?php endwhile; //has iframe
         endif; //has iframe ?>
+        <?php
+        // vars
+        $example_type = get_sub_field_object('notes_columns');
+        $value = $example_type['value'];
+        ?>
 
+        <?php if( $value !== '0' ): ?>
+          <div class="subsection-notes">
+            <h6><i class="mdi mdi-note-text"></i> Notes for the <em><?php the_sub_field('section_subheading'); ?></em> section:</h6>
+            <div class="subsection-notes-container">
+              <div class="row">
+                <?php if( $value == '3' ): ?>
+                  <div class="col-sm-4">
+                    <?php the_sub_field('subsection_notes_1'); ?>
+                  </div>
+                  <div class="col-sm-4">
+                    <?php the_sub_field('subsection_notes_2'); ?>
+                  </div>
+                  <div class="col-sm-4">
+                    <?php the_sub_field('subsection_notes_3'); ?>
+                  </div>
+
+                <?php elseif( $value == '2' ): ?>
+                  <div class="col-sm-6">
+                    <?php the_sub_field('subsection_notes_1'); ?>
+                  </div>
+                  <div class="col-sm-6">
+                    <?php the_sub_field('subsection_notes_2'); ?>
+                  </div>
+
+                <?php elseif( $value == '1' ): ?>
+                  <div class="col-sm-12">
+                    <?php the_sub_field('subsection_notes'); ?>
+                  </div>
+                <?php endif; ?>
+              </div>
+            </div>
+          </div>
+        <?php endif; ?>
       </section> <!-- /sb-docs-subsection -->
     <?php endwhile; //has more subsections
   endif; //has more docs subsections ?>

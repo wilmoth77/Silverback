@@ -219,9 +219,13 @@ function example_iframe($atts, $content) {
 /**
  * Disable wpautop on ACF wysiwyg
  * https://support.advancedcustomfields.com/forums/topic/removing-paragraph-tags-from-wysiwyg-fields/
+ *
+ ******No longer using this******** instead I'm disabling it per wysiwyg field usage
+ * usage: <?php the_sub_field('section_copy', false); ?>
  */
  //Remove WPAUTOP from ACF TinyMCE Editor
- function acf_wysiwyg_remove_wpautop() {
-     remove_filter('acf_the_content', 'wpautop' );
- }
- add_action('acf/init', 'acf_wysiwyg_remove_wpautop');
+
+ //function acf_wysiwyg_remove_wpautop() {
+//     remove_filter('acf_the_content', 'wpautop' );
+// }
+// add_action('acf/init', 'acf_wysiwyg_remove_wpautop');
