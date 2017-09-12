@@ -179,7 +179,8 @@ function is_tree($pid)
  function nopages_user_can_richedit($cap) {
 		 global $post_type;
 
-		 if (('page' == $post_type) || ('content_block' == $post_type))
+		 //if (('page' == $post_type) || ('content_block' == $post_type))
+		 if (('content_block' == $post_type))
 				 return false;
 		 return $cap;
  }

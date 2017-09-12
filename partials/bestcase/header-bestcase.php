@@ -19,7 +19,7 @@
   <?php wp_head(); ?>
 
 </head>
-
+<body class="page-template-app-bestcase">
 <?php
 // Get the queried object and sanitize it
 $current_page = sanitize_post( $GLOBALS['wp_the_query']->get_queried_object() );
@@ -32,19 +32,19 @@ $showPage = $slug;
 switch ( $showPage ) {
 
 case 'at1':
-echo '<body class="at1 page-template-app-bestcase">';
+echo '<div id="app" class="at1">';
 break;
 
 case 'at2':
-echo '<body class="at2 page-template-app-bestcase">';
+echo '<div id="app" class="at2">';
 break;
 
 case 'at3':
-echo '<body class="at3 page-template-app-bestcase">';
+echo '<div id="app" class="at3">';
 break;
 
 case 'at4':
-echo '<body class="at4 page-template-app-bestcase">';
+echo '<div id="app" class="at4">';
 break;
 
 }

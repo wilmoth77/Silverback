@@ -105,7 +105,7 @@
                                   <button class="btn btn-link screen-rotation-phone"><i class="mdi mdi-screen-rotation"></i>Rotate device</button>
                                 </div>
                                 <div id="orientation" class="iframe-container phone">
-                                <iframe class="iframe-phone" src="<?php the_permalink(); ?>" frameborder="0" scrolling="no"></iframe>
+                                  <iframe class="iframe-phone" src="<?php the_permalink(); ?>" frameborder="0" scrolling="no"></iframe>
                                 </div>
                                 <span class="small"><em>iPhone 6 shown in example - 375x667 viewport</em></span>
 
@@ -119,7 +119,7 @@
                                 <span class="small"><em>Standard iPad shown in example - 768x1024 viewport</em></span>
 
                               <?php else: ?>
-                                  <iframe class="col-xs-12 iframe-desktop" src="<?php the_permalink(); ?>" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+                                <iframe class="col-xs-12 iframe-desktop" src="<?php the_permalink(); ?>" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
 
                               <?php endif; ?>
                             </div>
@@ -174,35 +174,73 @@
 
               <?php endwhile; //has iframe
             endif; //has iframe ?>
+            <?php
+            // vars
+            $example_type = get_sub_field_object('notes_columns');
+            $value = $example_type['value'];
+            ?>
 
+            <?php if( $value !== '0' ): ?>
+              <div class="subsection-notes">
+                <h6><i class="mdi mdi-note-text"></i> Notes for the <em><?php the_sub_field('section_subheading'); ?></em> section:</h6>
+                <div class="subsection-notes-container">
+                  <div class="row">
+                    <?php if( $value == '3' ): ?>
+                      <div class="col-sm-4">
+                        <?php the_sub_field('subsection_notes_1'); ?>
+                      </div>
+                      <div class="col-sm-4">
+                        <?php the_sub_field('subsection_notes_2'); ?>
+                      </div>
+                      <div class="col-sm-4">
+                        <?php the_sub_field('subsection_notes_3'); ?>
+                      </div>
+
+                    <?php elseif( $value == '2' ): ?>
+                      <div class="col-sm-6">
+                        <?php the_sub_field('subsection_notes_1'); ?>
+                      </div>
+                      <div class="col-sm-6">
+                        <?php the_sub_field('subsection_notes_2'); ?>
+                      </div>
+
+                    <?php elseif( $value == '1' ): ?>
+                      <div class="col-sm-12">
+                        <?php the_sub_field('subsection_notes'); ?>
+                      </div>
+                    <?php endif; ?>
+                  </div>
+                </div>
+              </div>
+            <?php endif; ?>
           </section> <!-- /sb-docs-subsection -->
         <?php endwhile; //has more subsections
       endif; //has more docs subsections ?>
 
     </section> <!-- /sb-docs-section -->
-    <?php endwhile; //has more docs sections
-    endif; //has more docs sections ?>
+  <?php endwhile; //has more docs sections
+endif; //has more docs sections ?>
 
-    <?php if( have_rows('icon_library') ): ?>
-      <section id="icon-library" class="sb-docs-subsection">
-        <ul class="icons-list">
-          <?php  while ( have_rows('icon_library') ) : the_row(); ?>
-            <li>
-              <div class="media">
-                <div class="media-left">
-                    <button><i class="mdi mdi-<?php the_sub_field('icon_class'); ?> media-object" title="Copy Class"></i></button>
-                </div>
-                <div class="media-body">
-                  <h6 class="media-heading"><?php the_sub_field('icon_description'); ?></h6>
-                  <span><code>mdi-<?php the_sub_field('icon_class'); ?></code></span>
-                </div>
-              </div>
-            </li>
-          <?php  endwhile; ?>
-        </ul>
-      </section>
-    <?php endif; ?>
-    </div> <!-- /#main-primary-container -->
+<?php if( have_rows('icon_library') ): ?>
+  <section id="icon-library" class="sb-docs-subsection">
+    <ul class="icons-list">
+      <?php  while ( have_rows('icon_library') ) : the_row(); ?>
+        <li>
+          <div class="media">
+            <div class="media-left">
+              <button><i class="mdi mdi-<?php the_sub_field('icon_class'); ?> media-object" title="Copy Class"></i></button>
+            </div>
+            <div class="media-body">
+              <h6 class="media-heading"><?php the_sub_field('icon_description'); ?></h6>
+              <span><code>mdi-<?php the_sub_field('icon_class'); ?></code></span>
+            </div>
+          </div>
+        </li>
+      <?php  endwhile; ?>
+    </ul>
+  </section>
+<?php endif; ?>
+</div> <!-- /#main-primary-container -->
 
 <div class="main-tertiary">
   <?php get_template_part( 'partials/sidebar-tertiary', 'acf' ); ?>
@@ -294,7 +332,7 @@ else: ?>
                               <button class="btn btn-link screen-rotation-phone"><i class="mdi mdi-screen-rotation"></i>Rotate device</button>
                             </div>
                             <div id="orientation" class="iframe-container phone">
-                            <iframe class="iframe-phone" src="<?php the_permalink(); ?>" frameborder="0" scrolling="yes"></iframe>
+                              <iframe class="iframe-phone" src="<?php the_permalink(); ?>" frameborder="0" scrolling="yes"></iframe>
                             </div>
                             <span class="small"><em>iPhone 6 shown in example - 375x667 viewport</em></span>
 
@@ -308,7 +346,7 @@ else: ?>
                             <span class="small"><em>Standard iPad shown in example - 768x1024 viewport</em></span>
 
                           <?php else: ?>
-                              <iframe class="col-xs-12 iframe-desktop" src="<?php the_permalink(); ?>" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+                            <iframe class="col-xs-12 iframe-desktop" src="<?php the_permalink(); ?>" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
 
                           <?php endif; ?>
                         </div>

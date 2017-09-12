@@ -1,4 +1,4 @@
-<div class="app-content-primary">
+<div id="app-content-primary">
   <div class="panel panel-montane">
     <div class="panel-heading">
       <div class="panel-heading-content">
