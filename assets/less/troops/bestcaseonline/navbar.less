@@ -20,30 +20,20 @@ Main nav #app-header
 
 .navbar-header {
   .navbar-brand {
+    padding: 0 0 0 15px;
     .navbar-brand-logo {
-      background-image: url("/wp-content/uploads/bc-app-sphere.svg");
-      align-items: center;
-      background-repeat: no-repeat;
-      display: flex;
       height: 34px;
-      padding-left: 42px;
-      margin-top: -7px;
-
-      @media (min-width: @screen-md-min) {
-        margin-top: -15px;
-      }
-
-      .navbar-brand-wordmark {
-        &:extend(.hidden-sm);
-        background-image: url("/wp-content/uploads/bc-app-wordmark.svg");
-        background-position: left center;
-        background-repeat: no-repeat;
-        background-size: 124px auto;
-        margin: 0;
-        overflow: hidden;
-        text-indent: 100%;
-        white-space: nowrap;
-        width: 124px;
+      width: 166px;
+      float: left;
+      display: block;
+      background: transparent url(/wp-content/uploads/bc-app-logo.svg) no-repeat 0 0;
+      -webkit-background-size: contain;
+      background-size: contain;
+      text-indent: -999px;
+      .navbar-brand-link {
+        display: block;
+        height: inherit;
+        width: inherit;
       }
     }
   }

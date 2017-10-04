@@ -1,7 +1,6 @@
 /*******************************************************************************
 footer.less
 */
-
 #app-footer {
   width: 100%;
   position: absolute;
@@ -23,26 +22,20 @@ footer.less
           font-size: @font-size-small;
           height: auto;
           .navbar-brand-logo {
-            background-image: url("/wp-content/uploads/bc-app-sphere_footer.svg");
-            align-items: center;
-            background-repeat: no-repeat;
-            display: flex;
             height: 34px;
             width: 166px;
-            padding-left: 42px;
             margin: 0 auto 15px auto;
-
-            .navbar-brand-wordmark {
-              &:extend(.hidden-sm);
-              background-image: url("/wp-content/uploads/bc-app-wordmark_footer.svg");
-              background-position: left center;
-              background-repeat: no-repeat;
-              background-size: 124px auto;
-              margin: 0;
-              overflow: hidden;
-              text-indent: 100%;
-              white-space: nowrap;
-              width: 124px;
+            display: block;
+            background: transparent url(/wp-content/uploads/bc-app-logo_grayscale.svg) no-repeat 0 0;
+            -webkit-background-size: contain;
+            background-size: contain;
+            overflow: hidden;
+            text-indent: 100%;
+            white-space: nowrap;
+            .navbar-brand-link {
+              display: block;
+              height: inherit;
+              width: inherit;
             }
           }
           .footer-links,

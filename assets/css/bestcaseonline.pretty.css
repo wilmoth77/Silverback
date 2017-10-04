@@ -6861,9 +6861,7 @@ button.close {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .hidden-sm,
-  .navbar-header .navbar-brand .navbar-brand-logo .navbar-brand-wordmark,
-  #app-header-navbar ul.navbar-nav.navbar-right .navbar-user a .navbar-user-dropdown,
-  #app-footer #footer-container #footer-content #footer-content-primary .navbar-brand .navbar-brand-logo .navbar-brand-wordmark {
+  #app-header-navbar ul.navbar-nav.navbar-right .navbar-user a .navbar-user-dropdown {
     display: none !important;
   }
 }
@@ -7256,30 +7254,23 @@ Main nav #app-header
     padding-top: 12px;
   }
 }
+.navbar-header .navbar-brand {
+  padding: 0 0 0 15px;
+}
 .navbar-header .navbar-brand .navbar-brand-logo {
-  background-image: url("/wp-content/uploads/bc-app-sphere.svg");
-  align-items: center;
-  background-repeat: no-repeat;
-  display: flex;
   height: 34px;
-  padding-left: 42px;
-  margin-top: -7px;
+  width: 166px;
+  float: left;
+  display: block;
+  background: transparent url(/wp-content/uploads/bc-app-logo.svg) no-repeat 0 0;
+  -webkit-background-size: contain;
+  background-size: contain;
+  text-indent: -999px;
 }
-@media (min-width: 992px) {
-  .navbar-header .navbar-brand .navbar-brand-logo {
-    margin-top: -15px;
-  }
-}
-.navbar-header .navbar-brand .navbar-brand-logo .navbar-brand-wordmark {
-  background-image: url("/wp-content/uploads/bc-app-wordmark.svg");
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-size: 124px auto;
-  margin: 0;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  width: 124px;
+.navbar-header .navbar-brand .navbar-brand-logo .navbar-brand-link {
+  display: block;
+  height: inherit;
+  width: inherit;
 }
 #app-header-navbar {
   max-height: none;
@@ -8147,25 +8138,21 @@ footer.less
   height: auto;
 }
 #app-footer #footer-container #footer-content #footer-content-primary .navbar-brand .navbar-brand-logo {
-  background-image: url("/wp-content/uploads/bc-app-sphere_footer.svg");
-  align-items: center;
-  background-repeat: no-repeat;
-  display: flex;
   height: 34px;
   width: 166px;
-  padding-left: 42px;
   margin: 0 auto 15px auto;
-}
-#app-footer #footer-container #footer-content #footer-content-primary .navbar-brand .navbar-brand-logo .navbar-brand-wordmark {
-  background-image: url("/wp-content/uploads/bc-app-wordmark_footer.svg");
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-size: 124px auto;
-  margin: 0;
+  display: block;
+  background: transparent url(/wp-content/uploads/bc-app-logo_grayscale.svg) no-repeat 0 0;
+  -webkit-background-size: contain;
+  background-size: contain;
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  width: 124px;
+}
+#app-footer #footer-container #footer-content #footer-content-primary .navbar-brand .navbar-brand-logo .navbar-brand-link {
+  display: block;
+  height: inherit;
+  width: inherit;
 }
 #app-footer #footer-container #footer-content #footer-content-primary .navbar-brand .footer-links,
 #app-footer #footer-container #footer-content #footer-content-primary .navbar-brand .footer-social {
