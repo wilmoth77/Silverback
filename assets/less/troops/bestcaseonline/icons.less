@@ -1,0 +1,47 @@
+.mdi {
+  // Base material design icon style
+  font-size: 24px;
+  vertical-align: middle;
+
+  // Vertical dots menu icon
+  a .mdi-dots-vertical& {
+    color: @text-color;
+    font-size: 26px;
+
+    // Vertical dots in list group item
+    .list-group-item & {
+      float: right;
+      margin-top: -8px;
+    }
+  }
+
+  // Match to Case
+  &.mdi-arrow-collapse {
+    transform: rotate(45deg);
+}
+
+  // File type brand colors
+  &.mdi-file-pdf {
+    color: #962100;
+  }
+  &.mdi-file-excel {
+    color: #006600;
+  }
+  &.mdi-file-word {
+    color: #336699;
+  }
+
+  // Material icons that have an identifier class (notifications)
+  &.success {
+    color: @brand-success;
+  }
+  &.info {
+    color: @brand-info;
+  }
+  &.error {
+    color: @brand-danger;
+  }
+  &.warning {
+    color: @brand-warning;
+  }
+}

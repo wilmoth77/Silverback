@@ -45,7 +45,7 @@
           <?php if( have_rows('docs_free_form') ): ?>
             <?php while( have_rows('docs_free_form') ): the_row(); ?>
               <section class="sb-docs-section">
-                <?php the_sub_field('docs_wysiwyg'); ?>
+                <?php the_sub_field('docs_wysiwyg', false); ?>
               </section>
             <?php endwhile; ?>
           <?php endif; ?>
@@ -228,7 +228,7 @@ endif; //has more docs sections ?>
         <li>
           <div class="media">
             <div class="media-left">
-              <button><i class="mdi mdi-<?php the_sub_field('icon_class'); ?> media-object" title="Copy Class"></i></button>
+              <button><i class="mdi mdi-<?php the_sub_field('icon_class'); ?> media-object" ></i></button>
             </div>
             <div class="media-body">
               <h6 class="media-heading"><?php the_sub_field('icon_description'); ?></h6>
@@ -272,7 +272,7 @@ else: ?>
       <?php if( have_rows('docs_free_form') ): ?>
         <?php while( have_rows('docs_free_form') ): the_row(); ?>
           <section class="sb-docs-section">
-            <?php the_sub_field('docs_wysiwyg'); ?>
+            <?php the_sub_field('docs_wysiwyg', false); ?>
           </section>
         <?php endwhile; ?>
       <?php endif; ?>

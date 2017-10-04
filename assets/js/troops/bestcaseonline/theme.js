@@ -12,6 +12,8 @@ $(document).ready(function () {
   });
 });
 
+
+
 /* ========================================================================
 * jQuery Bootstrap Scrolling Tabs
 * https://github.com/mikejacobson/jquery-bootstrap-scrolling-tabs
@@ -47,6 +49,7 @@ $(function() {
   });
 });
 
+
 /* ========================================================================
 * Initialize Bootstrap Tooltips and Popovers
 * ======================================================================== */
@@ -64,6 +67,36 @@ $('#myTabs a').click(function (e) {
   e.preventDefault();
   $(this).tab('show');
 });
+
+$('#tab-1-tab[data-toggle="tab"]').on('hide.bs.tab', function (e) {
+  var $previousButton = $('.footer-content-right').find('.btn').first();
+  $($previousButton).removeClass('disabled');
+});
+
+$('#tab-1-tab[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  var $previousButton = $('.footer-content-right').find('.btn').first();
+  $($previousButton).addClass('disabled');
+});
+
+$('#tab-7-tab[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  var $NextButton = $('.footer-content-right').find('#next-tab');
+  $($NextButton).addClass('disabled');
+});
+$('#tab-7-tab[data-toggle="tab"]').on('hide.bs.tab', function (e) {
+  var $NextButton = $('.footer-content-right').find('#next-tab');
+  $($NextButton).removeClass('disabled');
+});
+
+$('#next-tab').click(function(){
+  $('.nav-tabs > .active').next('li').find('a').trigger('click');
+});
+
+$('#previous-tab').click(function(){
+  $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+});
+
+
+
 
 /* ========================================================================
 * On mouseenter of element with class ellipsis, put the content in a title

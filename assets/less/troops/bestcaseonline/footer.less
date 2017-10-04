@@ -1,0 +1,74 @@
+/*******************************************************************************
+footer.less
+*/
+
+#app-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  #footer-container {
+    &:extend(.container-fluid);
+    #footer-content {
+      .make-row();
+      #footer-content-primary {
+        @media (min-width: @screen-md-min) {
+          .make-md-column(10);
+          float: none !important;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .navbar-brand {
+          float: none;
+          text-align: center;
+          font-size: @font-size-small;
+          height: auto;
+          .navbar-brand-logo {
+            background-image: url("/wp-content/uploads/bc-app-sphere_footer.svg");
+            align-items: center;
+            background-repeat: no-repeat;
+            display: flex;
+            height: 34px;
+            width: 166px;
+            padding-left: 42px;
+            margin: 0 auto 15px auto;
+
+            .navbar-brand-wordmark {
+              &:extend(.hidden-sm);
+              background-image: url("/wp-content/uploads/bc-app-wordmark_footer.svg");
+              background-position: left center;
+              background-repeat: no-repeat;
+              background-size: 124px auto;
+              margin: 0;
+              overflow: hidden;
+              text-indent: 100%;
+              white-space: nowrap;
+              width: 124px;
+            }
+          }
+          .footer-links,
+          .footer-social {
+            padding-left: 0;
+            list-style: none;
+            margin-bottom: 10px;
+            li {
+              display: inline-block;
+              margin-left: 10px;
+              &:first-child {
+                margin-left: 0;
+              }
+            }
+          }
+          .footer-social {
+            a .mdi {
+              color: lighten(@gray-light, 20%);
+            }
+          }
+          .copyright {
+            color: lighten(@gray-light, 20%);
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -47,14 +47,18 @@ case 'at4':
 echo '<div id="app" class="at4">';
 break;
 
+case 'vol-pet':
+echo '<div id="app" class="at3">';
+break;
+
+
 }
 ?>
 
-  <div id="app">
   <header id="app-header" class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-header-navbar" aria-expanded="false" aria-controls="app-header-navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>

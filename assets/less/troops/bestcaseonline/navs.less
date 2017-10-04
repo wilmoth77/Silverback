@@ -1,0 +1,58 @@
+/******************************************************************************
+.nav-tabs
+*/
+
+.nav-tabs {
+  //Hidden until scrolling tabs plugin is ready
+  display: none;
+  > li {
+
+    > a {
+      &:extend(.btn-default all);
+      //  padding: @nav-tabs-link-padding;
+      font-size: @font-size-base - 1;
+      border-bottom-color: @bc-s01;
+      border-radius: 0;
+    }
+
+    // Active state, and its :hover to override normal :hover
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        //border-left-color: transparent;
+      }
+    }
+  }
+}
+
+.tab-content {
+  padding: 0 15px;
+}
+
+/*******************************************************************************
+jQuery.scrolling-tabs.js
+*/
+
+.scrtabs-tab-scroll-arrow-mdi {
+  color: @bc-s01;
+  cursor: pointer;
+  display: none;
+  float: left;
+  font-size: 12px;
+  height: 42px;
+  margin-bottom: -1px;
+  padding-top: 5px;
+  width: 20px;
+
+  &.scrtabs-disable {
+    .opacity(.35);
+    cursor: default;
+  }
+  .mdi-chevron-left {
+    margin-left: -10px;
+  }
+  .mdi-chevron-right {
+    margin-left: 10px;
+  }
+}

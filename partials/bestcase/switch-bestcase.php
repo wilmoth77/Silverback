@@ -67,6 +67,16 @@ $showPage = $slug;
       <?php
       break;
 
+      // Three column ////////////////////////////////////////////////////////
+      case 'vol-pet': ?>
+      <div id="app-content">
+        <?php get_template_part( 'partials/bestcase/views/primary-volpet'); ?>
+        <?php get_template_part( 'partials/bestcase/views/tertiary-volpet'); ?>
+      </div> <!-- /#app-content -->
+      <?php
+      break;
+
+
     }
     ?>
   </div> <!-- /#app-container -->

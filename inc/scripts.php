@@ -25,11 +25,11 @@ function Silverback_scripts() {
   wp_enqueue_style('materialdesignicons', get_stylesheet_directory_uri() . $assets['materialdesignicons'], false, filemtime( get_stylesheet_directory() . '/public/css/materialdesignicons.min.css' ), 'all');
   wp_enqueue_style('opensans', $assets['opensans'], false, 'all');
   wp_enqueue_style('roboto', $assets['roboto'], false, 'all');
+  wp_enqueue_style('scrollingtabs', get_stylesheet_directory_uri() . $assets['scrollingtabs'], false, 'all');
 
 
   if ( is_singular( 'bc_examples' ) ) {
     wp_enqueue_style('bestcaseonline', get_stylesheet_directory_uri() . $assets['bestcaseonline'], false, filemtime( get_stylesheet_directory() . '/public/css/bestcaseonline.min.css' ), 'all');
-    wp_enqueue_style('scrollingtabs', get_stylesheet_directory_uri() . $assets['scrollingtabs'], false, 'all');
   }
 
     elseif (is_tree(1356) && !is_page(1356)) { //Is Best Case App pages
@@ -61,7 +61,7 @@ function Silverback_jquery_local_fallback($src, $handle = null) {
   static $add_jquery_fallback = false;
 
   if ($add_jquery_fallback) {
-    echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/assets/vendor/jquery/dist/jquery.min.js?1.11.1"><\/script>\')</script>' . "\n";
+    echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/node_modules/jquery/dist/jquery.min.js"><\/script>\')</script>' . "\n";
     $add_jquery_fallback = false;
   }
 

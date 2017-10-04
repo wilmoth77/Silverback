@@ -1,0 +1,67 @@
+/*******************************************************************************
+alerts.less (notifications)
+*/
+
+// Alert common styles
+.alert {
+  padding: 25px 35px 25px 25px;
+  margin-bottom: 24px;
+  width: 300px;
+  font-size: @font-size-small;
+  border: none;
+  border-radius: 0;
+  border-top: 10px solid transparent;
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  transition: all 250ms;
+  .layer(3);
+
+  & .close {
+    font-size: 27px;
+  }
+
+  .alert-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    & i.mdi {
+      font-size: 36px;
+      position: relative;
+    }
+  }
+}
+
+// Alert type styles
+// Info
+.alert-info {
+  background-color: @white;
+  border-top-color: @bc-s03;
+  color: @text-color;
+
+  & .alert-title {
+    color: @brand-info;
+  }
+}
+
+// Success
+.alert-success {
+  background-color: @white;
+  border-top-color: @bc-sp03;
+  color: @text-color;
+
+  & .alert-title {
+    color: @bc-sp03;
+  }
+}
+
+
+// Error
+.alert-error {
+  background-color: @white;
+  border-top-color: @bc-sp05;
+  color: @text-color;
+
+  & .alert-title {
+    color: @bc-sp05;
+  }
+}

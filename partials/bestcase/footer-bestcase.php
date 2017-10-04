@@ -16,7 +16,7 @@
     </div> <!-- /#footer-content -->
   </div> <!-- /#footer-container -->
 </footer> <!-- /#app-footer -->
-<?php wp_footer(); ?>
 </div> <!-- /#app -->
+<?php wp_footer(); ?>
 </body>
 </html>

@@ -1,0 +1,103 @@
+/*******************************************************************************
+buttons.less
+*/
+
+//Remove glow from items with focus
+.focus,
+:focus {
+  outline: 0 !important;
+  outline-offset: 0 !important;
+}
+
+//Apply a left margin to buttons for spacing
+.btn {
+  margin-left: 10px;
+
+  //Remove the margin if:
+  &:first-of-type,
+  &+.dropdown-toggle,
+  &.btn-block {
+    margin-left: 0;
+  }
+}
+
+//New secondary button class
+.btn-secondary {
+  .button-variant(@text-color; lighten(@bc-s02-20, 5%); lighten(@bc-s02-20, 5%););
+  &.dropdown-toggle {
+    border-left-color: darken(@bc-s02-20, 5%);
+  }
+}
+
+//New tertiary button class
+.btn-tertiary {
+  .button-variant(@white; @bc-s03; @bc-s03;);
+  &.dropdown-toggle {
+    border-left-color: darken(@bc-s03, 5%);
+  }
+}
+
+
+.btn-icon {
+  padding-top: 2px;
+  padding-bottom: 0;
+  .mdi {
+    font-size: @font-size-btn-icon;
+    vertical-align: middle;
+    margin-right: 5px;
+    position: relative;
+  }
+  &.btn-sm .mdi {
+    margin-right: 3px;
+  }
+  &.dropdown-toggle .mdi,
+  &.dropdown-toggle.btn-sm .mdi {
+    margin: 0 -5px 0 0;
+  }
+}
+
+//Create an icon only button
+.button-icon-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  &:focus,
+  &.focus {
+    color: @text-color;
+  }
+  &:hover {
+    color: @text-color;
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @text-color;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @text-color;
+    }
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}
+
+// Style the icon only buttons
+.btn-link-icon {
+  .button-icon-variant(@gray-light; transparent; transparent;);
+}
+
+.search-wrap + button,
+.search-wrap + .dropdown {
+  margin-bottom: 15px;
+}

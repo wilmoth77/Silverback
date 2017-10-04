@@ -1,0 +1,229 @@
+/******************************************************************************
+montane Panel
+*/
+.panel-montane {
+  border: none;
+  border-top: 5px solid @bc-p01;
+  .layer(1);
+
+  .panel-heading,
+  .panel-footer {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .panel-heading {
+    .panel-title {
+      font-size: @font-size-h3 + 1;
+    }
+    .panel-heading-content {
+      .make-row ();
+      .heading-content-left,
+      .heading-content-right {
+        .make-sm-column (6);
+      }
+      & > div:first-of-type:last-of-type {
+        .make-sm-column (12);
+      }
+    }
+  }
+
+  .panel-footer {
+    padding: 20px 30px;
+    border-top-color: @bc-s02-20;
+    .panel-footer-content {
+      .make-row();
+      .footer-content-left,
+      .footer-content-right {
+        .make-sm-column (6);
+      }
+      & > div:first-of-type:last-of-type {
+        .make-sm-column (12);
+      }
+    }
+  }
+  @media (min-width: @screen-sm-min) {
+    .panel-heading-content .heading-content-right,
+    .panel-footer-content .footer-content-right {
+      text-align: right;
+    }
+  }
+  @media (min-width: @screen-md-min) {
+    .panel-heading,
+    .panel-body {
+      padding: 30px;
+    }
+    .panel-heading+.panel-body {
+      padding-top: 0px;
+    }
+  }
+}
+
+/******************************************************************************
+Secondary Container Menu
+*/
+
+.panel-nav-stacked {
+  height: 100%;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+
+  .panel-body {
+    padding: 0;
+    height:93.75%;
+    overflow: hidden;
+    &:hover {
+      overflow-y: auto;
+    }
+    ul {
+      padding:8px 0;
+      &:first-of-type {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+.nav-stacked {
+  li {
+    &.active {
+      a {
+        color: @bc-s01;
+        background-color: transparent;
+
+        &:hover,
+        &:focus {
+          color: @bc-s01;
+          background-color: transparent;
+        }
+
+        .badge {
+          color: @white;
+          background-color: @bc-p02;
+        }
+      }
+    }
+    a {
+      border-bottom: 1px solid @bc-s02-20;
+      color: @gray;
+      border-radius: 0;
+
+      &:hover,
+      &:focus {
+        color: @bc-s01;
+        background-color: transparent;
+      }
+      .mdi {
+        margin-right: 15px;
+      }
+      .badge {
+        margin-left: 10px;
+      }
+    }
+  }
+  @media (min-width: @screen-sm-min) {
+    li {
+      a {
+        .badge {
+          float: right;
+          margin-top: 9px;
+        }
+      }
+    }
+  }
+}
+
+/******************************************************************************
+Notification list panel used in main header
+*/
+.panel-notification-list {
+  &:extend(.dropdown-menu all);
+  &:extend(.dropdown-menu-right all);
+  .panel-montane;
+
+  @media (min-width: @screen-sm-min) {
+    width: @screen-sm-min;
+  }
+  .panel-body {
+    padding: 15px 0;
+    .list-group {
+      &:extend(.container-fluid all);
+      margin-bottom: 0;
+      .list-group-item {
+        .make-row();
+        padding: 10px 15px;
+        border: none;
+        font-size: @font-size-small;
+        &:nth-of-type(even) {
+          background-color: #f9f9f9;
+        }
+        .navbar-notification-icon {
+          &:extend(.hidden-xs all);
+        }
+        &:hover .navbar-notification-icon,
+        &:focus .navbar-notification-icon {
+          .opacity(1);
+        }
+        @media (min-width: @screen-sm-min) {
+          .navbar-notification-icon {
+            .opacity(.7);
+            .make-sm-column(1);
+          }
+
+          .navbar-notification-message {
+            .make-sm-column(9);
+            padding-top: 5px;
+          }
+
+          .navbar-notification-time {
+            .make-sm-column(2);
+            padding-top: 5px;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+  .panel-footer .btn-link {
+    color: @link-color;
+  }
+}
+
+/******************************************************************************
+User settings panel used in main header
+*/
+.panel-user {
+  &:extend(.dropdown-menu all);
+  &:extend(.dropdown-menu-right all);
+  .panel-montane;
+  border: none;
+  .layer(3);
+
+  .panel-body {
+    padding: 20px;
+
+    .list-group {
+      a.list-group-item {
+        color: @gray;
+
+        &:hover,
+        &:focus {
+          color: @bc-s01;
+          background-color: transparent;
+        }
+      }
+      .list-group-item {
+        padding: 5px;
+        border: none;
+      }
+      .list-group-title {
+        font-size: @font-size-h5;
+        font-weight: 600;
+      }
+    }
+  }
+  @media (min-width: @screen-sm-min) {
+    min-width: 250px;
+  }
+}

@@ -1,0 +1,104 @@
+/*******************************************************************************
+Best Case App Layouts
+*/
+
+
+#app {
+  // margin-bottom set equal to height of #app-footer
+  margin-bottom: 173px;
+  #app-outer {
+    #app-container {
+      &:extend(.container-fluid);
+      #app-content {
+        .make-row();
+        padding-top:30px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+
+.at1 {
+  #app-content-primary {
+    @media (min-width: @screen-md-min) {
+      .make-md-column(10);
+      float: none !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+}
+
+.at2 {
+  #app-content-primary {
+    .make-md-column(9);
+    .make-lg-column(10);
+  }
+
+  #app-content-secondary {
+    .make-md-column(3);
+    .make-lg-column(2);
+  }
+}
+
+.at3 {
+  #app-content-primary {
+    .make-md-column(9);
+  }
+
+  #app-content-tertiary {
+    .make-md-column(3);
+  }
+}
+
+.at4 {
+  #app-content-secondary {
+    .make-md-column(3);
+    .make-lg-column(2);
+  }
+
+  #app-content-primary {
+    .make-md-column(6);
+    .make-lg-column(7);
+  }
+
+  #app-content-tertiary {
+    .make-md-column(3);
+  }
+}
+
+/*
+* Off Canvas
+* --------------------------------------------------
+*/
+@media screen and (max-width: @screen-md-min) {
+  .secondary-offcanvas {
+    left: 0;
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+
+    #app-content-secondary {
+      left: -50%; /* 6 columns */
+      position: absolute !important;
+      top: 30px;
+      width: 50%; /* 6 columns */
+    }
+
+    &.active {
+      left: 50%; /* 6 columns */
+    }
+  }
+}
+
+.offcanvas-toggle {
+  display: none;
+  @media screen and (max-width: @screen-md-min) {
+    .at2 &,
+    .at4 & {
+      display: inline-block;
+    }
+  }
+}

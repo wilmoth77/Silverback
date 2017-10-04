@@ -1,0 +1,36 @@
+/*******************************************************************************
+Remove the top margin from all headings so paddings are true (standard in BS4.0)
+*/
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  //margin-bottom: (@line-height-computed / 2);
+}
+
+/*******************************************************************************
+Paragraph and elements in a paragraph
+*/
+
+p {
+  margin: 0 0 (@line-height-computed);
+
+  &+ul {
+    margin-top: -12px;
+  }
+}
+
+/*******************************************************************************
+Custom classes for text styling
+*/
+.hint {
+  &:extend(.text-muted);
+}
+
+.loud {
+  color: @bc-sp02;
+}

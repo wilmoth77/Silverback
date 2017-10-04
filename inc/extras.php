@@ -108,6 +108,7 @@ function cc_mime_types( $mimes ){
 $mimes['svg'] = 'image/svg+xml'; //Adding svg image support
 $mimes['exe'] = 'application/vnd.microsoft.portable-executable'; //Adding exe support
 $mimes['dmg'] = 'application/x-apple-diskimage'; //Adding dmg support
+$mimes['less'] = 'text/plain'; //Adding less support
 return $mimes;
 }
 add_filter( 'upload_mimes', 'cc_mime_types' );

@@ -78,7 +78,7 @@ module.exports = function(grunt) {
         }
       },
 
-      // Compile and but do not minify misc Less/CSS
+      // Compile but do not minify misc Less/CSS
       miscDev: {
         plugins: [
           new (require('less-plugin-autoprefix'))({browsers: ["> 5%, last 2 versions"]})

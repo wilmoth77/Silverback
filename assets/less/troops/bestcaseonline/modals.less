@@ -1,0 +1,44 @@
+/*******************************************************************************
+modal.less
+*/
+.modal-content {
+  border-radius: 0;
+
+  & .modal-header,
+  .modal-footer {
+    border-bottom-color: transparent;
+
+    & .modal-title {
+      &:extend(h2 all);
+      margin-top: 21px;
+      margin-bottom: 10.5px;
+    }
+  }
+}
+
+.modal-sm {
+  .modal-footer button {
+    &:extend(.btn-sm all);
+  }
+  @media (min-width: @screen-sm-min) {
+    width: 400px;
+  }
+}
+
+.modal-doc {
+  width: 90%;
+  height: 90vh;
+  max-height: 90vh;
+
+  .modal-content {
+    height: 100%;
+  }
+  .modal-body {
+    height: 74.5vh;
+  }
+  object#documentPreview {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
