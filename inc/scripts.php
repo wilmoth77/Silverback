@@ -82,6 +82,8 @@ function Silverback_login_stylesheet() {
   //wp_enqueue_script( 'custom-login', get_template_directory_uri() . '/public/js/wp-login.min.js' );
 }
 add_action( 'login_enqueue_scripts', 'Silverback_login_stylesheet' );
+add_action( 'admin_enqueue_scripts', 'Silverback_login_stylesheet' );
+
 
 // Change logo link and title
 function wpc_url_login(){
