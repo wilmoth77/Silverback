@@ -6,10 +6,10 @@
 *
 * @package Silverback
 */
-get_template_part( 'partials/bestcase/header', 'bestcase' );
+get_template_part( 'partials/bestcase/views/header' );
       while ( have_posts() ) : the_post();
-      get_template_part( 'partials/bestcase/switch', 'bestcase' );
+      get_template_part( 'partials/bestcase/views/app', 'templates' );
       endwhile; // End of the loop.
       ?>
 <!-- #primary -->
-<?php get_template_part( 'partials/bestcase/footer', 'bestcase' );?>
+<?php get_template_part( 'partials/bestcase/views/footer'  );?>

@@ -26,8 +26,20 @@
   }
 }
 
-.tab-content {
+// Tabbable tabs
+// -------------------------
+
+// Hide tabbable panes to start, show them when `.active`
+
+//Chaanged Bootstrap markup .tab-content to .scrolling-tab-content
+.scrolling-tab-content {
   padding: 0 15px;
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
 }
 
 /*******************************************************************************

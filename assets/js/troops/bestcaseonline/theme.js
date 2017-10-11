@@ -42,10 +42,10 @@ $(function() {
     //Add class to arrow when fully scrolled
     disableScrollArrowsOnFullyScrolled: true
   })
-  //Display .nav-tabs and .tab-content after component has
+  //Display .nav-tabs and .scrolling-tab-content after component has
   // been loaded and styled
   .on('ready.scrtabs', function() {
-    $('.tab-content').show();
+    $('.scrolling-tab-content').show();
   });
 });
 
@@ -95,8 +95,29 @@ $('#previous-tab').click(function(){
   $('.nav-tabs > .active').prev('li').find('a').trigger('click');
 });
 
+/* ========================================================================
+* Show Debtor 1 Mailing Address
+* ======================================================================== */
+$('#d1MailingAddressCheckbox').click(function () {
+  var $mailingAddressForm = $('#debtor1MailingAddress');
+  if ($($mailingAddressForm).hasClass("hidden")) {
+    $($mailingAddressForm).removeClass("hidden");
+  }  else {
+    $($mailingAddressForm).addClass("hidden");
+  }
+});
 
-
+/* ========================================================================
+* Show Debtor 2 Mailing Address
+* ======================================================================== */
+$('#d2MailingAddressCheckbox').click(function () {
+  var $mailingAddressForm = $('#debtor2MailingAddress');
+  if ($($mailingAddressForm).hasClass("hidden")) {
+    $($mailingAddressForm).removeClass("hidden");
+  }  else {
+    $($mailingAddressForm).addClass("hidden");
+  }
+});
 
 /* ========================================================================
 * On mouseenter of element with class ellipsis, put the content in a title

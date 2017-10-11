@@ -94,23 +94,6 @@
 
         });
 
-        $(function () {
-          //add active class to sample app navs
-          if ( $('body').hasClass('at1') ) {
-            $('#app-header-navbar .navbar-nav:first-child  li:nth-child(1)').addClass('active');
-          }
-          if ( $('body').hasClass('at2') ) {
-            $('#app-header-navbar .navbar-nav:first-child  li:nth-child(2)').addClass('active');
-          }
-          if ( $('body').hasClass('at3') ) {
-            $('#app-header-navbar .navbar-nav:first-child  li:nth-child(3)').addClass('active');
-          }
-          if ( $('body').hasClass('at4') ) {
-            $('#app-header-navbar .navbar-nav:first-child  li:nth-child(4)').addClass('active');
-          }
-
-        });
-
 
         $(function(){
           $('#silverback-header button.navbar-toggle').on("click", function() {

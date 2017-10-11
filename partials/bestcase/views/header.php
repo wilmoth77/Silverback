@@ -47,11 +47,9 @@
     echo '<div id="app" class="at4">';
     break;
 
-    case 'vol-pet':
-    echo '<div id="app" class="at3">';
+    default:
+    echo '<div id="app" class="at1">';
     break;
-
-
   }
   ?>
 
@@ -66,16 +64,67 @@
         </button>
         <div class="navbar-brand">
           <div class="navbar-brand-logo">
-            <a class="navbar-brand-link" href="/">Best Case Bankruptcy</a>
+            <a class="navbar-brand-link" href="/bestcase/layout/app-templates/">Best Case Bankruptcy</a>
           </div>
         </div><!--/.navbar-brand -->
       </div>
       <div id="app-header-navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="/bestcase/layout/app-templates/at1/">AT1</a></li>
-          <li><a href="/bestcase/layout/app-templates/at2/">AT2</a></li>
-          <li><a href="/bestcase/layout/app-templates/at3/">AT3</a></li>
-          <li><a href="/bestcase/layout/app-templates/at4/">AT4</a></li>
+          <?php
+          switch ( $showPage ) {
+
+            case 'at1':
+            echo '
+            <li class="active"><a href="/bestcase/layout/app-templates/at1">AT1</a></li>
+            <li><a href="/bestcase/layout/app-templates/at2">AT2</a></li>
+            <li><a href="/bestcase/layout/app-templates/at3">AT3</a></li>
+            <li><a href="/bestcase/layout/app-templates/at4">AT4</a></li>
+            ';
+            break;
+
+            case 'at2':
+            echo '
+            <li><a href="/bestcase/layout/app-templates/at1">AT1</a></li>
+            <li class="active"><a href="/bestcase/layout/app-templates/at2">AT2</a></li>
+            <li><a href="/bestcase/layout/app-templates/at3">AT3</a></li>
+            <li><a href="/bestcase/layout/app-templates/at4">AT4</a></li>
+            ';
+            break;
+
+            case 'at3':
+            echo '
+            <li><a href="/bestcase/layout/app-templates/at1">AT1</a></li>
+            <li><a href="/bestcase/layout/app-templates/at2">AT2</a></li>
+            <li class="active"><a href="/bestcase/layout/app-templates/at3">AT3</a></li>
+            <li><a href="/bestcase/layout/app-templates/at4">AT4</a></li>
+            ';
+            break;
+
+            case 'at4':
+            echo '
+            <li><a href="/bestcase/layout/app-templates/at1">AT1</a></li>
+            <li><a href="/bestcase/layout/app-templates/at2">AT2</a></li>
+            <li><a href="/bestcase/layout/app-templates/at3">AT3</a></li>
+            <li class="active"><a href="/bestcase/layout/app-templates/at4">AT4</a></li>
+            ';
+            break;
+
+            default:
+            echo '
+            <li><a href="/bestcase/layout/app-templates/at1">AT1</a></li>
+            <li><a href="/bestcase/layout/app-templates/at2">AT2</a></li>
+            <li><a href="/bestcase/layout/app-templates/at3">AT3</a></li>
+            <li><a href="/bestcase/layout/app-templates/at4">AT4</a></li>
+            <li class="active"><a href="/bestcase/layout/app-templates/';
+            echo $showPage;
+            echo '/">';
+            echo $showPage;
+            echo '</a></li>';
+            break;
+          }
+          ?>
+
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>

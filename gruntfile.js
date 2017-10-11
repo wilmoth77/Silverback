@@ -127,15 +127,15 @@ module.exports = function(grunt) {
 // Concatenate js dev - Not Minified
       bootstrapDev: {
         src: [bootstrapJs],
-        dest: './public/js/silverback.min.js',
+        dest: './public/js/bootstrap.min.js',
       },
       silverbackDev: {
         src: [silverbackJs],
-        dest: './public/js/bestcase.min.js',
+        dest: './public/js/silverback.min.js',
       },
       bestcaseDev: {
         src: [bestcaseJs],
-        dest: './public/js/bootstrap.min.js',
+        dest: './public/js/bestcase.min.js',
       },
     }, //end concat task
 
@@ -270,8 +270,8 @@ module.exports = function(grunt) {
 
   });
   // Compile tasks
-  grunt.registerTask('compile', ['clean', 'concat:bootstrapDev', 'concat:bestcaseDev', 'concat:silverbackDev', 'less:silverbackDev', 'less:bestcaseDev', 'less:miscDev', 'jshint', 'copy']);
-  grunt.registerTask('build',   ['clean', 'concat:bootstrap', 'concat:bestcase', 'concat:silverback', 'uglify', 'less:production', 'jshint', 'copy']);
+  grunt.registerTask('dev', ['clean', 'concat:bootstrapDev', 'concat:bestcaseDev', 'concat:silverbackDev', 'less:silverbackDev', 'less:bestcaseDev', 'less:miscDev', 'jshint', 'copy']);
+  grunt.registerTask('prod',   ['clean', 'concat:bootstrap', 'concat:bestcase', 'concat:silverback', 'uglify', 'less:production', 'jshint', 'copy']);
   // Set default task
   grunt.registerTask('default', ['watch']);
 };

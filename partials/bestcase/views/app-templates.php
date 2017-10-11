@@ -67,16 +67,17 @@ $showPage = $slug;
       <?php
       break;
 
-      // Three column ////////////////////////////////////////////////////////
-      case 'vol-pet': ?>
+      // One column - shows html of the post content inside a panel-body ///////
+      default: ?>
       <div id="app-content">
-        <?php get_template_part( 'partials/bestcase/views/primary-volpet'); ?>
-        <?php get_template_part( 'partials/bestcase/views/tertiary-volpet'); ?>
+        <div id="app-content-primary">
+          <h2><?php echo $showPage; ?></h2>
+          <?php the_content(); ?>
+          <a href="/bestcase/layout/app-templates/" type="button" class="btn btn-link"><i class="mdi mdi-arrow-left"></i>&nbsp;&nbsp;Return to App Templates page</a>
+        </div> <!-- /#app-content-primary -->
       </div> <!-- /#app-content -->
       <?php
       break;
-
-
     }
     ?>
   </div> <!-- /#app-container -->
